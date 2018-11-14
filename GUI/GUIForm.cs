@@ -15,10 +15,16 @@ namespace GUI
         /// <summary>
         /// Refererer til user controls
         /// </summary>
-        UserControl1Test test1;
+        UserControlCases userControlCases;
+        UserControlEmployees userControlEmployees;
+        UserControlClients userControlClients;
+        UserControlHelp userControlHelp;
         public GUIForm()
         {
-            test1 = new UserControl1Test(this);
+            userControlCases = new UserControlCases(this);
+            userControlEmployees = new UserControlEmployees(this);
+            userControlClients = new UserControlClients(this);
+            userControlHelp = new UserControlHelp(this);
             InitializeComponent();
             panelWidth = MenuPanel.Width;
             hidden = true;
@@ -118,11 +124,13 @@ namespace GUI
         private void CaseBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(CaseBtn);
-            //Vis usercontrol
-            test1.Show();
-            test1.Dock = DockStyle.Fill;
-            this.Controls.Add(test1);
-            //toggleMenuPanel();
+            userControlEmployees.Hide();
+            userControlClients.Hide();
+            userControlHelp.Hide();
+            userControlCases.Show();
+            userControlCases.Dock = DockStyle.Fill;
+            this.Controls.Add(userControlCases);
+            
         }
         #endregion
         #region Events for EmployeeBtn
@@ -137,8 +145,12 @@ namespace GUI
         private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(EmployeeBtn);
-            test1.Hide(); //fint so far at den bare gemmer det
-            //toggleMenuPanel();
+            userControlCases.Hide();
+            userControlClients.Hide();
+            userControlHelp.Hide();
+            userControlEmployees.Show();
+            userControlEmployees.Dock = DockStyle.Fill;
+            this.Controls.Add(userControlEmployees);
         }
         #endregion  
         #region Events for ClientBtn
@@ -153,6 +165,12 @@ namespace GUI
         private void ClientBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(ClientBtn);
+            userControlCases.Hide();
+            userControlEmployees.Hide();
+            userControlHelp.Hide();
+            userControlClients.Show();
+            userControlClients.Dock = DockStyle.Fill;
+            this.Controls.Add(userControlClients);
         }
         #endregion
         #region  Events for HelpBtn
@@ -167,10 +185,17 @@ namespace GUI
         private void HelpBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(HelpBtn);
+            userControlCases.Hide();
+            userControlEmployees.Hide();
+            userControlClients.Hide();
+            userControlHelp.Show();
+            userControlHelp.Dock = DockStyle.Fill;
+            this.Controls.Add(userControlHelp);
         }
 
         #endregion
 
+        //slet den her på et tidspunkt: 
         private void ContentPanel_MouseEnter(object sender, EventArgs e)
         {
             toggleMenuPanel();

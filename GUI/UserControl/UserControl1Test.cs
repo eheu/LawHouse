@@ -14,6 +14,7 @@ namespace GUI
     {
         /// <summary>
         /// Det er vigtigt at vi laver den sammenhæng mellem GUIForm i constructoren, så den kan tilgå metoder i GUIForm klassen
+        /// Lad denne usercontrol ligge i projektet, så har vi altid en prøvekanin :) 
         /// </summary>
         GUIForm gui; 
         public UserControl1Test(GUIForm guiForm)
