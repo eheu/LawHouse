@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class GUI
+    partial class GUIForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIForm));
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.HelpBtn = new System.Windows.Forms.Button();
             this.ClientBtn = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@
             this.TopPanel = new System.Windows.Forms.Panel();
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
-            this.dragControl1 = new DragControl();
+            this.dragControl1 = new GUI.DragControl();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +67,7 @@
             // 
             this.HelpBtn.FlatAppearance.BorderSize = 0;
             this.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HelpBtn.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelpBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpBtn.Image = ((System.Drawing.Image)(resources.GetObject("HelpBtn.Image")));
             this.HelpBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,15 +76,18 @@
             this.HelpBtn.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.HelpBtn.Size = new System.Drawing.Size(347, 68);
             this.HelpBtn.TabIndex = 4;
-            this.HelpBtn.Text = "        Hjælp";
+            this.HelpBtn.Text = "       Hjælp";
             this.HelpBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.HelpBtn.UseVisualStyleBackColor = true;
+            this.HelpBtn.Click += new System.EventHandler(this.HelpBtn_Click);
+            this.HelpBtn.MouseEnter += new System.EventHandler(this.HelpBtn_MouseEnter);
+            this.HelpBtn.MouseLeave += new System.EventHandler(this.HelpBtn_MouseLeave);
             // 
             // ClientBtn
             // 
             this.ClientBtn.FlatAppearance.BorderSize = 0;
             this.ClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientBtn.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientBtn.Image")));
             this.ClientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,7 +107,7 @@
             // 
             this.EmployeeBtn.FlatAppearance.BorderSize = 0;
             this.EmployeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmployeeBtn.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeBtn.Image")));
             this.EmployeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +127,7 @@
             // 
             this.CaseBtn.FlatAppearance.BorderSize = 0;
             this.CaseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CaseBtn.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseBtn.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaseBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CaseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CaseBtn.Image")));
             this.CaseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +136,7 @@
             this.CaseBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.CaseBtn.Size = new System.Drawing.Size(347, 68);
             this.CaseBtn.TabIndex = 4;
-            this.CaseBtn.Text = "      Sager";
+            this.CaseBtn.Text = "     Sager";
             this.CaseBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CaseBtn.UseVisualStyleBackColor = true;
             this.CaseBtn.Click += new System.EventHandler(this.CaseBtn_Click);
@@ -194,7 +197,7 @@
             // 
             this.dragControl1.SelectControl = this.TopPanel;
             // 
-            // GUI
+            // GUIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +206,7 @@
             this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.TopPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GUI";
+            this.Name = "GUIForm";
             this.Text = "GUI";
             this.Load += new System.EventHandler(this.GUI_Load);
             this.MenuPanel.ResumeLayout(false);
