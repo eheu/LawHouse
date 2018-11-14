@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    // OBS !!!  Alle kommentare refererer til nedenstående kode.
     public partial class GUI : Form
     {
         public GUI()
@@ -19,12 +18,16 @@ namespace GUI
             panelWidth = MenuPanel.Width;
             hidden = true;
         }
-        //Sørger for at det første der bliver loaded, når Formen loader, er Cases
+        /// <summary>
+        /// Sørger for at det første der bliver loaded, når Formen loader, er Cases
+        /// </summary>
         private void GUI_Load(object sender, EventArgs e)
         {
             CaseBtn.PerformClick();
         }
-        //Står for hide/show toggle på menuen
+        /// <summary>
+        /// Står for hide/show toggle på menuen
+        /// </summary>
         private int panelWidth;
         private bool hidden;
         private void MenuPictureBtn_Click(object sender, EventArgs e)
@@ -57,22 +60,32 @@ namespace GUI
                 }
             }
         }
-        //Står for at lukke programmet ned når man trykker på knappen
+        /// <summary>
+        /// Står for at lukke programmet ned når man trykker på knappen
+        /// </summary>
         private void CloseWindowBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //Står for at ændre tekstfarven når musen hover på knappen
+
+        /// <summary>
+        /// Står for at ændre tekstfarven når musen hover på knappen
+        /// </summary>
         private void buttonForeColorHover(Button button)
         {
             button.ForeColor = Color.SteelBlue;
         }
-        //Står for at ændre tekstfarven tilbage når musen forlader knappen
+
+        /// <summary>
+        /// Står for at ændre tekstfarven tilbage når musen forlader knappen
+        /// </summary>
         private void buttonForeColorLeave(Button button)
         {
             button.ForeColor = Color.Black;
         }
-        //Står for at highlighte den sidste knap der er blevet trykket på samt at resette farven når en ny knap trykkes på. 
+        /// <summary>
+        /// Står for at highlighte den sidste knap der er blevet trykket på samt at resette farven når en ny knap trykkes på. 
+        /// </summary>
         private Button _lastButtonClicked;
         private void buttonBackColor(Button button)
         {
@@ -82,7 +95,7 @@ namespace GUI
             _lastButtonClicked = button as Button;
             _lastButtonClicked.BackColor = Color.SteelBlue;
         }
-        //Events for CaseBtn
+        #region Events for CaseBtn
         private void CaseBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(CaseBtn);
@@ -95,7 +108,7 @@ namespace GUI
         {
             buttonBackColor(CaseBtn);
         }
-        //Events for EmployeeBtn
+        #region Events for EmployeeBtn
         private void EmployeeBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(EmployeeBtn);
@@ -108,7 +121,8 @@ namespace GUI
         {
             buttonBackColor(EmployeeBtn);
         }
-        //Events for ClientBtn
+
+        #region Events for ClientBtn
         private void ClientBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(ClientBtn);
