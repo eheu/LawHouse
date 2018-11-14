@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class GUI : Form
+    public partial class GUIForm : Form
     {
-        public GUI()
+        public GUIForm()
         {
             InitializeComponent();
             panelWidth = MenuPanel.Width;
@@ -136,7 +136,18 @@ namespace GUI
         {
             buttonBackColor(ClientBtn);
         }
-        #endregion  
-
+        //Events for HelpBtn
+        private void HelpBtn_MouseEnter(object sender, EventArgs e)
+        {
+            buttonForeColorHover(HelpBtn);
+        }
+        private void HelpBtn_MouseLeave(object sender, EventArgs e)
+        {
+            buttonForeColorLeave(HelpBtn);
+        }
+        private void HelpBtn_Click(object sender, EventArgs e)
+        {
+            buttonBackColor(HelpBtn);
+        }
     }
 }
