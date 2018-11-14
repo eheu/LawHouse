@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\UserControl1Test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControl1Test.Designer.cs">
+      <DependentUpon>UserControl1Test.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUIForm.resx">
       <DependentUpon>GUIForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,6 +75,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl\UserControl1Test.resx">
+      <DependentUpon>UserControl1Test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

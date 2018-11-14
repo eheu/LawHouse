@@ -12,8 +12,13 @@ namespace GUI
 {
     public partial class GUIForm : Form
     {
+        /// <summary>
+        /// Refererer til user controls
+        /// </summary>
+        UserControl1Test test1;
         public GUIForm()
         {
+            test1 = new UserControl1Test(this);
             InitializeComponent();
             panelWidth = MenuPanel.Width;
             hidden = true;
@@ -61,13 +66,20 @@ namespace GUI
             }
         }
         /// <summary>
+        /// Står for at lukke MenuPanel når man trykker på en knap i menuen
+        /// </summary>
+        public void toggleMenuPanel()
+        {
+            if (!hidden)
+                MenuPictureBtn_Click(this.MenuPictureBtn, null);
+        }
+        /// <summary>
         /// Står for at lukke programmet ned når man trykker på knappen
         /// </summary>
         private void CloseWindowBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         /// <summary>
         /// Står for at ændre tekstfarven når musen hover på knappen
         /// </summary>
@@ -75,7 +87,6 @@ namespace GUI
         {
             button.ForeColor = Color.SteelBlue;
         }
-
         /// <summary>
         /// Står for at ændre tekstfarven tilbage når musen forlader knappen
         /// </summary>
@@ -107,6 +118,11 @@ namespace GUI
         private void CaseBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(CaseBtn);
+            //Vis usercontrol
+            test1.Show();
+            test1.Dock = DockStyle.Fill;
+            this.Controls.Add(test1);
+            //toggleMenuPanel();
         }
         #endregion
         #region Events for EmployeeBtn
@@ -121,6 +137,8 @@ namespace GUI
         private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(EmployeeBtn);
+            test1.Hide(); //fint so far at den bare gemmer det
+            //toggleMenuPanel();
         }
         #endregion  
         #region Events for ClientBtn
@@ -136,7 +154,8 @@ namespace GUI
         {
             buttonBackColor(ClientBtn);
         }
-        //Events for HelpBtn
+        #endregion
+        #region  Events for HelpBtn
         private void HelpBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(HelpBtn);
@@ -149,5 +168,13 @@ namespace GUI
         {
             buttonBackColor(HelpBtn);
         }
+
+        #endregion
+
+        private void ContentPanel_MouseEnter(object sender, EventArgs e)
+        {
+            toggleMenuPanel();
+        }
+        
     }
 }
