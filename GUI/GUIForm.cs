@@ -136,8 +136,7 @@ namespace GUI
         {
             buttonBackColor(ClientBtn);
         }
-        #endregion
-        #region Events for HelpBtn
+        //Events for HelpBtn
         private void HelpBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(HelpBtn);
@@ -150,6 +149,5 @@ namespace GUI
         {
             buttonBackColor(HelpBtn);
         }
-        #endregion
     }
 }
