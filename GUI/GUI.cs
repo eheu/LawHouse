@@ -108,6 +108,7 @@ namespace GUI
         {
             buttonBackColor(CaseBtn);
         }
+        #endregion
         #region Events for EmployeeBtn
         private void EmployeeBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -121,7 +122,7 @@ namespace GUI
         {
             buttonBackColor(EmployeeBtn);
         }
-
+        #endregion  
         #region Events for ClientBtn
         private void ClientBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -135,5 +136,7 @@ namespace GUI
         {
             buttonBackColor(ClientBtn);
         }
+        #endregion  
+
     }
 }
