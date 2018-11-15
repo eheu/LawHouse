@@ -23,5 +23,20 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CreateCase;
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = FindCase;
+        }
+
+        private void EditBtnFind_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = FindCase;
+        }
     }
 }
