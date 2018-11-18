@@ -22,6 +22,14 @@ namespace DataAccess
             _transaction = transaction;
         }
 
+        //lacking comments
+        public EmployeeRepository()
+        {
+            SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=LawHouse;Integrated Security=True");
+            connection.Open();
+            _transaction = connection.BeginTransaction();
+        }
+
         /// <summary>
         ///     Create a new entity.
         /// </summary>
@@ -54,7 +62,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -84,7 +92,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -119,7 +127,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -160,7 +168,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -198,7 +206,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -211,8 +219,6 @@ namespace DataAccess
         ///     Find all rows.
         /// </summary>
         /// <returns>Collection of entities (empty list if none is found).</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Id is less than 1.</exception>
-        /// <exception cref="DataException">Db operation failed</exception>
         public List<Employee> FindAll()
         {
             var cmd = _transaction.Connection.CreateCommand();
@@ -225,7 +231,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {

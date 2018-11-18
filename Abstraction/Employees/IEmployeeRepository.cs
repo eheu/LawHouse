@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Abstraction.Employees
@@ -73,5 +74,8 @@ namespace Abstraction.Employees
         /// </remarks>
         /// <exception cref="DataException">DB operation failed (exception will include command details)</exception>
         void Update(Employee entity);
+
+        // remember xml comments
+        List<Employee> FindAll();
     }
 }

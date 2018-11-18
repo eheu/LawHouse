@@ -26,7 +26,6 @@ namespace DataAccess
         ///     Create a new entity.
         /// </summary>
         /// <param name="entity">Entity to create a database row from.</param>
-        /// <exception cref="DataException">Will include the insert statement and all <c>SqlCommand</c> arguments.</exception>
         /// <remarks>
         ///     <para>
         ///         Will throw an exception if the entity already exists.
@@ -59,7 +58,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -89,7 +88,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -107,7 +106,6 @@ namespace DataAccess
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException">entity</exception>
-        /// <exception cref="DataException">Db operation failed</exception>
         public void Delete(Case entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
@@ -124,7 +122,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -138,7 +136,6 @@ namespace DataAccess
         /// <param name="ID">primary key</param>
         /// <returns>Entity</returns>
         /// <exception cref="ArgumentOutOfRangeException">Id is less than 1.</exception>
-        /// <exception cref="DataException">Db operation failed</exception>
         public Case Get(int ID)
         {
             if (ID == 0) throw new ArgumentOutOfRangeException("ID", ID, "Must be 1 or larger.");
@@ -165,7 +162,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -213,7 +210,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -241,7 +238,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {

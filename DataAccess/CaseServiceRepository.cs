@@ -54,7 +54,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -84,7 +84,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -119,7 +119,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -161,7 +161,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -198,7 +198,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
@@ -225,7 +225,7 @@ namespace DataAccess
             }
             catch (Exception exception)
             {
-                throw cmd.CreateDataException(exception);
+                throw exception;
             }
             finally
             {
