@@ -40,7 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaseServices\CaseService.cs" />
+    <Compile Include="CaseServices\ICaseServiceRepository.cs" />
+    <Compile Include="Cases\Case.cs" />
+    <Compile Include="Cases\ICaseRepository.cs" />
+    <Compile Include="Clients\Client.cs" />
+    <Compile Include="Clients\IClientRepository.cs" />
+    <Compile Include="EmployeeSpecialities\EmployeeSpeciality.cs" />
+    <Compile Include="EmployeeSpecialities\IEmployeeSpecialityRepository.cs" />
+    <Compile Include="Employees\Employee.cs" />
+    <Compile Include="Employees\IEmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\IRoleRepository.cs" />
+    <Compile Include="Roles\Role.cs" />
+    <Compile Include="ServiceSpecialities\IServiceSpecialityRepository.cs" />
+    <Compile Include="ServiceSpecialities\ServiceSpeciality.cs" />
+    <Compile Include="Services\IServiceRepository.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Shared\CommandExtensions.cs" />
+    <Compile Include="Specialities\ISpecialityRepository.cs" />
+    <Compile Include="Specialities\Speciality.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
