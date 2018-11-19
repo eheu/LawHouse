@@ -115,6 +115,7 @@
             this.FindCase.TabIndex = 0;
             this.FindCase.Text = "Find sag";
             this.FindCase.UseVisualStyleBackColor = true;
+            this.FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
             // FindbtnEdit
             // 
@@ -142,6 +143,7 @@
             this.dataListView1.TabIndex = 2;
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
+            this.dataListView1.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -565,7 +567,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "UserControlCases";
             this.Size = new System.Drawing.Size(1226, 603);
-            this.MouseEnter += new System.EventHandler(this.UserControlCases_MouseEnter);
             this.TabControlCases.ResumeLayout(false);
             this.FindCase.ResumeLayout(false);
             this.FindCase.PerformLayout();

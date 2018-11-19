@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlClients));
             this.SuspendLayout();
             // 
             // UserControlClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Maroon;
             this.Name = "UserControlClients";
             this.Size = new System.Drawing.Size(1157, 572);
             this.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);

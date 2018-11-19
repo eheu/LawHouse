@@ -47,7 +47,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "UserControl1Test";
             this.Size = new System.Drawing.Size(1157, 572);
-            this.MouseEnter += new System.EventHandler(this.UserControl1Test_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

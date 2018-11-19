@@ -19,11 +19,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void UserControlCases_MouseEnter(object sender, EventArgs e)
-        {
-            gui.toggleMenuPanel();
-        }
-
         private void FindbtnCreate_Click(object sender, EventArgs e)
         {
             TabControlCases.SelectedTab = CreateCase;
@@ -52,6 +47,11 @@ namespace GUI
         private void CreatebtnEdit_Click(object sender, EventArgs e)
         {
             TabControlCases.SelectedTab = EditCase;
+        }
+
+        private void FindCase_MouseEnter(object sender, EventArgs e)
+        {
+            gui.toggleMenuPanel();
         }
     }
 }

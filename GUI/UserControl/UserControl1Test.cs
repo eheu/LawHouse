@@ -22,10 +22,5 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
         }
-
-        public void UserControl1Test_MouseEnter(object sender, EventArgs e)
-        {
-            gui.toggleMenuPanel(); 
-        }
     }
 }

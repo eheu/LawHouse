@@ -120,6 +120,7 @@ namespace GUI
         private void CaseBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(CaseBtn);
+            
         }
         private void CaseBtn_Click(object sender, EventArgs e)
         {
@@ -196,10 +197,5 @@ namespace GUI
         #endregion
 
         //slet den her på et tidspunkt: 
-        private void ContentPanel_MouseEnter(object sender, EventArgs e)
-        {
-            toggleMenuPanel();
-        }
-        
     }
 }
