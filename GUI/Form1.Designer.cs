@@ -30,6 +30,7 @@
         {
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.FirstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             this.objectListView1.CellEditUseWholeCell = false;
             this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstName});
+            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView1.Location = new System.Drawing.Point(13, 13);
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.Size = new System.Drawing.Size(121, 97);
@@ -51,16 +53,25 @@
             this.FirstName.AspectName = "FirstName";
             this.FirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(295, 180);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.objectListView1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +79,6 @@
 
         private BrightIdeasSoftware.ObjectListView objectListView1;
         private BrightIdeasSoftware.OLVColumn FirstName;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
