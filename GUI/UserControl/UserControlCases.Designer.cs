@@ -87,12 +87,13 @@
             // 
             // TabControlCases
             // 
+            this.TabControlCases.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.TabControlCases.Controls.Add(this.FindCase);
             this.TabControlCases.Controls.Add(this.EditCase);
             this.TabControlCases.Controls.Add(this.CreateCase);
             this.TabControlCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControlCases.ItemSize = new System.Drawing.Size(100, 30);
+            this.TabControlCases.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControlCases.Location = new System.Drawing.Point(69, 37);
             this.TabControlCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControlCases.Name = "TabControlCases";
@@ -108,10 +109,10 @@
             this.FindCase.Controls.Add(this.dataListView1);
             this.FindCase.Controls.Add(this.label3);
             this.FindCase.Controls.Add(this.FindbtnCreate);
-            this.FindCase.Location = new System.Drawing.Point(4, 34);
+            this.FindCase.Location = new System.Drawing.Point(4, 5);
             this.FindCase.Name = "FindCase";
             this.FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.FindCase.Size = new System.Drawing.Size(1149, 528);
+            this.FindCase.Size = new System.Drawing.Size(1149, 557);
             this.FindCase.TabIndex = 0;
             this.FindCase.Text = "Find sag";
             this.FindCase.UseVisualStyleBackColor = true;
@@ -195,10 +196,10 @@
             this.EditCase.Controls.Add(this.EditbtnCreate);
             this.EditCase.Controls.Add(this.label1);
             this.EditCase.Controls.Add(this.EditBtnFind);
-            this.EditCase.Location = new System.Drawing.Point(4, 34);
+            this.EditCase.Location = new System.Drawing.Point(4, 5);
             this.EditCase.Name = "EditCase";
             this.EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.EditCase.Size = new System.Drawing.Size(1149, 528);
+            this.EditCase.Size = new System.Drawing.Size(1149, 557);
             this.EditCase.TabIndex = 1;
             this.EditCase.Text = "Ændre";
             this.EditCase.UseVisualStyleBackColor = true;
@@ -383,10 +384,10 @@
             this.CreateCase.Controls.Add(this.label4);
             this.CreateCase.Controls.Add(this.label2);
             this.CreateCase.Controls.Add(this.CreatebtnFind);
-            this.CreateCase.Location = new System.Drawing.Point(4, 34);
+            this.CreateCase.Location = new System.Drawing.Point(4, 5);
             this.CreateCase.Name = "CreateCase";
             this.CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.CreateCase.Size = new System.Drawing.Size(1149, 528);
+            this.CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.CreateCase.TabIndex = 2;
             this.CreateCase.Text = "Opret";
             this.CreateCase.UseVisualStyleBackColor = true;
