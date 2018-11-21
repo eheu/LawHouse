@@ -60,5 +60,7 @@ namespace GUI
             //// Call methods of the System.Drawing.Graphics object.  
             //e.Graphics.DrawString(Text, Font, new SolidBrush(ForeColor), ClientRectangle);
         }
+
+
     }
 }

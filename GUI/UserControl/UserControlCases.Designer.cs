@@ -58,19 +58,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.EditBtnFind = new System.Windows.Forms.Button();
             this.CreateCase = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.CreatebtnEdit = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,7 +92,7 @@
             this.TabControlCases.Controls.Add(this.CreateCase);
             this.TabControlCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControlCases.ItemSize = new System.Drawing.Size(0, 1);
+            this.TabControlCases.ItemSize = new System.Drawing.Size(100, 50);
             this.TabControlCases.Location = new System.Drawing.Point(69, 37);
             this.TabControlCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControlCases.Name = "TabControlCases";
@@ -109,10 +108,10 @@
             this.FindCase.Controls.Add(this.dataListView1);
             this.FindCase.Controls.Add(this.label3);
             this.FindCase.Controls.Add(this.FindbtnCreate);
-            this.FindCase.Location = new System.Drawing.Point(4, 5);
+            this.FindCase.Location = new System.Drawing.Point(4, 54);
             this.FindCase.Name = "FindCase";
             this.FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.FindCase.Size = new System.Drawing.Size(1149, 557);
+            this.FindCase.Size = new System.Drawing.Size(1149, 508);
             this.FindCase.TabIndex = 0;
             this.FindCase.Text = "Find sag";
             this.FindCase.UseVisualStyleBackColor = true;
@@ -196,10 +195,10 @@
             this.EditCase.Controls.Add(this.EditbtnCreate);
             this.EditCase.Controls.Add(this.label1);
             this.EditCase.Controls.Add(this.EditBtnFind);
-            this.EditCase.Location = new System.Drawing.Point(4, 5);
+            this.EditCase.Location = new System.Drawing.Point(4, 54);
             this.EditCase.Name = "EditCase";
             this.EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.EditCase.Size = new System.Drawing.Size(1149, 557);
+            this.EditCase.Size = new System.Drawing.Size(1149, 508);
             this.EditCase.TabIndex = 1;
             this.EditCase.Text = "Ændre";
             this.EditCase.UseVisualStyleBackColor = true;
@@ -367,30 +366,68 @@
             // 
             // CreateCase
             // 
+            this.CreateCase.Controls.Add(this.button1);
+            this.CreateCase.Controls.Add(this.label19);
+            this.CreateCase.Controls.Add(this.listBox1);
+            this.CreateCase.Controls.Add(this.richTextBox1);
             this.CreateCase.Controls.Add(this.CreatebtnEdit);
             this.CreateCase.Controls.Add(this.comboBox3);
             this.CreateCase.Controls.Add(this.comboBox2);
             this.CreateCase.Controls.Add(this.comboBox1);
-            this.CreateCase.Controls.Add(this.dateTimePicker1);
-            this.CreateCase.Controls.Add(this.textBox3);
-            this.CreateCase.Controls.Add(this.textBox2);
             this.CreateCase.Controls.Add(this.textBox1);
             this.CreateCase.Controls.Add(this.label10);
             this.CreateCase.Controls.Add(this.label9);
             this.CreateCase.Controls.Add(this.label8);
-            this.CreateCase.Controls.Add(this.label7);
-            this.CreateCase.Controls.Add(this.label6);
             this.CreateCase.Controls.Add(this.label5);
             this.CreateCase.Controls.Add(this.label4);
             this.CreateCase.Controls.Add(this.label2);
             this.CreateCase.Controls.Add(this.CreatebtnFind);
-            this.CreateCase.Location = new System.Drawing.Point(4, 5);
+            this.CreateCase.Location = new System.Drawing.Point(4, 54);
             this.CreateCase.Name = "CreateCase";
             this.CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.CreateCase.Size = new System.Drawing.Size(1149, 557);
+            this.CreateCase.Size = new System.Drawing.Size(1149, 508);
             this.CreateCase.TabIndex = 2;
             this.CreateCase.Text = "Opret";
             this.CreateCase.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(357, 230);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 30);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Tilføj";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(496, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(127, 18);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Ydelsesoversigt";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Items.AddRange(new object[] {
+            "Voldtægt",
+            "Skilsmisse",
+            "Motorsavsmassakre "});
+            this.listBox1.Location = new System.Drawing.Point(499, 27);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(170, 454);
+            this.listBox1.TabIndex = 18;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(703, 27);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(421, 454);
+            this.richTextBox1.TabIndex = 17;
+            this.richTextBox1.Text = "";
             // 
             // CreatebtnEdit
             // 
@@ -405,7 +442,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(205, 345);
+            this.comboBox3.Location = new System.Drawing.Point(205, 337);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 26);
             this.comboBox3.TabIndex = 15;
@@ -413,7 +450,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(205, 300);
+            this.comboBox2.Location = new System.Drawing.Point(205, 227);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 26);
             this.comboBox2.TabIndex = 14;
@@ -421,31 +458,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 256);
+            this.comboBox1.Location = new System.Drawing.Point(205, 140);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 26);
             this.comboBox1.TabIndex = 13;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(205, 214);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(205, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 24);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(205, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 24);
-            this.textBox2.TabIndex = 10;
             // 
             // textBox1
             // 
@@ -457,7 +473,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 352);
+            this.label10.Location = new System.Drawing.Point(18, 230);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 18);
             this.label10.TabIndex = 8;
@@ -466,7 +482,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 307);
+            this.label9.Location = new System.Drawing.Point(13, 345);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 18);
             this.label9.TabIndex = 7;
@@ -475,34 +491,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 263);
+            this.label8.Location = new System.Drawing.Point(18, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 18);
             this.label8.TabIndex = 6;
             this.label8.Text = "Vælg klient";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 220);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 18);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Start dato";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 177);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 18);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Est. timer";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 138);
+            this.label5.Location = new System.Drawing.Point(700, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 18);
             this.label5.TabIndex = 3;
@@ -598,15 +596,10 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private BrightIdeasSoftware.DataListView dataListView1;
@@ -631,5 +624,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
