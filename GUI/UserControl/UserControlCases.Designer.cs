@@ -31,38 +31,37 @@
             this.components = new System.ComponentModel.Container();
             this.TabControlCases = new System.Windows.Forms.TabControl();
             this.FindCase = new System.Windows.Forms.TabPage();
-            this.FindbtnEdit = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dataListView1 = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label3 = new System.Windows.Forms.Label();
             this.FindbtnCreate = new System.Windows.Forms.Button();
             this.EditCase = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.EditbtnCreate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.EditBtnFind = new System.Windows.Forms.Button();
             this.CreateCase = new System.Windows.Forms.TabPage();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button9 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.CreatebtnEdit = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -74,6 +73,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CreatebtnFind = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
@@ -82,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
             this.EditCase.SuspendLayout();
             this.CreateCase.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControlCases
@@ -90,6 +102,7 @@
             this.TabControlCases.Controls.Add(this.FindCase);
             this.TabControlCases.Controls.Add(this.EditCase);
             this.TabControlCases.Controls.Add(this.CreateCase);
+            this.TabControlCases.Controls.Add(this.tabPage1);
             this.TabControlCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControlCases.ItemSize = new System.Drawing.Size(100, 50);
@@ -104,7 +117,8 @@
             // 
             // FindCase
             // 
-            this.FindCase.Controls.Add(this.FindbtnEdit);
+            this.FindCase.Controls.Add(this.textBox2);
+            this.FindCase.Controls.Add(this.label14);
             this.FindCase.Controls.Add(this.dataListView1);
             this.FindCase.Controls.Add(this.label3);
             this.FindCase.Controls.Add(this.FindbtnCreate);
@@ -117,15 +131,21 @@
             this.FindCase.UseVisualStyleBackColor = true;
             this.FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
-            // FindbtnEdit
+            // textBox2
             // 
-            this.FindbtnEdit.Location = new System.Drawing.Point(6, 35);
-            this.FindbtnEdit.Name = "FindbtnEdit";
-            this.FindbtnEdit.Size = new System.Drawing.Size(75, 30);
-            this.FindbtnEdit.TabIndex = 3;
-            this.FindbtnEdit.Text = "Ændre";
-            this.FindbtnEdit.UseVisualStyleBackColor = true;
-            this.FindbtnEdit.Click += new System.EventHandler(this.FindbtnEdit_Click);
+            this.textBox2.Location = new System.Drawing.Point(1022, 67);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 24);
+            this.textBox2.TabIndex = 11;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(980, 67);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 18);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "søg";
             // 
             // dataListView1
             // 
@@ -166,7 +186,7 @@
             // 
             // FindbtnCreate
             // 
-            this.FindbtnCreate.Location = new System.Drawing.Point(88, 35);
+            this.FindbtnCreate.Location = new System.Drawing.Point(6, 27);
             this.FindbtnCreate.Name = "FindbtnCreate";
             this.FindbtnCreate.Size = new System.Drawing.Size(75, 30);
             this.FindbtnCreate.TabIndex = 0;
@@ -176,21 +196,17 @@
             // 
             // EditCase
             // 
-            this.EditCase.Controls.Add(this.label18);
-            this.EditCase.Controls.Add(this.textBox7);
-            this.EditCase.Controls.Add(this.comboBox6);
+            this.EditCase.Controls.Add(this.label7);
+            this.EditCase.Controls.Add(this.button4);
+            this.EditCase.Controls.Add(this.button3);
+            this.EditCase.Controls.Add(this.richTextBox3);
+            this.EditCase.Controls.Add(this.listBox2);
+            this.EditCase.Controls.Add(this.button2);
             this.EditCase.Controls.Add(this.comboBox5);
             this.EditCase.Controls.Add(this.comboBox4);
-            this.EditCase.Controls.Add(this.dateTimePicker2);
-            this.EditCase.Controls.Add(this.textBox6);
-            this.EditCase.Controls.Add(this.textBox5);
             this.EditCase.Controls.Add(this.textBox4);
-            this.EditCase.Controls.Add(this.label17);
             this.EditCase.Controls.Add(this.label16);
             this.EditCase.Controls.Add(this.label15);
-            this.EditCase.Controls.Add(this.label14);
-            this.EditCase.Controls.Add(this.label13);
-            this.EditCase.Controls.Add(this.label12);
             this.EditCase.Controls.Add(this.label11);
             this.EditCase.Controls.Add(this.EditbtnCreate);
             this.EditCase.Controls.Add(this.label1);
@@ -200,37 +216,69 @@
             this.EditCase.Padding = new System.Windows.Forms.Padding(3);
             this.EditCase.Size = new System.Drawing.Size(1149, 508);
             this.EditCase.TabIndex = 1;
-            this.EditCase.Text = "Ændre";
+            this.EditCase.Text = "Rediger";
             this.EditCase.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // label7
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(20, 107);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 18);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Søg";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(698, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 18);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Beskrivelse";
             // 
-            // textBox7
+            // button4
             // 
-            this.textBox7.Location = new System.Drawing.Point(197, 101);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 24);
-            this.textBox7.TabIndex = 17;
+            this.button4.Location = new System.Drawing.Point(969, 423);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 31);
+            this.button4.TabIndex = 20;
+            this.button4.Tag = "";
+            this.button4.Text = "Gem Ændringer";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // button3
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(197, 369);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 26);
-            this.comboBox6.TabIndex = 16;
+            this.button3.Location = new System.Drawing.Point(480, 423);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 31);
+            this.button3.TabIndex = 19;
+            this.button3.Tag = "";
+            this.button3.Text = "Fjern ydelse";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(701, 35);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(421, 382);
+            this.richTextBox3.TabIndex = 18;
+            this.richTextBox3.Text = "";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 18;
+            this.listBox2.Location = new System.Drawing.Point(480, 35);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(184, 382);
+            this.listBox2.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(20, 423);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 31);
+            this.button2.TabIndex = 16;
+            this.button2.Tag = "";
+            this.button2.Text = "Slet sag";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(197, 326);
+            this.comboBox5.Location = new System.Drawing.Point(197, 215);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 26);
             this.comboBox5.TabIndex = 15;
@@ -238,31 +286,15 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(197, 285);
+            this.comboBox4.Items.AddRange(new object[] {
+            "kasper thorsen",
+            "kasper nielsen",
+            "stig thorsen",
+            "stig nielsen"});
+            this.comboBox4.Location = new System.Drawing.Point(197, 177);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 26);
             this.comboBox4.TabIndex = 14;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(197, 250);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker2.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(197, 214);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 24);
-            this.textBox6.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(197, 177);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 24);
-            this.textBox5.TabIndex = 11;
             // 
             // textBox4
             // 
@@ -271,76 +303,40 @@
             this.textBox4.Size = new System.Drawing.Size(121, 24);
             this.textBox4.TabIndex = 10;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 377);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 18);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Vælg service";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 334);
+            this.label16.Location = new System.Drawing.Point(17, 215);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 18);
+            this.label16.Size = new System.Drawing.Size(121, 18);
             this.label16.TabIndex = 8;
-            this.label16.Text = "Vælg advokat";
+            this.label16.Text = "Ændre advokat";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(17, 293);
+            this.label15.Location = new System.Drawing.Point(17, 180);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(90, 18);
+            this.label15.Size = new System.Drawing.Size(102, 18);
             this.label15.TabIndex = 7;
-            this.label15.Text = "Vælg klient";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 255);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 18);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Start dato";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 219);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 18);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Est. timer";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 182);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 18);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Beskrivelse";
+            this.label15.Text = "Ændre klient";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(17, 145);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 18);
+            this.label11.Size = new System.Drawing.Size(97, 18);
             this.label11.TabIndex = 3;
-            this.label11.Text = "Sags title";
+            this.label11.Text = "Ændre navn";
             // 
             // EditbtnCreate
             // 
-            this.EditbtnCreate.Location = new System.Drawing.Point(88, 35);
+            this.EditbtnCreate.Location = new System.Drawing.Point(144, 35);
             this.EditbtnCreate.Name = "EditbtnCreate";
-            this.EditbtnCreate.Size = new System.Drawing.Size(75, 31);
+            this.EditbtnCreate.Size = new System.Drawing.Size(146, 31);
             this.EditbtnCreate.TabIndex = 2;
-            this.EditbtnCreate.Text = "Opret";
+            this.EditbtnCreate.Text = "Administrer sag";
             this.EditbtnCreate.UseVisualStyleBackColor = true;
             this.EditbtnCreate.Click += new System.EventHandler(this.EditbtnCreate_Click);
             // 
@@ -349,28 +345,30 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Ændre sag";
+            this.label1.Text = "Rediger sag";
             // 
             // EditBtnFind
             // 
             this.EditBtnFind.Location = new System.Drawing.Point(6, 35);
             this.EditBtnFind.Name = "EditBtnFind";
-            this.EditBtnFind.Size = new System.Drawing.Size(75, 31);
+            this.EditBtnFind.Size = new System.Drawing.Size(120, 31);
             this.EditBtnFind.TabIndex = 0;
             this.EditBtnFind.Tag = "";
-            this.EditBtnFind.Text = "Find";
+            this.EditBtnFind.Text = "Find sag";
             this.EditBtnFind.UseVisualStyleBackColor = true;
             this.EditBtnFind.Click += new System.EventHandler(this.EditBtnFind_Click);
             // 
             // CreateCase
             // 
+            this.CreateCase.Controls.Add(this.radioButton2);
+            this.CreateCase.Controls.Add(this.radioButton1);
+            this.CreateCase.Controls.Add(this.button9);
             this.CreateCase.Controls.Add(this.button1);
             this.CreateCase.Controls.Add(this.label19);
             this.CreateCase.Controls.Add(this.listBox1);
             this.CreateCase.Controls.Add(this.richTextBox1);
-            this.CreateCase.Controls.Add(this.CreatebtnEdit);
             this.CreateCase.Controls.Add(this.comboBox3);
             this.CreateCase.Controls.Add(this.comboBox2);
             this.CreateCase.Controls.Add(this.comboBox1);
@@ -389,6 +387,37 @@
             this.CreateCase.TabIndex = 2;
             this.CreateCase.Text = "Opret";
             this.CreateCase.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(131, 366);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(53, 22);
+            this.radioButton2.TabIndex = 23;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Alle";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(16, 366);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(109, 22);
+            this.radioButton1.TabIndex = 22;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Kvalificeret";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(9, 451);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(136, 30);
+            this.button9.TabIndex = 21;
+            this.button9.Text = "Opret sag";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -429,16 +458,6 @@
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
-            // CreatebtnEdit
-            // 
-            this.CreatebtnEdit.Location = new System.Drawing.Point(88, 35);
-            this.CreatebtnEdit.Name = "CreatebtnEdit";
-            this.CreatebtnEdit.Size = new System.Drawing.Size(75, 30);
-            this.CreatebtnEdit.TabIndex = 16;
-            this.CreatebtnEdit.Text = "Ændre";
-            this.CreatebtnEdit.UseVisualStyleBackColor = true;
-            this.CreatebtnEdit.Click += new System.EventHandler(this.CreatebtnEdit_Click);
-            // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
@@ -475,9 +494,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(18, 230);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 18);
+            this.label10.Size = new System.Drawing.Size(98, 18);
             this.label10.TabIndex = 8;
-            this.label10.Text = "Vælg service";
+            this.label10.Text = "Vælg ydelse";
             // 
             // label9
             // 
@@ -534,6 +553,125 @@
             this.CreatebtnFind.UseVisualStyleBackColor = true;
             this.CreatebtnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.objectListView1);
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.comboBox6);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.richTextBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1149, 508);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Administrer";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // objectListView1
+            // 
+            this.objectListView1.CellEditUseWholeCell = false;
+            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView1.Location = new System.Drawing.Point(9, 125);
+            this.objectListView1.Name = "objectListView1";
+            this.objectListView1.Size = new System.Drawing.Size(562, 298);
+            this.objectListView1.TabIndex = 27;
+            this.objectListView1.UseCompatibleStateImageBehavior = false;
+            this.objectListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(995, 429);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(120, 31);
+            this.button8.TabIndex = 26;
+            this.button8.Tag = "";
+            this.button8.Text = "Gem";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(289, 88);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 31);
+            this.button7.TabIndex = 25;
+            this.button7.Tag = "";
+            this.button7.Text = "Tilføj";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "kasper thorsen",
+            "kasper nielsen",
+            "stig thorsen",
+            "stig nielsen"});
+            this.comboBox6.Location = new System.Drawing.Point(162, 88);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 26);
+            this.comboBox6.TabIndex = 24;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 88);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(150, 18);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Tilføj ekstra ydelse";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 54);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 18);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "\"sags navn\"";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(132, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 31);
+            this.button6.TabIndex = 21;
+            this.button6.Tag = "";
+            this.button6.Text = "Rediger sag";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 31);
+            this.button5.TabIndex = 20;
+            this.button5.Tag = "";
+            this.button5.Text = "Find sag";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(691, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Beskrivelse";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(694, 29);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(421, 394);
+            this.richTextBox2.TabIndex = 18;
+            this.richTextBox2.Text = "";
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -574,6 +712,9 @@
             this.EditCase.PerformLayout();
             this.CreateCase.ResumeLayout(false);
             this.CreateCase.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,28 +746,38 @@
         private BrightIdeasSoftware.DataListView dataListView1;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn olvColumn2;
-        private System.Windows.Forms.Button FindbtnEdit;
         private System.Windows.Forms.Button EditbtnCreate;
-        private System.Windows.Forms.Button CreatebtnEdit;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button9;
+        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }
