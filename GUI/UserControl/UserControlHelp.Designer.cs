@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.Name = "UserControlHelp";
-            this.Size = new System.Drawing.Size(1157, 572);
+            this.Size = new System.Drawing.Size(1157, 566);
             this.MouseEnter += new System.EventHandler(this.UserControlHelp_MouseEnter);
             this.ResumeLayout(false);
 
