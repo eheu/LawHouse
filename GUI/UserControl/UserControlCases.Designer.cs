@@ -31,62 +31,63 @@
             this.components = new System.ComponentModel.Container();
             this.TabControl_UCCases = new System.Windows.Forms.TabControl();
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
+            this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
             this.dataListView1 = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCFind_FindCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_EditCase = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCEdit_Description = new System.Windows.Forms.Label();
+            this.button_UCCaseTCEdit_SaveChange = new System.Windows.Forms.Button();
+            this.button_UCCaseTCEdit_RemoveService = new System.Windows.Forms.Button();
+            this.richTextBox_UCCaseTCEdit_Description = new System.Windows.Forms.RichTextBox();
+            this.listBox_UCCaseTCEdit_ServiceView = new System.Windows.Forms.ListBox();
+            this.button_UCCaseTCEdit_DeleteCase = new System.Windows.Forms.Button();
+            this.comboBox_UCCaseTCEdit_ChangeLawyer = new System.Windows.Forms.ComboBox();
+            this.comboBox_UCCaseTCEdit_ChangeClient = new System.Windows.Forms.ComboBox();
+            this.textBox_UCCaseTCEdit_ChangeName = new System.Windows.Forms.TextBox();
+            this.label_UCCaseTCEdit_ChangeLawyer = new System.Windows.Forms.Label();
+            this.label_UCCaseTCEdit_ChangeClient = new System.Windows.Forms.Label();
+            this.label_UCCaseTCEdit_ChangeName = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_ManageCase = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCEdit_EditCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_CreateCase = new System.Windows.Forms.TabPage();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.radioButton_UCCaseTCCreate_All = new System.Windows.Forms.RadioButton();
+            this.radioButton_UCCaseTCCreate_Qualified = new System.Windows.Forms.RadioButton();
+            this.button_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Button();
+            this.button_UCCaseTCCreate_AddService = new System.Windows.Forms.Button();
+            this.label_UCCaseTCCreate_ServiceView = new System.Windows.Forms.Label();
+            this.listBox_UCCaseTCCreate_ServiceView = new System.Windows.Forms.ListBox();
+            this.richTextBox_UCCaseTCCreate_Description = new System.Windows.Forms.RichTextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_ChooseService = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_ChooseLawyer = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_Description = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_CaseTitel = new System.Windows.Forms.Label();
+            this.label_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.button_UCCaseTCManage_Save = new System.Windows.Forms.Button();
+            this.button_UCCaseTCManage_AddService = new System.Windows.Forms.Button();
+            this.comboBox_UCCaseTCManage_AddService = new System.Windows.Forms.ComboBox();
+            this.label_UCCaseTCManage_AddService = new System.Windows.Forms.Label();
+            this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
             this.button_UCCaseTCManage_EditCase = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_FindCase = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
+            this.label_UCCaseTCEdit_ServiceView = new System.Windows.Forms.Label();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
@@ -117,10 +118,10 @@
             // 
             // TC_UCCaseTC_FindCase
             // 
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox2);
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.label14);
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.dataListView1);
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.label3);
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
             this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_FindCase.Name = "TC_UCCaseTC_FindCase";
@@ -131,21 +132,21 @@
             this.TC_UCCaseTC_FindCase.UseVisualStyleBackColor = true;
             this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
-            // textBox2
+            // textBox_UCCaseTCFind_Search
             // 
-            this.textBox2.Location = new System.Drawing.Point(1022, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 24);
-            this.textBox2.TabIndex = 11;
+            this.textBox_UCCaseTCFind_Search.Location = new System.Drawing.Point(1022, 67);
+            this.textBox_UCCaseTCFind_Search.Name = "textBox_UCCaseTCFind_Search";
+            this.textBox_UCCaseTCFind_Search.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCCaseTCFind_Search.TabIndex = 11;
             // 
-            // label14
+            // label_UCCaseTCFind_Search
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(980, 67);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 18);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "søg";
+            this.label_UCCaseTCFind_Search.AutoSize = true;
+            this.label_UCCaseTCFind_Search.Location = new System.Drawing.Point(980, 67);
+            this.label_UCCaseTCFind_Search.Name = "label_UCCaseTCFind_Search";
+            this.label_UCCaseTCFind_Search.Size = new System.Drawing.Size(36, 18);
+            this.label_UCCaseTCFind_Search.TabIndex = 4;
+            this.label_UCCaseTCFind_Search.Text = "søg";
             // 
             // dataListView1
             // 
@@ -175,14 +176,14 @@
             this.olvColumn2.Text = "Advokat";
             this.olvColumn2.Width = 77;
             // 
-            // label3
+            // label_UCCaseTCFind_FindCase
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Find sag";
+            this.label_UCCaseTCFind_FindCase.AutoSize = true;
+            this.label_UCCaseTCFind_FindCase.Location = new System.Drawing.Point(6, 6);
+            this.label_UCCaseTCFind_FindCase.Name = "label_UCCaseTCFind_FindCase";
+            this.label_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(72, 18);
+            this.label_UCCaseTCFind_FindCase.TabIndex = 1;
+            this.label_UCCaseTCFind_FindCase.Text = "Find sag";
             // 
             // button_UCCaseTCFind_CreateCase
             // 
@@ -196,20 +197,21 @@
             // 
             // TC_UCCaseTC_EditCase
             // 
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label7);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.button4);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.button3);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.richTextBox3);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.listBox2);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.button2);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.comboBox5);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.comboBox4);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.textBox4);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label16);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label15);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label11);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ServiceView);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_Description);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_SaveChange);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_RemoveService);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.richTextBox_UCCaseTCEdit_Description);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.listBox_UCCaseTCEdit_ServiceView);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_DeleteCase);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.comboBox_UCCaseTCEdit_ChangeLawyer);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.comboBox_UCCaseTCEdit_ChangeClient);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.textBox_UCCaseTCEdit_ChangeName);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeLawyer);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeClient);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeName);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_ManageCase);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label1);
+            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_EditCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_FindCase);
             this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_EditCase.Name = "TC_UCCaseTC_EditCase";
@@ -219,116 +221,119 @@
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
             this.TC_UCCaseTC_EditCase.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // label_UCCaseTCEdit_Description
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(698, 14);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 18);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Beskrivelse";
+            this.label_UCCaseTCEdit_Description.AutoSize = true;
+            this.label_UCCaseTCEdit_Description.Location = new System.Drawing.Point(698, 14);
+            this.label_UCCaseTCEdit_Description.Name = "label_UCCaseTCEdit_Description";
+            this.label_UCCaseTCEdit_Description.Size = new System.Drawing.Size(95, 18);
+            this.label_UCCaseTCEdit_Description.TabIndex = 21;
+            this.label_UCCaseTCEdit_Description.Text = "Beskrivelse";
             // 
-            // button4
+            // button_UCCaseTCEdit_SaveChange
             // 
-            this.button4.Location = new System.Drawing.Point(969, 423);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 31);
-            this.button4.TabIndex = 20;
-            this.button4.Tag = "";
-            this.button4.Text = "Gem Ændringer";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCEdit_SaveChange.Location = new System.Drawing.Point(969, 423);
+            this.button_UCCaseTCEdit_SaveChange.Name = "button_UCCaseTCEdit_SaveChange";
+            this.button_UCCaseTCEdit_SaveChange.Size = new System.Drawing.Size(153, 31);
+            this.button_UCCaseTCEdit_SaveChange.TabIndex = 20;
+            this.button_UCCaseTCEdit_SaveChange.Tag = "";
+            this.button_UCCaseTCEdit_SaveChange.Text = "Gem Ændringer";
+            this.button_UCCaseTCEdit_SaveChange.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button_UCCaseTCEdit_RemoveService
             // 
-            this.button3.Location = new System.Drawing.Point(480, 423);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 31);
-            this.button3.TabIndex = 19;
-            this.button3.Tag = "";
-            this.button3.Text = "Fjern ydelse";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCEdit_RemoveService.Location = new System.Drawing.Point(480, 423);
+            this.button_UCCaseTCEdit_RemoveService.Name = "button_UCCaseTCEdit_RemoveService";
+            this.button_UCCaseTCEdit_RemoveService.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCEdit_RemoveService.TabIndex = 19;
+            this.button_UCCaseTCEdit_RemoveService.Tag = "";
+            this.button_UCCaseTCEdit_RemoveService.Text = "Fjern ydelse";
+            this.button_UCCaseTCEdit_RemoveService.UseVisualStyleBackColor = true;
             // 
-            // richTextBox3
+            // richTextBox_UCCaseTCEdit_Description
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(701, 35);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(421, 382);
-            this.richTextBox3.TabIndex = 18;
-            this.richTextBox3.Text = "";
+            this.richTextBox_UCCaseTCEdit_Description.Location = new System.Drawing.Point(701, 35);
+            this.richTextBox_UCCaseTCEdit_Description.Name = "richTextBox_UCCaseTCEdit_Description";
+            this.richTextBox_UCCaseTCEdit_Description.Size = new System.Drawing.Size(421, 382);
+            this.richTextBox_UCCaseTCEdit_Description.TabIndex = 18;
+            this.richTextBox_UCCaseTCEdit_Description.Text = "";
             // 
-            // listBox2
+            // listBox_UCCaseTCEdit_ServiceView
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(480, 35);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(184, 382);
-            this.listBox2.TabIndex = 17;
+            this.listBox_UCCaseTCEdit_ServiceView.FormattingEnabled = true;
+            this.listBox_UCCaseTCEdit_ServiceView.ItemHeight = 18;
+            this.listBox_UCCaseTCEdit_ServiceView.Items.AddRange(new object[] {
+            "boligsag",
+            "kedeligt jura"});
+            this.listBox_UCCaseTCEdit_ServiceView.Location = new System.Drawing.Point(480, 35);
+            this.listBox_UCCaseTCEdit_ServiceView.Name = "listBox_UCCaseTCEdit_ServiceView";
+            this.listBox_UCCaseTCEdit_ServiceView.Size = new System.Drawing.Size(184, 382);
+            this.listBox_UCCaseTCEdit_ServiceView.TabIndex = 17;
             // 
-            // button2
+            // button_UCCaseTCEdit_DeleteCase
             // 
-            this.button2.Location = new System.Drawing.Point(20, 423);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 31);
-            this.button2.TabIndex = 16;
-            this.button2.Tag = "";
-            this.button2.Text = "Slet sag";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCEdit_DeleteCase.Location = new System.Drawing.Point(20, 423);
+            this.button_UCCaseTCEdit_DeleteCase.Name = "button_UCCaseTCEdit_DeleteCase";
+            this.button_UCCaseTCEdit_DeleteCase.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCEdit_DeleteCase.TabIndex = 16;
+            this.button_UCCaseTCEdit_DeleteCase.Tag = "";
+            this.button_UCCaseTCEdit_DeleteCase.Text = "Slet sag";
+            this.button_UCCaseTCEdit_DeleteCase.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
+            // comboBox_UCCaseTCEdit_ChangeLawyer
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(197, 215);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 26);
-            this.comboBox5.TabIndex = 15;
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.FormattingEnabled = true;
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(197, 215);
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.Name = "comboBox_UCCaseTCEdit_ChangeLawyer";
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.TabIndex = 15;
             // 
-            // comboBox4
+            // comboBox_UCCaseTCEdit_ChangeClient
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox_UCCaseTCEdit_ChangeClient.FormattingEnabled = true;
+            this.comboBox_UCCaseTCEdit_ChangeClient.Items.AddRange(new object[] {
             "kasper thorsen",
             "kasper nielsen",
             "stig thorsen",
             "stig nielsen"});
-            this.comboBox4.Location = new System.Drawing.Point(197, 177);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 26);
-            this.comboBox4.TabIndex = 14;
+            this.comboBox_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(197, 177);
+            this.comboBox_UCCaseTCEdit_ChangeClient.Name = "comboBox_UCCaseTCEdit_ChangeClient";
+            this.comboBox_UCCaseTCEdit_ChangeClient.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCEdit_ChangeClient.TabIndex = 14;
             // 
-            // textBox4
+            // textBox_UCCaseTCEdit_ChangeName
             // 
-            this.textBox4.Location = new System.Drawing.Point(197, 140);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 24);
-            this.textBox4.TabIndex = 10;
+            this.textBox_UCCaseTCEdit_ChangeName.Location = new System.Drawing.Point(197, 140);
+            this.textBox_UCCaseTCEdit_ChangeName.Name = "textBox_UCCaseTCEdit_ChangeName";
+            this.textBox_UCCaseTCEdit_ChangeName.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCCaseTCEdit_ChangeName.TabIndex = 10;
             // 
-            // label16
+            // label_UCCaseTCEdit_ChangeLawyer
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 215);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(121, 18);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Ændre advokat";
+            this.label_UCCaseTCEdit_ChangeLawyer.AutoSize = true;
+            this.label_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(17, 215);
+            this.label_UCCaseTCEdit_ChangeLawyer.Name = "label_UCCaseTCEdit_ChangeLawyer";
+            this.label_UCCaseTCEdit_ChangeLawyer.Size = new System.Drawing.Size(121, 18);
+            this.label_UCCaseTCEdit_ChangeLawyer.TabIndex = 8;
+            this.label_UCCaseTCEdit_ChangeLawyer.Text = "Ændre advokat";
             // 
-            // label15
+            // label_UCCaseTCEdit_ChangeClient
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(17, 180);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(102, 18);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Ændre klient";
+            this.label_UCCaseTCEdit_ChangeClient.AutoSize = true;
+            this.label_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(17, 180);
+            this.label_UCCaseTCEdit_ChangeClient.Name = "label_UCCaseTCEdit_ChangeClient";
+            this.label_UCCaseTCEdit_ChangeClient.Size = new System.Drawing.Size(102, 18);
+            this.label_UCCaseTCEdit_ChangeClient.TabIndex = 7;
+            this.label_UCCaseTCEdit_ChangeClient.Text = "Ændre klient";
             // 
-            // label11
+            // label_UCCaseTCEdit_ChangeName
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 18);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Ændre navn";
+            this.label_UCCaseTCEdit_ChangeName.AutoSize = true;
+            this.label_UCCaseTCEdit_ChangeName.Location = new System.Drawing.Point(17, 145);
+            this.label_UCCaseTCEdit_ChangeName.Name = "label_UCCaseTCEdit_ChangeName";
+            this.label_UCCaseTCEdit_ChangeName.Size = new System.Drawing.Size(97, 18);
+            this.label_UCCaseTCEdit_ChangeName.TabIndex = 3;
+            this.label_UCCaseTCEdit_ChangeName.Text = "Ændre navn";
             // 
             // button_UCCaseTCEdit_ManageCase
             // 
@@ -340,14 +345,14 @@
             this.button_UCCaseTCEdit_ManageCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCEdit_ManageCase.Click += new System.EventHandler(this.button_UCCaseTCEdit_ManageCase_Click);
             // 
-            // label1
+            // label_UCCaseTCEdit_EditCase
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Rediger sag";
+            this.label_UCCaseTCEdit_EditCase.AutoSize = true;
+            this.label_UCCaseTCEdit_EditCase.Location = new System.Drawing.Point(6, 6);
+            this.label_UCCaseTCEdit_EditCase.Name = "label_UCCaseTCEdit_EditCase";
+            this.label_UCCaseTCEdit_EditCase.Size = new System.Drawing.Size(98, 18);
+            this.label_UCCaseTCEdit_EditCase.TabIndex = 1;
+            this.label_UCCaseTCEdit_EditCase.Text = "Rediger sag";
             // 
             // button_UCCaseTCEdit_FindCase
             // 
@@ -362,23 +367,23 @@
             // 
             // TC_UCCaseTC_CreateCase
             // 
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton2);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.button9);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.button1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label19);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.richTextBox1);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_All);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_Qualified);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_CreateCase);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_AddService);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ServiceView);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox_UCCaseTCCreate_ServiceView);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.richTextBox_UCCaseTCCreate_Description);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox3);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox2);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox1);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.textBox1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label10);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label9);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label8);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label5);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label4);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label2);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseService);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseLawyer);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseClient);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_Description);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CreateCase);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
             this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
@@ -388,75 +393,75 @@
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton_UCCaseTCCreate_All
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(131, 366);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(53, 22);
-            this.radioButton2.TabIndex = 23;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Alle";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton_UCCaseTCCreate_All.AutoSize = true;
+            this.radioButton_UCCaseTCCreate_All.Location = new System.Drawing.Point(131, 366);
+            this.radioButton_UCCaseTCCreate_All.Name = "radioButton_UCCaseTCCreate_All";
+            this.radioButton_UCCaseTCCreate_All.Size = new System.Drawing.Size(53, 22);
+            this.radioButton_UCCaseTCCreate_All.TabIndex = 23;
+            this.radioButton_UCCaseTCCreate_All.TabStop = true;
+            this.radioButton_UCCaseTCCreate_All.Text = "Alle";
+            this.radioButton_UCCaseTCCreate_All.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButton_UCCaseTCCreate_Qualified
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 366);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(109, 22);
-            this.radioButton1.TabIndex = 22;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Kvalificeret";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton_UCCaseTCCreate_Qualified.AutoSize = true;
+            this.radioButton_UCCaseTCCreate_Qualified.Location = new System.Drawing.Point(16, 366);
+            this.radioButton_UCCaseTCCreate_Qualified.Name = "radioButton_UCCaseTCCreate_Qualified";
+            this.radioButton_UCCaseTCCreate_Qualified.Size = new System.Drawing.Size(109, 22);
+            this.radioButton_UCCaseTCCreate_Qualified.TabIndex = 22;
+            this.radioButton_UCCaseTCCreate_Qualified.TabStop = true;
+            this.radioButton_UCCaseTCCreate_Qualified.Text = "Kvalificeret";
+            this.radioButton_UCCaseTCCreate_Qualified.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // button_UCCaseTCCreate_CreateCase
             // 
-            this.button9.Location = new System.Drawing.Point(9, 451);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(136, 30);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "Opret sag";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(9, 451);
+            this.button_UCCaseTCCreate_CreateCase.Name = "button_UCCaseTCCreate_CreateCase";
+            this.button_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(136, 30);
+            this.button_UCCaseTCCreate_CreateCase.TabIndex = 21;
+            this.button_UCCaseTCCreate_CreateCase.Text = "Opret sag";
+            this.button_UCCaseTCCreate_CreateCase.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_UCCaseTCCreate_AddService
             // 
-            this.button1.Location = new System.Drawing.Point(357, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Tilføj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCCreate_AddService.Location = new System.Drawing.Point(357, 230);
+            this.button_UCCaseTCCreate_AddService.Name = "button_UCCaseTCCreate_AddService";
+            this.button_UCCaseTCCreate_AddService.Size = new System.Drawing.Size(75, 30);
+            this.button_UCCaseTCCreate_AddService.TabIndex = 20;
+            this.button_UCCaseTCCreate_AddService.Text = "Tilføj";
+            this.button_UCCaseTCCreate_AddService.UseVisualStyleBackColor = true;
             // 
-            // label19
+            // label_UCCaseTCCreate_ServiceView
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(496, 3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 18);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Ydelsesoversigt";
+            this.label_UCCaseTCCreate_ServiceView.AutoSize = true;
+            this.label_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(496, 3);
+            this.label_UCCaseTCCreate_ServiceView.Name = "label_UCCaseTCCreate_ServiceView";
+            this.label_UCCaseTCCreate_ServiceView.Size = new System.Drawing.Size(127, 18);
+            this.label_UCCaseTCCreate_ServiceView.TabIndex = 19;
+            this.label_UCCaseTCCreate_ServiceView.Text = "Ydelsesoversigt";
             // 
-            // listBox1
+            // listBox_UCCaseTCCreate_ServiceView
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBox_UCCaseTCCreate_ServiceView.FormattingEnabled = true;
+            this.listBox_UCCaseTCCreate_ServiceView.ItemHeight = 18;
+            this.listBox_UCCaseTCCreate_ServiceView.Items.AddRange(new object[] {
             "Voldtægt",
             "Skilsmisse",
             "Motorsavsmassakre "});
-            this.listBox1.Location = new System.Drawing.Point(499, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 454);
-            this.listBox1.TabIndex = 18;
+            this.listBox_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(499, 27);
+            this.listBox_UCCaseTCCreate_ServiceView.Name = "listBox_UCCaseTCCreate_ServiceView";
+            this.listBox_UCCaseTCCreate_ServiceView.Size = new System.Drawing.Size(170, 454);
+            this.listBox_UCCaseTCCreate_ServiceView.TabIndex = 18;
             // 
-            // richTextBox1
+            // richTextBox_UCCaseTCCreate_Description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(703, 27);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(421, 454);
-            this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "";
+            this.richTextBox_UCCaseTCCreate_Description.Location = new System.Drawing.Point(703, 27);
+            this.richTextBox_UCCaseTCCreate_Description.Name = "richTextBox_UCCaseTCCreate_Description";
+            this.richTextBox_UCCaseTCCreate_Description.Size = new System.Drawing.Size(421, 454);
+            this.richTextBox_UCCaseTCCreate_Description.TabIndex = 17;
+            this.richTextBox_UCCaseTCCreate_Description.Text = "";
             // 
             // comboBox3
             // 
@@ -489,59 +494,59 @@
             this.textBox1.Size = new System.Drawing.Size(121, 24);
             this.textBox1.TabIndex = 9;
             // 
-            // label10
+            // label_UCCaseTCCreate_ChooseService
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 230);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 18);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Vælg ydelse";
+            this.label_UCCaseTCCreate_ChooseService.AutoSize = true;
+            this.label_UCCaseTCCreate_ChooseService.Location = new System.Drawing.Point(18, 230);
+            this.label_UCCaseTCCreate_ChooseService.Name = "label_UCCaseTCCreate_ChooseService";
+            this.label_UCCaseTCCreate_ChooseService.Size = new System.Drawing.Size(98, 18);
+            this.label_UCCaseTCCreate_ChooseService.TabIndex = 8;
+            this.label_UCCaseTCCreate_ChooseService.Text = "Vælg ydelse";
             // 
-            // label9
+            // label_UCCaseTCCreate_ChooseLawyer
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 345);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Vælg advokat";
+            this.label_UCCaseTCCreate_ChooseLawyer.AutoSize = true;
+            this.label_UCCaseTCCreate_ChooseLawyer.Location = new System.Drawing.Point(13, 345);
+            this.label_UCCaseTCCreate_ChooseLawyer.Name = "label_UCCaseTCCreate_ChooseLawyer";
+            this.label_UCCaseTCCreate_ChooseLawyer.Size = new System.Drawing.Size(109, 18);
+            this.label_UCCaseTCCreate_ChooseLawyer.TabIndex = 7;
+            this.label_UCCaseTCCreate_ChooseLawyer.Text = "Vælg advokat";
             // 
-            // label8
+            // label_UCCaseTCCreate_ChooseClient
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 140);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Vælg klient";
+            this.label_UCCaseTCCreate_ChooseClient.AutoSize = true;
+            this.label_UCCaseTCCreate_ChooseClient.Location = new System.Drawing.Point(18, 140);
+            this.label_UCCaseTCCreate_ChooseClient.Name = "label_UCCaseTCCreate_ChooseClient";
+            this.label_UCCaseTCCreate_ChooseClient.Size = new System.Drawing.Size(90, 18);
+            this.label_UCCaseTCCreate_ChooseClient.TabIndex = 6;
+            this.label_UCCaseTCCreate_ChooseClient.Text = "Vælg klient";
             // 
-            // label5
+            // label_UCCaseTCCreate_Description
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(700, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 18);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Beskrivelse";
+            this.label_UCCaseTCCreate_Description.AutoSize = true;
+            this.label_UCCaseTCCreate_Description.Location = new System.Drawing.Point(700, 6);
+            this.label_UCCaseTCCreate_Description.Name = "label_UCCaseTCCreate_Description";
+            this.label_UCCaseTCCreate_Description.Size = new System.Drawing.Size(95, 18);
+            this.label_UCCaseTCCreate_Description.TabIndex = 3;
+            this.label_UCCaseTCCreate_Description.Text = "Beskrivelse";
             // 
-            // label4
+            // label_UCCaseTCCreate_CaseTitel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Sags title";
+            this.label_UCCaseTCCreate_CaseTitel.AutoSize = true;
+            this.label_UCCaseTCCreate_CaseTitel.Location = new System.Drawing.Point(18, 100);
+            this.label_UCCaseTCCreate_CaseTitel.Name = "label_UCCaseTCCreate_CaseTitel";
+            this.label_UCCaseTCCreate_CaseTitel.Size = new System.Drawing.Size(78, 18);
+            this.label_UCCaseTCCreate_CaseTitel.TabIndex = 2;
+            this.label_UCCaseTCCreate_CaseTitel.Text = "Sags title";
             // 
-            // label2
+            // label_UCCaseTCCreate_CreateCase
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Opret sag";
+            this.label_UCCaseTCCreate_CreateCase.AutoSize = true;
+            this.label_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(6, 6);
+            this.label_UCCaseTCCreate_CreateCase.Name = "label_UCCaseTCCreate_CreateCase";
+            this.label_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(82, 18);
+            this.label_UCCaseTCCreate_CreateCase.TabIndex = 1;
+            this.label_UCCaseTCCreate_CreateCase.Text = "Opret sag";
             // 
             // button_UCCaseTCCreate_FindCase
             // 
@@ -556,15 +561,15 @@
             // TC_UCCaseTC_ManageCase
             // 
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.objectListView1);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button8);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button7);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.comboBox6);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label13);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label12);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_Save);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.comboBox_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_CaseName);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_EditCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label6);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox2);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
@@ -584,56 +589,56 @@
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
             // 
-            // button8
+            // button_UCCaseTCManage_Save
             // 
-            this.button8.Location = new System.Drawing.Point(995, 429);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(120, 31);
-            this.button8.TabIndex = 26;
-            this.button8.Tag = "";
-            this.button8.Text = "Gem";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCManage_Save.Location = new System.Drawing.Point(995, 429);
+            this.button_UCCaseTCManage_Save.Name = "button_UCCaseTCManage_Save";
+            this.button_UCCaseTCManage_Save.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCManage_Save.TabIndex = 26;
+            this.button_UCCaseTCManage_Save.Tag = "";
+            this.button_UCCaseTCManage_Save.Text = "Gem";
+            this.button_UCCaseTCManage_Save.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button_UCCaseTCManage_AddService
             // 
-            this.button7.Location = new System.Drawing.Point(289, 88);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 31);
-            this.button7.TabIndex = 25;
-            this.button7.Tag = "";
-            this.button7.Text = "Tilføj";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCManage_AddService.Location = new System.Drawing.Point(289, 88);
+            this.button_UCCaseTCManage_AddService.Name = "button_UCCaseTCManage_AddService";
+            this.button_UCCaseTCManage_AddService.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCManage_AddService.TabIndex = 25;
+            this.button_UCCaseTCManage_AddService.Tag = "";
+            this.button_UCCaseTCManage_AddService.Text = "Tilføj";
+            this.button_UCCaseTCManage_AddService.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // comboBox_UCCaseTCManage_AddService
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.comboBox_UCCaseTCManage_AddService.FormattingEnabled = true;
+            this.comboBox_UCCaseTCManage_AddService.Items.AddRange(new object[] {
             "kasper thorsen",
             "kasper nielsen",
             "stig thorsen",
             "stig nielsen"});
-            this.comboBox6.Location = new System.Drawing.Point(162, 88);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 26);
-            this.comboBox6.TabIndex = 24;
+            this.comboBox_UCCaseTCManage_AddService.Location = new System.Drawing.Point(162, 88);
+            this.comboBox_UCCaseTCManage_AddService.Name = "comboBox_UCCaseTCManage_AddService";
+            this.comboBox_UCCaseTCManage_AddService.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCManage_AddService.TabIndex = 24;
             // 
-            // label13
+            // label_UCCaseTCManage_AddService
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 88);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 18);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Tilføj ekstra ydelse";
+            this.label_UCCaseTCManage_AddService.AutoSize = true;
+            this.label_UCCaseTCManage_AddService.Location = new System.Drawing.Point(6, 88);
+            this.label_UCCaseTCManage_AddService.Name = "label_UCCaseTCManage_AddService";
+            this.label_UCCaseTCManage_AddService.Size = new System.Drawing.Size(150, 18);
+            this.label_UCCaseTCManage_AddService.TabIndex = 23;
+            this.label_UCCaseTCManage_AddService.Text = "Tilføj ekstra ydelse";
             // 
-            // label12
+            // label_UCCaseTCManage_CaseName
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 54);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 18);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "\"sags navn\"";
+            this.label_UCCaseTCManage_CaseName.AutoSize = true;
+            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(3, 54);
+            this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
+            this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(96, 18);
+            this.label_UCCaseTCManage_CaseName.TabIndex = 22;
+            this.label_UCCaseTCManage_CaseName.Text = "\"sags navn\"";
             // 
             // button_UCCaseTCManage_EditCase
             // 
@@ -666,13 +671,13 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Beskrivelse";
             // 
-            // richTextBox2
+            // richTextBox_UCCaseTCManage_Description
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(694, 29);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(421, 394);
-            this.richTextBox2.TabIndex = 18;
-            this.richTextBox2.Text = "";
+            this.richTextBox_UCCaseTCManage_Description.Location = new System.Drawing.Point(694, 29);
+            this.richTextBox_UCCaseTCManage_Description.Name = "richTextBox_UCCaseTCManage_Description";
+            this.richTextBox_UCCaseTCManage_Description.Size = new System.Drawing.Size(421, 394);
+            this.richTextBox_UCCaseTCManage_Description.TabIndex = 18;
+            this.richTextBox_UCCaseTCManage_Description.Text = "";
             // 
             // panel1
             // 
@@ -695,6 +700,15 @@
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // label_UCCaseTCEdit_ServiceView
+            // 
+            this.label_UCCaseTCEdit_ServiceView.AutoSize = true;
+            this.label_UCCaseTCEdit_ServiceView.Location = new System.Drawing.Point(477, 14);
+            this.label_UCCaseTCEdit_ServiceView.Name = "label_UCCaseTCEdit_ServiceView";
+            this.label_UCCaseTCEdit_ServiceView.Size = new System.Drawing.Size(127, 18);
+            this.label_UCCaseTCEdit_ServiceView.TabIndex = 22;
+            this.label_UCCaseTCEdit_ServiceView.Text = "Ydelsesoversigt";
             // 
             // UserControlCases
             // 
@@ -733,53 +747,54 @@
         private System.Windows.Forms.Button button_UCCaseTCFind_CreateCase;
         private System.Windows.Forms.Button button_UCCaseTCEdit_FindCase;
         private System.Windows.Forms.Button button_UCCaseTCCreate_FindCase;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_UCCaseTCFind_FindCase;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_EditCase;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_CreateCase;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseService;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseLawyer;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseClient;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_Description;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_CaseTitel;
         private BrightIdeasSoftware.DataListView dataListView1;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn olvColumn2;
         private System.Windows.Forms.Button button_UCCaseTCEdit_ManageCase;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeLawyer;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeClient;
+        private System.Windows.Forms.TextBox textBox_UCCaseTCEdit_ChangeName;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_ChangeLawyer;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_ChangeClient;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_ChangeName;
+        private System.Windows.Forms.Button button_UCCaseTCCreate_AddService;
+        private System.Windows.Forms.Label label_UCCaseTCCreate_ServiceView;
+        private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_ServiceView;
+        private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCCreate_Description;
         private System.Windows.Forms.TabPage TC_UCCaseTC_ManageCase;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCManage_Description;
+        private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
+        private System.Windows.Forms.Label label_UCCaseTCFind_Search;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_Description;
+        private System.Windows.Forms.Button button_UCCaseTCEdit_SaveChange;
+        private System.Windows.Forms.Button button_UCCaseTCEdit_RemoveService;
+        private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCEdit_Description;
+        private System.Windows.Forms.ListBox listBox_UCCaseTCEdit_ServiceView;
+        private System.Windows.Forms.Button button_UCCaseTCEdit_DeleteCase;
+        private System.Windows.Forms.RadioButton radioButton_UCCaseTCCreate_All;
+        private System.Windows.Forms.RadioButton radioButton_UCCaseTCCreate_Qualified;
+        private System.Windows.Forms.Button button_UCCaseTCCreate_CreateCase;
         private BrightIdeasSoftware.ObjectListView objectListView1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button_UCCaseTCManage_Save;
+        private System.Windows.Forms.Button button_UCCaseTCManage_AddService;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCManage_AddService;
+        private System.Windows.Forms.Label label_UCCaseTCManage_AddService;
+        private System.Windows.Forms.Label label_UCCaseTCManage_CaseName;
         private System.Windows.Forms.Button button_UCCaseTCManage_EditCase;
         private System.Windows.Forms.Button button_UCCaseTCManage_FindCase;
+        private System.Windows.Forms.Label label_UCCaseTCEdit_ServiceView;
     }
 }
