@@ -17,11 +17,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var container = new UnityContainer())
-            {
-                container.RegisterType<ICaseRepository, CaseRepository>();
-                Application.Run(container.Resolve<Form1>());
-            }
+            Application.Run(new GUIForm());
         }
     }
 }
