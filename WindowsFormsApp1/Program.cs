@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Windows.Forms;
+using Unity;
+using Unity.Injection;
 
-namespace GUI
+namespace WindowsFormsApp1
 {
     static class Program
     {
@@ -16,7 +17,11 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            using (var container = new UnityContainer())
+            {
+                container.RegisterType<ICaseRepository, CaseRepository>();
+                Application.Run(container.Resolve<Form1>());
+            }
         }
     }
 }

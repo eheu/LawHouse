@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
+using DataAccess;
+using Unity;
+using Unity.Injection;
 
-namespace LawHouse
+namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public ICaseRepository caseRepository { get; private set; } 
+        public Form1(ICaseRepository caseRepository)
         {
             InitializeComponent();
+            objectListView1.AddObject(caseRepository.Get(1));
         }
     }
 }

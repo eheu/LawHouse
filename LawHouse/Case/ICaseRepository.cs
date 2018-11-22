@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLogic
+{
+    public interface ICaseRepository : IRepository<Case>
+    {
+        /// <summary>
+        ///     Load all cases with a relation to the client.
+        /// </summary>
+        List<Case> GetCasesFromClient(int clientID);
+
+        /// <summary>
+        ///     Load all cases with a relation to the lawyer.
+        /// </summary>
+        List<Case> GetCasesFromLawyer(int lawyerID);
+    }
+}
