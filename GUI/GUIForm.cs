@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
 
 namespace GUI
 {
     public partial class GUIForm : Form
     {
+        public ICaseRepository CaseRepository { get; set; }
         /// <summary>
         /// Refererer til user controls
         /// </summary>
@@ -19,8 +21,9 @@ namespace GUI
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlHelp userControlHelp;
-        public GUIForm()
+        public GUIForm(ICaseRepository caseRepository)
         {
+            CaseRepository = caseRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
