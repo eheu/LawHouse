@@ -25,32 +25,34 @@ namespace GUI
 
 
 
-
-        private void FindbtnCreate_Click(object sender, EventArgs e)
+        private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
-            TabControlCases.SelectedTab = CreateCase;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_CreateCase;
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+        private void button_UCCaseTCEdit_FindCase_Click(object sender, EventArgs e)
         {
-            TabControlCases.SelectedTab = FindCase;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
         }
 
-        private void EditBtnFind_Click(object sender, EventArgs e)
+        private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
-            TabControlCases.SelectedTab = FindCase;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
         }
 
-        private void EditbtnCreate_Click(object sender, EventArgs e)
+        private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
-            TabControlCases.SelectedTab = CreateCase;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
         }
 
-        private void CreatebtnEdit_Click(object sender, EventArgs e)
+        private void button_UCCaseTCManage_FindCase_Click(object sender, EventArgs e)
         {
-            TabControlCases.SelectedTab = EditCase;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
         }
 
-
+        private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
+        {
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
+        }
     }
 }
