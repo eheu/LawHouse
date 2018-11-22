@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Unity;
 using BusinessLogic;
 using DataAccess;
+using Unity.RegistrationByConvention;
 
 namespace GUI
 {
@@ -21,7 +22,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             using (var container = new UnityContainer())
             {
-                container.RegisterType<ICaseRepository, CaseRepository>();
+                container.RegisterTypes(AllClasses.FromAssembliesInBasePath(), (c) => WithMappings.FromMatchingInterface(c));
                 Application.Run(container.Resolve<GUIForm>());
             }
         }
