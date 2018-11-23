@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TC_UCCaseTC_Edit = new System.Windows.Forms.TabControl();
+            this.TabControl_UCEmployee = new System.Windows.Forms.TabControl();
             this.TC_UCEmployeeTC_FindEmployee = new System.Windows.Forms.TabPage();
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
@@ -72,7 +72,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.TC_UCCaseTC_Edit.SuspendLayout();
+            this.button_UCEmployeeTCCreate_FindEmployee = new System.Windows.Forms.Button();
+            this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
             this.TC_UCEmployeeTC_EditEmployee.SuspendLayout();
@@ -81,20 +82,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataListView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // TC_UCCaseTC_Edit
+            // TabControl_UCEmployee
             // 
-            this.TC_UCCaseTC_Edit.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.TC_UCCaseTC_Edit.Controls.Add(this.TC_UCEmployeeTC_FindEmployee);
-            this.TC_UCCaseTC_Edit.Controls.Add(this.TC_UCEmployeeTC_EditEmployee);
-            this.TC_UCCaseTC_Edit.Controls.Add(this.TC_UCEmployeeTC_CreateEmployee);
-            this.TC_UCCaseTC_Edit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TC_UCCaseTC_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TC_UCCaseTC_Edit.ItemSize = new System.Drawing.Size(100, 50);
-            this.TC_UCCaseTC_Edit.Location = new System.Drawing.Point(0, 0);
-            this.TC_UCCaseTC_Edit.Name = "TC_UCCaseTC_Edit";
-            this.TC_UCCaseTC_Edit.SelectedIndex = 0;
-            this.TC_UCCaseTC_Edit.Size = new System.Drawing.Size(1157, 566);
-            this.TC_UCCaseTC_Edit.TabIndex = 0;
+            this.TabControl_UCEmployee.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.TabControl_UCEmployee.Controls.Add(this.TC_UCEmployeeTC_FindEmployee);
+            this.TabControl_UCEmployee.Controls.Add(this.TC_UCEmployeeTC_EditEmployee);
+            this.TabControl_UCEmployee.Controls.Add(this.TC_UCEmployeeTC_CreateEmployee);
+            this.TabControl_UCEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl_UCEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.TabControl_UCEmployee.ItemSize = new System.Drawing.Size(100, 50);
+            this.TabControl_UCEmployee.Location = new System.Drawing.Point(0, 0);
+            this.TabControl_UCEmployee.Name = "TabControl_UCEmployee";
+            this.TabControl_UCEmployee.SelectedIndex = 0;
+            this.TabControl_UCEmployee.Size = new System.Drawing.Size(1157, 566);
+            this.TabControl_UCEmployee.TabIndex = 0;
+            this.TabControl_UCEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // TC_UCEmployeeTC_FindEmployee
             // 
@@ -110,6 +112,7 @@
             this.TC_UCEmployeeTC_FindEmployee.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCEmployeeTC_FindEmployee.TabIndex = 0;
             this.TC_UCEmployeeTC_FindEmployee.Text = "Find ansat";
+            this.TC_UCEmployeeTC_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -135,6 +138,7 @@
             this.button_UCEmployeeTCFind_CreateEmployee.TabIndex = 2;
             this.button_UCEmployeeTCFind_CreateEmployee.Text = "Opret";
             this.button_UCEmployeeTCFind_CreateEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCFind_CreateEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCFind_CreateEmployee_Click);
             // 
             // label1
             // 
@@ -163,6 +167,7 @@
             this.dataListView1.TabIndex = 0;
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
+            this.dataListView1.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -342,6 +347,7 @@
             // 
             // TC_UCEmployeeTC_CreateEmployee
             // 
+            this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.button_UCEmployeeTCCreate_FindEmployee);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.button4);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.dataListView3);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.button3);
@@ -502,16 +508,26 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
             // 
+            // button_UCEmployeeTCCreate_FindEmployee
+            // 
+            this.button_UCEmployeeTCCreate_FindEmployee.Location = new System.Drawing.Point(6, 27);
+            this.button_UCEmployeeTCCreate_FindEmployee.Name = "button_UCEmployeeTCCreate_FindEmployee";
+            this.button_UCEmployeeTCCreate_FindEmployee.Size = new System.Drawing.Size(102, 30);
+            this.button_UCEmployeeTCCreate_FindEmployee.TabIndex = 27;
+            this.button_UCEmployeeTCCreate_FindEmployee.Text = "Find";
+            this.button_UCEmployeeTCCreate_FindEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCCreate_FindEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCCreate_FindEmployee_Click);
+            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.TC_UCCaseTC_Edit);
+            this.Controls.Add(this.TabControl_UCEmployee);
             this.Name = "UserControlEmployees";
             this.Size = new System.Drawing.Size(1157, 566);
             this.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
-            this.TC_UCCaseTC_Edit.ResumeLayout(false);
+            this.TabControl_UCEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_FindEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_FindEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).EndInit();
@@ -527,7 +543,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl TC_UCCaseTC_Edit;
+        private System.Windows.Forms.TabControl TabControl_UCEmployee;
         private System.Windows.Forms.TabPage TC_UCEmployeeTC_FindEmployee;
         private System.Windows.Forms.TabPage TC_UCEmployeeTC_EditEmployee;
         private System.Windows.Forms.TabPage TC_UCEmployeeTC_CreateEmployee;
@@ -571,5 +587,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button_UCEmployeeTCCreate_FindEmployee;
     }
 }

@@ -162,7 +162,6 @@
             this.dataListView1.TabIndex = 2;
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
-            this.dataListView1.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
             // olvColumn1
             // 

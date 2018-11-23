@@ -21,7 +21,17 @@ namespace GUI
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
         {
-            gui.toggleMenuPanel();
+            //gui.toggleMenuPanel();
+        }
+
+        private void button_UCEmployeeTCFind_CreateEmployee_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_CreateEmployee;
+        }
+
+        private void button_UCEmployeeTCCreate_FindEmployee_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
         }
     }
 }

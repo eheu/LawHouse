@@ -197,6 +197,11 @@ namespace GUI
             UcContainer.Controls.Add(userControlHelp);
         }
 
+        private void Menu_leave(object sender, EventArgs e)
+        {
+            toggleMenuPanel();
+        }
+
         #endregion
 
         //slet den her på et tidspunkt: 

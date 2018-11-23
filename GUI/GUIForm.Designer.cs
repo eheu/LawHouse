@@ -40,8 +40,9 @@
             this.TopPanel = new System.Windows.Forms.Panel();
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
-            this.dragControl1 = new GUI.DragControl();
             this.UcContainer = new System.Windows.Forms.Panel();
+            this.dragControl1 = new GUI.DragControl();
+            this.MenuTestPanelLeave = new System.Windows.Forms.Panel();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +53,7 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuPanel.Controls.Add(this.MenuTestPanelLeave);
             this.MenuPanel.Controls.Add(this.HelpBtn);
             this.MenuPanel.Controls.Add(this.ClientBtn);
             this.MenuPanel.Controls.Add(this.EmployeeBtn);
@@ -194,10 +196,6 @@
             this.MenuSlideTimer.Tag = "";
             this.MenuSlideTimer.Tick += new System.EventHandler(this.MenuSlideTimer_Tick);
             // 
-            // dragControl1
-            // 
-            this.dragControl1.SelectControl = this.TopPanel;
-            // 
             // UcContainer
             // 
             this.UcContainer.BackColor = System.Drawing.Color.Transparent;
@@ -205,6 +203,21 @@
             this.UcContainer.Name = "UcContainer";
             this.UcContainer.Size = new System.Drawing.Size(1158, 566);
             this.UcContainer.TabIndex = 3;
+            // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectControl = this.TopPanel;
+            // 
+            // MenuTestPanelLeave
+            // 
+            this.MenuTestPanelLeave.BackColor = System.Drawing.Color.Transparent;
+            this.MenuTestPanelLeave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MenuTestPanelLeave.Location = new System.Drawing.Point(68, 0);
+            this.MenuTestPanelLeave.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuTestPanelLeave.Name = "MenuTestPanelLeave";
+            this.MenuTestPanelLeave.Size = new System.Drawing.Size(1, 566);
+            this.MenuTestPanelLeave.TabIndex = 5;
+            this.MenuTestPanelLeave.MouseLeave += new System.EventHandler(this.Menu_leave);
             // 
             // GUIForm
             // 
@@ -242,5 +255,6 @@
         private System.Windows.Forms.Timer MenuSlideTimer;
         private DragControl dragControl1;
         private System.Windows.Forms.Panel UcContainer;
+        private System.Windows.Forms.Panel MenuTestPanelLeave;
     }
 }
