@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace BusinessLogic
 {
     /// <summary>
-    ///     Repository definition for Case.
+    ///     Generic repository interface.
     /// </summary>
     public interface IRepository<T> where T : Entity
     {
@@ -31,11 +31,6 @@ namespace BusinessLogic
         /// <summary>
         ///     Delete an entity.
         /// </summary>
-        void Delete(int id);
-
-        /// <summary>
-        ///     Delete an entity.
-        /// </summary>
-        void Delete(T entity);
+        void Delete(int ID);
     }
 }

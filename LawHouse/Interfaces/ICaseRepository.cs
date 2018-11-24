@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Interfaces
 {
+    /// <summary>
+    /// Repository interface for Cases.
+    /// </summary>
     public interface ICaseRepository : IRepository<Case>
     {
         /// <summary>

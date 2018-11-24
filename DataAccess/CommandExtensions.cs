@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Data;
-
+using System.Data.SqlClient;
 
 namespace DataAccess
 {
     public static class CommandExtensions
     {
-        public static IDataParameter AddParameter(this IDbCommand command, string name, object value)
+        public static SqlParameter AddParameter(this SqlCommand command, string name, object value)
         {
             var p = command.CreateParameter();
             p.ParameterName = name;
