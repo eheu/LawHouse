@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessLogic;
+using BusinessLogic.Interfaces;
+using BusinessLogic.Models;
 
 namespace DataAccess
 {
@@ -99,7 +98,7 @@ namespace DataAccess
         {
         }
 
-        public void Update(Entity entity)
+        public void Update(Case entity)
         {
         }
 

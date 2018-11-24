@@ -1,6 +1,5 @@
-﻿using System;
+﻿using BusinessLogic.Models;
 using System.Collections.Generic;
-using System.Data;
 
 namespace BusinessLogic
 {
@@ -27,7 +26,7 @@ namespace BusinessLogic
         /// <summary>
         ///     Update existing entity.
         /// </summary>
-        void Update(Entity entity);
+        void Update(T entity);
 
         /// <summary>
         ///     Delete an entity.
@@ -37,6 +36,6 @@ namespace BusinessLogic
         /// <summary>
         ///     Delete an entity.
         /// </summary>
-        void Delete(Case entity);
+        void Delete(T entity);
     }
 }
