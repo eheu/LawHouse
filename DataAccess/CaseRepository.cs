@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using BusinessLogic;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 
@@ -49,28 +48,17 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                try
-                {
-                    _connection.Open();
-                    command.CommandText = @"SELECT [ID], [title], [description], [status], [startDate], [endDate], [hoursSum], [estimatedHoursSum], [clientID], [employeeID]
+                _connection.Open();
+                command.CommandText = @"SELECT [ID], [title], [description], [status], [startDate], [endDate], [hoursSum], [estimatedHoursSum], [clientID], [employeeID]
                                             FROM [Case]
                                             WHERE ID = @ID";
-                    command.AddParameter("ID", ID);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (!reader.Read()) throw new DataException("Not found");
-                        var entity = new Case();
-                        Map(reader, entity);
-                        return entity;
-                    }
-                }
-                catch (Exception exception)
+                command.AddParameter("ID", ID);
+                using (var reader = command.ExecuteReader())
                 {
-                    throw exception;
-                }
-                finally
-                {
-                    _connection.Close();
+                    if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
+                    var entity = new Case();
+                    Map(reader, entity);
+                    return entity;
                 }
             }
         }
