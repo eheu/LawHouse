@@ -16,31 +16,21 @@ namespace DataAccess
             if (@case == null) throw new ArgumentNullException("entity");
             using (var cmd = _connection.CreateCommand())
             {
-                try
-                {
-                    _connection.Open();
 
-                    cmd.CommandText = @"INSERT INTO Case (title, description, status, startDate, endDate, clientID, employeeID)
+                _connection.Open();
+
+                cmd.CommandText = @"INSERT INTO Case (title, description, status, startDate, endDate, clientID, employeeID)
                                         VALUES(@title, @description, @status, @startDate, @endDate, @clientID, @employeeID);
                                         SELECT CAST(SCOPE_IDENTITY() AS INT);";
-                    cmd.AddParameter("title", @case.Title);
-                    cmd.AddParameter("description", @case.Description);
-                    cmd.AddParameter("status", @case.Status);
-                    cmd.AddParameter("startDate", @case.StartDate);
-                    cmd.AddParameter("endDate", @case.EndDate);
-                    cmd.AddParameter("clientID", @case.ClientID);
-                    cmd.AddParameter("employeeID", @case.EmployeeID);
-                    var ID = (int)cmd.ExecuteScalar();
-                    @case.ID = ID;
-                }
-                catch (Exception exception)
-                {
-                    throw exception;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
+                cmd.AddParameter("title", @case.Title);
+                cmd.AddParameter("description", @case.Description);
+                cmd.AddParameter("status", @case.Status);
+                cmd.AddParameter("startDate", @case.StartDate);
+                cmd.AddParameter("endDate", @case.EndDate);
+                cmd.AddParameter("clientID", @case.ClientID);
+                cmd.AddParameter("employeeID", @case.EmployeeID);
+                var ID = (int)cmd.ExecuteScalar();
+                @case.ID = ID;
             }
         }
 
