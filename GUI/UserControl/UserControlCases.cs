@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
 
 namespace GUI
 {
@@ -53,6 +54,12 @@ namespace GUI
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
+        }
+
+        private void button_UCCaseTCCreate_CreateCase_Click(object sender, EventArgs e)
+        {
+            Case @case = new Case();
+
         }
     }
 }

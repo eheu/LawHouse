@@ -12,6 +12,7 @@ namespace GUI
 {
     public partial class GUIForm : Form
     {
+
         /// <summary>
         /// Refererer til user controls
         /// </summary>

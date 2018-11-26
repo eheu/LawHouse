@@ -39,6 +39,7 @@
             this.label_UCCaseTCFind_FindCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_EditCase = new System.Windows.Forms.TabPage();
+            this.label_UCCaseTCEdit_ServiceView = new System.Windows.Forms.Label();
             this.label_UCCaseTCEdit_Description = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_SaveChange = new System.Windows.Forms.Button();
             this.button_UCCaseTCEdit_RemoveService = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
-            this.label_UCCaseTCEdit_ServiceView = new System.Windows.Forms.Label();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
@@ -220,6 +220,15 @@
             this.TC_UCCaseTC_EditCase.TabIndex = 1;
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
             this.TC_UCCaseTC_EditCase.UseVisualStyleBackColor = true;
+            // 
+            // label_UCCaseTCEdit_ServiceView
+            // 
+            this.label_UCCaseTCEdit_ServiceView.AutoSize = true;
+            this.label_UCCaseTCEdit_ServiceView.Location = new System.Drawing.Point(477, 14);
+            this.label_UCCaseTCEdit_ServiceView.Name = "label_UCCaseTCEdit_ServiceView";
+            this.label_UCCaseTCEdit_ServiceView.Size = new System.Drawing.Size(127, 18);
+            this.label_UCCaseTCEdit_ServiceView.TabIndex = 22;
+            this.label_UCCaseTCEdit_ServiceView.Text = "Ydelsesoversigt";
             // 
             // label_UCCaseTCEdit_Description
             // 
@@ -423,6 +432,7 @@
             this.button_UCCaseTCCreate_CreateCase.TabIndex = 21;
             this.button_UCCaseTCCreate_CreateCase.Text = "Opret sag";
             this.button_UCCaseTCCreate_CreateCase.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCCreate_CreateCase.Click += new System.EventHandler(this.button_UCCaseTCCreate_CreateCase_Click);
             // 
             // button_UCCaseTCCreate_AddService
             // 
@@ -700,15 +710,6 @@
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label_UCCaseTCEdit_ServiceView
-            // 
-            this.label_UCCaseTCEdit_ServiceView.AutoSize = true;
-            this.label_UCCaseTCEdit_ServiceView.Location = new System.Drawing.Point(477, 14);
-            this.label_UCCaseTCEdit_ServiceView.Name = "label_UCCaseTCEdit_ServiceView";
-            this.label_UCCaseTCEdit_ServiceView.Size = new System.Drawing.Size(127, 18);
-            this.label_UCCaseTCEdit_ServiceView.TabIndex = 22;
-            this.label_UCCaseTCEdit_ServiceView.Text = "Ydelsesoversigt";
             // 
             // UserControlCases
             // 
