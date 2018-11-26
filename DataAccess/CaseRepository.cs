@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 using Microsoft.SqlServer.Server;
+using System.Globalization;
 
 namespace DataAccess
 {
@@ -16,19 +17,31 @@ namespace DataAccess
         {
             using (var cmd = _connection.CreateCommand())
             {
-                cmd.CommandText = @"INSERT INTO Case (title, description, status, startDate, endDate, clientID, employeeID)
-                                    VALUES(@title, @description, @status, @startDate, @endDate, @clientID, @employeeID);
-                                    SELECT CAST(SCOPE_IDENTITY() AS INT);";
-                cmd.AddParameter("title", @case.Title);
-                cmd.AddParameter("description", @case.Description);
-                cmd.AddParameter("status", @case.Status);
-                cmd.AddParameter("startDate", @case.StartDate);
-                cmd.AddParameter("endDate", @case.EndDate);
-                cmd.AddParameter("clientID", @case.ClientID);
-                cmd.AddParameter("employeeID", @case.EmployeeID);
-                _connection.Open();
-                var ID = (int)cmd.ExecuteScalar();
-                @case.ID = ID;
+                try
+                {
+                    cmd.CommandText = @"INSERT INTO [Case] (title, description, status, startDate, endDate, clientID, employeeID)
+                                        VALUES(@title, @description, @status, @startDate, @endDate, @clientID, @employeeID);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    cmd.AddParameter("title", @case.Title);
+                    cmd.AddParameter("description", @case.Description);
+                    cmd.AddParameter("status", @case.Status);
+                    cmd.AddParameter("startDate", DateTime.Now.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+                    cmd.AddParameter("endDate", null);
+                    cmd.AddParameter("clientID", @case.ClientID);
+                    cmd.AddParameter("employeeID", @case.EmployeeID);
+                    _connection.Open();
+                    var ID = (int)cmd.ExecuteScalar();
+                    @case.ID = ID;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
             }
         }
 
@@ -55,10 +68,22 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                _connection.Open();
-                command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
-                                        FROM Case";
-                return MapCollection(command);
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                        FROM [Case]";
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
             }
         }
 
@@ -77,7 +102,7 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = @"UPDATE Case SET
+                command.CommandText = @"UPDATE [Case] SET
                                     title = @title, 
                                     description = @description, 
                                     status = @status, 
@@ -104,7 +129,7 @@ namespace DataAccess
         {
             using (var cmd = _connection.CreateCommand())
             {
-                cmd.CommandText = @"DELETE FROM Case
+                cmd.CommandText = @"DELETE FROM [Case]
                                     WHERE ID = @ID";
                 cmd.AddParameter("ID", ID);
                 cmd.ExecuteNonQuery();
@@ -118,7 +143,7 @@ namespace DataAccess
             @case.Description = (string)reader[2];
             @case.Status = (bool)reader[3];
             @case.StartDate = (DateTime)reader[4];
-            @case.EndDate = (DateTime)reader[5];
+            @case.EndDate = reader[5] == DBNull.Value ? default(DateTime) : (DateTime)reader[5];
             @case.ClientID = (int)reader[6];
             @case.EmployeeID = (int)reader[7];
         }

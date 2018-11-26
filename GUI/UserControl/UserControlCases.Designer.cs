@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.TabControl_UCCases = new System.Windows.Forms.TabControl();
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
+            this.objectListView_UCCaseTCFind_FindCase = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
-            this.dataListView1 = new BrightIdeasSoftware.DataListView();
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCCaseTCFind_FindCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_EditCase = new System.Windows.Forms.TabPage();
@@ -88,7 +87,7 @@
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
             this.TC_UCCaseTC_EditCase.SuspendLayout();
             this.TC_UCCaseTC_CreateCase.SuspendLayout();
             this.TC_UCCaseTC_ManageCase.SuspendLayout();
@@ -117,9 +116,9 @@
             // TC_UCCaseTC_FindCase
             // 
             this.TC_UCCaseTC_FindCase.BackColor = System.Drawing.Color.White;
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.objectListView_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.dataListView1);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
             this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 54);
@@ -129,6 +128,27 @@
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
             this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
+            // 
+            // objectListView_UCCaseTCFind_FindCase
+            // 
+            this.objectListView_UCCaseTCFind_FindCase.AllColumns.Add(this.olvColumnName);
+            this.objectListView_UCCaseTCFind_FindCase.CellEditUseWholeCell = false;
+            this.objectListView_UCCaseTCFind_FindCase.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnName});
+            this.objectListView_UCCaseTCFind_FindCase.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCCaseTCFind_FindCase.Location = new System.Drawing.Point(9, 97);
+            this.objectListView_UCCaseTCFind_FindCase.Name = "objectListView_UCCaseTCFind_FindCase";
+            this.objectListView_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(1134, 405);
+            this.objectListView_UCCaseTCFind_FindCase.TabIndex = 12;
+            this.objectListView_UCCaseTCFind_FindCase.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCCaseTCFind_FindCase.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
+            // 
+            // olvColumnName
+            // 
+            this.olvColumnName.AspectName = "Title";
+            this.olvColumnName.Groupable = false;
+            this.olvColumnName.Text = "Sags titel";
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -145,33 +165,6 @@
             this.label_UCCaseTCFind_Search.Size = new System.Drawing.Size(36, 18);
             this.label_UCCaseTCFind_Search.TabIndex = 4;
             this.label_UCCaseTCFind_Search.Text = "søg";
-            // 
-            // dataListView1
-            // 
-            this.dataListView1.AllColumns.Add(this.olvColumn1);
-            this.dataListView1.AllColumns.Add(this.olvColumn2);
-            this.dataListView1.CellEditUseWholeCell = false;
-            this.dataListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.olvColumn2});
-            this.dataListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataListView1.DataSource = null;
-            this.dataListView1.Location = new System.Drawing.Point(9, 97);
-            this.dataListView1.Name = "dataListView1";
-            this.dataListView1.Size = new System.Drawing.Size(1134, 396);
-            this.dataListView1.TabIndex = 2;
-            this.dataListView1.UseCompatibleStateImageBehavior = false;
-            this.dataListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // olvColumn1
-            // 
-            this.olvColumn1.Text = "ID";
-            this.olvColumn1.Width = 39;
-            // 
-            // olvColumn2
-            // 
-            this.olvColumn2.Text = "Advokat";
-            this.olvColumn2.Width = 77;
             // 
             // label_UCCaseTCFind_FindCase
             // 
@@ -703,7 +696,7 @@
             this.TabControl_UCCases.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).EndInit();
             this.TC_UCCaseTC_EditCase.ResumeLayout(false);
             this.TC_UCCaseTC_EditCase.PerformLayout();
             this.TC_UCCaseTC_CreateCase.ResumeLayout(false);
@@ -737,9 +730,6 @@
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseClient;
         private System.Windows.Forms.Label label_UCCaseTCCreate_Description;
         private System.Windows.Forms.Label label_UCCaseTCCreate_CaseTitel;
-        private BrightIdeasSoftware.DataListView dataListView1;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
-        private BrightIdeasSoftware.OLVColumn olvColumn2;
         private System.Windows.Forms.Button button_UCCaseTCEdit_ManageCase;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeLawyer;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeClient;
@@ -774,5 +764,7 @@
         private System.Windows.Forms.Button button_UCCaseTCManage_EditCase;
         private System.Windows.Forms.Button button_UCCaseTCManage_FindCase;
         private System.Windows.Forms.Label label_UCCaseTCEdit_ServiceView;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCCaseTCFind_FindCase;
+        private BrightIdeasSoftware.OLVColumn olvColumnName;
     }
 }

@@ -24,7 +24,7 @@ namespace GUI
             //vælg klient
             List<Client> clientlist = gui.ClientRepository.GetAll();
             comboBox_UCCaseTCCreate_ChooseClient.DataSource = clientlist;
-            comboBox_UCCaseTCCreate_ChooseClient.DisplayMember = "FullName" ;
+            comboBox_UCCaseTCCreate_ChooseClient.DisplayMember = "FullName";
             comboBox_UCCaseTCCreate_ChooseClient.ValueMember = "ID";
             comboBox_UCCaseTCCreate_ChooseClient.SelectedIndex = -1;
 
@@ -40,9 +40,19 @@ namespace GUI
             comboBox_UCCaseTCCreate_ChooseService.DataSource = servicelist;
             comboBox_UCCaseTCCreate_ChooseService.DisplayMember = "Name";
             comboBox_UCCaseTCCreate_ChooseService.ValueMember = "ID";
-            comboBox_UCCaseTCCreate_ChooseService.SelectedIndex = -1; 
+            comboBox_UCCaseTCCreate_ChooseService.SelectedIndex = -1;
+
+            //object list view
+            SetObjectListViewCases();
 
         }
+
+        private void SetObjectListViewCases()
+        {
+            List<Case> caselist = gui.CaseRepository.GetAll();
+            objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+        }
+
         private void FindCase_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
@@ -86,7 +96,18 @@ namespace GUI
             @case.Description = richTextBox_UCCaseTCCreate_Description.Text;
             @case.Title = textBox_UCCaseTCCreate_Title.Text;
             @case.ClientID = (int)comboBox_UCCaseTCCreate_ChooseClient.SelectedValue;
+            @case.EmployeeID = (int)comboBox_UCCaseTCCreate_ChooseLawyer.SelectedValue;
             gui.CaseRepository.Create(@case);
+            MessageBox.Show("virkede");
+            SetObjectListViewCases();
+        }
+
+        private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
+        {
+            Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
+            label_UCCaseTCManage_CaseName.Text = @case.Title;
+            richTextBox_UCCaseTCManage_Description.Text = @case.Description;
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
         }
     }
 }
