@@ -20,6 +20,11 @@ namespace GUI
         {
             gui = guiForm;
             InitializeComponent();
+            List<Client> clientlist = gui.ClientRepository.GetAll();
+            comboBox_UCCaseTCCreate_ChooseClient.DataSource = clientlist;
+            comboBox_UCCaseTCCreate_ChooseClient.DisplayMember = "FullName" ;
+            comboBox_UCCaseTCCreate_ChooseClient.ValueMember = "ID";
+            comboBox_UCCaseTCCreate_ChooseClient.SelectedIndex = -1;
         }
         private void FindCase_MouseEnter(object sender, EventArgs e)
         {

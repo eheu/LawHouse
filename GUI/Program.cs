@@ -7,6 +7,7 @@ using Unity;
 using BusinessLogic;
 using DataAccess;
 using Unity.RegistrationByConvention;
+using BusinessLogic.Interfaces;
 
 namespace GUI
 {

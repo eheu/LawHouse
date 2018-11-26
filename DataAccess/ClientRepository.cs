@@ -9,7 +9,7 @@ using BusinessLogic.Models;
 
 namespace DataAccess
 {
-    class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
 
@@ -33,8 +33,8 @@ namespace DataAccess
             using (var command = _connection.CreateCommand())
             {
                 _connection.Open();
-                command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
-                                        FROM Case";
+                command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
+                                        FROM Client";
                 return MapCollection(command);
             }
         }
@@ -46,11 +46,12 @@ namespace DataAccess
 
         private static void Map(SqlDataReader reader, Client client)
         {
-            client.FirstName = (string)reader[0];
-            client.LastName = (string)reader[1];
-            client.Phone = (int)reader[2];
-            client.Address = (string)reader[3];
-            client.Email = (string)reader[4];
+            client.ID = (int)reader[0];
+            client.FirstName = (string)reader[1];
+            client.LastName = (string)reader[2];
+            client.Phone = (int)reader[3];
+            client.Address = (string)reader[4];
+            client.Email = reader[5] == DBNull.Value ? "" : (string)reader[5];
         }
         private static List<Client> MapCollection(SqlCommand command)
         {

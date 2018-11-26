@@ -8,6 +8,7 @@ namespace GUI
     public partial class GUIForm : Form
     {
         public ICaseRepository CaseRepository { get; set; }
+        public IClientRepository ClientRepository { get; set; }
         /// <summary>
         /// Refererer til user controls
         /// </summary>
@@ -15,9 +16,10 @@ namespace GUI
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlHelp userControlHelp;
-        public GUIForm(ICaseRepository caseRepository)
+        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository)
         {
             CaseRepository = caseRepository;
+            ClientRepository = clientRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
