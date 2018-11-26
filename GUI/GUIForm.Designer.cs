@@ -40,7 +40,9 @@
             this.TopPanel = new System.Windows.Forms.Panel();
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
+            this.UcContainer = new System.Windows.Forms.Panel();
             this.dragControl1 = new GUI.DragControl();
+            this.MenuTestPanelLeave = new System.Windows.Forms.Panel();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,6 +53,7 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuPanel.Controls.Add(this.MenuTestPanelLeave);
             this.MenuPanel.Controls.Add(this.HelpBtn);
             this.MenuPanel.Controls.Add(this.ClientBtn);
             this.MenuPanel.Controls.Add(this.EmployeeBtn);
@@ -67,7 +70,7 @@
             // 
             this.HelpBtn.FlatAppearance.BorderSize = 0;
             this.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HelpBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpBtn.Image = ((System.Drawing.Image)(resources.GetObject("HelpBtn.Image")));
             this.HelpBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -87,7 +90,7 @@
             // 
             this.ClientBtn.FlatAppearance.BorderSize = 0;
             this.ClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientBtn.Image")));
             this.ClientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +110,7 @@
             // 
             this.EmployeeBtn.FlatAppearance.BorderSize = 0;
             this.EmployeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmployeeBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeBtn.Image")));
             this.EmployeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,7 +130,7 @@
             // 
             this.CaseBtn.FlatAppearance.BorderSize = 0;
             this.CaseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CaseBtn.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaseBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CaseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CaseBtn.Image")));
             this.CaseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,9 +196,28 @@
             this.MenuSlideTimer.Tag = "";
             this.MenuSlideTimer.Tick += new System.EventHandler(this.MenuSlideTimer_Tick);
             // 
+            // UcContainer
+            // 
+            this.UcContainer.BackColor = System.Drawing.Color.Transparent;
+            this.UcContainer.Location = new System.Drawing.Point(68, 37);
+            this.UcContainer.Name = "UcContainer";
+            this.UcContainer.Size = new System.Drawing.Size(1158, 566);
+            this.UcContainer.TabIndex = 3;
+            // 
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.TopPanel;
+            // 
+            // MenuTestPanelLeave
+            // 
+            this.MenuTestPanelLeave.BackColor = System.Drawing.Color.Transparent;
+            this.MenuTestPanelLeave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MenuTestPanelLeave.Location = new System.Drawing.Point(68, 0);
+            this.MenuTestPanelLeave.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuTestPanelLeave.Name = "MenuTestPanelLeave";
+            this.MenuTestPanelLeave.Size = new System.Drawing.Size(1, 566);
+            this.MenuTestPanelLeave.TabIndex = 5;
+            this.MenuTestPanelLeave.MouseLeave += new System.EventHandler(this.Menu_leave);
             // 
             // GUIForm
             // 
@@ -205,6 +227,7 @@
             this.ClientSize = new System.Drawing.Size(1226, 603);
             this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.TopPanel);
+            this.Controls.Add(this.UcContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GUIForm";
             this.Text = "GUI";
@@ -231,5 +254,7 @@
         private System.Windows.Forms.PictureBox CloseWindowBtn;
         private System.Windows.Forms.Timer MenuSlideTimer;
         private DragControl dragControl1;
+        private System.Windows.Forms.Panel UcContainer;
+        private System.Windows.Forms.Panel MenuTestPanelLeave;
     }
 }

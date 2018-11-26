@@ -1,11 +1,10 @@
-﻿using System;
+﻿using BusinessLogic.Models;
 using System.Collections.Generic;
-using System.Data;
 
 namespace BusinessLogic
 {
     /// <summary>
-    ///     Repository definition for Case.
+    ///     Generic repository interface.
     /// </summary>
     public interface IRepository<T> where T : Entity
     {
@@ -27,16 +26,11 @@ namespace BusinessLogic
         /// <summary>
         ///     Update existing entity.
         /// </summary>
-        void Update(Entity entity);
+        void Update(T entity);
 
         /// <summary>
         ///     Delete an entity.
         /// </summary>
-        void Delete(int id);
-
-        /// <summary>
-        ///     Delete an entity.
-        /// </summary>
-        void Delete(Case entity);
+        void Delete(int ID);
     }
 }

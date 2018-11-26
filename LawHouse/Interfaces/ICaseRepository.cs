@@ -1,11 +1,15 @@
-﻿using System;
+﻿using BusinessLogic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic
+namespace BusinessLogic.Interfaces
 {
+    /// <summary>
+    /// Repository interface for Cases.
+    /// </summary>
     public interface ICaseRepository : IRepository<Case>
     {
         /// <summary>
