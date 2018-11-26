@@ -1,8 +1,11 @@
 ﻿using BusinessLogic.Models;
+using System.Collections.Generic;
 
 namespace BusinessLogic.Interfaces
 {
-    interface IEmployeeRepository : IRepository<Employee>
+    public interface IEmployeeRepository : IRepository<Employee>
     {
+        List<Employee> GetAllLawyers(); 
+
     }
 }

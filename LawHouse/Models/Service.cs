@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Models
 {
-    class Service : Entity
+    public class Service : Entity
     {
         public Service()
         {
@@ -21,6 +21,6 @@ namespace BusinessLogic.Models
 
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public Boolean IsHourly { get; set; }
+        public bool IsHourly { get; set; }
     }
 }

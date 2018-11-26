@@ -5,7 +5,7 @@ namespace BusinessLogic.Interfaces
     /// <summary>
     /// Repository interface for Services.
     /// </summary>
-    interface IServiceRepository : IRepository<Service>
+    public interface IServiceRepository : IRepository<Service>
     {
     }
 }
