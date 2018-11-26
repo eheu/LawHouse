@@ -61,6 +61,9 @@ namespace GUI
         private void button_UCCaseTCCreate_CreateCase_Click(object sender, EventArgs e)
         {
             Case @case = new Case();
+            @case.Description = richTextBox_UCCaseTCCreate_Description.Text;
+            @case.Title = textBox_UCCaseTCCreate_Title.Text;
+            @case.ClientID = 4;
             gui.CaseRepository.Create(@case);
         }
     }

@@ -63,10 +63,10 @@
             this.label_UCCaseTCCreate_ServiceView = new System.Windows.Forms.Label();
             this.listBox_UCCaseTCCreate_ServiceView = new System.Windows.Forms.ListBox();
             this.richTextBox_UCCaseTCCreate_Description = new System.Windows.Forms.RichTextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox_UCCaseTCCreate_ChooseLawyer = new System.Windows.Forms.ComboBox();
+            this.comboBox_UCCaseTCCreate_ChooseService = new System.Windows.Forms.ComboBox();
+            this.comboBox_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.ComboBox();
+            this.textBox_UCCaseTCCreate_Title = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCCreate_ChooseService = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_ChooseLawyer = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
             this.button_UCCaseTCManage_EditCase = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_FindCase = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.TabControl_UCCases.SuspendLayout();
@@ -380,10 +380,10 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ServiceView);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox_UCCaseTCCreate_ServiceView);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.richTextBox_UCCaseTCCreate_Description);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox3);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox2);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.textBox1);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseLawyer);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseService);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseClient);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.textBox_UCCaseTCCreate_Title);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseService);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseLawyer);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseClient);
@@ -470,36 +470,36 @@
             this.richTextBox_UCCaseTCCreate_Description.TabIndex = 17;
             this.richTextBox_UCCaseTCCreate_Description.Text = "";
             // 
-            // comboBox3
+            // comboBox_UCCaseTCCreate_ChooseLawyer
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(205, 337);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 26);
-            this.comboBox3.TabIndex = 15;
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Location = new System.Drawing.Point(205, 337);
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Name = "comboBox_UCCaseTCCreate_ChooseLawyer";
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.TabIndex = 15;
             // 
-            // comboBox2
+            // comboBox_UCCaseTCCreate_ChooseService
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(205, 227);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 14;
+            this.comboBox_UCCaseTCCreate_ChooseService.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseService.Location = new System.Drawing.Point(205, 227);
+            this.comboBox_UCCaseTCCreate_ChooseService.Name = "comboBox_UCCaseTCCreate_ChooseService";
+            this.comboBox_UCCaseTCCreate_ChooseService.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseService.TabIndex = 14;
             // 
-            // comboBox1
+            // comboBox_UCCaseTCCreate_ChooseClient
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 140);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox_UCCaseTCCreate_ChooseClient.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseClient.Location = new System.Drawing.Point(205, 140);
+            this.comboBox_UCCaseTCCreate_ChooseClient.Name = "comboBox_UCCaseTCCreate_ChooseClient";
+            this.comboBox_UCCaseTCCreate_ChooseClient.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseClient.TabIndex = 13;
             // 
-            // textBox1
+            // textBox_UCCaseTCCreate_Title
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 24);
-            this.textBox1.TabIndex = 9;
+            this.textBox_UCCaseTCCreate_Title.Location = new System.Drawing.Point(205, 94);
+            this.textBox_UCCaseTCCreate_Title.Name = "textBox_UCCaseTCCreate_Title";
+            this.textBox_UCCaseTCCreate_Title.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCCaseTCCreate_Title.TabIndex = 9;
             // 
             // label_UCCaseTCCreate_ChooseService
             // 
@@ -575,7 +575,7 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_CaseName);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_EditCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label6);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
@@ -669,14 +669,14 @@
             this.button_UCCaseTCManage_FindCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCManage_FindCase.Click += new System.EventHandler(this.button_UCCaseTCManage_FindCase_Click);
             // 
-            // label6
+            // label_UCCaseTCManage_Description
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(691, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 18);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Beskrivelse";
+            this.label_UCCaseTCManage_Description.AutoSize = true;
+            this.label_UCCaseTCManage_Description.Location = new System.Drawing.Point(691, 8);
+            this.label_UCCaseTCManage_Description.Name = "label_UCCaseTCManage_Description";
+            this.label_UCCaseTCManage_Description.Size = new System.Drawing.Size(95, 18);
+            this.label_UCCaseTCManage_Description.TabIndex = 19;
+            this.label_UCCaseTCManage_Description.Text = "Beskrivelse";
             // 
             // richTextBox_UCCaseTCManage_Description
             // 
@@ -728,10 +728,10 @@
         private System.Windows.Forms.Label label_UCCaseTCFind_FindCase;
         private System.Windows.Forms.Label label_UCCaseTCEdit_EditCase;
         private System.Windows.Forms.Label label_UCCaseTCCreate_CreateCase;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseLawyer;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseService;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseClient;
+        private System.Windows.Forms.TextBox textBox_UCCaseTCCreate_Title;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseService;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseLawyer;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseClient;
@@ -752,7 +752,7 @@
         private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_ServiceView;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCCreate_Description;
         private System.Windows.Forms.TabPage TC_UCCaseTC_ManageCase;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_UCCaseTCManage_Description;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCManage_Description;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
         private System.Windows.Forms.Label label_UCCaseTCFind_Search;
