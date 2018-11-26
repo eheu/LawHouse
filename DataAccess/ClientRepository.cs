@@ -32,10 +32,23 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                _connection.Open();
-                command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
                                         FROM Case";
-                return MapCollection(command);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
             }
         }
 
