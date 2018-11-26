@@ -127,7 +127,7 @@ namespace GUI
             userControlHelp.Hide();
             userControlCases.Show();
             userControlCases.Dock = DockStyle.Fill;
-            this.Controls.Add(userControlCases);
+            UcContainer.Controls.Add(userControlCases);
             
         }
         #endregion
@@ -148,7 +148,7 @@ namespace GUI
             userControlHelp.Hide();
             userControlEmployees.Show();
             userControlEmployees.Dock = DockStyle.Fill;
-            this.Controls.Add(userControlEmployees);
+            UcContainer.Controls.Add(userControlEmployees);
         }
         #endregion  
         #region Events for ClientBtn
@@ -168,7 +168,7 @@ namespace GUI
             userControlHelp.Hide();
             userControlClients.Show();
             userControlClients.Dock = DockStyle.Fill;
-            this.Controls.Add(userControlClients);
+            UcContainer.Controls.Add(userControlClients);
         }
         #endregion
         #region  Events for HelpBtn
@@ -188,7 +188,12 @@ namespace GUI
             userControlClients.Hide();
             userControlHelp.Show();
             userControlHelp.Dock = DockStyle.Fill;
-            this.Controls.Add(userControlHelp);
+            UcContainer.Controls.Add(userControlHelp);
+        }
+
+        private void Menu_leave(object sender, EventArgs e)
+        {
+            toggleMenuPanel();
         }
 
         #endregion

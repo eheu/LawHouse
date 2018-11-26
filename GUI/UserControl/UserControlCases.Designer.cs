@@ -85,8 +85,6 @@
             this.button_UCCaseTCManage_FindCase = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
@@ -107,7 +105,7 @@
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 50);
-            this.TabControl_UCCases.Location = new System.Drawing.Point(69, 37);
+            this.TabControl_UCCases.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCCases.Name = "TabControl_UCCases";
             this.TabControl_UCCases.Padding = new System.Drawing.Point(0, 0);
@@ -118,6 +116,7 @@
             // 
             // TC_UCCaseTC_FindCase
             // 
+            this.TC_UCCaseTC_FindCase.BackColor = System.Drawing.Color.White;
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.dataListView1);
@@ -129,7 +128,6 @@
             this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
-            this.TC_UCCaseTC_FindCase.UseVisualStyleBackColor = true;
             this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
             // textBox_UCCaseTCFind_Search
@@ -160,11 +158,10 @@
             this.dataListView1.DataSource = null;
             this.dataListView1.Location = new System.Drawing.Point(9, 97);
             this.dataListView1.Name = "dataListView1";
-            this.dataListView1.Size = new System.Drawing.Size(1134, 412);
+            this.dataListView1.Size = new System.Drawing.Size(1134, 396);
             this.dataListView1.TabIndex = 2;
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
-            this.dataListView1.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -689,22 +686,6 @@
             this.richTextBox_UCCaseTCManage_Description.TabIndex = 18;
             this.richTextBox_UCCaseTCManage_Description.Text = "";
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(69, 566);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1226, 37);
-            this.panel2.TabIndex = 2;
-            // 
             // imageListCases
             // 
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
@@ -717,10 +698,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.TabControl_UCCases);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Name = "UserControlCases";
-            this.Size = new System.Drawing.Size(1226, 603);
+            this.Size = new System.Drawing.Size(1157, 566);
             this.TabControl_UCCases.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.PerformLayout();
@@ -741,8 +720,6 @@
         private System.Windows.Forms.TabControl TabControl_UCCases;
         private System.Windows.Forms.TabPage TC_UCCaseTC_FindCase;
         private System.Windows.Forms.TabPage TC_UCCaseTC_EditCase;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage TC_UCCaseTC_CreateCase;
         private System.Windows.Forms.ImageList imageListCases;
         private System.Windows.Forms.Button button_UCCaseTCFind_CreateCase;
