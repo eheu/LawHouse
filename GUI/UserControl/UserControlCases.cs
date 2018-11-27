@@ -20,31 +20,48 @@ namespace GUI
         {
             gui = guiForm;
             InitializeComponent();
-
             //vælg klient
+            SetComboBowClint();
+            //vælg advokat
+            SetComboBoxLawyer();
+            //vælg ydelse
+            SetComboboxService();
+            //object list view
+            SetObjectListViewCases();
+
+        }
+
+        private void SetComboBowClint()
+        {
             List<Client> clientlist = gui.ClientRepository.GetAll();
             comboBox_UCCaseTCCreate_ChooseClient.DataSource = clientlist;
             comboBox_UCCaseTCCreate_ChooseClient.DisplayMember = "FullName";
             comboBox_UCCaseTCCreate_ChooseClient.ValueMember = "ID";
             comboBox_UCCaseTCCreate_ChooseClient.SelectedIndex = -1;
+            comboBox_UCCaseTCCreate_ChooseClient.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_UCCaseTCCreate_ChooseClient.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
 
-            //vælg advokat
+        private void SetComboBoxLawyer()
+        {
             List<Employee> lawyerlist = gui.EmployeeRepository.GetAllLawyers();
             comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = lawyerlist;
             comboBox_UCCaseTCCreate_ChooseLawyer.DisplayMember = "FullName";
             comboBox_UCCaseTCCreate_ChooseLawyer.ValueMember = "ID";
             comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
+            comboBox_UCCaseTCCreate_ChooseLawyer.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_UCCaseTCCreate_ChooseLawyer.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
 
-            //vælg ydelse
+        private void SetComboboxService()
+        {
             List<Service> servicelist = gui.ServiceRepository.GetAll();
             comboBox_UCCaseTCCreate_ChooseService.DataSource = servicelist;
             comboBox_UCCaseTCCreate_ChooseService.DisplayMember = "Name";
             comboBox_UCCaseTCCreate_ChooseService.ValueMember = "ID";
             comboBox_UCCaseTCCreate_ChooseService.SelectedIndex = -1;
-
-            //object list view
-            SetObjectListViewCases();
-
+            comboBox_UCCaseTCCreate_ChooseService.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_UCCaseTCCreate_ChooseService.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void SetObjectListViewCases()
