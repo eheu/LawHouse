@@ -35,6 +35,9 @@
             this.objectListView_UCClientTCFind_FindClient = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCClientTCFind_CreateClient = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TC_UCEmployeeTC_EditClient = new System.Windows.Forms.TabPage();
@@ -65,9 +68,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button_UCClientTCCreate_FindClient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.button1 = new System.Windows.Forms.Button();
             this.TabControl_UCClient.SuspendLayout();
             this.TC_UCEmployeeTC_FindClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCFind_FindClient)).BeginInit();
@@ -158,6 +159,24 @@
             this.olvColumn2.Text = "Efternavn";
             this.olvColumn2.Width = 92;
             // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "Phone";
+            this.olvColumn3.Text = "Telefon";
+            this.olvColumn3.Width = 98;
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "Address";
+            this.olvColumn4.Text = "Adresse";
+            this.olvColumn4.Width = 179;
+            // 
+            // olvColumn5
+            // 
+            this.olvColumn5.AspectName = "Email";
+            this.olvColumn5.Text = "Email";
+            this.olvColumn5.Width = 177;
+            // 
             // button_UCClientTCFind_CreateClient
             // 
             this.button_UCClientTCFind_CreateClient.Location = new System.Drawing.Point(6, 27);
@@ -166,6 +185,7 @@
             this.button_UCClientTCFind_CreateClient.TabIndex = 3;
             this.button_UCClientTCFind_CreateClient.Text = "Opret";
             this.button_UCClientTCFind_CreateClient.UseVisualStyleBackColor = true;
+            this.button_UCClientTCFind_CreateClient.Click += new System.EventHandler(this.button_UCClientTCFind_CreateClient_Click);
             // 
             // label2
             // 
@@ -320,6 +340,7 @@
             // 
             // TC_UCEmployeeTC_CreateClient
             // 
+            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.button1);
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textBox5);
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textBox4);
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textBox3);
@@ -438,23 +459,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Opret klient";
             // 
-            // olvColumn3
+            // button1
             // 
-            this.olvColumn3.AspectName = "Phone";
-            this.olvColumn3.Text = "Telefon";
-            this.olvColumn3.Width = 98;
-            // 
-            // olvColumn4
-            // 
-            this.olvColumn4.AspectName = "Address";
-            this.olvColumn4.Text = "Adresse";
-            this.olvColumn4.Width = 179;
-            // 
-            // olvColumn5
-            // 
-            this.olvColumn5.AspectName = "Email";
-            this.olvColumn5.Text = "Email";
-            this.olvColumn5.Width = 177;
+            this.button1.Location = new System.Drawing.Point(995, 472);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 30);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Gem ændringer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserControlClients
             // 
@@ -520,5 +533,6 @@
         private BrightIdeasSoftware.OLVColumn olvColumn3;
         private BrightIdeasSoftware.OLVColumn olvColumn4;
         private BrightIdeasSoftware.OLVColumn olvColumn5;
+        private System.Windows.Forms.Button button1;
     }
 }

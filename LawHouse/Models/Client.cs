@@ -6,7 +6,7 @@
         {
         }
 
-        public Client(string firstName, string lastName, int phone, string address, string email)
+        public Client(string firstName, string lastName, string phone, string address, string email)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,7 +18,7 @@
         public string FullName { get => FirstName + " " + LastName; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
 

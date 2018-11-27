@@ -13,9 +13,34 @@ namespace DataAccess
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
 
-        public void Create(Client entity)
+        public void Create(Client client)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = @"INSERT INTO [Case] (firstName, lastName, phone, address, email)
+                                        VALUES(@firstName, @lastName, @phone, @address, @email);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    cmd.AddParameter("title", @client.FirstName);
+                    cmd.AddParameter("description", @client.LastName);
+                    cmd.AddParameter("status", @client.Phone);
+                    cmd.AddParameter("clientID", @client.Address);
+                    cmd.AddParameter("employeeID", @client.Email);
+                    _connection.Open();
+                    var ID = (int)cmd.ExecuteScalar();
+                    @client.ID = ID;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+            }
         }
 
         public void Delete(int ID)
@@ -63,7 +88,7 @@ namespace DataAccess
             client.ID = (int)reader[0];
             client.FirstName = (string)reader[1];
             client.LastName = (string)reader[2];
-            client.Phone = (int)reader[3];
+            client.Phone = (string)reader[3];
             client.Address = (string)reader[4];
             client.Email = reader[5] == DBNull.Value ? "" : (string)reader[5];
         }

@@ -18,7 +18,7 @@ namespace GUI
         {
             gui = guiForm;
             InitializeComponent();
-
+            //Load of clients into the objectlistview
             SetObjectListViewClients();
         }
 
@@ -26,10 +26,21 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
+        private void button_UCClientTCFind_CreateClient_Click(object sender, EventArgs e)
+        {
+            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_CreateClient;
+        }
         private void SetObjectListViewClients()
         {
             List<Client> clientlist = gui.ClientRepository.GetAll();
             objectListView_UCClientTCFind_FindClient.SetObjects(clientlist);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Client NewClient = new Client();
+            NewClient.FirstName = textBox1.Text;
+            gui.ClientRepository.Create(NewClient);
         }
     }
 }
