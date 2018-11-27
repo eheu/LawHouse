@@ -21,5 +21,11 @@ namespace BusinessLogic.Interfaces
         ///     Load all cases with a relation to the lawyer.
         /// </summary>
         List<Case> GetCasesFromLawyer(int lawyerID);
+
+        /// <summary>
+        ///     Add services to a case.
+        /// </summary>
+        void AddServiceToCase(Service service, Case @case);
+
     }
 }

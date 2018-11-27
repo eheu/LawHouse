@@ -161,5 +161,31 @@ namespace DataAccess
                 return items;
             }
         }
+
+        public void AddServiceToCase(Service service, Case @case)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"INSERT INTO CaseService (caseID, serviceID, hours, kilometres, estimatedHours)
+                                            VALUES(@caseID, @serviceID, 0, 0, 0)";
+                    command.AddParameter("caseID", @case.ID);
+                    command.AddParameter("serviceID", service.ID);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+
+        }
+
     }
 }

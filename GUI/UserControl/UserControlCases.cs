@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class UserControlCases : UserControl
     {
+
         GUIForm gui;
         public UserControlCases(GUIForm guiForm)
         {
@@ -28,7 +29,10 @@ namespace GUI
             SetComboboxService();
             //object list view
             SetObjectListViewCases();
-
+            // liste af valgte ydelser, opret sag
+            List<Service> servicelist = new List<Service>();
+            listBox_UCCaseTCCreate_Service.DisplayMember = "Name";
+            listBox_UCCaseTCCreate_Service.ValueMember = "ID";
         }
 
         private void SetComboBowClint()
@@ -115,8 +119,14 @@ namespace GUI
             @case.ClientID = (int)comboBox_UCCaseTCCreate_ChooseClient.SelectedValue;
             @case.EmployeeID = (int)comboBox_UCCaseTCCreate_ChooseLawyer.SelectedValue;
             gui.CaseRepository.Create(@case);
-            MessageBox.Show("virkede");
             SetObjectListViewCases();
+
+            foreach(Service service in listBox_UCCaseTCCreate_Service.Items)
+            {
+                gui.CaseRepository.AddServiceToCase(service, @case);
+            }
+
+            MessageBox.Show("virkede");
         }
 
         private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
@@ -125,6 +135,13 @@ namespace GUI
             label_UCCaseTCManage_CaseName.Text = @case.Title;
             richTextBox_UCCaseTCManage_Description.Text = @case.Description;
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            
+        }
+
+        private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
+        {
+            if (!listBox_UCCaseTCCreate_Service.Items.Contains((Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem))
+                listBox_UCCaseTCCreate_Service.Items.Add((Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem);
         }
     }
 }
