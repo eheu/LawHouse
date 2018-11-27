@@ -42,6 +42,7 @@ namespace DataAccess
         {
             throw new NotImplementedException();
         }
+
         private static void Map(SqlDataReader reader, Service service)
         {
             service.ID = (int)reader[0];
@@ -63,5 +64,30 @@ namespace DataAccess
                 return services;
             }
         }
+
+        public List<Service> GetServicesOnCase(Case @case)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT *
+                                            FROM [Case]
+                                            JOIN CaseService ON [Case]";
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
     }
 }

@@ -6,7 +6,7 @@ namespace BusinessLogic
     /// <summary>
     ///     Generic repository interface.
     /// </summary>
-    public interface IRepository<T> where T : Entity
+    public interface IRepository<T> where T : BaseEntity
     {
         /// <summary>
         ///     Create a new entity.

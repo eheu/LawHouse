@@ -134,6 +134,7 @@ namespace GUI
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
             label_UCCaseTCManage_CaseName.Text = @case.Title;
             richTextBox_UCCaseTCManage_Description.Text = @case.Description;
+            //her skal indlæses sager
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
             
         }

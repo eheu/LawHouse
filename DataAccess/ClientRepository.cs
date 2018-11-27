@@ -63,7 +63,7 @@ namespace DataAccess
             client.ID = (int)reader[0];
             client.FirstName = (string)reader[1];
             client.LastName = (string)reader[2];
-            client.Phone = (int)reader[3];
+            client.Phone = (string)reader[3];
             client.Address = (string)reader[4];
             client.Email = reader[5] == DBNull.Value ? "" : (string)reader[5];
         }
