@@ -32,10 +32,24 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                _connection.Open();
-                command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
-                                        FROM Client";
-                return MapCollection(command);
+                try
+                {
+                     _connection.Open();
+                    command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
+                                            FROM Client";
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+               
+                finally
+                {
+                    _connection.Close();
+                }
+
             }
         }
 

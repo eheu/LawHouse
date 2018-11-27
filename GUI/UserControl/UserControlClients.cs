@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic.Models;
 
 namespace GUI
 {
@@ -17,11 +18,18 @@ namespace GUI
         {
             gui = guiForm;
             InitializeComponent();
+
+            SetObjectListViewClients();
         }
 
         private void UserControlClients_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
+        }
+        private void SetObjectListViewClients()
+        {
+            List<Client> clientlist = gui.ClientRepository.GetAll();
+            objectListView_UCClientTCFind_FindClient.SetObjects(clientlist);
         }
     }
 }
