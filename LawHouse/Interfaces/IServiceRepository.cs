@@ -8,9 +8,6 @@ namespace BusinessLogic.Interfaces
     /// </summary>
     public interface IServiceRepository : IRepository<Service>
     {
-        /// <summary>
-        ///     Get all services from a case
-        /// </summary>
-        List<Service> GetServicesOnCase(Case @case);
+        
     }
 }

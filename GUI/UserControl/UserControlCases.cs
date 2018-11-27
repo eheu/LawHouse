@@ -123,7 +123,7 @@ namespace GUI
 
             foreach(Service service in listBox_UCCaseTCCreate_Service.Items)
             {
-                gui.CaseRepository.AddServiceToCase(service, @case);
+                gui.CaseServiceRepository.AddServiceToCase(service, @case);
             }
 
             MessageBox.Show("virkede");
