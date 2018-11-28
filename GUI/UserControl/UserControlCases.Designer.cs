@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.TabControl_UCCases = new System.Windows.Forms.TabControl();
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
+            this.objectListView_UCCaseTCFind_FindCase = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
-            this.dataListView1 = new BrightIdeasSoftware.DataListView();
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCCaseTCFind_FindCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_EditCase = new System.Windows.Forms.TabPage();
@@ -61,12 +60,11 @@
             this.button_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Button();
             this.button_UCCaseTCCreate_AddService = new System.Windows.Forms.Button();
             this.label_UCCaseTCCreate_ServiceView = new System.Windows.Forms.Label();
-            this.listBox_UCCaseTCCreate_ServiceView = new System.Windows.Forms.ListBox();
             this.richTextBox_UCCaseTCCreate_Description = new System.Windows.Forms.RichTextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox_UCCaseTCCreate_ChooseLawyer = new System.Windows.Forms.ComboBox();
+            this.comboBox_UCCaseTCCreate_ChooseService = new System.Windows.Forms.ComboBox();
+            this.comboBox_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.ComboBox();
+            this.textBox_UCCaseTCCreate_Title = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCCreate_ChooseService = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_ChooseLawyer = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.Label();
@@ -83,12 +81,13 @@
             this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
             this.button_UCCaseTCManage_EditCase = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_FindCase = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_UCCaseTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
+            this.listBox_UCCaseTCCreate_Service = new System.Windows.Forms.ListBox();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
             this.TC_UCCaseTC_EditCase.SuspendLayout();
             this.TC_UCCaseTC_CreateCase.SuspendLayout();
             this.TC_UCCaseTC_ManageCase.SuspendLayout();
@@ -117,9 +116,9 @@
             // TC_UCCaseTC_FindCase
             // 
             this.TC_UCCaseTC_FindCase.BackColor = System.Drawing.Color.White;
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.objectListView_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.dataListView1);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
             this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 54);
@@ -129,6 +128,27 @@
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
             this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
+            // 
+            // objectListView_UCCaseTCFind_FindCase
+            // 
+            this.objectListView_UCCaseTCFind_FindCase.AllColumns.Add(this.olvColumnName);
+            this.objectListView_UCCaseTCFind_FindCase.CellEditUseWholeCell = false;
+            this.objectListView_UCCaseTCFind_FindCase.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnName});
+            this.objectListView_UCCaseTCFind_FindCase.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCCaseTCFind_FindCase.Location = new System.Drawing.Point(9, 97);
+            this.objectListView_UCCaseTCFind_FindCase.Name = "objectListView_UCCaseTCFind_FindCase";
+            this.objectListView_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(1134, 405);
+            this.objectListView_UCCaseTCFind_FindCase.TabIndex = 12;
+            this.objectListView_UCCaseTCFind_FindCase.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCCaseTCFind_FindCase.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
+            // 
+            // olvColumnName
+            // 
+            this.olvColumnName.AspectName = "Title";
+            this.olvColumnName.Groupable = false;
+            this.olvColumnName.Text = "Sags titel";
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -145,33 +165,6 @@
             this.label_UCCaseTCFind_Search.Size = new System.Drawing.Size(36, 18);
             this.label_UCCaseTCFind_Search.TabIndex = 4;
             this.label_UCCaseTCFind_Search.Text = "søg";
-            // 
-            // dataListView1
-            // 
-            this.dataListView1.AllColumns.Add(this.olvColumn1);
-            this.dataListView1.AllColumns.Add(this.olvColumn2);
-            this.dataListView1.CellEditUseWholeCell = false;
-            this.dataListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.olvColumn2});
-            this.dataListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataListView1.DataSource = null;
-            this.dataListView1.Location = new System.Drawing.Point(9, 97);
-            this.dataListView1.Name = "dataListView1";
-            this.dataListView1.Size = new System.Drawing.Size(1134, 396);
-            this.dataListView1.TabIndex = 2;
-            this.dataListView1.UseCompatibleStateImageBehavior = false;
-            this.dataListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // olvColumn1
-            // 
-            this.olvColumn1.Text = "ID";
-            this.olvColumn1.Width = 39;
-            // 
-            // olvColumn2
-            // 
-            this.olvColumn2.Text = "Advokat";
-            this.olvColumn2.Width = 77;
             // 
             // label_UCCaseTCFind_FindCase
             // 
@@ -373,17 +366,17 @@
             // 
             // TC_UCCaseTC_CreateCase
             // 
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox_UCCaseTCCreate_Service);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_All);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_Qualified);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_CreateCase);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_AddService);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ServiceView);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox_UCCaseTCCreate_ServiceView);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.richTextBox_UCCaseTCCreate_Description);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox3);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox2);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox1);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.textBox1);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseLawyer);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseService);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.comboBox_UCCaseTCCreate_ChooseClient);
+            this.TC_UCCaseTC_CreateCase.Controls.Add(this.textBox_UCCaseTCCreate_Title);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseService);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseLawyer);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseClient);
@@ -439,6 +432,7 @@
             this.button_UCCaseTCCreate_AddService.TabIndex = 20;
             this.button_UCCaseTCCreate_AddService.Text = "Tilføj";
             this.button_UCCaseTCCreate_AddService.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCCreate_AddService.Click += new System.EventHandler(this.button_UCCaseTCCreate_AddService_Click);
             // 
             // label_UCCaseTCCreate_ServiceView
             // 
@@ -449,19 +443,6 @@
             this.label_UCCaseTCCreate_ServiceView.TabIndex = 19;
             this.label_UCCaseTCCreate_ServiceView.Text = "Ydelsesoversigt";
             // 
-            // listBox_UCCaseTCCreate_ServiceView
-            // 
-            this.listBox_UCCaseTCCreate_ServiceView.FormattingEnabled = true;
-            this.listBox_UCCaseTCCreate_ServiceView.ItemHeight = 18;
-            this.listBox_UCCaseTCCreate_ServiceView.Items.AddRange(new object[] {
-            "Voldtægt",
-            "Skilsmisse",
-            "Motorsavsmassakre "});
-            this.listBox_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(499, 27);
-            this.listBox_UCCaseTCCreate_ServiceView.Name = "listBox_UCCaseTCCreate_ServiceView";
-            this.listBox_UCCaseTCCreate_ServiceView.Size = new System.Drawing.Size(170, 454);
-            this.listBox_UCCaseTCCreate_ServiceView.TabIndex = 18;
-            // 
             // richTextBox_UCCaseTCCreate_Description
             // 
             this.richTextBox_UCCaseTCCreate_Description.Location = new System.Drawing.Point(703, 27);
@@ -470,36 +451,36 @@
             this.richTextBox_UCCaseTCCreate_Description.TabIndex = 17;
             this.richTextBox_UCCaseTCCreate_Description.Text = "";
             // 
-            // comboBox3
+            // comboBox_UCCaseTCCreate_ChooseLawyer
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(205, 337);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 26);
-            this.comboBox3.TabIndex = 15;
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Location = new System.Drawing.Point(205, 337);
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Name = "comboBox_UCCaseTCCreate_ChooseLawyer";
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.TabIndex = 15;
             // 
-            // comboBox2
+            // comboBox_UCCaseTCCreate_ChooseService
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(205, 227);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 14;
+            this.comboBox_UCCaseTCCreate_ChooseService.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseService.Location = new System.Drawing.Point(205, 227);
+            this.comboBox_UCCaseTCCreate_ChooseService.Name = "comboBox_UCCaseTCCreate_ChooseService";
+            this.comboBox_UCCaseTCCreate_ChooseService.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseService.TabIndex = 14;
             // 
-            // comboBox1
+            // comboBox_UCCaseTCCreate_ChooseClient
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 140);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox_UCCaseTCCreate_ChooseClient.FormattingEnabled = true;
+            this.comboBox_UCCaseTCCreate_ChooseClient.Location = new System.Drawing.Point(205, 140);
+            this.comboBox_UCCaseTCCreate_ChooseClient.Name = "comboBox_UCCaseTCCreate_ChooseClient";
+            this.comboBox_UCCaseTCCreate_ChooseClient.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCCaseTCCreate_ChooseClient.TabIndex = 13;
             // 
-            // textBox1
+            // textBox_UCCaseTCCreate_Title
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 24);
-            this.textBox1.TabIndex = 9;
+            this.textBox_UCCaseTCCreate_Title.Location = new System.Drawing.Point(205, 94);
+            this.textBox_UCCaseTCCreate_Title.Name = "textBox_UCCaseTCCreate_Title";
+            this.textBox_UCCaseTCCreate_Title.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCCaseTCCreate_Title.TabIndex = 9;
             // 
             // label_UCCaseTCCreate_ChooseService
             // 
@@ -575,7 +556,7 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_CaseName);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_EditCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label6);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
@@ -669,14 +650,14 @@
             this.button_UCCaseTCManage_FindCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCManage_FindCase.Click += new System.EventHandler(this.button_UCCaseTCManage_FindCase_Click);
             // 
-            // label6
+            // label_UCCaseTCManage_Description
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(691, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 18);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Beskrivelse";
+            this.label_UCCaseTCManage_Description.AutoSize = true;
+            this.label_UCCaseTCManage_Description.Location = new System.Drawing.Point(691, 8);
+            this.label_UCCaseTCManage_Description.Name = "label_UCCaseTCManage_Description";
+            this.label_UCCaseTCManage_Description.Size = new System.Drawing.Size(95, 18);
+            this.label_UCCaseTCManage_Description.TabIndex = 19;
+            this.label_UCCaseTCManage_Description.Text = "Beskrivelse";
             // 
             // richTextBox_UCCaseTCManage_Description
             // 
@@ -692,6 +673,15 @@
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // listBox_UCCaseTCCreate_Service
+            // 
+            this.listBox_UCCaseTCCreate_Service.FormattingEnabled = true;
+            this.listBox_UCCaseTCCreate_Service.ItemHeight = 18;
+            this.listBox_UCCaseTCCreate_Service.Location = new System.Drawing.Point(477, 30);
+            this.listBox_UCCaseTCCreate_Service.Name = "listBox_UCCaseTCCreate_Service";
+            this.listBox_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 454);
+            this.listBox_UCCaseTCCreate_Service.TabIndex = 24;
+            // 
             // UserControlCases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,7 +693,7 @@
             this.TabControl_UCCases.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.ResumeLayout(false);
             this.TC_UCCaseTC_FindCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).EndInit();
             this.TC_UCCaseTC_EditCase.ResumeLayout(false);
             this.TC_UCCaseTC_EditCase.PerformLayout();
             this.TC_UCCaseTC_CreateCase.ResumeLayout(false);
@@ -728,18 +718,15 @@
         private System.Windows.Forms.Label label_UCCaseTCFind_FindCase;
         private System.Windows.Forms.Label label_UCCaseTCEdit_EditCase;
         private System.Windows.Forms.Label label_UCCaseTCCreate_CreateCase;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseLawyer;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseService;
+        private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseClient;
+        private System.Windows.Forms.TextBox textBox_UCCaseTCCreate_Title;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseService;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseLawyer;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ChooseClient;
         private System.Windows.Forms.Label label_UCCaseTCCreate_Description;
         private System.Windows.Forms.Label label_UCCaseTCCreate_CaseTitel;
-        private BrightIdeasSoftware.DataListView dataListView1;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
-        private BrightIdeasSoftware.OLVColumn olvColumn2;
         private System.Windows.Forms.Button button_UCCaseTCEdit_ManageCase;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeLawyer;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCEdit_ChangeClient;
@@ -749,10 +736,9 @@
         private System.Windows.Forms.Label label_UCCaseTCEdit_ChangeName;
         private System.Windows.Forms.Button button_UCCaseTCCreate_AddService;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ServiceView;
-        private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_ServiceView;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCCreate_Description;
         private System.Windows.Forms.TabPage TC_UCCaseTC_ManageCase;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_UCCaseTCManage_Description;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCManage_Description;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
         private System.Windows.Forms.Label label_UCCaseTCFind_Search;
@@ -774,5 +760,8 @@
         private System.Windows.Forms.Button button_UCCaseTCManage_EditCase;
         private System.Windows.Forms.Button button_UCCaseTCManage_FindCase;
         private System.Windows.Forms.Label label_UCCaseTCEdit_ServiceView;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCCaseTCFind_FindCase;
+        private BrightIdeasSoftware.OLVColumn olvColumnName;
+        private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_Service;
     }
 }

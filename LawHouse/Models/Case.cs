@@ -1,17 +1,13 @@
-﻿    using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace BusinessLogic
+namespace BusinessLogic.Models
 {
     public class Case : Entity
     {
         public Case()
         {
-
         }
+
         public Case(string title, string description, bool status, DateTime startDate, DateTime endDate, int clientID, int employeeID)
         {
             Title = title;

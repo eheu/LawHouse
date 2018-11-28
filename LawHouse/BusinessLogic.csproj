@@ -69,14 +69,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Case\Case.cs" />
-    <Compile Include="Entity.cs" />
+    <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IServiceRepository.cs" />
+    <Compile Include="Interfaces\ISpecialityRepository.cs" />
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Interfaces\IClientRepository.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Speciality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Case\ICaseRepository.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Interfaces\ICaseRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

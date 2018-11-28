@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
+using BusinessLogic.Interfaces;
 
 namespace GUI
 {
     public partial class GUIForm : Form
     {
         public ICaseRepository CaseRepository { get; set; }
+        public IClientRepository ClientRepository { get; set; }
+        public IEmployeeRepository EmployeeRepository { get; set; }
+        public IServiceRepository ServiceRepository { get; set; }
         /// <summary>
         /// Refererer til user controls
         /// </summary>
@@ -21,9 +18,12 @@ namespace GUI
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlHelp userControlHelp;
-        public GUIForm(ICaseRepository caseRepository)
+        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository)
         {
             CaseRepository = caseRepository;
+            ClientRepository = clientRepository;
+            EmployeeRepository = employeeRepository;
+            ServiceRepository = serviceRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
