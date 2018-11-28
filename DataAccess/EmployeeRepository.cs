@@ -44,6 +44,10 @@ namespace DataAccess
                 return MapCollection(command);
             }
         }
+        public List<Employee> GetAllQualifiedLawyers()
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(Employee entity)
         {
@@ -72,5 +76,6 @@ namespace DataAccess
                 return employees;
             }
         }
+
     }
 }

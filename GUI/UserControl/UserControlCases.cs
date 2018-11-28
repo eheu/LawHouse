@@ -35,9 +35,6 @@ namespace GUI
             listBox_UCCaseTCCreate_Service.DisplayMember = "Name";
             listBox_UCCaseTCCreate_Service.ValueMember = "ID";
             
-
-
-
         }
 
         private void SetComboBowClint()

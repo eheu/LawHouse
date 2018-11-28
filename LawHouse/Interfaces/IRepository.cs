@@ -32,5 +32,7 @@ namespace BusinessLogic
         ///     Delete an entity.
         /// </summary>
         void Delete(int ID);
+
+
     }
 }

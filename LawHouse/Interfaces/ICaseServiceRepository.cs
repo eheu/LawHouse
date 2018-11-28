@@ -15,7 +15,6 @@ namespace BusinessLogic.Interfaces
         /// </summary>
         List<CaseService> GetServicesOnCase(Case @case);
 
-
         /// <summary>
         ///     Add services to a case.
         /// </summary>
