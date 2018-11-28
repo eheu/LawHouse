@@ -35,6 +35,8 @@ namespace DataAccess
 
         public List<Employee> GetAllLawyers()
         {
+            try
+            {
             using (var command = _connection.CreateCommand())
             {
                 _connection.Open();
@@ -42,6 +44,17 @@ namespace DataAccess
                                         FROM Employee
                                         WHERE roleID = 1";
                 return MapCollection(command);
+            }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
             }
         }
         public List<Employee> GetAllQualifiedLawyers()

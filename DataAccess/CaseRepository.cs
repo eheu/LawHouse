@@ -47,20 +47,33 @@ namespace DataAccess
 
         public Case Get(int ID)
         {
-            using (var command = _connection.CreateCommand())
+            try
             {
-                command.CommandText = @"SELECT [ID], [title], [description], [status], [startDate], [endDate], [hoursSum], [estimatedHoursSum], [clientID], [employeeID]
+                using (var command = _connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT [ID], [title], [description], [status], [startDate], [endDate], [hoursSum], [estimatedHoursSum], [clientID], [employeeID]
                                         FROM [Case]
                                             WHERE ID = @ID";
-                command.AddParameter("ID", ID);
-                _connection.Open();
-                using (var reader = command.ExecuteReader())
-                {
-                    if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
-                    var entity = new Case();
-                    Map(reader, entity);
-                    return entity;
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
+                        var entity = new Case();
+                        Map(reader, entity);
+                        return entity;
+                    }
                 }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
             }
         }
 

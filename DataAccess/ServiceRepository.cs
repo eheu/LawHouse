@@ -27,21 +27,21 @@ namespace DataAccess
         {
             try
             {
-            using (var command = _connection.CreateCommand())
-            {
-                command.CommandText = @"SELECT [ID], [name], [price], [isHourly]
+                using (var command = _connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT [ID], [name], [price], [isHourly]
                                         FROM [Service]
                                             WHERE ID = @ID";
-                command.AddParameter("ID", ID);
-                _connection.Open();
-                using (var reader = command.ExecuteReader())
-                {
-                    if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
-                    var entity = new Service();
-                    Map(reader, entity);
-                    return entity;
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
+                        var entity = new Service();
+                        Map(reader, entity);
+                        return entity;
+                    }
                 }
-            }
             }
             catch (Exception)
             {
@@ -77,7 +77,7 @@ namespace DataAccess
             }
 
         }
-        
+
 
         public void Update(Service entity)
         {
