@@ -25,6 +25,7 @@ namespace GUI
             ClientRepository = clientRepository;
             EmployeeRepository = employeeRepository;
             ServiceRepository = serviceRepository;
+            CaseServiceRepository = caseServiceRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);

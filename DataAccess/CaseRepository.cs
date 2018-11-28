@@ -100,28 +100,36 @@ namespace DataAccess
 
         public void Update(Case @case)
         {
-            using (var command = _connection.CreateCommand())
+            try
             {
-                command.CommandText = @"UPDATE [Case] SET
+                using (var command = _connection.CreateCommand())
+                {
+                    command.CommandText = @"UPDATE [Case] SET
                                     title = @title, 
                                     description = @description, 
                                     status = @status, 
-                                    startDate = @startDate, 
-                                    endDate = @endDate, 
-                                    hoursSum = @hoursSum, 
-                                    estimatedHoursSum = @estimatedHoursSum, 
                                     clientID = @clientID, 
                                     employeeID = @employeeID
                                     WHERE ID = @ID";
-                command.AddParameter("ID", @case.ID);
-                command.AddParameter("title", @case.Title);
-                command.AddParameter("description", @case.Description);
-                command.AddParameter("status", @case.Status);
-                command.AddParameter("startDate", @case.StartDate);
-                command.AddParameter("endDate", @case.EndDate);
-                command.AddParameter("clientID", @case.ClientID);
-                command.AddParameter("employeeID", @case.EmployeeID);
-                command.ExecuteNonQuery();
+                    command.AddParameter("ID", @case.ID);
+                    command.AddParameter("title", @case.Title);
+                    command.AddParameter("description", @case.Description);
+                    command.AddParameter("status", @case.Status);
+                    command.AddParameter("clientID", @case.ClientID);
+                    command.AddParameter("employeeID", @case.EmployeeID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
             }
         }
 
@@ -162,7 +170,7 @@ namespace DataAccess
             }
         }
 
-        
+
 
     }
 }

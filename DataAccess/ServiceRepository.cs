@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DataAccess
 {
@@ -22,21 +23,61 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Service Get(int id)
+        public Service Get(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = @"SELECT [ID], [name], [price], [isHourly]
+                                        FROM [Service]
+                                            WHERE ID = @ID";
+                command.AddParameter("ID", ID);
+                _connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    if (!reader.Read()) throw new DataException("Case with ID " + ID + " not found");
+                    var entity = new Service();
+                    Map(reader, entity);
+                    return entity;
+                }
+            }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
         public List<Service> GetAll()
         {
-            using (var command = _connection.CreateCommand())
+            try
             {
-                _connection.Open();
-                command.CommandText = @"SELECT ID, name, price, isHourly 
+                using (var command = _connection.CreateCommand())
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, name, price, isHourly 
                                         FROM Service";
-                return MapCollection(command);
+                    return MapCollection(command);
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
         }
+        
 
         public void Update(Service entity)
         {
@@ -62,30 +103,6 @@ namespace DataAccess
                     services.Add(service);
                 }
                 return services;
-            }
-        }
-
-        public List<Service> GetServicesOnCase(Case @case)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                try
-                {
-                    _connection.Open();
-                    command.CommandText = @"SELECT *
-                                            FROM [Case]
-                                            JOIN CaseService ON [Case]";
-                    return MapCollection(command);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
             }
         }
 
