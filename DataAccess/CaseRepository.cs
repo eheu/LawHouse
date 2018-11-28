@@ -89,7 +89,26 @@ namespace DataAccess
 
         public List<Case> GetCasesFromClient(int clientID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                            FROM [Case] 
+                                            WHERE ID = @clientID";
+                    command.AddParameter("clientID", @clientID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public List<Case> GetCasesFromLawyer(int lawyerID)

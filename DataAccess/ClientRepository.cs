@@ -19,14 +19,14 @@ namespace DataAccess
             {
                 try
                 {
-                    cmd.CommandText = @"INSERT INTO [Case] (firstName, lastName, phone, address, email)
+                    cmd.CommandText = @"INSERT INTO [Client] (firstName, lastName, phone, address, email)
                                         VALUES(@firstName, @lastName, @phone, @address, @email);
                                         SELECT CAST(SCOPE_IDENTITY() AS INT);";
-                    cmd.AddParameter("title", @client.FirstName);
-                    cmd.AddParameter("description", @client.LastName);
-                    cmd.AddParameter("status", @client.Phone);
-                    cmd.AddParameter("clientID", @client.Address);
-                    cmd.AddParameter("employeeID", @client.Email);
+                    cmd.AddParameter("firstName", @client.FirstName);
+                    cmd.AddParameter("lastName", @client.LastName);
+                    cmd.AddParameter("phone", @client.Phone);
+                    cmd.AddParameter("address", @client.Address);
+                    cmd.AddParameter("email", @client.Email);
                     _connection.Open();
                     var ID = (int)cmd.ExecuteScalar();
                     @client.ID = ID;

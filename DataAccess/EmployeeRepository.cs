@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace DataAccess
 {
@@ -23,9 +23,44 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Employee Get(int id)
+        public Employee Get(int ID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                _connection.Close();
+
+                try
+                {
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
+                                        FROM [Employee]
+                                        WHERE ID = @ID";
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            throw new DataException("Employee with ID " + ID + " not found");
+
+                        var entity = new Employee();
+                        Map(reader, entity);
+
+                        _connection.Close();
+
+                        return entity;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw; 
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+
+            }
         }
 
         public List<Employee> GetAll()
