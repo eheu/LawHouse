@@ -69,7 +69,6 @@ namespace GUI
         }
 
         private void objectListView_UCClientTCFind_FindClient_MouseDoubleClick(object sender, EventArgs e)
-
         {
             // user clicked an item of objectListView control
             if (objectListView_UCClientTCFind_FindClient.SelectedItems.Count == 1)
@@ -89,18 +88,21 @@ namespace GUI
                     List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(client.ID);
                     dataListView_UCClientTCEdit.SetObjects(Caselist);
 
-                    olvColumn_UCClient_TCEdit_cases_name.AspectGetter = delegate (object obj)
+                    olvColumn_UCClient_TCEdit_laywer_name.AspectGetter = delegate (object obj)
                     {
                         Case clientCase = (Case)obj;
                         Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
                         return caseEmployee.FullName;
                     };
-
                 }
                 catch (Exception)
                 {
 
                     throw;
+                }
+                finally
+                {
+
                 }
 
             }
