@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -22,6 +23,16 @@ namespace GUI
         private void UserControlHelp_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            process.StartInfo = startInfo;
+            startInfo.Arguments = "/A \"page=2\"";
+            startInfo.FileName = @"C:\Users\Stig\Desktop\PDFTest.pdf";
+            process.Start();
         }
     }
 }
