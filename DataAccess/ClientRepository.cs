@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,34 @@ namespace DataAccess
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
 
-        public void Create(Client entity)
+        public void Create(Client client)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = @"INSERT INTO [Client] (firstName, lastName, phone, address, email)
+                                        VALUES(@firstName, @lastName, @phone, @address, @email);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    cmd.AddParameter("firstName", @client.FirstName);
+                    cmd.AddParameter("lastName", @client.LastName);
+                    cmd.AddParameter("phone", @client.Phone);
+                    cmd.AddParameter("address", @client.Address);
+                    cmd.AddParameter("email", @client.Email);
+                    _connection.Open();
+                    var ID = (int)cmd.ExecuteScalar();
+                    @client.ID = ID;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+            }
         }
 
         public void Delete(int ID)
@@ -23,9 +49,40 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Client Get(int id)
+        public Client Get(int ID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
+                                            FROM Client
+                                        WHERE ID = @ID";
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            throw new DataException("Employee with ID " + ID + " not found");
+
+                        var entity = new Client();
+                        Map(reader, entity);
+
+                        return entity;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+
+            }
         }
 
         public List<Client> GetAll()

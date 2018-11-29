@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic.Models;
 
 namespace GUI
 {
@@ -17,11 +18,13 @@ namespace GUI
         {
             gui = guiForm;
             InitializeComponent();
+            //Load of clients into the objectlistview
+            SetObjectListViewEmployee();
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
         {
-            //gui.toggleMenuPanel();
+            gui.toggleMenuPanel();
         }
 
         private void button_UCEmployeeTCFind_CreateEmployee_Click(object sender, EventArgs e)
@@ -33,5 +36,24 @@ namespace GUI
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
         }
+
+        private void button_UCEmployeeTCEdit_Back_FindEmployee_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
+        private void SetObjectListViewEmployee()
+        {
+            List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
+            objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
+        }
+
+        private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
+        {
+            //if (!dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Contains((Service)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem))
+            //    dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add((Service)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
+        }
+
+
     }
 }
