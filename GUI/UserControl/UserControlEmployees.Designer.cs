@@ -35,15 +35,16 @@
             this.button_UCEmployeeTCFind_CreateEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.objectListView_UCEmployeeTCFind_FindEmployee = new BrightIdeasSoftware.DataListView();
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnEmployeeFindID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnEmployeeFindFirstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnEmployeeFindLastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TC_UCEmployeeTC_EditEmployee = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button_UCEmployeeTCEdit_Back_FindEmployee = new System.Windows.Forms.Button();
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee = new System.Windows.Forms.Button();
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality = new System.Windows.Forms.Button();
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataListView2 = new BrightIdeasSoftware.DataListView();
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality = new BrightIdeasSoftware.DataListView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -73,12 +74,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button_UCEmployeeTCEdit_EditEmployee = new System.Windows.Forms.Button();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
             this.TC_UCEmployeeTC_EditEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality)).BeginInit();
             this.TC_UCEmployeeTC_CreateEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView3)).BeginInit();
             this.SuspendLayout();
@@ -152,46 +152,52 @@
             // 
             // objectListView_UCEmployeeTCFind_FindEmployee
             // 
-            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn1);
-            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn2);
-            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn3);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindID);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindFirstName);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindLastName);
             this.objectListView_UCEmployeeTCFind_FindEmployee.CellEditUseWholeCell = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.olvColumn2,
-            this.olvColumn3});
+            this.olvColumnEmployeeFindID,
+            this.olvColumnEmployeeFindFirstName,
+            this.olvColumnEmployeeFindLastName});
             this.objectListView_UCEmployeeTCFind_FindEmployee.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCEmployeeTCFind_FindEmployee.DataSource = null;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.FullRowSelect = true;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.GridLines = true;
             this.objectListView_UCEmployeeTCFind_FindEmployee.Location = new System.Drawing.Point(9, 97);
             this.objectListView_UCEmployeeTCFind_FindEmployee.Name = "objectListView_UCEmployeeTCFind_FindEmployee";
+            this.objectListView_UCEmployeeTCFind_FindEmployee.ShowGroups = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.Size = new System.Drawing.Size(1134, 396);
             this.objectListView_UCEmployeeTCFind_FindEmployee.TabIndex = 0;
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.Details;
             this.objectListView_UCEmployeeTCFind_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
-            // olvColumn1
+            // olvColumnEmployeeFindID
             // 
-            this.olvColumn1.Text = "Id";
+            this.olvColumnEmployeeFindID.AspectName = "ID";
+            this.olvColumnEmployeeFindID.Text = "Id";
             // 
-            // olvColumn2
+            // olvColumnEmployeeFindFirstName
             // 
-            this.olvColumn2.Text = "Fornavn";
-            this.olvColumn2.Width = 76;
+            this.olvColumnEmployeeFindFirstName.AspectName = "FirstName";
+            this.olvColumnEmployeeFindFirstName.Text = "Fornavn";
+            this.olvColumnEmployeeFindFirstName.Width = 76;
             // 
-            // olvColumn3
+            // olvColumnEmployeeFindLastName
             // 
-            this.olvColumn3.Text = "Efternavn";
-            this.olvColumn3.Width = 89;
+            this.olvColumnEmployeeFindLastName.AspectName = "LastName";
+            this.olvColumnEmployeeFindLastName.Text = "Efternavn";
+            this.olvColumnEmployeeFindLastName.Width = 89;
             // 
             // TC_UCEmployeeTC_EditEmployee
             // 
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button2);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button1);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.comboBox2);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_Back_FindEmployee);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label8);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.dataListView2);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.comboBox1);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox4);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox3);
@@ -211,31 +217,41 @@
             this.TC_UCEmployeeTC_EditEmployee.Text = "Rediger";
             this.TC_UCEmployeeTC_EditEmployee.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_UCEmployeeTCEdit_Back_FindEmployee
             // 
-            this.button2.Location = new System.Drawing.Point(995, 472);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 30);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Gem ændringer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.Location = new System.Drawing.Point(6, 27);
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.Name = "button_UCEmployeeTCEdit_Back_FindEmployee";
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.Size = new System.Drawing.Size(102, 30);
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.TabIndex = 16;
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.Text = "Tilbage";
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCEdit_Back_FindEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCEdit_Back_FindEmployee_Click);
             // 
-            // button1
+            // button_UCEmployeeTCEdit_EditEmployee_SaveEmployee
             // 
-            this.button1.Location = new System.Drawing.Point(1031, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Tilføj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Location = new System.Drawing.Point(995, 472);
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Name = "button_UCEmployeeTCEdit_EditEmployee_SaveEmployee";
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Size = new System.Drawing.Size(138, 30);
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.TabIndex = 15;
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Text = "Gem ændringer";
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // button_UCEmployeeTCEdit_EditEmployee_AddSpeciality
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(904, 15);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 13;
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.Location = new System.Drawing.Point(1031, 12);
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.Name = "button_UCEmployeeTCEdit_EditEmployee_AddSpeciality";
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.Size = new System.Drawing.Size(102, 30);
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.TabIndex = 14;
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.Text = "Tilføj";
+            this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_UCEmployeeTCEdit_EditEmployee_Speciality
+            // 
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.FormattingEnabled = true;
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Location = new System.Drawing.Point(904, 15);
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Name = "comboBox_UCEmployeeTCEdit_EditEmployee_Speciality";
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.TabIndex = 13;
             // 
             // label8
             // 
@@ -246,16 +262,16 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Tilføj efteruddannelse:";
             // 
-            // dataListView2
+            // dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality
             // 
-            this.dataListView2.CellEditUseWholeCell = false;
-            this.dataListView2.DataSource = null;
-            this.dataListView2.Location = new System.Drawing.Point(352, 48);
-            this.dataListView2.Name = "dataListView2";
-            this.dataListView2.Size = new System.Drawing.Size(781, 351);
-            this.dataListView2.TabIndex = 11;
-            this.dataListView2.UseCompatibleStateImageBehavior = false;
-            this.dataListView2.View = System.Windows.Forms.View.Details;
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.CellEditUseWholeCell = false;
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = null;
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Location = new System.Drawing.Point(352, 48);
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Name = "dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality";
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Size = new System.Drawing.Size(781, 351);
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.TabIndex = 11;
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.UseCompatibleStateImageBehavior = false;
+            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.View = System.Windows.Forms.View.Details;
             // 
             // comboBox1
             // 
@@ -520,16 +536,6 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
             // 
-            // button_UCEmployeeTCEdit_EditEmployee
-            // 
-            this.button_UCEmployeeTCEdit_EditEmployee.Location = new System.Drawing.Point(6, 27);
-            this.button_UCEmployeeTCEdit_EditEmployee.Name = "button_UCEmployeeTCEdit_EditEmployee";
-            this.button_UCEmployeeTCEdit_EditEmployee.Size = new System.Drawing.Size(102, 30);
-            this.button_UCEmployeeTCEdit_EditEmployee.TabIndex = 16;
-            this.button_UCEmployeeTCEdit_EditEmployee.Text = "Tilbage";
-            this.button_UCEmployeeTCEdit_EditEmployee.UseVisualStyleBackColor = true;
-            this.button_UCEmployeeTCEdit_EditEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCEdit_EditEmployee_Click);
-            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +551,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).EndInit();
             this.TC_UCEmployeeTC_EditEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_EditEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality)).EndInit();
             this.TC_UCEmployeeTC_CreateEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_CreateEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView3)).EndInit();
@@ -564,9 +570,9 @@
         private BrightIdeasSoftware.DataListView objectListView_UCEmployeeTCFind_FindEmployee;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
         private System.Windows.Forms.Label label_UCCaseTCFind_Search;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
-        private BrightIdeasSoftware.OLVColumn olvColumn2;
-        private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindID;
+        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindFirstName;
+        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindLastName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -578,11 +584,11 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private BrightIdeasSoftware.DataListView dataListView2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private BrightIdeasSoftware.DataListView dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality;
+        private System.Windows.Forms.ComboBox comboBox_UCEmployeeTCEdit_EditEmployee_Speciality;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_UCEmployeeTCEdit_EditEmployee_SaveEmployee;
+        private System.Windows.Forms.Button button_UCEmployeeTCEdit_EditEmployee_AddSpeciality;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox textbox_UCEmployeeTCCreate_Role;
         private System.Windows.Forms.TextBox textbox_UCEmployeeTCCreate_phone;
@@ -600,6 +606,6 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button_UCEmployeeTCCreate_FindEmployee;
-        private System.Windows.Forms.Button button_UCEmployeeTCEdit_EditEmployee;
+        private System.Windows.Forms.Button button_UCEmployeeTCEdit_Back_FindEmployee;
     }
 }

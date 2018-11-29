@@ -27,8 +27,6 @@ namespace DataAccess
         {
             using (var command = _connection.CreateCommand())
             {
-                _connection.Close();
-
                 try
                 {
                     command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
