@@ -53,6 +53,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ServiceRepository.cs" />
+    <Compile Include="SpecialityRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LawHouse\BusinessLogic.csproj">

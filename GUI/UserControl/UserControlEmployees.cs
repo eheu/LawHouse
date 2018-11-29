@@ -20,6 +20,10 @@ namespace GUI
             InitializeComponent();
             //Load of clients into the objectlistview
             SetObjectListViewEmployee();
+            //Load of Speciality into Combobox
+            SetComboBoxSpeciality();
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -48,12 +52,21 @@ namespace GUI
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
 
-        private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
+        private void SetComboBoxSpeciality()
         {
-            //if (!dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Contains((Service)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem))
-            //    dataListView_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add((Service)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
+            List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DataSource = SpecialityList;
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DisplayMember = "Name";
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.ValueMember = "ID";
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-
+        private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
+        {
+            if (!ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem))
+                ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
+        }
     }
 }

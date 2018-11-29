@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Models
 {
-    class Role : Entity
+    public class Role : Entity
     {
         public Role()
         {

@@ -12,6 +12,7 @@ namespace GUI
         public IEmployeeRepository EmployeeRepository { get; set; }
         public IServiceRepository ServiceRepository { get; set; }
         public ICaseServiceRepository CaseServiceRepository { get; set; }
+        public ISpecialityRepository SpecialityRepository { get; set; }
         /// <summary>
         /// Refererer til user controls
         /// </summary>
@@ -19,13 +20,14 @@ namespace GUI
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlHelp userControlHelp;
-        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository)
+        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository)
         {
             CaseRepository = caseRepository;
             ClientRepository = clientRepository;
             EmployeeRepository = employeeRepository;
             ServiceRepository = serviceRepository;
             CaseServiceRepository = caseServiceRepository;
+            SpecialityRepository = specialityRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
