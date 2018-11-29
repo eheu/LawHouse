@@ -85,6 +85,52 @@ namespace DataAccess
                 }
             }
         }
+        public Dictionary<CaseService, Service> GetServiceNamesFromCase()
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT *
+                                            FROM CaseService
+                                            JOIN Service 
+                                            ON CaseService.serviceID = Service.ID";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        Dictionary<CaseService, Service> serviceNameDictionary = new Dictionary<CaseService,Service>();
+                        while (reader.Read())
+                        {
+                            CaseService caseService = new CaseService();
+                            caseService.CaseID = (int)reader["caseID"];
+                            caseService.ServiceID = (int)reader["serviceID"];
+                            caseService.Hours = (decimal)reader["hours"];
+                            caseService.Kilometres = (decimal)reader["kilometres"];
+                            caseService.EstimatedHours = (decimal)reader["estimatedHours"];
+
+                            Service service = new Service();
+                            service.ID = (int)reader["[Service].ID"];
+                            service.Name = (string)reader["[Service].name"];
+                            service.Price = (decimal)reader["[Service].price"];
+                            service.IsHourly = (bool)reader["[Service].isHourly"];
+
+                            serviceNameDictionary.Add(caseService, service);
+                        }
+                        return serviceNameDictionary;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
         private static void Map(SqlDataReader reader, CaseService caseService)
         {
             caseService.CaseID = (int)reader[0];

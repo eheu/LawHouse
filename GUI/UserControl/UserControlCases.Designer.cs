@@ -76,6 +76,8 @@
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCCaseTCManage_Save = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_AddService = new System.Windows.Forms.Button();
             this.comboBox_UCCaseTCManage_AddService = new System.Windows.Forms.ComboBox();
@@ -86,8 +88,6 @@
             this.label_UCCaseTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
@@ -152,6 +152,7 @@
             this.olvColumnName.AspectName = "Title";
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
+            this.olvColumnName.Width = 100;
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -603,6 +604,18 @@
             this.olvColumn_UCCaseTCManage_ManageService_Name.Text = "Titel";
             this.olvColumn_UCCaseTCManage_ManageService_Name.Width = 320;
             // 
+            // olvColumn_UCCaseTCManage_ManageService_EstimatedHourses
+            // 
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.AspectName = "Hours";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Text = "EST. Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Width = 110;
+            // 
+            // olvColumn_UCCaseTCManage_ManageService_Hourses
+            // 
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.AspectName = "EstimatedHours";
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Text = "Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Width = 110;
+            // 
             // button_UCCaseTCManage_Save
             // 
             this.button_UCCaseTCManage_Save.Location = new System.Drawing.Point(995, 429);
@@ -700,18 +713,6 @@
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // olvColumn_UCCaseTCManage_ManageService_EstimatedHourses
-            // 
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.AspectName = "Hours";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Text = "EST. Timer";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Width = 110;
-            // 
-            // olvColumn_UCCaseTCManage_ManageService_Hourses
-            // 
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.AspectName = "EstimatedHours";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Text = "Timer";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Width = 110;
             // 
             // UserControlCases
             // 

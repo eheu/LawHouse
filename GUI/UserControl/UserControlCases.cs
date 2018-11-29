@@ -110,6 +110,8 @@ namespace GUI
 
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
+            richTextBox_UCCaseTCEdit_Description.Text = currentCase.Description;
+           
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
         }
 

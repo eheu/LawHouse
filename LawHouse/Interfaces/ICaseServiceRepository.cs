@@ -20,7 +20,10 @@ namespace BusinessLogic.Interfaces
         /// </summary>
         void AddServiceToCase(Service service, Case @case);
 
-
+        /// <summary>
+        ///     Collects a dictionary with paired caseservice and service information.
+        /// </summary>
+        Dictionary<CaseService, Service> GetServiceNamesFromCase();
         
 
     }
