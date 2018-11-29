@@ -46,12 +46,14 @@ namespace GUI
         {
             try
             {
-                Client NewClient = new Client();
-                NewClient.FirstName = textbox_UCClientTCCreate_firstName.Text;
-                NewClient.LastName = textbox_UCClientTCCreate_lastName.Text;
-                NewClient.Phone = textbox_UCClientTCCreate_phone.Text;
-                NewClient.Address = textbox_UCClientTCCreate_addresse.Text;
-                NewClient.Email = textbox_UCClientTCCreate_email.Text;
+                Client NewClient = new Client
+                {
+                    FirstName = textbox_UCClientTCCreate_firstName.Text,
+                    LastName = textbox_UCClientTCCreate_lastName.Text,
+                    Phone = textbox_UCClientTCCreate_phone.Text,
+                    Address = textbox_UCClientTCCreate_addresse.Text,
+                    Email = textbox_UCClientTCCreate_email.Text
+                };
                 //Send to DB.
                 gui.ClientRepository.Create(NewClient);
                 label_UCClientTCCreate_Save.Text = "Klienten er nu gemt";

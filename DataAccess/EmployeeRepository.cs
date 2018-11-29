@@ -44,8 +44,6 @@ namespace DataAccess
                         var entity = new Employee();
                         Map(reader, entity);
 
-                        _connection.Close();
-
                         return entity;
                     }
                 }
@@ -65,7 +63,27 @@ namespace DataAccess
 
         public List<Employee> GetAll()
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
+                                        FROM [Employee]";
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+
+            }
         }
 
         public List<Employee> GetAllLawyers()

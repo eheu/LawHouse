@@ -31,7 +31,7 @@ namespace GUI
             ProcessStartInfo startInfo = new ProcessStartInfo();
             process.StartInfo = startInfo;
             startInfo.Arguments = "/A \"page=2\"";
-            startInfo.FileName = @"C:\Users\Stig\Desktop\PDFTest.pdf";
+            startInfo.FileName = @"PDFTest.pdf";
             process.Start();
         }
     }

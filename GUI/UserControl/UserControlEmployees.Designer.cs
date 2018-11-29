@@ -34,7 +34,7 @@
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
             this.button_UCEmployeeTCFind_CreateEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataListView1 = new BrightIdeasSoftware.DataListView();
+            this.objectListView_UCEmployeeTCFind_FindEmployee = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -56,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TC_UCEmployeeTC_CreateEmployee = new System.Windows.Forms.TabPage();
+            this.button_UCEmployeeTCCreate_FindEmployee = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataListView3 = new BrightIdeasSoftware.DataListView();
             this.button3 = new System.Windows.Forms.Button();
@@ -72,10 +73,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button_UCEmployeeTCCreate_FindEmployee = new System.Windows.Forms.Button();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
             this.TC_UCEmployeeTC_EditEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView2)).BeginInit();
             this.TC_UCEmployeeTC_CreateEmployee.SuspendLayout();
@@ -105,7 +105,7 @@
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.button_UCEmployeeTCFind_CreateEmployee);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.label1);
-            this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.dataListView1);
+            this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.objectListView_UCEmployeeTCFind_FindEmployee);
             this.TC_UCEmployeeTC_FindEmployee.Location = new System.Drawing.Point(4, 54);
             this.TC_UCEmployeeTC_FindEmployee.Name = "TC_UCEmployeeTC_FindEmployee";
             this.TC_UCEmployeeTC_FindEmployee.Padding = new System.Windows.Forms.Padding(3);
@@ -149,25 +149,25 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Find ansat";
             // 
-            // dataListView1
+            // objectListView_UCEmployeeTCFind_FindEmployee
             // 
-            this.dataListView1.AllColumns.Add(this.olvColumn1);
-            this.dataListView1.AllColumns.Add(this.olvColumn2);
-            this.dataListView1.AllColumns.Add(this.olvColumn3);
-            this.dataListView1.CellEditUseWholeCell = false;
-            this.dataListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn1);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn2);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumn3);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.CellEditUseWholeCell = false;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.olvColumn2,
             this.olvColumn3});
-            this.dataListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataListView1.DataSource = null;
-            this.dataListView1.Location = new System.Drawing.Point(9, 97);
-            this.dataListView1.Name = "dataListView1";
-            this.dataListView1.Size = new System.Drawing.Size(1134, 396);
-            this.dataListView1.TabIndex = 0;
-            this.dataListView1.UseCompatibleStateImageBehavior = false;
-            this.dataListView1.View = System.Windows.Forms.View.Details;
-            this.dataListView1.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.DataSource = null;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.Location = new System.Drawing.Point(9, 97);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.Name = "objectListView_UCEmployeeTCFind_FindEmployee";
+            this.objectListView_UCEmployeeTCFind_FindEmployee.Size = new System.Drawing.Size(1134, 396);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.TabIndex = 0;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -372,6 +372,16 @@
             this.TC_UCEmployeeTC_CreateEmployee.Text = "Opret";
             this.TC_UCEmployeeTC_CreateEmployee.UseVisualStyleBackColor = true;
             // 
+            // button_UCEmployeeTCCreate_FindEmployee
+            // 
+            this.button_UCEmployeeTCCreate_FindEmployee.Location = new System.Drawing.Point(6, 27);
+            this.button_UCEmployeeTCCreate_FindEmployee.Name = "button_UCEmployeeTCCreate_FindEmployee";
+            this.button_UCEmployeeTCCreate_FindEmployee.Size = new System.Drawing.Size(102, 30);
+            this.button_UCEmployeeTCCreate_FindEmployee.TabIndex = 27;
+            this.button_UCEmployeeTCCreate_FindEmployee.Text = "Find";
+            this.button_UCEmployeeTCCreate_FindEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCCreate_FindEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCCreate_FindEmployee_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(995, 472);
@@ -508,16 +518,6 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
             // 
-            // button_UCEmployeeTCCreate_FindEmployee
-            // 
-            this.button_UCEmployeeTCCreate_FindEmployee.Location = new System.Drawing.Point(6, 27);
-            this.button_UCEmployeeTCCreate_FindEmployee.Name = "button_UCEmployeeTCCreate_FindEmployee";
-            this.button_UCEmployeeTCCreate_FindEmployee.Size = new System.Drawing.Size(102, 30);
-            this.button_UCEmployeeTCCreate_FindEmployee.TabIndex = 27;
-            this.button_UCEmployeeTCCreate_FindEmployee.Text = "Find";
-            this.button_UCEmployeeTCCreate_FindEmployee.UseVisualStyleBackColor = true;
-            this.button_UCEmployeeTCCreate_FindEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCCreate_FindEmployee_Click);
-            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +530,7 @@
             this.TabControl_UCEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_FindEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_FindEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).EndInit();
             this.TC_UCEmployeeTC_EditEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_EditEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView2)).EndInit();
@@ -549,7 +549,7 @@
         private System.Windows.Forms.TabPage TC_UCEmployeeTC_CreateEmployee;
         private System.Windows.Forms.Button button_UCEmployeeTCFind_CreateEmployee;
         private System.Windows.Forms.Label label1;
-        private BrightIdeasSoftware.DataListView dataListView1;
+        private BrightIdeasSoftware.DataListView objectListView_UCEmployeeTCFind_FindEmployee;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
         private System.Windows.Forms.Label label_UCCaseTCFind_Search;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
