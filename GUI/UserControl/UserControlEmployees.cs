@@ -19,7 +19,7 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
             //Load of clients into the objectlistview
-            SetObjectListViewEmployee();
+            //SetObjectListViewEmployee();
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -36,10 +36,18 @@ namespace GUI
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
         }
+
+        private void button_UCEmployeeTCEdit_EditEmployee_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
         private void SetObjectListViewEmployee()
         {
             List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
+
+
     }
 }
