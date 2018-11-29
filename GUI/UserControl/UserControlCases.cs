@@ -117,8 +117,8 @@ namespace GUI
             //labels
             
             label_UCCaseTCEdit_CurrentName.Text = currentCase.Title;
-            label_UCCaseTCEdit_CurrentClient.Text = currentCase.ClientID;
-            label_UCCaseTCEdit_CurrentLawyer.Text = currentCase.EmployeeID;
+            //label_UCCaseTCEdit_CurrentClient.Text = currentCase.ClientID;
+            //label_UCCaseTCEdit_CurrentLawyer.Text = currentCase.EmployeeID;
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
         }
