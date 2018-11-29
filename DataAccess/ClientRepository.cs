@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -48,9 +49,40 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Client Get(int id)
+        public Client Get(int ID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
+                                            FROM Client
+                                        WHERE ID = @ID";
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            throw new DataException("Employee with ID " + ID + " not found");
+
+                        var entity = new Client();
+                        Map(reader, entity);
+
+                        return entity;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+
+            }
         }
 
         public List<Client> GetAll()
