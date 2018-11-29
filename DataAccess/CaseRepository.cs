@@ -169,10 +169,22 @@ namespace DataAccess
         {
             using (var cmd = _connection.CreateCommand())
             {
-                cmd.CommandText = @"DELETE FROM [Case]
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [Case]
                                     WHERE ID = @ID";
-                cmd.AddParameter("ID", ID);
-                cmd.ExecuteNonQuery();
+                    cmd.AddParameter("ID", ID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
             }
         }
 

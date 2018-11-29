@@ -24,7 +24,11 @@ namespace BusinessLogic.Interfaces
         ///     Collects a dictionary with paired caseservice and service information.
         /// </summary>
         Dictionary<CaseService, Service> GetCaseServiceServiceDictionaryFromCase(Case @case);
-        
+
+        /// <summary>
+        ///     Deletes all services on a specific case
+        /// </summary>
+        void DeleteAllServicesOnACase(int CaseID);
 
     }
 }
