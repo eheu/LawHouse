@@ -111,7 +111,15 @@ namespace GUI
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
             richTextBox_UCCaseTCEdit_Description.Text = currentCase.Description;
-           
+            // objectlistview 
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
+            //labels
+            
+            label_UCCaseTCEdit_CurrentName.Text = currentCase.Title;
+            label_UCCaseTCEdit_CurrentClient.Text = currentCase.ClientID;
+            label_UCCaseTCEdit_CurrentLawyer.Text = currentCase.EmployeeID;
+
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
         }
 
@@ -148,19 +156,8 @@ namespace GUI
         
         private void LoadCaseservicesTObjectListView(Case @case)
         {
-            List<CaseService> caseServiceList = gui.CaseServiceRepository.GetServicesOnCase(@case);
-            foreach (CaseService caseService in caseServiceList)
-            {
-                objectListView_UCCaseTCManage_ManageService.SetObjects(caseServiceList);
-            }
-
-
-            olvColumn_UCCaseTCManage_ManageService_Name.AspectGetter = delegate (object obj)
-            {
-                CaseService caseService = (CaseService)obj;
-                Service service = gui.ServiceRepository.Get(caseService.ServiceID);
-                return service.Name;
-            };
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(@case);
+            objectListView_UCCaseTCManage_ManageService.SetObjects(caseNameDictionary);
         }
 
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
@@ -178,6 +175,13 @@ namespace GUI
         private void button_UCCaseTCManage_Save_Click(object sender, EventArgs e)
         {
             currentCase.Description = richTextBox_UCCaseTCManage_Description.Text;
+            gui.CaseRepository.Update(currentCase);
+            MessageBox.Show("Det virkede!");
+        }
+
+        private void button_UCCaseTCEdit_SaveChange_Click(object sender, EventArgs e)
+        {
+            currentCase.Description = richTextBox_UCCaseTCEdit_Description.Text;
             gui.CaseRepository.Update(currentCase);
             MessageBox.Show("Det virkede!");
         }

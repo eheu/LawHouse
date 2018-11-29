@@ -85,7 +85,7 @@ namespace DataAccess
                 }
             }
         }
-        public Dictionary<CaseService, Service> GetServiceNamesFromCase()
+        public Dictionary<CaseService, Service> GetCaseServiceServiceDictionaryFromCase(Case @case)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -94,8 +94,10 @@ namespace DataAccess
                     _connection.Open();
                     command.CommandText = @"SELECT *
                                             FROM CaseService
-                                            JOIN Service 
-                                            ON CaseService.serviceID = Service.ID";
+                                            JOIN Service
+                                            ON CaseService.serviceID = Service.ID
+                                            WHERE CaseService.caseID = @caseID";
+                    command.AddParameter("caseID", @case.ID);
                     using (var reader = command.ExecuteReader())
                     {
                         Dictionary<CaseService, Service> serviceNameDictionary = new Dictionary<CaseService,Service>();
@@ -109,10 +111,10 @@ namespace DataAccess
                             caseService.EstimatedHours = (decimal)reader["estimatedHours"];
 
                             Service service = new Service();
-                            service.ID = (int)reader["[Service].ID"];
-                            service.Name = (string)reader["[Service].name"];
-                            service.Price = (decimal)reader["[Service].price"];
-                            service.IsHourly = (bool)reader["[Service].isHourly"];
+                            service.ID = (int)reader["ID"];
+                            service.Name = (string)reader["name"];
+                            service.Price = (decimal)reader["price"];
+                            service.IsHourly = (bool)reader["isHourly"];
 
                             serviceNameDictionary.Add(caseService, service);
                         }
