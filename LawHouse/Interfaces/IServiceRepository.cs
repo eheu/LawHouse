@@ -1,4 +1,5 @@
 ﻿using BusinessLogic.Models;
+using System.Collections.Generic;
 
 namespace BusinessLogic.Interfaces
 {
@@ -7,5 +8,6 @@ namespace BusinessLogic.Interfaces
     /// </summary>
     public interface IServiceRepository : IRepository<Service>
     {
+        
     }
 }

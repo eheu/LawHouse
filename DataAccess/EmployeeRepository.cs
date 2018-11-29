@@ -88,6 +88,8 @@ namespace DataAccess
 
         public List<Employee> GetAllLawyers()
         {
+            try
+            {
             using (var command = _connection.CreateCommand())
             {
                 _connection.Open();
@@ -96,6 +98,21 @@ namespace DataAccess
                                         WHERE roleID = 1";
                 return MapCollection(command);
             }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+        public List<Employee> GetAllQualifiedLawyers()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Employee entity)
@@ -125,5 +142,6 @@ namespace DataAccess
                 return employees;
             }
         }
+
     }
 }

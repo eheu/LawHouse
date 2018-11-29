@@ -55,6 +55,7 @@
             this.label_UCCaseTCEdit_EditCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_CreateCase = new System.Windows.Forms.TabPage();
+            this.listBox_UCCaseTCCreate_Service = new System.Windows.Forms.ListBox();
             this.radioButton_UCCaseTCCreate_All = new System.Windows.Forms.RadioButton();
             this.radioButton_UCCaseTCCreate_Qualified = new System.Windows.Forms.RadioButton();
             this.button_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Button();
@@ -73,7 +74,10 @@
             this.label_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCCaseTCManage_Save = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_AddService = new System.Windows.Forms.Button();
             this.comboBox_UCCaseTCManage_AddService = new System.Windows.Forms.ComboBox();
@@ -84,14 +88,13 @@
             this.label_UCCaseTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
-            this.listBox_UCCaseTCCreate_Service = new System.Windows.Forms.ListBox();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
             this.TC_UCCaseTC_EditCase.SuspendLayout();
             this.TC_UCCaseTC_CreateCase.SuspendLayout();
             this.TC_UCCaseTC_ManageCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCManage_ManageService)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCCases
@@ -149,6 +152,7 @@
             this.olvColumnName.AspectName = "Title";
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
+            this.olvColumnName.Width = 100;
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -392,6 +396,15 @@
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.UseVisualStyleBackColor = true;
             // 
+            // listBox_UCCaseTCCreate_Service
+            // 
+            this.listBox_UCCaseTCCreate_Service.FormattingEnabled = true;
+            this.listBox_UCCaseTCCreate_Service.ItemHeight = 18;
+            this.listBox_UCCaseTCCreate_Service.Location = new System.Drawing.Point(477, 30);
+            this.listBox_UCCaseTCCreate_Service.Name = "listBox_UCCaseTCCreate_Service";
+            this.listBox_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 454);
+            this.listBox_UCCaseTCCreate_Service.TabIndex = 24;
+            // 
             // radioButton_UCCaseTCCreate_All
             // 
             this.radioButton_UCCaseTCCreate_All.AutoSize = true;
@@ -548,7 +561,7 @@
             // 
             // TC_UCCaseTC_ManageCase
             // 
-            this.TC_UCCaseTC_ManageCase.Controls.Add(this.objectListView1);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.objectListView_UCCaseTCManage_ManageService);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_Save);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_AddService);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.comboBox_UCCaseTCManage_AddService);
@@ -566,16 +579,42 @@
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.UseVisualStyleBackColor = true;
             // 
-            // objectListView1
+            // objectListView_UCCaseTCManage_ManageService
             // 
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.Location = new System.Drawing.Point(9, 125);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.Size = new System.Drawing.Size(562, 298);
-            this.objectListView1.TabIndex = 27;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Name);
+            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses);
+            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Hourses);
+            this.objectListView_UCCaseTCManage_ManageService.CellEditUseWholeCell = false;
+            this.objectListView_UCCaseTCManage_ManageService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn_UCCaseTCManage_ManageService_Name,
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses,
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses});
+            this.objectListView_UCCaseTCManage_ManageService.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCCaseTCManage_ManageService.HasCollapsibleGroups = false;
+            this.objectListView_UCCaseTCManage_ManageService.Location = new System.Drawing.Point(9, 125);
+            this.objectListView_UCCaseTCManage_ManageService.Name = "objectListView_UCCaseTCManage_ManageService";
+            this.objectListView_UCCaseTCManage_ManageService.ShowGroups = false;
+            this.objectListView_UCCaseTCManage_ManageService.Size = new System.Drawing.Size(562, 298);
+            this.objectListView_UCCaseTCManage_ManageService.TabIndex = 27;
+            this.objectListView_UCCaseTCManage_ManageService.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCCaseTCManage_ManageService.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn_UCCaseTCManage_ManageService_Name
+            // 
+            this.olvColumn_UCCaseTCManage_ManageService_Name.Text = "Titel";
+            this.olvColumn_UCCaseTCManage_ManageService_Name.Width = 320;
+            // 
+            // olvColumn_UCCaseTCManage_ManageService_EstimatedHourses
+            // 
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.AspectName = "Hours";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Text = "EST. Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Width = 110;
+            // 
+            // olvColumn_UCCaseTCManage_ManageService_Hourses
+            // 
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.AspectName = "EstimatedHours";
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Text = "Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Width = 110;
             // 
             // button_UCCaseTCManage_Save
             // 
@@ -586,6 +625,7 @@
             this.button_UCCaseTCManage_Save.Tag = "";
             this.button_UCCaseTCManage_Save.Text = "Gem";
             this.button_UCCaseTCManage_Save.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCManage_Save.Click += new System.EventHandler(this.button_UCCaseTCManage_Save_Click);
             // 
             // button_UCCaseTCManage_AddService
             // 
@@ -596,6 +636,7 @@
             this.button_UCCaseTCManage_AddService.Tag = "";
             this.button_UCCaseTCManage_AddService.Text = "Tilføj";
             this.button_UCCaseTCManage_AddService.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCManage_AddService.Click += new System.EventHandler(this.button_UCCaseTCManage_AddService_Click);
             // 
             // comboBox_UCCaseTCManage_AddService
             // 
@@ -673,15 +714,6 @@
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // listBox_UCCaseTCCreate_Service
-            // 
-            this.listBox_UCCaseTCCreate_Service.FormattingEnabled = true;
-            this.listBox_UCCaseTCCreate_Service.ItemHeight = 18;
-            this.listBox_UCCaseTCCreate_Service.Location = new System.Drawing.Point(477, 30);
-            this.listBox_UCCaseTCCreate_Service.Name = "listBox_UCCaseTCCreate_Service";
-            this.listBox_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 454);
-            this.listBox_UCCaseTCCreate_Service.TabIndex = 24;
-            // 
             // UserControlCases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,7 +732,7 @@
             this.TC_UCCaseTC_CreateCase.PerformLayout();
             this.TC_UCCaseTC_ManageCase.ResumeLayout(false);
             this.TC_UCCaseTC_ManageCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCManage_ManageService)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -751,7 +783,7 @@
         private System.Windows.Forms.RadioButton radioButton_UCCaseTCCreate_All;
         private System.Windows.Forms.RadioButton radioButton_UCCaseTCCreate_Qualified;
         private System.Windows.Forms.Button button_UCCaseTCCreate_CreateCase;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCCaseTCManage_ManageService;
         private System.Windows.Forms.Button button_UCCaseTCManage_Save;
         private System.Windows.Forms.Button button_UCCaseTCManage_AddService;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCManage_AddService;
@@ -763,5 +795,8 @@
         private BrightIdeasSoftware.ObjectListView objectListView_UCCaseTCFind_FindCase;
         private BrightIdeasSoftware.OLVColumn olvColumnName;
         private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_Service;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Name;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_EstimatedHourses;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Hourses;
     }
 }

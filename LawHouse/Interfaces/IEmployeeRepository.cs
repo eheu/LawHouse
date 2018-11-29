@@ -5,7 +5,14 @@ namespace BusinessLogic.Interfaces
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        List<Employee> GetAllLawyers(); 
+        /// <summary>
+        /// Gets a list with all lawyers
+        /// </summary>
+        List<Employee> GetAllLawyers();
+        /// <summary>
+        /// Gets a list with all qualified lawyers
+        /// </summary>
+        List<Employee> GetAllQualifiedLawyers();
 
     }
 }
