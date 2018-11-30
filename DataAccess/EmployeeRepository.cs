@@ -18,7 +18,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Delete(int ID)
+        public void Delete(Employee employee)
         {
             throw new NotImplementedException();
         }

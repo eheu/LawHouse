@@ -165,7 +165,7 @@ namespace DataAccess
             }
         }
 
-        public void Delete(int ID)
+        public void Delete(Case @case)
         {
             using (var cmd = _connection.CreateCommand())
             {
@@ -174,7 +174,7 @@ namespace DataAccess
                     _connection.Open();
                     cmd.CommandText = @"DELETE FROM [Case]
                                     WHERE ID = @ID";
-                    cmd.AddParameter("ID", ID);
+                    cmd.AddParameter("ID", @case.ID);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception)

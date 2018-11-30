@@ -207,8 +207,8 @@ namespace GUI
 
         private void button_UCCaseTCEdit_DeleteCase_Click(object sender, EventArgs e)
         {
-            gui.CaseServiceRepository.DeleteAllServicesOnACase(currentCase.ID);
-            gui.CaseRepository.Delete(currentCase.ID);
+            gui.CaseServiceRepository.DeleteAllServicesOnACase(currentCase);
+            gui.CaseRepository.Delete(currentCase);
             //Refresh Find case object list view
             SetObjectListViewCases();
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
