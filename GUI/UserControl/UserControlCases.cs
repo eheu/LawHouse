@@ -22,9 +22,11 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
             //vælg klient
-            SetComboBowClint();
+            SetComboBowClint(comboBox_UCCaseTCCreate_ChooseClient);
+            SetComboBowClint(comboBox_UCCaseTCEdit_ChangeClient);
             //vælg advokat
-            SetComboBoxLawyer();
+            SetComboBoxLawyer(comboBox_UCCaseTCCreate_ChooseLawyer);
+            SetComboBoxLawyer(comboBox_UCCaseTCEdit_ChangeLawyer);
             //vælg ydelse
             SetComboboxService(comboBox_UCCaseTCCreate_ChooseService);
             SetComboboxService(comboBox_UCCaseTCManage_AddService);
@@ -37,26 +39,26 @@ namespace GUI
             
         }
 
-        private void SetComboBowClint()
+        private void SetComboBowClint(ComboBox comboBox)
         {
             List<Client> clientList = gui.ClientRepository.GetAll();
-            comboBox_UCCaseTCCreate_ChooseClient.DataSource = clientList;
-            comboBox_UCCaseTCCreate_ChooseClient.DisplayMember = "FullName";
-            comboBox_UCCaseTCCreate_ChooseClient.ValueMember = "ID";
-            comboBox_UCCaseTCCreate_ChooseClient.SelectedIndex = -1;
-            comboBox_UCCaseTCCreate_ChooseClient.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox_UCCaseTCCreate_ChooseClient.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox.DataSource = clientList;
+            comboBox.DisplayMember = "FullName";
+            comboBox.ValueMember = "ID";
+            comboBox.SelectedIndex = -1;
+            comboBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-        private void SetComboBoxLawyer()
+        private void SetComboBoxLawyer(ComboBox comboBox)
         {
             List<Employee> lawyerList = gui.EmployeeRepository.GetAllLawyers();
-            comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = lawyerList;
-            comboBox_UCCaseTCCreate_ChooseLawyer.DisplayMember = "FullName";
-            comboBox_UCCaseTCCreate_ChooseLawyer.ValueMember = "ID";
-            comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
-            comboBox_UCCaseTCCreate_ChooseLawyer.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox_UCCaseTCCreate_ChooseLawyer.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox.DataSource = lawyerList;
+            comboBox.DisplayMember = "FullName";
+            comboBox.ValueMember = "ID";
+            comboBox.SelectedIndex = -1;
+            comboBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void SetComboboxService(ComboBox comboBox)
@@ -96,6 +98,8 @@ namespace GUI
         private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            //her skal indlæses sager
+            LoadCaseservicesTObjectListView(currentCase);
         }
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
@@ -111,7 +115,16 @@ namespace GUI
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
             richTextBox_UCCaseTCEdit_Description.Text = currentCase.Description;
-           
+            // objectlistview 
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
+            //labels
+            Client client = gui.ClientRepository.Get(currentCase.ClientID);
+            Employee employee = gui.EmployeeRepository.Get(currentCase.EmployeeID);
+            label_UCCaseTCEdit_CurrentName.Text = currentCase.Title;
+            label_UCCaseTCEdit_CurrentClient.Text = client.FullName;
+            label_UCCaseTCEdit_CurrentLawyer.Text = employee.FullName;
+
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
         }
 
@@ -148,19 +161,8 @@ namespace GUI
         
         private void LoadCaseservicesTObjectListView(Case @case)
         {
-            List<CaseService> caseServiceList = gui.CaseServiceRepository.GetServicesOnCase(@case);
-            foreach (CaseService caseService in caseServiceList)
-            {
-                objectListView_UCCaseTCManage_ManageService.SetObjects(caseServiceList);
-            }
-
-
-            olvColumn_UCCaseTCManage_ManageService_Name.AspectGetter = delegate (object obj)
-            {
-                CaseService caseService = (CaseService)obj;
-                Service service = gui.ServiceRepository.Get(caseService.ServiceID);
-                return service.Name;
-            };
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(@case);
+            objectListView_UCCaseTCManage_ManageService.SetObjects(caseNameDictionary);
         }
 
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
@@ -180,6 +182,48 @@ namespace GUI
             currentCase.Description = richTextBox_UCCaseTCManage_Description.Text;
             gui.CaseRepository.Update(currentCase);
             MessageBox.Show("Det virkede!");
+        }
+
+        private void button_UCCaseTCEdit_SaveChange_Click(object sender, EventArgs e)
+        {
+            currentCase.Description = richTextBox_UCCaseTCEdit_Description.Text;
+            if(!string.IsNullOrEmpty(comboBox_UCCaseTCEdit_ChangeClient.Text))
+            {
+                currentCase.ClientID = (int)comboBox_UCCaseTCEdit_ChangeClient.SelectedValue;
+            }
+            if(!string.IsNullOrEmpty(comboBox_UCCaseTCEdit_ChangeLawyer.Text))
+            {
+                currentCase.EmployeeID = (int)comboBox_UCCaseTCEdit_ChangeLawyer.SelectedValue;
+            }
+            if (!string.IsNullOrEmpty(textBox_UCCaseTCEdit_ChangeName.Text))
+            {
+                currentCase.Title = textBox_UCCaseTCEdit_ChangeName.Text;
+            }
+            gui.CaseRepository.Update(currentCase);
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            // clear tab
+            textBox_UCCaseTCEdit_ChangeName.Clear();
+            comboBox_UCCaseTCEdit_ChangeClient.SelectedIndex = -1;
+            comboBox_UCCaseTCEdit_ChangeLawyer.SelectedIndex = -1;
+        }
+
+        private void button_UCCaseTCEdit_DeleteCase_Click(object sender, EventArgs e)
+        {
+            gui.CaseServiceRepository.DeleteAllServicesOnACase(currentCase);
+            gui.CaseRepository.Delete(currentCase);
+            //Refresh Find case object list view
+            SetObjectListViewCases();
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+        }
+
+        private void button_UCCaseTCEdit_RemoveService_Click(object sender, EventArgs e)
+        {
+            KeyValuePair<CaseService, Service> caseServiceServiceKeyValuePair = (KeyValuePair<CaseService, Service>)objectListView_UCCaseTCEdit_Services.SelectedObject;
+            CaseService caseService = caseServiceServiceKeyValuePair.Key;
+            gui.CaseServiceRepository.Delete(caseService);
+            // refresh objectlistview 
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
         }
     }
 }

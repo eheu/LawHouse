@@ -44,7 +44,7 @@ namespace DataAccess
             }
         }
 
-        public void Delete(int ID)
+        public void Delete(Client client)
         {
             throw new NotImplementedException();
         }
