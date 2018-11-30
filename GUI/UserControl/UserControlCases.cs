@@ -98,6 +98,8 @@ namespace GUI
         private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            //her skal indlæses sager
+            LoadCaseservicesTObjectListView(currentCase);
         }
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
@@ -212,6 +214,16 @@ namespace GUI
             //Refresh Find case object list view
             SetObjectListViewCases();
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+        }
+
+        private void button_UCCaseTCEdit_RemoveService_Click(object sender, EventArgs e)
+        {
+            KeyValuePair<CaseService, Service> caseServiceServiceKeyValuePair = (KeyValuePair<CaseService, Service>)objectListView_UCCaseTCEdit_Services.SelectedObject;
+            CaseService caseService = caseServiceServiceKeyValuePair.Key;
+            gui.CaseServiceRepository.Delete(caseService);
+            // refresh objectlistview 
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
         }
     }
 }

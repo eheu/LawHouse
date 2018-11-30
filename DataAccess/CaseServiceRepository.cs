@@ -17,9 +17,29 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Delete(CaseService entity)
+        public void Delete(CaseService caseService)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM CaseService
+                                      WHERE caseID = @caseID
+                                      AND serviceID = @serviceID";
+                    cmd.AddParameter("caseID", caseService.CaseID);
+                    cmd.AddParameter("serviceID", caseService.ServiceID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
         public void DeleteAllServicesOnACase(Case @case)
         {

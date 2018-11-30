@@ -111,7 +111,7 @@
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManageCase);
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 50);
+            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCCases.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCCases.Name = "TabControl_UCCases";
@@ -257,6 +257,7 @@
             this.objectListView_UCCaseTCEdit_Services.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1});
             this.objectListView_UCCaseTCEdit_Services.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCCaseTCEdit_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.objectListView_UCCaseTCEdit_Services.Location = new System.Drawing.Point(480, 35);
             this.objectListView_UCCaseTCEdit_Services.Name = "objectListView_UCCaseTCEdit_Services";
             this.objectListView_UCCaseTCEdit_Services.ShowGroups = false;
@@ -309,6 +310,7 @@
             this.button_UCCaseTCEdit_RemoveService.Tag = "";
             this.button_UCCaseTCEdit_RemoveService.Text = "Fjern ydelse";
             this.button_UCCaseTCEdit_RemoveService.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCEdit_RemoveService.Click += new System.EventHandler(this.button_UCCaseTCEdit_RemoveService_Click);
             // 
             // richTextBox_UCCaseTCEdit_Description
             // 
@@ -434,10 +436,10 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CreateCase);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
-            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
             this.TC_UCCaseTC_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_CreateCase.TabIndex = 2;
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.UseVisualStyleBackColor = true;
@@ -630,6 +632,7 @@
             this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Name);
             this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses);
             this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Hourses);
+            this.objectListView_UCCaseTCManage_ManageService.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
             this.objectListView_UCCaseTCManage_ManageService.CellEditUseWholeCell = false;
             this.objectListView_UCCaseTCManage_ManageService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn_UCCaseTCManage_ManageService_Name,
