@@ -8,34 +8,29 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class RoleRepository : IRoleRepository
+    public class EmployeeSpecialityRepository : IEmployeeSpecialityRepository
     {
-        public void Create(Role entity)
+        public void Create(EmployeeSpeciality entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int ID)
+        public void Delete(EmployeeSpeciality entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Role entity)
+        public EmployeeSpeciality Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Role Get(int id)
+        public List<EmployeeSpeciality> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public List<Role> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Role entity)
+        public void Update(EmployeeSpeciality entity)
         {
             throw new NotImplementedException();
         }

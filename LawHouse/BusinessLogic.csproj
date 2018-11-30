@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\ICaseServiceRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IEmployeeSpecialityRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IServiceRepository.cs" />
     <Compile Include="Interfaces\ISpecialityRepository.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\CaseService.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Interfaces\IClientRepository.cs" />
+    <Compile Include="Models\EmployeeSpeciality.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Role.cs" />

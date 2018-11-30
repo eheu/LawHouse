@@ -108,6 +108,8 @@ namespace GUI
             employee.Email = textbox_UCEmployeeTCCreate_emailName.Text;
             employee.Phone = textbox_UCEmployeeTCCreate_phone.Text;
             employee.RoleID = (int)combo_UCEmployeeTCCreate_Role.SelectedValue;
+                //Create the employee
+                gui.EmployeeRepository.Create(employee);
 
 
         }

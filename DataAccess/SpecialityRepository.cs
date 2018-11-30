@@ -74,5 +74,10 @@ namespace DataAccess
                 return employees;
             }
         }
+
+        public void Delete(Speciality entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
