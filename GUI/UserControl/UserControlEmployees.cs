@@ -21,9 +21,9 @@ namespace GUI
             //Load of clients into the objectlistview
             SetObjectListViewEmployee();
             //Load of Speciality into Combobox
-            SetComboBoxSpeciality();
-            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
-            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
+            //SetComboBoxSpeciality();
+            //ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
+            //ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)

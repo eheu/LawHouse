@@ -15,11 +15,6 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Delete(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
         public Role Get(int id)
         {
             throw new NotImplementedException();
@@ -31,6 +26,10 @@ namespace DataAccess
         }
 
         public void Update(Role entity)
+        {
+            throw new NotImplementedException();
+        }
+        public void Delete(Role entity)
         {
             throw new NotImplementedException();
         }

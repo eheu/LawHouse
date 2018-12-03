@@ -15,11 +15,6 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Delete(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
         public Speciality Get(int id)
         {
             throw new NotImplementedException();
@@ -50,6 +45,11 @@ namespace DataAccess
         }
 
         public void Update(Speciality entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Speciality entity)
         {
             throw new NotImplementedException();
         }
