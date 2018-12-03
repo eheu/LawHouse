@@ -24,6 +24,8 @@ namespace GUI
             SetComboBoxSpeciality();
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
+            ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.DisplayMember = "Name";
+            ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -58,6 +60,8 @@ namespace GUI
             List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
             List<Role> Role = gui.RoleRepository.GetAll();
 
+            
+
             //Settings of both Speciality comboboxes
             comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DataSource = SpecialityList;
             comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DisplayMember = "Name";
@@ -73,13 +77,20 @@ namespace GUI
             comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.AutoCompleteMode = AutoCompleteMode.Suggest;
             comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            //Settings of Role combobox
+            //Settings of Role comboboxes
             combo_UCEmployeeTCCreate_Role.DataSource = Role;
             combo_UCEmployeeTCCreate_Role.DisplayMember = "Name";
             combo_UCEmployeeTCCreate_Role.ValueMember = "ID";
             combo_UCEmployeeTCCreate_Role.SelectedIndex = -1;
             combo_UCEmployeeTCCreate_Role.AutoCompleteMode = AutoCompleteMode.Suggest;
             combo_UCEmployeeTCCreate_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            combo_UCEmployeeTCEdit_Role.DataSource = Role;
+            combo_UCEmployeeTCEdit_Role.DisplayMember = "Name";
+            combo_UCEmployeeTCEdit_Role.ValueMember = "ID";
+            combo_UCEmployeeTCEdit_Role.SelectedIndex = -1;
+            combo_UCEmployeeTCEdit_Role.AutoCompleteMode = AutoCompleteMode.Suggest;
+            combo_UCEmployeeTCEdit_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
@@ -112,6 +123,28 @@ namespace GUI
                 gui.EmployeeRepository.Create(employee);
 
 
+        }
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // user clicked an item of objectListView control
+            if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
+            {
+                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+
+                Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
+
+                textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
+                textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
+                textbox_UCEmployeeTCEdit_email.Text = employee.Email;
+                textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
+                combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
+
+                    List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee.ID);
+                    foreach (var item in Specialitylist)
+                    {
+                        ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add(item);
+                    }
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DataAccess
             {
                 try
                 {
-                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email], [phone] 
                                         FROM [Employee]
                                         WHERE ID = @ID";
                     command.AddParameter("ID", ID);
@@ -66,7 +66,7 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email], [phone] 
                                         FROM [Employee]";
                     return MapCollection(command);
                 }
@@ -90,7 +90,7 @@ namespace DataAccess
             using (var command = _connection.CreateCommand())
             {
                 _connection.Open();
-                command.CommandText = @"SELECT ID, firstName, lastName, roleID, email 
+                command.CommandText = @"SELECT ID, firstName, lastName, roleID, email, phone 
                                         FROM Employee
                                         WHERE roleID = 1";
                 return MapCollection(command);
@@ -119,11 +119,12 @@ namespace DataAccess
 
         private static void Map(SqlDataReader reader, Employee employee)
         {
-            employee.ID = (int)reader[0];
-            employee.FirstName = (string)reader[1];
-            employee.LastName = (string)reader[2];
-            employee.RoleID = (int)reader[3];
-            employee.Email = reader[4] == DBNull.Value ? "" : (string)reader[4];
+            employee.ID = (int)reader["ID"];
+            employee.FirstName = (string)reader["firstName"];
+            employee.LastName = (string)reader["lastName"];
+            employee.RoleID = (int)reader["roleID"];
+            employee.Email = reader[4] == DBNull.Value ? "" : (string)reader["email"];
+            employee.Phone = (string)reader["phone"]; 
         }
         private static List<Employee> MapCollection(SqlCommand command)
         {

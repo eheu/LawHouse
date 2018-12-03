@@ -45,11 +45,11 @@
             this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality = new System.Windows.Forms.Button();
             this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.combo_UCEmployeeTCEdit_Role = new System.Windows.Forms.ComboBox();
+            this.textbox_UCEmployeeTCEdit_phone = new System.Windows.Forms.TextBox();
+            this.textbox_UCEmployeeTCEdit_email = new System.Windows.Forms.TextBox();
+            this.textbox_UCEmployeeTCEdit_lastName = new System.Windows.Forms.TextBox();
+            this.textbox_UCEmployeeTCEdit_firstName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TC_UCEmployeeTC_CreateEmployee = new System.Windows.Forms.TabPage();
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality = new System.Windows.Forms.ListBox();
             this.button_UCEmployeeTCCreate_FindEmployee = new System.Windows.Forms.Button();
             this.button_UCEmployeeTCCreate_CreateEmployee_SaveEmployee = new System.Windows.Forms.Button();
             this.button_UCEmployeeTCCreate_CreateEmployee_AddSpeciality = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality = new System.Windows.Forms.ListBox();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -169,6 +169,7 @@
             this.objectListView_UCEmployeeTCFind_FindEmployee.TabIndex = 0;
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick);
             this.objectListView_UCEmployeeTCFind_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // olvColumnEmployeeFindID
@@ -196,11 +197,11 @@
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee_AddSpeciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label8);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.comboBox1);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox4);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox3);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox2);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textBox1);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.combo_UCEmployeeTCEdit_Role);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textbox_UCEmployeeTCEdit_phone);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textbox_UCEmployeeTCEdit_email);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textbox_UCEmployeeTCEdit_lastName);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.textbox_UCEmployeeTCEdit_firstName);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label7);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label6);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label5);
@@ -219,9 +220,9 @@
             // 
             this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.FormattingEnabled = true;
             this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ItemHeight = 18;
-            this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Location = new System.Drawing.Point(732, 54);
+            this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Location = new System.Drawing.Point(683, 54);
             this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality";
-            this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Size = new System.Drawing.Size(401, 400);
+            this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Size = new System.Drawing.Size(450, 400);
             this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.TabIndex = 17;
             // 
             // button_UCEmployeeTCEdit_Back_FindEmployee
@@ -256,55 +257,55 @@
             // comboBox_UCEmployeeTCEdit_EditEmployee_Speciality
             // 
             this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.FormattingEnabled = true;
-            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Location = new System.Drawing.Point(904, 15);
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Location = new System.Drawing.Point(852, 14);
             this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Name = "comboBox_UCEmployeeTCEdit_EditEmployee_Speciality";
-            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.Size = new System.Drawing.Size(173, 26);
             this.comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(729, 18);
+            this.label8.Location = new System.Drawing.Point(678, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(174, 18);
             this.label8.TabIndex = 12;
             this.label8.Text = "Tilføj efteruddannelse:";
             // 
-            // comboBox1
+            // combo_UCEmployeeTCEdit_Role
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(99, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 26);
-            this.comboBox1.TabIndex = 10;
+            this.combo_UCEmployeeTCEdit_Role.FormattingEnabled = true;
+            this.combo_UCEmployeeTCEdit_Role.Location = new System.Drawing.Point(99, 283);
+            this.combo_UCEmployeeTCEdit_Role.Name = "combo_UCEmployeeTCEdit_Role";
+            this.combo_UCEmployeeTCEdit_Role.Size = new System.Drawing.Size(191, 26);
+            this.combo_UCEmployeeTCEdit_Role.TabIndex = 10;
             // 
-            // textBox4
+            // textbox_UCEmployeeTCEdit_phone
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 244);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 24);
-            this.textBox4.TabIndex = 9;
+            this.textbox_UCEmployeeTCEdit_phone.Location = new System.Drawing.Point(99, 244);
+            this.textbox_UCEmployeeTCEdit_phone.Name = "textbox_UCEmployeeTCEdit_phone";
+            this.textbox_UCEmployeeTCEdit_phone.Size = new System.Drawing.Size(191, 24);
+            this.textbox_UCEmployeeTCEdit_phone.TabIndex = 9;
             // 
-            // textBox3
+            // textbox_UCEmployeeTCEdit_email
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 204);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 24);
-            this.textBox3.TabIndex = 8;
+            this.textbox_UCEmployeeTCEdit_email.Location = new System.Drawing.Point(99, 204);
+            this.textbox_UCEmployeeTCEdit_email.Name = "textbox_UCEmployeeTCEdit_email";
+            this.textbox_UCEmployeeTCEdit_email.Size = new System.Drawing.Size(191, 24);
+            this.textbox_UCEmployeeTCEdit_email.TabIndex = 8;
             // 
-            // textBox2
+            // textbox_UCEmployeeTCEdit_lastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 24);
-            this.textBox2.TabIndex = 7;
+            this.textbox_UCEmployeeTCEdit_lastName.Location = new System.Drawing.Point(99, 164);
+            this.textbox_UCEmployeeTCEdit_lastName.Name = "textbox_UCEmployeeTCEdit_lastName";
+            this.textbox_UCEmployeeTCEdit_lastName.Size = new System.Drawing.Size(191, 24);
+            this.textbox_UCEmployeeTCEdit_lastName.TabIndex = 7;
             // 
-            // textBox1
+            // textbox_UCEmployeeTCEdit_firstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 24);
-            this.textBox1.TabIndex = 6;
+            this.textbox_UCEmployeeTCEdit_firstName.Location = new System.Drawing.Point(99, 124);
+            this.textbox_UCEmployeeTCEdit_firstName.Name = "textbox_UCEmployeeTCEdit_firstName";
+            this.textbox_UCEmployeeTCEdit_firstName.Size = new System.Drawing.Size(191, 24);
+            this.textbox_UCEmployeeTCEdit_firstName.TabIndex = 6;
             // 
             // label7
             // 
@@ -387,6 +388,15 @@
             this.TC_UCEmployeeTC_CreateEmployee.Text = "Opret";
             this.TC_UCEmployeeTC_CreateEmployee.UseVisualStyleBackColor = true;
             // 
+            // ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality
+            // 
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.FormattingEnabled = true;
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ItemHeight = 18;
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Location = new System.Drawing.Point(683, 54);
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality";
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Size = new System.Drawing.Size(450, 400);
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.TabIndex = 28;
+            // 
             // button_UCEmployeeTCCreate_FindEmployee
             // 
             this.button_UCEmployeeTCCreate_FindEmployee.Location = new System.Drawing.Point(6, 27);
@@ -420,15 +430,15 @@
             // comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality
             // 
             this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.FormattingEnabled = true;
-            this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.Location = new System.Drawing.Point(904, 15);
+            this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.Location = new System.Drawing.Point(852, 14);
             this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.Name = "comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality";
-            this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.Size = new System.Drawing.Size(121, 26);
+            this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.Size = new System.Drawing.Size(173, 26);
             this.comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.TabIndex = 23;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(729, 18);
+            this.label15.Location = new System.Drawing.Point(678, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(174, 18);
             this.label15.TabIndex = 22;
@@ -524,15 +534,6 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
             // 
-            // ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality
-            // 
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.FormattingEnabled = true;
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ItemHeight = 18;
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Location = new System.Drawing.Point(732, 54);
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality";
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Size = new System.Drawing.Size(401, 400);
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.TabIndex = 28;
-            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,11 +575,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox combo_UCEmployeeTCEdit_Role;
+        private System.Windows.Forms.TextBox textbox_UCEmployeeTCEdit_phone;
+        private System.Windows.Forms.TextBox textbox_UCEmployeeTCEdit_email;
+        private System.Windows.Forms.TextBox textbox_UCEmployeeTCEdit_lastName;
+        private System.Windows.Forms.TextBox textbox_UCEmployeeTCEdit_firstName;
         private System.Windows.Forms.ComboBox comboBox_UCEmployeeTCEdit_EditEmployee_Speciality;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button_UCEmployeeTCEdit_EditEmployee_SaveEmployee;

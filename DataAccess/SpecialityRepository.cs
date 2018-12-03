@@ -49,6 +49,33 @@ namespace DataAccess
             }
         }
 
+        public List<Speciality> GetAllSpecialityesFromOnelaywer(int employeeID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT [ID], [Name], [Decription] 
+                    FROM [Speciality]
+                    INNER JOIN [EmployeeSpeciality] ON [EmployeeSpeciality].[specialityID] = [Speciality].[ID] 
+                    AND [EmployeeSpeciality].[employeeID] = @employeeID";
+                    command.AddParameter("employeeID", @employeeID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
         public void Update(Speciality entity)
         {
             throw new NotImplementedException();
