@@ -116,8 +116,8 @@ namespace GUI
         {
             richTextBox_UCCaseTCEdit_Description.Text = currentCase.Description;
             // objectlistview 
-            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
-            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
+            Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(servicesByCaseService);
             //labels
             Client client = gui.ClientRepository.Get(currentCase.ClientID);
             Employee employee = gui.EmployeeRepository.Get(currentCase.EmployeeID);
@@ -161,7 +161,7 @@ namespace GUI
         
         private void LoadCaseservicesTObjectListView(Case @case)
         {
-            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(@case);
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
             objectListView_UCCaseTCManage_ManageService.SetObjects(caseNameDictionary);
         }
 
@@ -222,7 +222,7 @@ namespace GUI
             CaseService caseService = caseServiceServiceKeyValuePair.Key;
             gui.CaseServiceRepository.Delete(caseService);
             // refresh objectlistview 
-            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetCaseServiceServiceDictionaryFromCase(currentCase);
+            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
             objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
         }
     }

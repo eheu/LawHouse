@@ -127,7 +127,7 @@ namespace DataAccess
                 }
             }
         }
-        public Dictionary<CaseService, Service> GetCaseServiceServiceDictionaryFromCase(Case @case)
+        public Dictionary<CaseService, Service> GetServicesByCaseServiceFromCase(Case @case)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -142,7 +142,7 @@ namespace DataAccess
                     command.AddParameter("caseID", @case.ID);
                     using (var reader = command.ExecuteReader())
                     {
-                        Dictionary<CaseService, Service> serviceNameDictionary = new Dictionary<CaseService,Service>();
+                        Dictionary<CaseService, Service> servicesByCaseService = new Dictionary<CaseService,Service>();
                         while (reader.Read())
                         {
                             CaseService caseService = new CaseService();
@@ -158,9 +158,9 @@ namespace DataAccess
                             service.Price = (decimal)reader["price"];
                             service.IsHourly = (bool)reader["isHourly"];
 
-                            serviceNameDictionary.Add(caseService, service);
+                            servicesByCaseService.Add(caseService, service);
                         }
-                        return serviceNameDictionary;
+                        return servicesByCaseService;
                     }
 
                 }
