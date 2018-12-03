@@ -22,8 +22,8 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
             //vælg klient
-            SetComboBowClint(comboBox_UCCaseTCCreate_ChooseClient);
-            SetComboBowClint(comboBox_UCCaseTCEdit_ChangeClient);
+            SetComboBoxClient(comboBox_UCCaseTCCreate_ChooseClient);
+            SetComboBoxClient(comboBox_UCCaseTCEdit_ChangeClient);
             //vælg advokat
             SetComboBoxLawyer(comboBox_UCCaseTCCreate_ChooseLawyer);
             SetComboBoxLawyer(comboBox_UCCaseTCEdit_ChangeLawyer);
@@ -39,7 +39,7 @@ namespace GUI
             
         }
 
-        private void SetComboBowClint(ComboBox comboBox)
+        private void SetComboBoxClient(ComboBox comboBox)
         {
             List<Client> clientList = gui.ClientRepository.GetAll();
             comboBox.DataSource = clientList;
@@ -105,7 +105,7 @@ namespace GUI
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
-        }
+        }   
 
         private void button_UCCaseTCManage_FindCase_Click(object sender, EventArgs e)
         {
@@ -224,6 +224,23 @@ namespace GUI
             // refresh objectlistview 
             Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
             objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
+        }
+
+        private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
+        {
+            List<Service> services = new List<Service>();
+            foreach (Service service in listBox_UCCaseTCCreate_Service.Items)
+            {
+                services.Add(service);
+            }
+            comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
+            comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
+        }
+
+        private void radioButton_UCCaseTCCreate_All_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllLawyers();
+            comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
         }
     }
 }

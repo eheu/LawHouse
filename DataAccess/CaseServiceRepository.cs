@@ -172,7 +172,7 @@ namespace DataAccess
                 {
                     _connection.Close();
                 }
-            }
+            }   
         }
 
         private static void Map(SqlDataReader reader, CaseService caseService)

@@ -48,7 +48,7 @@ namespace DataAccess
                 catch (Exception)
                 {
 
-                    throw; 
+                    throw;
                 }
                 finally
                 {
@@ -66,7 +66,7 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email] 
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [email], [phone], [roleID] 
                                         FROM [Employee]";
                     return MapCollection(command);
                 }
@@ -87,14 +87,14 @@ namespace DataAccess
         {
             try
             {
-            using (var command = _connection.CreateCommand())
-            {
-                _connection.Open();
-                command.CommandText = @"SELECT ID, firstName, lastName, roleID, email 
+                using (var command = _connection.CreateCommand())
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, firstName, lastName, phone, email, roleID
                                         FROM Employee
                                         WHERE roleID = 1";
-                return MapCollection(command);
-            }
+                    return MapCollection(command);
+                }
 
             }
             catch (Exception)
@@ -107,9 +107,71 @@ namespace DataAccess
                 _connection.Close();
             }
         }
-        public List<Employee> GetAllQualifiedLawyers()
+        public List<Employee> GetAllFullyQualifiedLawyersFromServices(List<Service> services)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = "SELECT * FROM Employee ";
+                    if (services.Count > 0)
+                    {
+                        command.CommandText += @"JOIN EmployeeSpeciality ON Employee.ID = EmployeeSpeciality.employeeID
+                                                 JOIN ServiceSpeciality ON EmployeeSpeciality.specialityID = ServiceSpeciality.specialityID
+                                                 WHERE serviceID = @ServiceID0";
+                        command.AddParameter("ServiceID0", services[0].ID);
+                        for (int i = 1; i < services.Count; i++)
+                        {
+                            command.CommandText += $" AND serviceID = @serviceID{i}";
+                            command.AddParameter($"ServiceID{i}", services[i].ID);
+                        }
+                    }
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+        public List<Employee> GetAllPartiallyQualifiedLawyersFromServices(List<Service> services)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = "SELECT * FROM Employee ";
+                    if (services.Count > 0)
+                    {
+                        command.CommandText += @"JOIN EmployeeSpeciality ON Employee.ID = EmployeeSpeciality.employeeID
+                                                 JOIN ServiceSpeciality ON EmployeeSpeciality.specialityID = ServiceSpeciality.specialityID
+                                                 WHERE serviceID = @ServiceID0";
+                        command.AddParameter("ServiceID0", services[0].ID);
+                        for (int i = 1; i < services.Count; i++)
+                        {
+                            command.CommandText += $" AND serviceID = @serviceID{i}";
+                            command.AddParameter($"ServiceID{i}", services[i].ID);
+                        }
+                    }
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public void Update(Employee entity)
@@ -119,11 +181,12 @@ namespace DataAccess
 
         private static void Map(SqlDataReader reader, Employee employee)
         {
-            employee.ID = (int)reader[0];
-            employee.FirstName = (string)reader[1];
-            employee.LastName = (string)reader[2];
-            employee.RoleID = (int)reader[3];
-            employee.Email = reader[4] == DBNull.Value ? "" : (string)reader[4];
+            employee.ID = (int)reader["ID"];
+            employee.FirstName = (string)reader["firstName"];
+            employee.LastName = (string)reader["lastName"];
+            employee.Email = reader["email"] == DBNull.Value ? "" : (string)reader["email"];
+            employee.Phone = (string)reader["phone"];
+            employee.RoleID = (int)reader["roleID"];
         }
         private static List<Employee> MapCollection(SqlCommand command)
         {
@@ -139,6 +202,5 @@ namespace DataAccess
                 return employees;
             }
         }
-
     }
 }
