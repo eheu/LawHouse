@@ -15,7 +15,33 @@ namespace DataAccess
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
         public void Create(Employee entity)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [Employee]([firstName], [lastName], [roleID], [email], [phone])
+                                            VALUES(@FirstName, @LastName, @RoleID, @Email, @Phone);
+                                            SELECT CAST(SCOPE_IDENTITY() AS INT)";
+                    command.AddParameter("FirstName", entity.FirstName);
+                    command.AddParameter("LastName", entity.LastName);
+                    command.AddParameter("RoleID", entity.RoleID);
+                    command.AddParameter("Email", entity.Email);
+                    command.AddParameter("Phone", entity.Phone);
+                    _connection.Open();
+                    var ID = (int)command.ExecuteScalar();
+                    entity.ID = ID;
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public void Delete(Employee employee)

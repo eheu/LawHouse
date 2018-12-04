@@ -96,7 +96,7 @@ namespace GUI
         private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
             if (!ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem))
-            { 
+            {
                 ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
                 comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
             }
@@ -139,8 +139,9 @@ namespace GUI
                 textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
                 combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
 
-                    List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee.ID);
-                    foreach (var item in Specialitylist)
+                //List of employee Specialitys showed in listbox
+                List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee.ID);
+                    foreach (Speciality item in Specialitylist)
                     {
                         ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add(item);
                     }
