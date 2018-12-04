@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
+using BrightIdeasSoftware;
 
 namespace GUI
 {
@@ -109,6 +110,15 @@ namespace GUI
             employee.Phone = textbox_UCEmployeeTCCreate_phone.Text;
             employee.RoleID = (int)combo_UCEmployeeTCCreate_Role.SelectedValue;
 
+
+        }
+        /// <summary>
+        /// Makes the search field sort the list view
+        /// </summary>
+        private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
+            this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
 
         }
     }

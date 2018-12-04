@@ -57,6 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TC_UCEmployeeTC_CreateEmployee = new System.Windows.Forms.TabPage();
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality = new System.Windows.Forms.ListBox();
             this.button_UCEmployeeTCCreate_FindEmployee = new System.Windows.Forms.Button();
             this.button_UCEmployeeTCCreate_CreateEmployee_SaveEmployee = new System.Windows.Forms.Button();
             this.button_UCEmployeeTCCreate_CreateEmployee_AddSpeciality = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality = new System.Windows.Forms.ListBox();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -119,6 +119,7 @@
             this.textBox_UCCaseTCFind_Search.Name = "textBox_UCCaseTCFind_Search";
             this.textBox_UCCaseTCFind_Search.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCCaseTCFind_Search.TabIndex = 13;
+            this.textBox_UCCaseTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCCaseTCFind_Search_TextChanged);
             // 
             // label_UCCaseTCFind_Search
             // 
@@ -180,13 +181,13 @@
             // 
             this.olvColumnEmployeeFindFirstName.AspectName = "FirstName";
             this.olvColumnEmployeeFindFirstName.Text = "Fornavn";
-            this.olvColumnEmployeeFindFirstName.Width = 76;
+            this.olvColumnEmployeeFindFirstName.Width = 100;
             // 
             // olvColumnEmployeeFindLastName
             // 
             this.olvColumnEmployeeFindLastName.AspectName = "LastName";
             this.olvColumnEmployeeFindLastName.Text = "Efternavn";
-            this.olvColumnEmployeeFindLastName.Width = 89;
+            this.olvColumnEmployeeFindLastName.Width = 100;
             // 
             // TC_UCEmployeeTC_EditEmployee
             // 
@@ -387,6 +388,15 @@
             this.TC_UCEmployeeTC_CreateEmployee.Text = "Opret";
             this.TC_UCEmployeeTC_CreateEmployee.UseVisualStyleBackColor = true;
             // 
+            // ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality
+            // 
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.FormattingEnabled = true;
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ItemHeight = 18;
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Location = new System.Drawing.Point(732, 54);
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality";
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Size = new System.Drawing.Size(401, 400);
+            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.TabIndex = 28;
+            // 
             // button_UCEmployeeTCCreate_FindEmployee
             // 
             this.button_UCEmployeeTCCreate_FindEmployee.Location = new System.Drawing.Point(6, 27);
@@ -523,15 +533,6 @@
             this.label13.Size = new System.Drawing.Size(69, 18);
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
-            // 
-            // ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality
-            // 
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.FormattingEnabled = true;
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ItemHeight = 18;
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Location = new System.Drawing.Point(732, 54);
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality";
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Size = new System.Drawing.Size(401, 400);
-            this.ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.TabIndex = 28;
             // 
             // UserControlEmployees
             // 
