@@ -60,8 +60,6 @@ namespace GUI
             List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
             List<Role> Role = gui.RoleRepository.GetAll();
 
-            
-
             //Settings of both Speciality comboboxes
             comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DataSource = SpecialityList;
             comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DisplayMember = "Name";

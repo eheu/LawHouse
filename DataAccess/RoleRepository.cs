@@ -17,7 +17,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Delete(int ID)
+        public Role Get(int id)
         {
             throw new NotImplementedException();
         }
@@ -32,7 +32,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public List<Role> GetAll()
+        public void Update(Role entity)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -55,8 +55,7 @@ namespace DataAccess
                 }
             }
         }
-
-        public void Update(Role entity)
+        public void Delete(Role entity)
         {
             throw new NotImplementedException();
         }

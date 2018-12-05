@@ -137,12 +137,12 @@ namespace DataAccess
                 using (var command = _connection.CreateCommand())
                 {
                     command.CommandText = @"UPDATE [Case] SET
-                                    title = @title, 
-                                    description = @description, 
-                                    status = @status, 
-                                    clientID = @clientID, 
-                                    employeeID = @employeeID
-                                    WHERE ID = @ID";
+                                            title = @title, 
+                                            description = @description, 
+                                            status = @status, 
+                                            clientID = @clientID, 
+                                            employeeID = @employeeID
+                                            WHERE ID = @ID";
                     command.AddParameter("ID", @case.ID);
                     command.AddParameter("title", @case.Title);
                     command.AddParameter("description", @case.Description);
@@ -173,7 +173,7 @@ namespace DataAccess
                 {
                     _connection.Open();
                     cmd.CommandText = @"DELETE FROM [Case]
-                                    WHERE ID = @ID";
+                                        WHERE ID = @ID";
                     cmd.AddParameter("ID", @case.ID);
                     cmd.ExecuteNonQuery();
                 }
