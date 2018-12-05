@@ -92,7 +92,7 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [email], [phone], [roleID] 
+                    command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email], [phone] 
                                         FROM [Employee]";
                     return MapCollection(command);
                 }
