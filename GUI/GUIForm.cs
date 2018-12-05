@@ -212,6 +212,7 @@ namespace GUI
 
         #endregion
 
-        //slet den her på et tidspunkt: 
+        //Lav søge funktionen her og se om den kan kaldes fra de forskellige UC's :
+
     }
 }

@@ -92,6 +92,8 @@
             this.label_UCCaseTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCCaseTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
+            this.highlightTextRenderer1 = new BrightIdeasSoftware.HighlightTextRenderer();
+            this.highlightTextRenderer2 = new BrightIdeasSoftware.HighlightTextRenderer();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
@@ -165,6 +167,7 @@
             this.textBox_UCCaseTCFind_Search.Name = "textBox_UCCaseTCFind_Search";
             this.textBox_UCCaseTCFind_Search.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCCaseTCFind_Search.TabIndex = 11;
+            this.textBox_UCCaseTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCCaseTCFind_Search_TextChanged);
             // 
             // label_UCCaseTCFind_Search
             // 
@@ -621,10 +624,10 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCCaseTC_ManageCase.TabIndex = 3;
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.UseVisualStyleBackColor = true;
@@ -855,5 +858,7 @@
         private System.Windows.Forms.Label label_UCCaseTCEdit_CurrentLawyer;
         private System.Windows.Forms.Label label_UCCaseTCEdit_CurrentClient;
         private System.Windows.Forms.Label label_UCCaseTCEdit_CurrentName;
+        private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer1;
+        private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer2;
     }
 }

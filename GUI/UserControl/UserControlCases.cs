@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BusinessLogic;
 using GUI;
 using BusinessLogic.Models;
+using BrightIdeasSoftware;
 
 namespace GUI
 {
@@ -241,6 +242,14 @@ namespace GUI
         {
             comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllLawyers();
             comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
+        }
+        /// <summary>
+        /// Makes the search field sort the list view
+        /// </summary>
+        private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCCaseTCFind_FindCase.UseFiltering = true;
+            this.objectListView_UCCaseTCFind_FindCase.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCCaseTCFind_FindCase, $"{textBox_UCCaseTCFind_Search.Text}");
         }
     }
 }

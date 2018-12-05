@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
+using BrightIdeasSoftware;
 
 namespace GUI
 {
     public partial class UserControlClients : UserControl
     {
         GUIForm gui;
+
         public UserControlClients(GUIForm guiForm)
         {
             gui = guiForm;
@@ -107,6 +109,14 @@ namespace GUI
 
                 }
             }
+        }
+        /// <summary>
+        /// Makes the search field sort the list view
+        /// </summary>
+        private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCClientTCFind_FindClient.UseFiltering = true;
+            this.objectListView_UCClientTCFind_FindClient.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCClientTCFind_FindClient, $"{textBox_UCCaseTCFind_Search.Text}");
         }
     }
 }
