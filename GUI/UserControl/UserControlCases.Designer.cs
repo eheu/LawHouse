@@ -503,7 +503,7 @@
             // label_UCCaseTCCreate_ServiceView
             // 
             this.label_UCCaseTCCreate_ServiceView.AutoSize = true;
-            this.label_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(496, 3);
+            this.label_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(474, 3);
             this.label_UCCaseTCCreate_ServiceView.Name = "label_UCCaseTCCreate_ServiceView";
             this.label_UCCaseTCCreate_ServiceView.Size = new System.Drawing.Size(127, 18);
             this.label_UCCaseTCCreate_ServiceView.TabIndex = 19;

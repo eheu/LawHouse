@@ -30,8 +30,8 @@
         {
             this.TabControl_UCClient = new System.Windows.Forms.TabControl();
             this.TC_UCEmployeeTC_FindClient = new System.Windows.Forms.TabPage();
-            this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
-            this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
+            this.textBox_UCClientTCFind_Search = new System.Windows.Forms.TextBox();
+            this.label_UCClientTCFind_Search = new System.Windows.Forms.Label();
             this.objectListView_UCClientTCFind_FindClient = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -99,8 +99,8 @@
             // TC_UCEmployeeTC_FindClient
             // 
             this.TC_UCEmployeeTC_FindClient.BackColor = System.Drawing.Color.White;
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.textBox_UCCaseTCFind_Search);
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label_UCCaseTCFind_Search);
+            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.textBox_UCClientTCFind_Search);
+            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label_UCClientTCFind_Search);
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.objectListView_UCClientTCFind_FindClient);
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.button_UCClientTCFind_CreateClient);
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label2);
@@ -111,22 +111,22 @@
             this.TC_UCEmployeeTC_FindClient.TabIndex = 0;
             this.TC_UCEmployeeTC_FindClient.Text = "Find";
             // 
-            // textBox_UCCaseTCFind_Search
+            // textBox_UCClientTCFind_Search
             // 
-            this.textBox_UCCaseTCFind_Search.Location = new System.Drawing.Point(1022, 67);
-            this.textBox_UCCaseTCFind_Search.Name = "textBox_UCCaseTCFind_Search";
-            this.textBox_UCCaseTCFind_Search.Size = new System.Drawing.Size(121, 24);
-            this.textBox_UCCaseTCFind_Search.TabIndex = 15;
-            this.textBox_UCCaseTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCCaseTCFind_Search_TextChanged);
+            this.textBox_UCClientTCFind_Search.Location = new System.Drawing.Point(1022, 67);
+            this.textBox_UCClientTCFind_Search.Name = "textBox_UCClientTCFind_Search";
+            this.textBox_UCClientTCFind_Search.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCClientTCFind_Search.TabIndex = 15;
+            this.textBox_UCClientTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCCaseTCFind_Search_TextChanged);
             // 
-            // label_UCCaseTCFind_Search
+            // label_UCClientTCFind_Search
             // 
-            this.label_UCCaseTCFind_Search.AutoSize = true;
-            this.label_UCCaseTCFind_Search.Location = new System.Drawing.Point(980, 67);
-            this.label_UCCaseTCFind_Search.Name = "label_UCCaseTCFind_Search";
-            this.label_UCCaseTCFind_Search.Size = new System.Drawing.Size(38, 18);
-            this.label_UCCaseTCFind_Search.TabIndex = 14;
-            this.label_UCCaseTCFind_Search.Text = "Søg";
+            this.label_UCClientTCFind_Search.AutoSize = true;
+            this.label_UCClientTCFind_Search.Location = new System.Drawing.Point(980, 67);
+            this.label_UCClientTCFind_Search.Name = "label_UCClientTCFind_Search";
+            this.label_UCClientTCFind_Search.Size = new System.Drawing.Size(38, 18);
+            this.label_UCClientTCFind_Search.TabIndex = 14;
+            this.label_UCClientTCFind_Search.Text = "Søg";
             // 
             // objectListView_UCClientTCFind_FindClient
             // 
@@ -547,8 +547,8 @@
         private BrightIdeasSoftware.DataListView objectListView_UCClientTCFind_FindClient;
         private System.Windows.Forms.Button button_UCClientTCFind_CreateClient;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
-        private System.Windows.Forms.Label label_UCCaseTCFind_Search;
+        private System.Windows.Forms.TextBox textBox_UCClientTCFind_Search;
+        private System.Windows.Forms.Label label_UCClientTCFind_Search;
         private BrightIdeasSoftware.DataListView dataListView_UCClientTCEdit;
         private System.Windows.Forms.TextBox textbox_UCClientTCEdit_email;
         private System.Windows.Forms.TextBox textbox_UCClientTCEdit_addresse;
