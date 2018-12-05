@@ -21,6 +21,8 @@ namespace GUI
         UserControlCases userControlCases;
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
+        UserControlSpecialities userControlSpecialities;
+        UserControlServices userControlServices;
         UserControlHelp userControlHelp;
         public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository)
         {
@@ -35,6 +37,8 @@ namespace GUI
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
+            userControlSpecialities = new UserControlSpecialities(this);
+            userControlServices = new UserControlServices(this);
             userControlHelp = new UserControlHelp(this);
             InitializeComponent();
             panelWidth = MenuPanel.Width;
@@ -123,6 +127,7 @@ namespace GUI
             _lastButtonClicked = button as Button;
             _lastButtonClicked.BackColor = Color.SteelBlue;
         }
+
         #region Events for CaseBtn
         private void CaseBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -130,8 +135,7 @@ namespace GUI
         }
         private void CaseBtn_MouseLeave(object sender, EventArgs e)
         {
-            buttonForeColorLeave(CaseBtn);
-            
+            buttonForeColorLeave(CaseBtn);     
         }
         private void CaseBtn_Click(object sender, EventArgs e)
         {
@@ -139,6 +143,8 @@ namespace GUI
             userControlEmployees.Hide();
             userControlClients.Hide();
             userControlHelp.Hide();
+            userControlSpecialities.Hide();
+            userControlServices.Hide();
             userControlCases.Show();
             userControlCases.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlCases);
@@ -160,6 +166,8 @@ namespace GUI
             userControlCases.Hide();
             userControlClients.Hide();
             userControlHelp.Hide();
+            userControlSpecialities.Hide();
+            userControlServices.Hide();
             userControlEmployees.Show();
             userControlEmployees.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlEmployees);
@@ -180,9 +188,55 @@ namespace GUI
             userControlCases.Hide();
             userControlEmployees.Hide();
             userControlHelp.Hide();
+            userControlSpecialities.Hide();
+            userControlServices.Hide();
             userControlClients.Show();
             userControlClients.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlClients);
+        }
+        #endregion
+        #region Events for SpecialitiesBtn
+        private void SpecialitiesBtn_MouseEnter(object sender, EventArgs e)
+        {
+            buttonForeColorHover(SpecialitiesBtn);
+        }
+        private void SpecialitiesBtn_MouseLeave(object sender, EventArgs e)
+        {
+            buttonForeColorLeave(SpecialitiesBtn);
+        }
+        private void SpecialitiesBtn_Click(object sender, EventArgs e)
+        {
+            buttonBackColor(SpecialitiesBtn);
+            userControlEmployees.Hide();
+            userControlClients.Hide();
+            userControlHelp.Hide();
+            userControlServices.Hide();
+            userControlCases.Hide();
+            userControlSpecialities.Show();
+            userControlSpecialities.Dock = DockStyle.Fill;
+            UcContainer.Controls.Add(userControlSpecialities);
+        }
+        #endregion
+        #region Events for ServicesBtn
+        private void servicesBtn_MouseEnter(object sender, EventArgs e)
+        {
+            buttonForeColorHover(servicesBtn);
+        }
+        private void servicesBtn_MouseLeave(object sender, EventArgs e)
+        {
+            buttonForeColorLeave(servicesBtn);
+        }
+        private void servicesBtn_Click(object sender, EventArgs e)
+        {
+            buttonBackColor(servicesBtn);
+            userControlEmployees.Hide();
+            userControlClients.Hide();
+            userControlHelp.Hide();
+            userControlCases.Hide();
+            userControlSpecialities.Hide();
+            userControlServices.Show();
+            userControlServices.Dock = DockStyle.Fill;
+            UcContainer.Controls.Add(userControlServices);
         }
         #endregion
         #region  Events for HelpBtn
@@ -200,6 +254,8 @@ namespace GUI
             userControlCases.Hide();
             userControlEmployees.Hide();
             userControlClients.Hide();
+            userControlSpecialities.Hide();
+            userControlServices.Hide();
             userControlHelp.Show();
             userControlHelp.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlHelp);

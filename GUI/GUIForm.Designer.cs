@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIForm));
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.SpecialitiesBtn = new System.Windows.Forms.Button();
+            this.servicesBtn = new System.Windows.Forms.Button();
+            this.MenuTestPanelLeave = new System.Windows.Forms.Panel();
             this.HelpBtn = new System.Windows.Forms.Button();
             this.ClientBtn = new System.Windows.Forms.Button();
             this.EmployeeBtn = new System.Windows.Forms.Button();
@@ -41,8 +44,7 @@
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
             this.UcContainer = new System.Windows.Forms.Panel();
-            this.dragControl1 = new GUI.DragControl();
-            this.MenuTestPanelLeave = new System.Windows.Forms.Panel();
+            this.dragControl2 = new GUI.DragControl();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,6 +55,8 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuPanel.Controls.Add(this.SpecialitiesBtn);
+            this.MenuPanel.Controls.Add(this.servicesBtn);
             this.MenuPanel.Controls.Add(this.MenuTestPanelLeave);
             this.MenuPanel.Controls.Add(this.HelpBtn);
             this.MenuPanel.Controls.Add(this.ClientBtn);
@@ -65,6 +69,57 @@
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(69, 566);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // SpecialitiesBtn
+            // 
+            this.SpecialitiesBtn.FlatAppearance.BorderSize = 0;
+            this.SpecialitiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpecialitiesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialitiesBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.SpecialitiesBtn.Image = ((System.Drawing.Image)(resources.GetObject("SpecialitiesBtn.Image")));
+            this.SpecialitiesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SpecialitiesBtn.Location = new System.Drawing.Point(0, 330);
+            this.SpecialitiesBtn.Name = "SpecialitiesBtn";
+            this.SpecialitiesBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.SpecialitiesBtn.Size = new System.Drawing.Size(347, 68);
+            this.SpecialitiesBtn.TabIndex = 6;
+            this.SpecialitiesBtn.Text = "     Efteruddannelser";
+            this.SpecialitiesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SpecialitiesBtn.UseVisualStyleBackColor = true;
+            this.SpecialitiesBtn.Click += new System.EventHandler(this.SpecialitiesBtn_Click);
+            this.SpecialitiesBtn.MouseEnter += new System.EventHandler(this.SpecialitiesBtn_MouseEnter);
+            this.SpecialitiesBtn.MouseLeave += new System.EventHandler(this.SpecialitiesBtn_MouseLeave);
+            // 
+            // servicesBtn
+            // 
+            this.servicesBtn.FlatAppearance.BorderSize = 0;
+            this.servicesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.servicesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicesBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.servicesBtn.Image = ((System.Drawing.Image)(resources.GetObject("servicesBtn.Image")));
+            this.servicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.servicesBtn.Location = new System.Drawing.Point(0, 390);
+            this.servicesBtn.Name = "servicesBtn";
+            this.servicesBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.servicesBtn.Size = new System.Drawing.Size(347, 68);
+            this.servicesBtn.TabIndex = 6;
+            this.servicesBtn.Text = "     Ydelser";
+            this.servicesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.servicesBtn.UseVisualStyleBackColor = true;
+            this.servicesBtn.Click += new System.EventHandler(this.servicesBtn_Click);
+            this.servicesBtn.MouseEnter += new System.EventHandler(this.servicesBtn_MouseEnter);
+            this.servicesBtn.MouseLeave += new System.EventHandler(this.servicesBtn_MouseLeave);
+            // 
+            // MenuTestPanelLeave
+            // 
+            this.MenuTestPanelLeave.BackColor = System.Drawing.Color.Transparent;
+            this.MenuTestPanelLeave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MenuTestPanelLeave.Location = new System.Drawing.Point(68, 0);
+            this.MenuTestPanelLeave.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuTestPanelLeave.Name = "MenuTestPanelLeave";
+            this.MenuTestPanelLeave.Size = new System.Drawing.Size(1, 566);
+            this.MenuTestPanelLeave.TabIndex = 5;
+            this.MenuTestPanelLeave.MouseLeave += new System.EventHandler(this.Menu_leave);
             // 
             // HelpBtn
             // 
@@ -94,7 +149,7 @@
             this.ClientBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientBtn.Image")));
             this.ClientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClientBtn.Location = new System.Drawing.Point(0, 281);
+            this.ClientBtn.Location = new System.Drawing.Point(0, 270);
             this.ClientBtn.Name = "ClientBtn";
             this.ClientBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.ClientBtn.Size = new System.Drawing.Size(347, 68);
@@ -114,7 +169,7 @@
             this.EmployeeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeBtn.Image")));
             this.EmployeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeBtn.Location = new System.Drawing.Point(0, 218);
+            this.EmployeeBtn.Location = new System.Drawing.Point(0, 210);
             this.EmployeeBtn.Name = "EmployeeBtn";
             this.EmployeeBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.EmployeeBtn.Size = new System.Drawing.Size(347, 68);
@@ -134,7 +189,7 @@
             this.CaseBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CaseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CaseBtn.Image")));
             this.CaseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CaseBtn.Location = new System.Drawing.Point(0, 155);
+            this.CaseBtn.Location = new System.Drawing.Point(0, 150);
             this.CaseBtn.Name = "CaseBtn";
             this.CaseBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.CaseBtn.Size = new System.Drawing.Size(347, 68);
@@ -204,20 +259,9 @@
             this.UcContainer.Size = new System.Drawing.Size(1158, 566);
             this.UcContainer.TabIndex = 3;
             // 
-            // dragControl1
+            // dragControl2
             // 
-            this.dragControl1.SelectControl = this.TopPanel;
-            // 
-            // MenuTestPanelLeave
-            // 
-            this.MenuTestPanelLeave.BackColor = System.Drawing.Color.Transparent;
-            this.MenuTestPanelLeave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MenuTestPanelLeave.Location = new System.Drawing.Point(68, 0);
-            this.MenuTestPanelLeave.Margin = new System.Windows.Forms.Padding(0);
-            this.MenuTestPanelLeave.Name = "MenuTestPanelLeave";
-            this.MenuTestPanelLeave.Size = new System.Drawing.Size(1, 566);
-            this.MenuTestPanelLeave.TabIndex = 5;
-            this.MenuTestPanelLeave.MouseLeave += new System.EventHandler(this.Menu_leave);
+            this.dragControl2.SelectControl = this.TopPanel;
             // 
             // GUIForm
             // 
@@ -253,8 +297,10 @@
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.PictureBox CloseWindowBtn;
         private System.Windows.Forms.Timer MenuSlideTimer;
-        private DragControl dragControl1;
         private System.Windows.Forms.Panel UcContainer;
         private System.Windows.Forms.Panel MenuTestPanelLeave;
+        private System.Windows.Forms.Button SpecialitiesBtn;
+        private System.Windows.Forms.Button servicesBtn;
+        private DragControl dragControl2;
     }
 }
