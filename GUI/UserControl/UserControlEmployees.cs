@@ -123,7 +123,7 @@ namespace GUI
 
 
         }
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MousefloatClick(object sender, MouseEventArgs e)
         {
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)

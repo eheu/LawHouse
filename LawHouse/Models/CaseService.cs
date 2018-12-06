@@ -12,7 +12,7 @@ namespace BusinessLogic.Models
         {
         }
 
-        public CaseService(int caseID, int serviceID, decimal hours, decimal kilometres, decimal estimatedHours)
+        public CaseService(int caseID, int serviceID, float hours, float kilometres, float estimatedHours)
         {
             CaseID = caseID;
             ServiceID = serviceID;
@@ -23,8 +23,8 @@ namespace BusinessLogic.Models
 
         public int CaseID { get; set; }
         public int ServiceID { get; set; }
-        public decimal Hours { get; set; }
-        public decimal Kilometres { get; set; }
-        public decimal EstimatedHours { get; set; }
+        public float Hours { get; set; }
+        public float Kilometres { get; set; }
+        public float EstimatedHours { get; set; }
     }
 }

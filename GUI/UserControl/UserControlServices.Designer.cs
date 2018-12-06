@@ -37,7 +37,7 @@
             this.objectListView_UCServiceTCFind_FindService = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCServiceTCFind_IsHourly = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TC_UCServiceTC_CreateService = new System.Windows.Forms.TabPage();
             this.radioButton_UCCServiceTCCreate_IsHourlyNo = new System.Windows.Forms.RadioButton();
             this.radioButton_UCCServiceTCCreate_IsHourlyYes = new System.Windows.Forms.RadioButton();
@@ -175,12 +175,12 @@
             // 
             this.objectListView_UCServiceTCFind_FindService.AllColumns.Add(this.olvColumn1);
             this.objectListView_UCServiceTCFind_FindService.AllColumns.Add(this.olvColumn2);
-            this.objectListView_UCServiceTCFind_FindService.AllColumns.Add(this.olvColumn3);
+            this.objectListView_UCServiceTCFind_FindService.AllColumns.Add(this.olvColumn_UCServiceTCFind_IsHourly);
             this.objectListView_UCServiceTCFind_FindService.CellEditUseWholeCell = false;
             this.objectListView_UCServiceTCFind_FindService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.olvColumn2,
-            this.olvColumn3});
+            this.olvColumn_UCServiceTCFind_IsHourly});
             this.objectListView_UCServiceTCFind_FindService.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCServiceTCFind_FindService.DataSource = null;
             this.objectListView_UCServiceTCFind_FindService.FullRowSelect = true;
@@ -192,7 +192,7 @@
             this.objectListView_UCServiceTCFind_FindService.TabIndex = 5;
             this.objectListView_UCServiceTCFind_FindService.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCServiceTCFind_FindService.View = System.Windows.Forms.View.Details;
-            this.objectListView_UCServiceTCFind_FindService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCServiceTCFind_FindService_MouseDoubleClick);
+            this.objectListView_UCServiceTCFind_FindService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCServiceTCFind_FindService_MousefloatClick);
             // 
             // olvColumn1
             // 
@@ -206,11 +206,11 @@
             this.olvColumn2.Text = "Pris";
             this.olvColumn2.Width = 147;
             // 
-            // olvColumn3
+            // olvColumn_UCServiceTCFind_IsHourly
             // 
-            this.olvColumn3.AspectName = "IsHourly";
-            this.olvColumn3.Text = "Afregning";
-            this.olvColumn3.Width = 185;
+            this.olvColumn_UCServiceTCFind_IsHourly.AspectName = "IsHourly";
+            this.olvColumn_UCServiceTCFind_IsHourly.Text = "Afregning";
+            this.olvColumn_UCServiceTCFind_IsHourly.Width = 185;
             // 
             // TC_UCServiceTC_CreateService
             // 
@@ -332,6 +332,7 @@
             this.bottom_UCServiceTCCreate_Create.TabIndex = 26;
             this.bottom_UCServiceTCCreate_Create.Text = "Opret ydelse";
             this.bottom_UCServiceTCCreate_Create.UseVisualStyleBackColor = true;
+            this.bottom_UCServiceTCCreate_Create.Click += new System.EventHandler(this.bottom_UCServiceTCCreate_Create_Click);
             // 
             // textbox_UCCServiceTCCreate_Price
             // 
@@ -803,7 +804,7 @@
         private System.Windows.Forms.Label label_UCServicesTCFind_Search;
         private System.Windows.Forms.Label label_UCCServiceTCCreate_Create;
         private System.Windows.Forms.Button button_UCServicesTCCreate_FindService;
-        private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCServiceTCFind_IsHourly;
         private System.Windows.Forms.Label label_UCCServiceTCCreate_IsHourly;
         private System.Windows.Forms.Label label_UCCServiceTCCreate_Price;
         private System.Windows.Forms.Label label_UCCServiceTCCreate_Name;

@@ -152,7 +152,7 @@
             this.objectListView_UCCaseTCFind_FindCase.TabIndex = 12;
             this.objectListView_UCCaseTCFind_FindCase.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCFind_FindCase.View = System.Windows.Forms.View.Details;
-            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
+            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_floatClick);
             // 
             // olvColumnName
             // 

@@ -147,7 +147,7 @@ namespace GUI
             MessageBox.Show("virkede");
         }
 
-        private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
+        private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
         {
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
             label_UCCaseTCManage_CaseName.Text = @case.Title;
