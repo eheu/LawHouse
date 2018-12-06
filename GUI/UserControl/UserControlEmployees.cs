@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
+using System.Linq;
 
 namespace GUI
 {
@@ -55,6 +56,10 @@ namespace GUI
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
 
+
+        /// <summary>
+        /// Sets the All comboboxes on startup
+        /// </summary>
         private void SetComboBoxSpeciality()
         {
             //Load of SpecialityList and RoleList from DB
@@ -92,37 +97,43 @@ namespace GUI
             combo_UCEmployeeTCEdit_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        #region Edit Employee
+        /// <summary>
+        /// Sets the EditEmployee Listbox
+        /// </summary>
+        private void SetEditEmployeeListbox(int employee_ID)
+        {
+            //List of employee Specialitys showed in listbox on Edit Employee
+            List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee_ID);
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = Specialitylist;
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
+        }
+
+        /// <summary>
+        /// Inserts Speciality's in Edit Employee's SpecialityListbox and checks if the Employee already have them
+        /// </summary>
         private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
-            if (!ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem))
+            Speciality inCombobox = (Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem;
+            var inListBox = ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items;
+            foreach (Speciality item in ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items)
             {
-                ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
-                comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
+                if (item.ID == inCombobox.ID) {
+                    comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
+                    return;
+                }
             }
+
+            Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
+            gui.SpecialityRepository.AddOneSpecialityOnLaywer(employee.ID, (Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
+            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
+            SetEditEmployeeListbox(employee.ID);
         }
 
-        private void button_UCEmployeeTCCreate_CreateEmployee_AddSpeciality_Click(object sender, EventArgs e)
-        {
-            if (!ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem))
-            {
-                ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem);
-                comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedIndex = -1;
-            }
-        }
-
-        private void button_UCEmployeeTCCreate_CreateEmployee_SaveEmployee_Click(object sender, EventArgs e)
-        {
-            Employee employee = new Employee();
-            employee.FirstName = textbox_UCEmployeeTCCreate_firstName.Text;
-            employee.LastName = textbox_UCEmployeeTCCreate_lastName.Text;
-            employee.Email = textbox_UCEmployeeTCCreate_emailName.Text;
-            employee.Phone = textbox_UCEmployeeTCCreate_phone.Text;
-            employee.RoleID = (int)combo_UCEmployeeTCCreate_Role.SelectedValue;
-                //Create the employee
-                gui.EmployeeRepository.Create(employee);
-
-
-        }
+        /// <summary>
+        /// Fills data in the EditEmployee tap and loads the Specialitys listbox
+        /// </summary>
         private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // user clicked an item of objectListView control
@@ -138,14 +149,55 @@ namespace GUI
                 textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
                 combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
 
-                //List of employee Specialitys showed in listbox
-                List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee.ID);
-                    foreach (Speciality item in Specialitylist)
-                    {
-                        ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items.Add(item);
-                    }
+                //Load List of employee Specialitys showed in listbox on Edit Employee
+                SetEditEmployeeListbox(employee.ID);
             }
         }
+        #endregion
+        #region Save Employee
+        /// <summary>
+        /// Inserts Speciality's in Create Employee's SpecialityListbox
+        /// </summary>
+        private void button_UCEmployeeTCCreate_CreateEmployee_AddSpeciality_Click(object sender, EventArgs e)
+        {
+            if (!ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem))
+            {
+                ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem);
+                comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
+        /// Saves the Employee and the Employee's Speciality's
+        /// </summary>
+        private void button_UCEmployeeTCCreate_CreateEmployee_SaveEmployee_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.FirstName = textbox_UCEmployeeTCCreate_firstName.Text;
+            employee.LastName = textbox_UCEmployeeTCCreate_lastName.Text;
+            employee.Email = textbox_UCEmployeeTCCreate_emailName.Text;
+            employee.Phone = textbox_UCEmployeeTCCreate_phone.Text;
+            employee.RoleID = (int)combo_UCEmployeeTCCreate_Role.SelectedValue;
+            //Create the employee
+            gui.EmployeeRepository.Create(employee);
+
+            //Set the Employee's Specialityes
+            List<Speciality> Specialitylist = new List<Speciality>();
+            foreach (Speciality item in ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items)
+            {
+                Specialitylist.Add(item);
+            }
+            gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
+
+            gui.ClearTextboxesAndCompoboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+        }
+        #endregion
+
+
+
+
+
+
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
@@ -153,7 +205,6 @@ namespace GUI
         {
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
             this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
-
         }
     }
 }

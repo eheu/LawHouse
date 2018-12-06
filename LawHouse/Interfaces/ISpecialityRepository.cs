@@ -11,5 +11,8 @@ namespace BusinessLogic.Interfaces
 
         List<Speciality> GetAllSpecialityesFromOnelaywer(int employeeID);
 
+        void SetAllSpecialityesOnOnelaywer(int employeeID, List<Speciality> Specialitylist);
+
+        void AddOneSpecialityOnLaywer(int employeeID, Speciality speciality);
     }
 }

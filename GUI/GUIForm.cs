@@ -268,7 +268,20 @@ namespace GUI
 
         #endregion
 
-        //Lav søge funktionen her og se om den kan kaldes fra de forskellige UC's :
-
+        /// <summary>
+        /// Clear all textboxes in the given control
+        /// Ex call: gui.ClearTextboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+        /// </summary>
+        public void ClearTextboxesAndCompoboxes(System.Windows.Forms.Control.ControlCollection ctrls)
+        {
+            foreach (Control ctrl in ctrls)
+            {
+                if (ctrl is TextBox)
+                    ((TextBox)ctrl).Text = string.Empty;
+                if (ctrl is ComboBox)
+                    ((ComboBox)ctrl).SelectedItem = -1;
+                ClearTextboxesAndCompoboxes(ctrl.Controls);
+            }
+        }
     }
 }
