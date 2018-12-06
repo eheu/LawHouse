@@ -56,19 +56,6 @@ namespace GUI
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
 
-        /// <summary>
-        /// Clear all textboxes in the given control
-        /// </summary>
-        void ClearTextboxes(System.Windows.Forms.Control.ControlCollection ctrls)
-        {
-            foreach (Control ctrl in ctrls)
-            {
-                if (ctrl is TextBox)
-                    ((TextBox)ctrl).Text = string.Empty;
-                ClearTextboxes(ctrl.Controls);
-            }
-        }
-
 
         /// <summary>
         /// Sets the All comboboxes on startup
@@ -110,22 +97,21 @@ namespace GUI
             combo_UCEmployeeTCEdit_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        #region Edit Employee
         /// <summary>
         /// Sets the EditEmployee Listbox
         /// </summary>
-
         private void SetEditEmployeeListbox(int employee_ID)
         {
             //List of employee Specialitys showed in listbox on Edit Employee
             List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee_ID);
-
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = Specialitylist;
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         /// <summary>
-        /// Inserts Speciality's in Edit Employee's SpecialityListbox and check if the Employee already have them
+        /// Inserts Speciality's in Edit Employee's SpecialityListbox and checks if the Employee already have them
         /// </summary>
         private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
@@ -145,6 +131,30 @@ namespace GUI
             SetEditEmployeeListbox(employee.ID);
         }
 
+        /// <summary>
+        /// Fills data in the EditEmployee tap and loads the Specialitys listbox
+        /// </summary>
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // user clicked an item of objectListView control
+            if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
+            {
+                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+
+                Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
+
+                textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
+                textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
+                textbox_UCEmployeeTCEdit_email.Text = employee.Email;
+                textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
+                combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
+
+                //Load List of employee Specialitys showed in listbox on Edit Employee
+                SetEditEmployeeListbox(employee.ID);
+            }
+        }
+        #endregion
+        #region Save Employee
         /// <summary>
         /// Inserts Speciality's in Create Employee's SpecialityListbox
         /// </summary>
@@ -179,31 +189,15 @@ namespace GUI
             }
             gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
 
-            ClearTextboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+            gui.ClearTextboxesAndCompoboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
+        #endregion
 
-        /// <summary>
-        /// Fills data in the EditEmployee tap and loads the Specialitys listbox
-        /// </summary>
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // user clicked an item of objectListView control
-            if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
-            {
-                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
 
-                Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
 
-                textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
-                textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
-                textbox_UCEmployeeTCEdit_email.Text = employee.Email;
-                textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
-                combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
 
-                //Load List of employee Specialitys showed in listbox on Edit Employee
-                SetEditEmployeeListbox(employee.ID);
-            }
-        }
+
+
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
