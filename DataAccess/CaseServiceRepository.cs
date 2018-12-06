@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -148,14 +149,14 @@ namespace DataAccess
                             CaseService caseService = new CaseService();
                             caseService.CaseID = (int)reader["caseID"];
                             caseService.ServiceID = (int)reader["serviceID"];
-                            caseService.Hours = (decimal)reader["hours"];
-                            caseService.Kilometres = (decimal)reader["kilometres"];
-                            caseService.EstimatedHours = (decimal)reader["estimatedHours"];
+                            caseService.Hours = (double)reader["hours"];
+                            caseService.Kilometres = (double)reader["kilometres"];
+                            caseService.EstimatedHours = (double)reader["estimatedHours"];
 
                             Service service = new Service();
                             service.ID = (int)reader["ID"];
                             service.Name = (string)reader["name"];
-                            service.Price = (decimal)reader["price"];
+                            service.Price = (double)reader["price"];
                             service.IsHourly = (bool)reader["isHourly"];
 
                             servicesByCaseService.Add(caseService, service);
@@ -174,14 +175,47 @@ namespace DataAccess
                 }
             }   
         }
+        public void UpdateCaseService(CaseService caseService)
+        {
+            //Lav SQL til at gemme tid og estimeret tid i databasen 
+            //Debug.WriteLine($"Estimated: {caseService.EstimatedHours}. CaseHours: {caseService.Hours}");
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"UPDATE CaseService SET
+                                            hours = @hours, 
+                                            estimatedHours = @estimatedHours, 
+                                            kilometres = @kilometres 
+                                            WHERE caseID = @caseID
+                                            AND serviceID = @serviceID";
+                    command.AddParameter("hours", @caseService.Hours);
+                    command.AddParameter("estimatedHours", @caseService.EstimatedHours);
+                    command.AddParameter("kilometres", @caseService.Kilometres);
+                    command.AddParameter("caseID", @caseService.CaseID);
+                    command.AddParameter("serviceID", @caseService.ServiceID);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+
+        }
 
         private static void Map(SqlDataReader reader, CaseService caseService)
         {
             caseService.CaseID = (int)reader[0];
             caseService.ServiceID = (int)reader[1];
-            caseService.Hours = (decimal)reader[2];
-            caseService.Kilometres = (decimal)reader[3];
-            caseService.EstimatedHours = (decimal)reader[3];
+            caseService.Hours = (double)reader[2];
+            caseService.Kilometres = (double)reader[3];
+            caseService.EstimatedHours = (double)reader[3];
         }
         private static List<CaseService> MapCollection(SqlCommand command)
         {
@@ -197,6 +231,5 @@ namespace DataAccess
                 return caseServices;
             }
         }
-
     }
 }

@@ -12,7 +12,7 @@ namespace BusinessLogic.Models
         {
         }
 
-        public Service(string name, decimal price, bool isHourly)
+        public Service(string name, double price, bool isHourly)
         {
             Name = name;
             Price = price;
@@ -20,7 +20,7 @@ namespace BusinessLogic.Models
         }
 
         public string Name { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public bool IsHourly { get; set; }
     }
 }

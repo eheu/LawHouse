@@ -80,8 +80,8 @@
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCCaseTCManage_ManageService_Hours = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCCaseTCManage_Save = new System.Windows.Forms.Button();
             this.button_UCCaseTCManage_AddService = new System.Windows.Forms.Button();
             this.comboBox_UCCaseTCManage_AddService = new System.Windows.Forms.ComboBox();
@@ -635,15 +635,16 @@
             // objectListView_UCCaseTCManage_ManageService
             // 
             this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Name);
-            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses);
-            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Hourses);
+            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours);
+            this.objectListView_UCCaseTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Hours);
             this.objectListView_UCCaseTCManage_ManageService.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
             this.objectListView_UCCaseTCManage_ManageService.CellEditUseWholeCell = false;
             this.objectListView_UCCaseTCManage_ManageService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn_UCCaseTCManage_ManageService_Name,
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses,
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses});
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours,
+            this.olvColumn_UCCaseTCManage_ManageService_Hours});
             this.objectListView_UCCaseTCManage_ManageService.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCCaseTCManage_ManageService.FullRowSelect = true;
             this.objectListView_UCCaseTCManage_ManageService.HasCollapsibleGroups = false;
             this.objectListView_UCCaseTCManage_ManageService.Location = new System.Drawing.Point(9, 125);
             this.objectListView_UCCaseTCManage_ManageService.Name = "objectListView_UCCaseTCManage_ManageService";
@@ -652,6 +653,8 @@
             this.objectListView_UCCaseTCManage_ManageService.TabIndex = 27;
             this.objectListView_UCCaseTCManage_ManageService.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCManage_ManageService.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCCaseTCManage_ManageService.CellEditFinished += new BrightIdeasSoftware.CellEditEventHandler(this.objectListView_UCCaseTCManage_ManageService_CellEditFinished);
+            this.objectListView_UCCaseTCManage_ManageService.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.objectListView_UCCaseTCManage_ManageService_CellEditFinishing);
             // 
             // olvColumn_UCCaseTCManage_ManageService_Name
             // 
@@ -659,17 +662,17 @@
             this.olvColumn_UCCaseTCManage_ManageService_Name.Text = "Titel";
             this.olvColumn_UCCaseTCManage_ManageService_Name.Width = 320;
             // 
-            // olvColumn_UCCaseTCManage_ManageService_EstimatedHourses
+            // olvColumn_UCCaseTCManage_ManageService_EstimatedHours
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.AspectName = "Key.Hours";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Text = "EST. Timer";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Width = 110;
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours.AspectName = "Key.EstimatedHours";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours.Text = "EST. Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours.Width = 110;
             // 
-            // olvColumn_UCCaseTCManage_ManageService_Hourses
+            // olvColumn_UCCaseTCManage_ManageService_Hours
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.AspectName = "Key.EstimatedHours";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Text = "Timer";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Width = 110;
+            this.olvColumn_UCCaseTCManage_ManageService_Hours.AspectName = "Key.Hours";
+            this.olvColumn_UCCaseTCManage_ManageService_Hours.Text = "Timer";
+            this.olvColumn_UCCaseTCManage_ManageService_Hours.Width = 110;
             // 
             // button_UCCaseTCManage_Save
             // 
@@ -851,8 +854,8 @@
         private BrightIdeasSoftware.OLVColumn olvColumnName;
         private System.Windows.Forms.ListBox listBox_UCCaseTCCreate_Service;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Name;
-        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_EstimatedHourses;
-        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Hourses;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_EstimatedHours;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Hours;
         private BrightIdeasSoftware.ObjectListView objectListView_UCCaseTCEdit_Services;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.Label label_UCCaseTCEdit_CurrentLawyer;

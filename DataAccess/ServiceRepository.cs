@@ -88,7 +88,7 @@ namespace DataAccess
         {
             service.ID = (int)reader[0];
             service.Name = (string)reader[1];
-            service.Price = (decimal)reader[2];
+            service.Price = (double)reader[2];
             service.IsHourly = (bool)reader[3];
         }
         private static List<Service> MapCollection(SqlCommand command)
