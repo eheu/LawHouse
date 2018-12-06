@@ -74,6 +74,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.button_UCEmployeeTCEdit_DeleteEmployee = new System.Windows.Forms.Button();
+            this.label_UCEmployeeTCEdit_DeleteEmployee = new System.Windows.Forms.Label();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -192,6 +194,8 @@
             // 
             // TC_UCEmployeeTC_EditEmployee
             // 
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label_UCEmployeeTCEdit_DeleteEmployee);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_DeleteEmployee);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_Back_FindEmployee);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee);
@@ -244,6 +248,7 @@
             this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.TabIndex = 15;
             this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Text = "Gem ændringer";
             this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCEdit_EditEmployee_SaveEmployee_Click);
             // 
             // button_UCEmployeeTCEdit_EditEmployee_AddSpeciality
             // 
@@ -535,6 +540,24 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Fornavn";
             // 
+            // button_UCEmployeeTCEdit_DeleteEmployee
+            // 
+            this.button_UCEmployeeTCEdit_DeleteEmployee.Location = new System.Drawing.Point(6, 472);
+            this.button_UCEmployeeTCEdit_DeleteEmployee.Name = "button_UCEmployeeTCEdit_DeleteEmployee";
+            this.button_UCEmployeeTCEdit_DeleteEmployee.Size = new System.Drawing.Size(102, 30);
+            this.button_UCEmployeeTCEdit_DeleteEmployee.TabIndex = 18;
+            this.button_UCEmployeeTCEdit_DeleteEmployee.Text = "Slet ansat";
+            this.button_UCEmployeeTCEdit_DeleteEmployee.UseVisualStyleBackColor = true;
+            this.button_UCEmployeeTCEdit_DeleteEmployee.Click += new System.EventHandler(this.button_UCEmployeeTCEdit_DeleteEmployee_Click);
+            // 
+            // label_UCEmployeeTCEdit_DeleteEmployee
+            // 
+            this.label_UCEmployeeTCEdit_DeleteEmployee.AutoSize = true;
+            this.label_UCEmployeeTCEdit_DeleteEmployee.Location = new System.Drawing.Point(115, 478);
+            this.label_UCEmployeeTCEdit_DeleteEmployee.Name = "label_UCEmployeeTCEdit_DeleteEmployee";
+            this.label_UCEmployeeTCEdit_DeleteEmployee.Size = new System.Drawing.Size(0, 18);
+            this.label_UCEmployeeTCEdit_DeleteEmployee.TabIndex = 19;
+            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,5 +627,7 @@
         private System.Windows.Forms.Button button_UCEmployeeTCEdit_Back_FindEmployee;
         private System.Windows.Forms.ListBox ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality;
         private System.Windows.Forms.ListBox ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality;
+        private System.Windows.Forms.Button button_UCEmployeeTCEdit_DeleteEmployee;
+        private System.Windows.Forms.Label label_UCEmployeeTCEdit_DeleteEmployee;
     }
 }

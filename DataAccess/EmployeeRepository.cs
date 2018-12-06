@@ -46,7 +46,31 @@ namespace DataAccess
 
         public void Delete(Employee employee)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    //Prøv at få dette til at virke
+                    //DELETE[DBO].[Employee] , [DBO].[EmployeeSpeciality] FROM[Employee] INNER JOIN[EmployeeSpeciality]
+                    //WHERE[Employee].[ID] = [EmployeeSpeciality].[employeeID] and[Employee].[ID] = '23'
+
+                    command.CommandText = @"Delete from [EmployeeSpeciality] where [EmployeeSpeciality].[employeeID] = @E_ID;
+		                                    Delete from [Employee] where [Employee].[ID] = @E_ID";
+
+                    command.AddParameter("E_ID", employee.ID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public Employee Get(int ID)
@@ -80,8 +104,6 @@ namespace DataAccess
                 {
                     _connection.Close();
                 }
-
-
             }
         }
 
@@ -202,7 +224,36 @@ namespace DataAccess
 
         public void Update(Employee entity)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"UPDATE Employee
+                                            SET [firstName]=@FirstName, [lastName]=@LastName, [email]=@Email, [phone]=@Phone, [roleID]=@RoleID
+                                            WHERE [ID]=@E_ID";
+                    command.AddParameter("FirstName", entity.FirstName);
+                    command.AddParameter("LastName", entity.LastName);
+                    command.AddParameter("Email", entity.Email);
+                    command.AddParameter("Phone", entity.Phone);
+                    command.AddParameter("RoleID", entity.RoleID);
+                    command.AddParameter("E_ID", entity.ID);
+
+                    _connection.Open();
+                    int numberOfRecords = command.ExecuteNonQuery();
+                    Console.WriteLine(numberOfRecords);
+                    
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         private static void Map(SqlDataReader reader, Employee employee)

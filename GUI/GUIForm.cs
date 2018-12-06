@@ -213,10 +213,10 @@ namespace GUI
         #endregion
 
         /// <summary>
-        /// Clear all textboxes in the given control
-        /// Ex call: gui.ClearTextboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+        /// Clear all Controls in the given ControlCollection
+        /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
-        public void ClearTextboxesAndCompoboxes(System.Windows.Forms.Control.ControlCollection ctrls)
+        public void ClearTextboxesAndCompoboxesAndlistboxes(System.Windows.Forms.Control.ControlCollection ctrls)
         {
             foreach (Control ctrl in ctrls)
             {
@@ -224,7 +224,11 @@ namespace GUI
                     ((TextBox)ctrl).Text = string.Empty;
                 if (ctrl is ComboBox)
                     ((ComboBox)ctrl).SelectedItem = -1;
-                ClearTextboxesAndCompoboxes(ctrl.Controls);
+                if (ctrl is ListBox) {
+                    ((ListBox)ctrl).DataSource = null;
+                    ((ListBox)ctrl).Items.Clear();
+                }
+                ClearTextboxesAndCompoboxesAndlistboxes(ctrl.Controls);
             }
         }
     }

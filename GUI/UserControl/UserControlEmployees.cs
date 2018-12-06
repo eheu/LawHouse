@@ -16,6 +16,7 @@ namespace GUI
     public partial class UserControlEmployees : UserControl
     {
         GUIForm gui;
+        private Employee currentEmployee;
         public UserControlEmployees(GUIForm guiForm)
         {
             gui = guiForm;
@@ -131,6 +132,34 @@ namespace GUI
             SetEditEmployeeListbox(employee.ID);
         }
 
+        ///<summary>
+        ///Saves the Employees edited data
+        /// </summary>
+        private void button_UCEmployeeTCEdit_EditEmployee_SaveEmployee_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+
+            employee.ID = currentEmployee.ID;
+            employee.FirstName = textbox_UCEmployeeTCEdit_firstName.Text;
+            employee.LastName = textbox_UCEmployeeTCEdit_lastName.Text;
+            employee.Email = textbox_UCEmployeeTCEdit_email.Text;
+            employee.Phone = textbox_UCEmployeeTCEdit_phone.Text;
+            employee.RoleID = Convert.ToInt32(combo_UCEmployeeTCEdit_Role.SelectedValue);
+
+            //Create the employee
+            gui.EmployeeRepository.Update(employee);
+
+            //Clear text/Compoboxes
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+
+            //Refresh Employee Olv
+            SetObjectListViewEmployee();
+
+            //Go back to Find Employee
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
+
         /// <summary>
         /// Fills data in the EditEmployee tap and loads the Specialitys listbox
         /// </summary>
@@ -142,6 +171,9 @@ namespace GUI
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
 
                 Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
+
+                //Set the globel Employee object
+                currentEmployee = employee;
 
                 textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
                 textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
@@ -189,7 +221,7 @@ namespace GUI
             }
             gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
 
-            gui.ClearTextboxesAndCompoboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
         #endregion
 
@@ -205,6 +237,19 @@ namespace GUI
         {
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
             this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
+        }
+
+        private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
+        {
+            gui.EmployeeRepository.Delete(currentEmployee);
+
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+
+            //Refresh Employee Olv
+            SetObjectListViewEmployee();
+
+            //Go back to Find Employee
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
         }
     }
 }
