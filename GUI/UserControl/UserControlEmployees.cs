@@ -241,8 +241,17 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
         {
-            gui.EmployeeRepository.Delete(currentEmployee);
-
+            if (gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID) == 0)
+            {
+                gui.EmployeeRepository.Delete(currentEmployee);
+            }
+            else
+            {
+                label_UCEmployeeTCEdit_DeleteEmployee.Text = "Medarbejderen er på en sag og kan ikke slettes";
+                return;
+            }
+            
+            //label_UCEmployeeTCEdit_DeleteEmployee
             gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv

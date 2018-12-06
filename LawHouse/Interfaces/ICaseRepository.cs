@@ -22,6 +22,11 @@ namespace BusinessLogic.Interfaces
         /// </summary>
         List<Case> GetCasesFromLawyer(int lawyerID);
 
+        /// <summary>
+        ///     Check if a lawyer has one or more cases.
+        /// </summary>
+        int CheckIflawyerHasCases(int lawyerID);
+
         
 
     }

@@ -63,7 +63,6 @@ namespace DataAccess
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
                 finally
