@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -174,6 +175,39 @@ namespace DataAccess
                 }
             }   
         }
+        public void UpdateCaseService(CaseService caseService)
+        {
+            //Lav SQL til at gemme tid og estimeret tid i databasen 
+            //Debug.WriteLine($"Estimated: {caseService.EstimatedHours}. CaseHours: {caseService.Hours}");
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"UPDATE CaseService SET
+                                            hours = @hours, 
+                                            estimatedHours = @estimatedHours, 
+                                            kilometres = @kilometres 
+                                            WHERE caseID = @caseID
+                                            AND serviceID = @serviceID";
+                    command.AddParameter("hours", @caseService.Hours);
+                    command.AddParameter("estimatedHours", @caseService.EstimatedHours);
+                    command.AddParameter("kilometres", @caseService.Kilometres);
+                    command.AddParameter("caseID", @caseService.CaseID);
+                    command.AddParameter("serviceID", @caseService.ServiceID);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+
+        }
 
         private static void Map(SqlDataReader reader, CaseService caseService)
         {
@@ -197,6 +231,5 @@ namespace DataAccess
                 return caseServices;
             }
         }
-
     }
 }

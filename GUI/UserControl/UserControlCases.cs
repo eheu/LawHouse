@@ -11,6 +11,7 @@ using BusinessLogic;
 using GUI;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -250,6 +251,38 @@ namespace GUI
         {
             this.objectListView_UCCaseTCFind_FindCase.UseFiltering = true;
             this.objectListView_UCCaseTCFind_FindCase.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCCaseTCFind_FindCase, $"{textBox_UCCaseTCFind_Search.Text}");
+        }
+        /// <summary>
+        ///      Since ObjectListView cannot handle updating a KeyValuePair object correctly, we do it manually here
+        /// </summary>
+        private void objectListView_UCCaseTCManage_ManageService_CellEditFinishing(object sender, CellEditEventArgs e)
+        {
+            KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)e.RowObject;
+
+            string c = e.Column.AspectName;
+            switch (c)
+            {
+                case "Key.Hours":
+                    keyValue.Key.Hours = (double)e.NewValue;
+                    Debug.WriteLine("object value: " + keyValue.Key.Hours);
+                    break;
+                case "Key.EstimatedHours":
+                    keyValue.Key.EstimatedHours = (double)e.NewValue;
+                    Debug.WriteLine("object value: " + keyValue.Key.EstimatedHours);
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        ///     We take the newly updatet object in the ObjectListView and save it to the database. 
+        /// </summary>
+        private void objectListView_UCCaseTCManage_ManageService_CellEditFinished(object sender, CellEditEventArgs e)
+        {
+            KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)e.RowObject;
+            var caseService = keyValue.Key;
+                      
+            gui.CaseServiceRepository.UpdateCaseService(caseService);
         }
     }
 }

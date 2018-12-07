@@ -44,6 +44,68 @@ namespace DataAccess
             }
         }
 
+        public void AddOneSpecialityOnLaywer(int employeeID, Speciality speciality)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) 
+                                            VALUES (@employeeID, @S_ID)";
+
+                    command.AddParameter("S_ID", speciality.ID);
+                    command.AddParameter("employeeID", employeeID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
+        public void SetAllSpecialityesOnOnelaywer(int employeeID, List<Speciality> Specialitylist)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) VALUES";
+
+                    for (int i = 0; i < Specialitylist.Count; i++)
+                    {
+                        command.CommandText += " (@employeeID, @S_ID"+i+")";
+                        command.AddParameter("S_ID"+i, Specialitylist[i].ID);
+                        if (i < Specialitylist.Count - 1)
+                        {
+                            command.CommandText += ",";
+                        }
+                    }
+
+                    command.AddParameter("employeeID", employeeID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
         public List<Speciality> GetAllSpecialityesFromOnelaywer(int employeeID)
         {
             using (var command = _connection.CreateCommand())
