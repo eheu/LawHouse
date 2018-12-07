@@ -2,6 +2,7 @@
 using BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,39 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public Role Get(int id)
+        public Role Get(int ID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"SELECT [ID], [Name] 
+                                            FROM [Role]
+                                            WHERE ID = @ID";
+                    command.AddParameter("ID", ID);
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            throw new DataException("Role with ID " + ID + " not found");
+
+                        var Role = new Role();
+                        Map(reader, Role);
+
+                        return Role;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public List<Role> GetAll()

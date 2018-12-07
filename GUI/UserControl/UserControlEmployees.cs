@@ -167,29 +167,32 @@ namespace GUI
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
             {
-                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
 
                 Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
 
                 //Set the globel Employee object
                 currentEmployee = employee;
 
-                textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
-                textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
-                textbox_UCEmployeeTCEdit_email.Text = employee.Email;
-                textbox_UCEmployeeTCEdit_phone.Text = employee.Phone;
-                combo_UCEmployeeTCEdit_Role.SelectedValue = employee.RoleID;
+                label_UCEmployeeTCManage_firstName_Show.Text = employee.FirstName;
+                label_UCEmployeeTCManage_lastName_Show.Text = employee.LastName;
+                label_UCEmployeeTCManage_email_Show.Text = employee.Email;
+                label_UCEmployeeTCManage_phone_Show.Text = employee.Phone;
+
+                //Get Role
+                Role RoleInfo = gui.RoleRepository.Get(employee.RoleID);
+                label_UCEmployeeTCManage_role_Show.Text = RoleInfo.Name;
 
                 //Load List of employee Specialitys showed in listbox on Edit Employee
                 SetEditEmployeeListbox(employee.ID);
 
                 //Load datalstview with employees cases
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
-                dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
+                dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
             }
         }
         #endregion
-        #region Save Employee
+        #region Create Employee
         /// <summary>
         /// Inserts Speciality's in Create Employee's SpecialityListbox
         /// </summary>
@@ -236,11 +239,6 @@ namespace GUI
         }
             #endregion
 
-
-
-
-
-
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
@@ -281,6 +279,24 @@ namespace GUI
 
             //Load List of employee Specialitys showed in listbox on Edit Employee
             SetEditEmployeeListbox(currentEmployee.ID);
+        }
+
+        private void button_UCEmployeeTCManage_EditEmployee_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+
+            textbox_UCEmployeeTCEdit_firstName.Text = currentEmployee.FirstName;
+            textbox_UCEmployeeTCEdit_lastName.Text = currentEmployee.LastName;
+            textbox_UCEmployeeTCEdit_email.Text = currentEmployee.Email;
+            textbox_UCEmployeeTCEdit_phone.Text = currentEmployee.Phone;
+            combo_UCEmployeeTCEdit_Role.SelectedValue = currentEmployee.RoleID;
+
+            //Load List of employee Specialitys showed in listbox on Edit Employee
+            SetEditEmployeeListbox(currentEmployee.ID);
+
+            //Load datalstview with employees cases
+            List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);
+            dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
         }
     }
 }
