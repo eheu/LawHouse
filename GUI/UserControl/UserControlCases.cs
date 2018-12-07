@@ -144,7 +144,7 @@ namespace GUI
                 gui.CaseServiceRepository.AddServiceToCase(service, @case);
             }
 
-            gui.ClearTextboxesAndCompoboxes(TC_UCCaseTC_CreateCase.Controls);
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCCaseTC_CreateCase.Controls);
         }
 
         private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
