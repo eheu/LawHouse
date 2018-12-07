@@ -119,7 +119,6 @@
             this.textBox_UCCaseTCFind_Search.Name = "textBox_UCCaseTCFind_Search";
             this.textBox_UCCaseTCFind_Search.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCCaseTCFind_Search.TabIndex = 13;
-            this.textBox_UCCaseTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCCaseTCFind_Search_TextChanged);
             // 
             // label_UCCaseTCFind_Search
             // 
