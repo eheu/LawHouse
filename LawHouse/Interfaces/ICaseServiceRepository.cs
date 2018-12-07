@@ -29,6 +29,9 @@ namespace BusinessLogic.Interfaces
         ///     Deletes all services on a specific case
         /// </summary>
         void DeleteAllServicesOnACase(Case @case);
-
+        /// <summary>
+        ///     Updates estimated time and or times spend on a case service
+        /// </summary>
+        void UpdateCaseService(CaseService caseService);
     }
 }

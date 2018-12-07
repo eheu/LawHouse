@@ -13,9 +13,33 @@ namespace DataAccess
     public class ServiceRepository : IServiceRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
-        public void Create(Service entity)
+        public void Create(Service service)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = @"INSERT INTO [Service] (name, price, isHourly, description)
+                                        VALUES(@name, @price, @isHourly, @description);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    cmd.AddParameter("name", service.Name);
+                    cmd.AddParameter("price", service.Price);
+                    cmd.AddParameter("isHourly", service.IsHourly);
+                    cmd.AddParameter("description", service.Description);
+                    _connection.Open();
+                    var ID = (int)cmd.ExecuteScalar();
+                    service.ID = ID;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+            }
         }
 
         public void Delete(Service service)

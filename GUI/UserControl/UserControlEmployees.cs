@@ -226,7 +226,20 @@ namespace GUI
 
             gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
-        #endregion
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
+        {
+            // user clicked an item of objectListView control
+            if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
+            {
+                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+            }
+        }
+            #endregion
+
+
+
+
+
 
         /// <summary>
         /// Makes the search field sort the list view

@@ -116,7 +116,7 @@ namespace GUI
         private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
         {
             this.objectListView_UCClientTCFind_FindClient.UseFiltering = true;
-            this.objectListView_UCClientTCFind_FindClient.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCClientTCFind_FindClient, $"{textBox_UCCaseTCFind_Search.Text}");
+            this.objectListView_UCClientTCFind_FindClient.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCClientTCFind_FindClient, $"{textBox_UCClientTCFind_Search.Text}");
         }
     }
 }

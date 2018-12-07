@@ -11,12 +11,14 @@ using BusinessLogic;
 using GUI;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
+using System.Diagnostics;
 
 namespace GUI
 {
     public partial class UserControlCases : UserControl
     {
         private Case currentCase;
+        private List<Case> caselist;
         GUIForm gui;
         public UserControlCases(GUIForm guiForm)
         {
@@ -75,7 +77,7 @@ namespace GUI
 
         private void SetObjectListViewCases()
         {
-            List<Case> caselist = gui.CaseRepository.GetAll();
+            caselist = gui.CaseRepository.GetAll();
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
 
@@ -83,8 +85,6 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
-
-
 
         private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace GUI
             MessageBox.Show("virkede");
         }
 
-        private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
+        private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
         {
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
             label_UCCaseTCManage_CaseName.Text = @case.Title;
@@ -250,6 +250,54 @@ namespace GUI
         {
             this.objectListView_UCCaseTCFind_FindCase.UseFiltering = true;
             this.objectListView_UCCaseTCFind_FindCase.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCCaseTCFind_FindCase, $"{textBox_UCCaseTCFind_Search.Text}");
+        }
+        /// <summary>
+        ///      Since ObjectListView cannot handle updating a KeyValuePair object correctly, we do it manually here
+        /// </summary>
+        private void objectListView_UCCaseTCManage_ManageService_CellEditFinishing(object sender, CellEditEventArgs e)
+        {
+            KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)e.RowObject;
+
+            string c = e.Column.AspectName;
+            switch (c)
+            {
+                case "Key.Hours":
+                    keyValue.Key.Hours = (double)e.NewValue;
+                    Debug.WriteLine("object value: " + keyValue.Key.Hours);
+                    break;
+                case "Key.EstimatedHours":
+                    keyValue.Key.EstimatedHours = (double)e.NewValue;
+                    Debug.WriteLine("object value: " + keyValue.Key.EstimatedHours);
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        ///     We take the newly updatet object in the ObjectListView and save it to the database. 
+        /// </summary>
+        private void objectListView_UCCaseTCManage_ManageService_CellEditFinished(object sender, CellEditEventArgs e)
+        {
+            KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)e.RowObject;
+            var caseService = keyValue.Key;
+                      
+            gui.CaseServiceRepository.UpdateCaseService(caseService);
+        }
+
+        private void checkBox_UCCaseTCFind_IsFinished_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox_UCCaseTCFind_IsFinished.Checked)
+            {
+                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
+                caselist = gui.CaseRepository.GetAll();
+                objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
+            if (checkBox_UCCaseTCFind_IsFinished.Checked)
+            {
+                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle igangværende sager";
+                caselist = gui.CaseRepository.GetAllDoneCases();
+                objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
         }
     }
 }
