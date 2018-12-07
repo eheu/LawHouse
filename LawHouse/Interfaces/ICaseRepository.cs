@@ -21,8 +21,12 @@ namespace BusinessLogic.Interfaces
         ///     Load all cases with a relation to the lawyer.
         /// </summary>
         List<Case> GetCasesFromLawyer(int lawyerID);
+        /// <summary>
+        ///     Load all existing entities that has status 1 (done). 
+        /// </summary>
+        List<Case> GetAllDoneCases();
 
-        
+
 
     }
 }

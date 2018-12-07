@@ -44,15 +44,16 @@ namespace GUI
             panelWidth = MenuPanel.Width;
             hidden = true;
         }
+        #region GUI events. Primarily menubar events and application close/minimize events
         /// <summary>
-        /// Sørger for at det første der bliver loaded, når Formen loader, er Cases
+        ///     Performs a click on CaseBtn when GUIform is loaded. 
         /// </summary>
         private void GUI_Load(object sender, EventArgs e)
         {
             CaseBtn.PerformClick();
         }
         /// <summary>
-        /// Står for hide/show toggle på menuen
+        ///     Makes the menu bar slide when menubutton is clicked.
         /// </summary>
         private int panelWidth;
         private bool hidden;
@@ -63,6 +64,9 @@ namespace GUI
             else
                 MenuSlideTimer.Start();
         }
+        /// <summary>
+        ///     Makes the menu bar slide out or in depending on the state in which it is when the event is raised.
+        /// </summary>
         private void MenuSlideTimer_Tick(object sender, EventArgs e)
         {
             if (hidden)
@@ -87,7 +91,7 @@ namespace GUI
             }
         }
         /// <summary>
-        /// Står for at lukke MenuPanel når man trykker på en knap i menuen
+        ///     Makes the menu bar slide in if it is not hidden. Used for when the user leaves the menubar, so it slides in automaticly. 
         /// </summary>
         public void toggleMenuPanel()
         {
@@ -95,28 +99,35 @@ namespace GUI
                 MenuPictureBtn_Click(this.MenuPictureBtn, null);
         }
         /// <summary>
-        /// Står for at lukke programmet ned når man trykker på knappen
+        ///     Closes the program.
         /// </summary>
         private void CloseWindowBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         /// <summary>
-        /// Står for at ændre tekstfarven når musen hover på knappen
+        ///     Minimizes the window
+        /// </summary>
+        private void minimizeWindowBtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        /// <summary>
+        ///     Changes the text color on the buttons when hovered
         /// </summary>
         private void buttonForeColorHover(Button button)
         {
             button.ForeColor = Color.SteelBlue;
         }
         /// <summary>
-        /// Står for at ændre tekstfarven tilbage når musen forlader knappen
+        ///     Changes the text color back when mouse leaves the buttons.
         /// </summary>
         private void buttonForeColorLeave(Button button)
         {
             button.ForeColor = Color.Black;
         }
         /// <summary>
-        /// Står for at highlighte den sidste knap der er blevet trykket på samt at resette farven når en ny knap trykkes på. 
+        ///     Highlights the last button clicked, so that the user can always see which menu point they are on.  
         /// </summary>
         private Button _lastButtonClicked;
         private void buttonBackColor(Button button)
@@ -127,7 +138,7 @@ namespace GUI
             _lastButtonClicked = button as Button;
             _lastButtonClicked.BackColor = Color.SteelBlue;
         }
-
+#endregion
         #region Events for CaseBtn
         private void CaseBtn_MouseEnter(object sender, EventArgs e)
         {

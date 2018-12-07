@@ -94,6 +94,7 @@
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.highlightTextRenderer1 = new BrightIdeasSoftware.HighlightTextRenderer();
             this.highlightTextRenderer2 = new BrightIdeasSoftware.HighlightTextRenderer();
+            this.checkBox_UCCaseTCFind_IsFinished = new System.Windows.Forms.CheckBox();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
@@ -126,6 +127,7 @@
             // TC_UCCaseTC_FindCase
             // 
             this.TC_UCCaseTC_FindCase.BackColor = System.Drawing.Color.White;
+            this.TC_UCCaseTC_FindCase.Controls.Add(this.checkBox_UCCaseTCFind_IsFinished);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.objectListView_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
@@ -772,6 +774,17 @@
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // checkBox_UCCaseTCFind_IsFinished
+            // 
+            this.checkBox_UCCaseTCFind_IsFinished.AutoSize = true;
+            this.checkBox_UCCaseTCFind_IsFinished.Location = new System.Drawing.Point(9, 67);
+            this.checkBox_UCCaseTCFind_IsFinished.Name = "checkBox_UCCaseTCFind_IsFinished";
+            this.checkBox_UCCaseTCFind_IsFinished.Size = new System.Drawing.Size(186, 22);
+            this.checkBox_UCCaseTCFind_IsFinished.TabIndex = 13;
+            this.checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
+            this.checkBox_UCCaseTCFind_IsFinished.UseVisualStyleBackColor = true;
+            this.checkBox_UCCaseTCFind_IsFinished.CheckedChanged += new System.EventHandler(this.checkBox_UCCaseTCFind_IsFinished_CheckedChanged);
+            // 
             // UserControlCases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,5 +876,6 @@
         private System.Windows.Forms.Label label_UCCaseTCEdit_CurrentName;
         private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer1;
         private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer2;
+        private System.Windows.Forms.CheckBox checkBox_UCCaseTCFind_IsFinished;
     }
 }

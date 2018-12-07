@@ -18,6 +18,7 @@ namespace GUI
     public partial class UserControlCases : UserControl
     {
         private Case currentCase;
+        private List<Case> caselist;
         GUIForm gui;
         public UserControlCases(GUIForm guiForm)
         {
@@ -76,7 +77,7 @@ namespace GUI
 
         private void SetObjectListViewCases()
         {
-            List<Case> caselist = gui.CaseRepository.GetAll();
+            caselist = gui.CaseRepository.GetAll();
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
 
@@ -84,8 +85,6 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
-
-
 
         private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
@@ -283,6 +282,22 @@ namespace GUI
             var caseService = keyValue.Key;
                       
             gui.CaseServiceRepository.UpdateCaseService(caseService);
+        }
+
+        private void checkBox_UCCaseTCFind_IsFinished_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox_UCCaseTCFind_IsFinished.Checked)
+            {
+                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
+                caselist = gui.CaseRepository.GetAll();
+                objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
+            if (checkBox_UCCaseTCFind_IsFinished.Checked)
+            {
+                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle igangværende sager";
+                caselist = gui.CaseRepository.GetAllDoneCases();
+                objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
         }
     }
 }

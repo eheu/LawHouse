@@ -41,6 +41,7 @@
             this.MenuPictureBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.minimizeWindowBtn = new System.Windows.Forms.PictureBox();
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
             this.UcContainer = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeWindowBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseWindowBtn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,6 +228,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.SteelBlue;
+            this.TopPanel.Controls.Add(this.minimizeWindowBtn);
             this.TopPanel.Controls.Add(this.CloseWindowBtn);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
@@ -233,13 +236,26 @@
             this.TopPanel.Size = new System.Drawing.Size(1226, 37);
             this.TopPanel.TabIndex = 2;
             // 
+            // minimizeWindowBtn
+            // 
+            this.minimizeWindowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeWindowBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeWindowBtn.Image")));
+            this.minimizeWindowBtn.Location = new System.Drawing.Point(1154, 3);
+            this.minimizeWindowBtn.Name = "minimizeWindowBtn";
+            this.minimizeWindowBtn.Size = new System.Drawing.Size(31, 28);
+            this.minimizeWindowBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.minimizeWindowBtn.TabIndex = 4;
+            this.minimizeWindowBtn.TabStop = false;
+            this.minimizeWindowBtn.Click += new System.EventHandler(this.minimizeWindowBtn_Click);
+            // 
             // CloseWindowBtn
             // 
             this.CloseWindowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseWindowBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.CloseWindowBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseWindowBtn.Image")));
-            this.CloseWindowBtn.Location = new System.Drawing.Point(1192, 6);
+            this.CloseWindowBtn.Location = new System.Drawing.Point(1188, 6);
             this.CloseWindowBtn.Name = "CloseWindowBtn";
-            this.CloseWindowBtn.Size = new System.Drawing.Size(25, 24);
+            this.CloseWindowBtn.Size = new System.Drawing.Size(31, 28);
             this.CloseWindowBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CloseWindowBtn.TabIndex = 3;
             this.CloseWindowBtn.TabStop = false;
@@ -280,6 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TopPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeWindowBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseWindowBtn)).EndInit();
             this.ResumeLayout(false);
 
@@ -302,5 +319,6 @@
         private System.Windows.Forms.Button SpecialitiesBtn;
         private System.Windows.Forms.Button servicesBtn;
         private DragControl dragControl2;
+        private System.Windows.Forms.PictureBox minimizeWindowBtn;
     }
 }
