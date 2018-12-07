@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
-using System.Linq;
 
 namespace GUI
 {
@@ -183,6 +182,10 @@ namespace GUI
 
                 //Load List of employee Specialitys showed in listbox on Edit Employee
                 SetEditEmployeeListbox(employee.ID);
+
+                //Load datalstview with employees cases
+                List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
+                dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
             }
         }
         #endregion
@@ -225,11 +228,6 @@ namespace GUI
         }
         #endregion
 
-
-
-
-
-
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
@@ -259,6 +257,17 @@ namespace GUI
 
             //Go back to Find Employee
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
+        private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
+        {
+            EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality();
+            employeeSpeciality.employeeID = currentEmployee.ID;
+            employeeSpeciality.specialityID = Convert.ToInt32(ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.SelectedValue.ToString());
+            gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
+
+            //Load List of employee Specialitys showed in listbox on Edit Employee
+            SetEditEmployeeListbox(currentEmployee.ID);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace GUI
             CaseServiceRepository = caseServiceRepository;
             SpecialityRepository = specialityRepository;
             RoleRepository = roleRepository;
-            EmployeeSpecialityRepository = EmployeeSpecialityRepository;
+            EmployeeSpecialityRepository = employeeSpecialityRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
@@ -123,6 +123,7 @@ namespace GUI
             _lastButtonClicked = button as Button;
             _lastButtonClicked.BackColor = Color.SteelBlue;
         }
+
         #region Events for CaseBtn
         private void CaseBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -228,6 +229,10 @@ namespace GUI
                     ((ListBox)ctrl).DataSource = null;
                     ((ListBox)ctrl).Items.Clear();
                 }
+                if(ctrl is RichTextBox)
+                    ((RichTextBox)ctrl).Text = string.Empty;
+                if(ctrl is RadioButton)
+                    ((RadioButton)ctrl).Checked = false;
                 ClearTextboxesAndCompoboxesAndlistboxes(ctrl.Controls);
             }
         }

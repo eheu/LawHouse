@@ -6,13 +6,13 @@
         {
         }
 
-        public Speciality(string name, string decription)
+        public Speciality(string name, string description)
         {
             Name = name;
-            Decription = decription;
+            Description = description;
         }
 
         public string Name { get; set; }
-        public string Decription { get; set; }
+        public string Description { get; set; }
     }
 }
