@@ -262,11 +262,11 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                    command.CommandText = @"SELECT COUNT(*)
                                             FROM [Case] 
                                             WHERE employeeID = @lawyerID";
                     command.AddParameter("lawyerID", lawyerID);
-                    int rowsAffected = command.ExecuteNonQuery();
+                    int rowsAffected = (Int32) command.ExecuteScalar();
                     return rowsAffected;
                 }
                 catch (Exception)
