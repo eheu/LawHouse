@@ -162,7 +162,7 @@ namespace GUI
         /// <summary>
         /// Fills data in the EditEmployee tap and loads the Specialitys listbox
         /// </summary>
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
         {
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
@@ -225,14 +225,6 @@ namespace GUI
             gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
 
             gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
-        }
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
-        {
-            // user clicked an item of objectListView control
-            if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
-            {
-                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
-            }
         }
             #endregion
 
