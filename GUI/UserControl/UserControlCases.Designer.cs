@@ -78,7 +78,7 @@
             this.label_UCCaseTCCreate_CaseTitel = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
-            this.TC_UCCaseTC_ManaageCase = new System.Windows.Forms.TabPage();
+            this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -101,7 +101,7 @@
             this.TC_UCCaseTC_EditCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCEdit_Services)).BeginInit();
             this.TC_UCCaseTC_CreateCase.SuspendLayout();
-            this.TC_UCCaseTC_ManaageCase.SuspendLayout();
+            this.TC_UCCaseTC_ManageCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCManage_ManageService)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +111,7 @@
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_FindCase);
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_EditCase);
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_CreateCase);
-            this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManaageCase);
+            this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManageCase);
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 50);
@@ -625,25 +625,25 @@
             this.button_UCCaseTCCreate_FindCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCCreate_FindCase.Click += new System.EventHandler(this.button_UCCaseTCCreate_FindCase_Click);
             // 
-            // TC_UCCaseTC_ManaageCase
+            // TC_UCCaseTC_ManageCase
             // 
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.objectListView_UCCaseTCManage_ManageService);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.button_UCCaseTCManage_Save);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.button_UCCaseTCManage_AddService);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.comboBox_UCCaseTCManage_AddService);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.label_UCCaseTCManage_AddService);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.label_UCCaseTCManage_CaseName);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.button_UCCaseTCManage_EditCase);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.label_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManaageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManaageCase.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCCaseTC_ManaageCase.Name = "TC_UCCaseTC_ManaageCase";
-            this.TC_UCCaseTC_ManaageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManaageCase.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCCaseTC_ManaageCase.TabIndex = 3;
-            this.TC_UCCaseTC_ManaageCase.Text = "Administrer";
-            this.TC_UCCaseTC_ManaageCase.UseVisualStyleBackColor = true;
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.objectListView_UCCaseTCManage_ManageService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_Save);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.comboBox_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_AddService);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_CaseName);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_EditCase);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
+            this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_ManageCase.TabIndex = 3;
+            this.TC_UCCaseTC_ManageCase.Text = "Administrer";
+            this.TC_UCCaseTC_ManageCase.UseVisualStyleBackColor = true;
             // 
             // objectListView_UCCaseTCManage_ManageService
             // 
@@ -802,8 +802,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCEdit_Services)).EndInit();
             this.TC_UCCaseTC_CreateCase.ResumeLayout(false);
             this.TC_UCCaseTC_CreateCase.PerformLayout();
-            this.TC_UCCaseTC_ManaageCase.ResumeLayout(false);
-            this.TC_UCCaseTC_ManaageCase.PerformLayout();
+            this.TC_UCCaseTC_ManageCase.ResumeLayout(false);
+            this.TC_UCCaseTC_ManageCase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCManage_ManageService)).EndInit();
             this.ResumeLayout(false);
 
@@ -841,7 +841,7 @@
         private System.Windows.Forms.Button button_UCCaseTCCreate_AddService;
         private System.Windows.Forms.Label label_UCCaseTCCreate_ServiceView;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCCreate_Description;
-        private System.Windows.Forms.TabPage TC_UCCaseTC_ManaageCase;
+        private System.Windows.Forms.TabPage TC_UCCaseTC_ManageCase;
         private System.Windows.Forms.Label label_UCCaseTCManage_Description;
         private System.Windows.Forms.RichTextBox richTextBox_UCCaseTCManage_Description;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;

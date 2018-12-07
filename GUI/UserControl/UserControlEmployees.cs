@@ -28,6 +28,8 @@ namespace GUI
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
             ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ValueMember = "ID";
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -45,9 +47,9 @@ namespace GUI
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
         }
 
-        private void button_UCEmployeeTCEdit_Back_FindEmployee_Click(object sender, EventArgs e)
+        private void button_UCEmployeeTCEdit_Back_ManageEmployee_Click(object sender, EventArgs e)
         {
-            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
         }
 
         private void SetObjectListViewEmployee()
@@ -67,12 +69,12 @@ namespace GUI
             List<Role> Role = gui.RoleRepository.GetAll();
 
             //Settings of both Speciality comboboxes
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DataSource = SpecialityList;
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.DisplayMember = "Name";
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.ValueMember = "ID";
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.DataSource = SpecialityList;
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.DisplayMember = "Name";
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.ValueMember = "ID";
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedIndex = -1;
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.DataSource = SpecialityList;
             comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.DisplayMember = "Name";
@@ -110,25 +112,39 @@ namespace GUI
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
+        
+        /// <summary>
+        /// Sets the EditEmployee Listbox
+        /// </summary>
+        private void SetManageEmployeeListbox(int employee_ID)
+        {
+            //List of employee Specialitys showed in listbox on Edit Employee
+            List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee_ID);
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DataSource = Specialitylist;
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
+        }
+
         /// <summary>
         /// Inserts Speciality's in Edit Employee's SpecialityListbox and checks if the Employee already have them
         /// </summary>
-        private void button_UCEmployeeTCEdit_EditEmployee_AddSpeciality_Click(object sender, EventArgs e)
+        /// ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality
+        private void button_UCEmployeeTCManage_ManageEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
-            Speciality inCombobox = (Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem;
-            var inListBox = ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items;
-            foreach (Speciality item in ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.Items)
+            Speciality inCombobox = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
+            var inListBox = ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items;
+            foreach (Speciality item in ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items)
             {
                 if (item.ID == inCombobox.ID) {
-                    comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
+                    ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.SelectedIndex = -1;
                     return;
                 }
             }
 
             Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
-            gui.SpecialityRepository.AddOneSpecialityOnLaywer(employee.ID, (Speciality)comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedItem);
-            comboBox_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedIndex = -1;
-            SetEditEmployeeListbox(employee.ID);
+            gui.SpecialityRepository.AddOneSpecialityOnLaywer(employee.ID, (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem);
+            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedIndex = -1;
+            SetManageEmployeeListbox(employee.ID);
         }
 
         ///<summary>
@@ -160,7 +176,7 @@ namespace GUI
 
 
         /// <summary>
-        /// Fills data in the EditEmployee tap and loads the Specialitys listbox
+        /// Fills data in the ManageEmployee tap and loads the Specialitys listbox
         /// </summary>
         private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
         {
@@ -183,8 +199,8 @@ namespace GUI
                 Role RoleInfo = gui.RoleRepository.Get(employee.RoleID);
                 label_UCEmployeeTCManage_role_Show.Text = RoleInfo.Name;
 
-                //Load List of employee Specialitys showed in listbox on Edit Employee
-                SetEditEmployeeListbox(employee.ID);
+                //Load List of employee Specialitys showed in listbox on Manage Employee
+                SetManageEmployeeListbox(employee.ID);
 
                 //Load datalstview with employees cases
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
@@ -242,6 +258,8 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID));
+
             if (gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID) == 0)
             {
                 gui.EmployeeRepository.Delete(currentEmployee);
@@ -288,7 +306,7 @@ namespace GUI
 
             //Load datalstview with employees cases
             List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);
-            dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
+            dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
         }
     }
 }

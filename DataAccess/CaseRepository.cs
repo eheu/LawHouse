@@ -264,7 +264,7 @@ namespace DataAccess
                     _connection.Open();
                     command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
                                             FROM [Case] 
-                                            WHERE clientID = @lawyerID";
+                                            WHERE employeeID = @lawyerID";
                     command.AddParameter("lawyerID", lawyerID);
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected;
