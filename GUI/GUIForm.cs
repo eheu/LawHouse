@@ -289,15 +289,15 @@ namespace GUI
             {
                 if (ctrl is TextBox)
                     ((TextBox)ctrl).Text = string.Empty;
-                if (ctrl is ComboBox)
-                    ((ComboBox)ctrl).SelectedItem = -1;
-                if (ctrl is ListBox) {
+                else if (ctrl is ComboBox)
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                else if (ctrl is ListBox) {
                     ((ListBox)ctrl).DataSource = null;
                     ((ListBox)ctrl).Items.Clear();
                 }
-                if(ctrl is RichTextBox)
+                else if (ctrl is RichTextBox)
                     ((RichTextBox)ctrl).Text = string.Empty;
-                if(ctrl is RadioButton)
+                else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
                 ClearTextboxesAndCompoboxesAndlistboxes(ctrl.Controls);
             }
