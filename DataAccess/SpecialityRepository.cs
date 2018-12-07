@@ -27,7 +27,7 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT [ID], [Name], [Decription] 
+                    command.CommandText = @"SELECT [ID], [Name], [Description] 
                                         FROM [Speciality]";
                     return MapCollection(command);
                 }
