@@ -263,11 +263,11 @@ namespace GUI
             switch (c)
             {
                 case "Key.Hours":
-                    keyValue.Key.Hours = (float)e.NewValue;
+                    keyValue.Key.Hours = (double)e.NewValue;
                     Debug.WriteLine("object value: " + keyValue.Key.Hours);
                     break;
                 case "Key.EstimatedHours":
-                    keyValue.Key.EstimatedHours = (float)e.NewValue;
+                    keyValue.Key.EstimatedHours = (double)e.NewValue;
                     Debug.WriteLine("object value: " + keyValue.Key.EstimatedHours);
                     break;
                 default:

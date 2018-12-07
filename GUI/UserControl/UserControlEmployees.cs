@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
-using System.Linq;
 
 namespace GUI
 {
@@ -191,14 +190,15 @@ namespace GUI
 
             gui.ClearTextboxesAndCompoboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MousefloatClick(object sender, MouseEventArgs e)
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
         {
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
             {
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
-        #endregion
-
+            }
+        }
+            #endregion
 
 
 

@@ -12,7 +12,7 @@ namespace BusinessLogic.Models
         {
         }
 
-        public Service(string name, float price, bool isHourly, string description)
+        public Service(string name, double price, bool isHourly, string description)
         {
             Name = name;
             Price = price;
@@ -21,7 +21,7 @@ namespace BusinessLogic.Models
         }
 
         public string Name { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
         public bool IsHourly { get; set; }
         public string Description { get; set; }
     }
