@@ -209,7 +209,7 @@
             this.MenuPictureBtn.Image = ((System.Drawing.Image)(resources.GetObject("MenuPictureBtn.Image")));
             this.MenuPictureBtn.Location = new System.Drawing.Point(0, 32);
             this.MenuPictureBtn.Name = "MenuPictureBtn";
-            this.MenuPictureBtn.Size = new System.Drawing.Size(69, 69);
+            this.MenuPictureBtn.Size = new System.Drawing.Size(69, 82);
             this.MenuPictureBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MenuPictureBtn.TabIndex = 3;
             this.MenuPictureBtn.TabStop = false;
