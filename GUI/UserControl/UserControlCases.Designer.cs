@@ -154,7 +154,7 @@
             this.objectListView_UCCaseTCFind_FindCase.TabIndex = 12;
             this.objectListView_UCCaseTCFind_FindCase.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCFind_FindCase.View = System.Windows.Forms.View.Details;
-            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
+            this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_floatClick);
             // 
             // olvColumnName
             // 
@@ -505,7 +505,7 @@
             // label_UCCaseTCCreate_ServiceView
             // 
             this.label_UCCaseTCCreate_ServiceView.AutoSize = true;
-            this.label_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(496, 3);
+            this.label_UCCaseTCCreate_ServiceView.Location = new System.Drawing.Point(474, 3);
             this.label_UCCaseTCCreate_ServiceView.Name = "label_UCCaseTCCreate_ServiceView";
             this.label_UCCaseTCCreate_ServiceView.Size = new System.Drawing.Size(127, 18);
             this.label_UCCaseTCCreate_ServiceView.TabIndex = 19;
