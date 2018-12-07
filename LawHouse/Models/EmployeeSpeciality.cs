@@ -8,5 +8,7 @@ namespace BusinessLogic.Models
 {
     public class EmployeeSpeciality : BaseEntity
     {
+        public int employeeID { get; set; }
+        public int specialityID { get; set; }
     }
 }

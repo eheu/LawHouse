@@ -131,7 +131,7 @@ namespace DataAccess
                     _connection.Open();
                     command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
                                             FROM [Case] 
-                                            WHERE ID = @clientID";
+                                            WHERE clientID = @clientID";
                     command.AddParameter("clientID", @clientID);
                     return MapCollection(command);
                 }
@@ -148,7 +148,26 @@ namespace DataAccess
 
         public List<Case> GetCasesFromLawyer(int lawyerID)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                            FROM [Case] 
+                                            WHERE employeeID = @lawyerID";
+                    command.AddParameter("lawyerID", lawyerID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
 
@@ -236,7 +255,29 @@ namespace DataAccess
             }
         }
 
-
-
+        public int CheckIflawyerHasCases(int lawyerID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                            FROM [Case] 
+                                            WHERE clientID = @lawyerID";
+                    command.AddParameter("lawyerID", lawyerID);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
     }
 }

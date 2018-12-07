@@ -113,7 +113,7 @@ namespace DataAccess
                 try
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT [ID], [Name], [Decription] 
+                    command.CommandText = @"SELECT [ID], [Name], [Description] 
                     FROM [Speciality]
                     INNER JOIN [EmployeeSpeciality] ON [EmployeeSpeciality].[specialityID] = [Speciality].[ID] 
                     AND [EmployeeSpeciality].[employeeID] = @employeeID";
@@ -147,7 +147,7 @@ namespace DataAccess
         {
             speciality.ID = (int)reader[0];
             speciality.Name = (string)reader[1];
-            speciality.Decription = (string)reader[2];
+            speciality.Description = (string)reader[2];
         }
         private static List<Speciality> MapCollection(SqlCommand command)
         {

@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
-using System.Linq;
 
 namespace GUI
 {
     public partial class UserControlEmployees : UserControl
     {
         GUIForm gui;
+        private Employee currentEmployee;
         public UserControlEmployees(GUIForm guiForm)
         {
             gui = guiForm;
@@ -131,6 +131,34 @@ namespace GUI
             SetEditEmployeeListbox(employee.ID);
         }
 
+        ///<summary>
+        ///Saves the Employees edited data
+        /// </summary>
+        private void button_UCEmployeeTCEdit_EditEmployee_SaveEmployee_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+
+            employee.ID = currentEmployee.ID;
+            employee.FirstName = textbox_UCEmployeeTCEdit_firstName.Text;
+            employee.LastName = textbox_UCEmployeeTCEdit_lastName.Text;
+            employee.Email = textbox_UCEmployeeTCEdit_email.Text;
+            employee.Phone = textbox_UCEmployeeTCEdit_phone.Text;
+            employee.RoleID = Convert.ToInt32(combo_UCEmployeeTCEdit_Role.SelectedValue);
+
+            //Create the employee
+            gui.EmployeeRepository.Update(employee);
+
+            //Clear text/Compoboxes
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+
+            //Refresh Employee Olv
+            SetObjectListViewEmployee();
+
+            //Go back to Find Employee
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
+
         /// <summary>
         /// Fills data in the EditEmployee tap and loads the Specialitys listbox
         /// </summary>
@@ -143,6 +171,9 @@ namespace GUI
 
                 Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
 
+                //Set the globel Employee object
+                currentEmployee = employee;
+
                 textbox_UCEmployeeTCEdit_firstName.Text = employee.FirstName;
                 textbox_UCEmployeeTCEdit_lastName.Text = employee.LastName;
                 textbox_UCEmployeeTCEdit_email.Text = employee.Email;
@@ -151,6 +182,10 @@ namespace GUI
 
                 //Load List of employee Specialitys showed in listbox on Edit Employee
                 SetEditEmployeeListbox(employee.ID);
+
+                //Load datalstview with employees cases
+                List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
+                dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
             }
         }
         #endregion
@@ -189,7 +224,7 @@ namespace GUI
             }
             gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
 
-            gui.ClearTextboxesAndCompoboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
         private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
         {
@@ -205,6 +240,7 @@ namespace GUI
 
 
 
+
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
@@ -212,6 +248,39 @@ namespace GUI
         {
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
             this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
+        }
+
+        private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if (gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID) == 0)
+            {
+                gui.EmployeeRepository.Delete(currentEmployee);
+            }
+            else
+            {
+                label_UCEmployeeTCEdit_DeleteEmployee.Text = "Medarbejderen er på en sag og kan ikke slettes";
+                return;
+            }
+            
+            //label_UCEmployeeTCEdit_DeleteEmployee
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+
+            //Refresh Employee Olv
+            SetObjectListViewEmployee();
+
+            //Go back to Find Employee
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+        }
+
+        private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
+        {
+            EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality();
+            employeeSpeciality.employeeID = currentEmployee.ID;
+            employeeSpeciality.specialityID = Convert.ToInt32(ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.SelectedValue.ToString());
+            gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
+
+            //Load List of employee Specialitys showed in listbox on Edit Employee
+            SetEditEmployeeListbox(currentEmployee.ID);
         }
     }
 }
