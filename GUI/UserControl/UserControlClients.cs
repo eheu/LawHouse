@@ -66,7 +66,7 @@ namespace GUI
             }
 
             //Clear textBoxes
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateClient.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateClient.Controls);
         }
 
         /// <summary>
