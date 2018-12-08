@@ -90,7 +90,6 @@ namespace GUI
                 try
                 {
                     List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
-                    dataListView_UCClientTCManage.SetObjects(Caselist);
 
                     olvColumn_UCClient_TCManage_laywer_name.AspectGetter = delegate (object obj)
                     {
@@ -98,6 +97,8 @@ namespace GUI
                         Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
                         return caseEmployee.FullName;
                     };
+
+                    dataListView_UCClientTCManage.SetObjects(Caselist);
                 }
                 catch (Exception)
                 {
@@ -132,7 +133,6 @@ namespace GUI
             try
             {
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
-                dataListView_UCClientTCEdit.SetObjects(Caselist);
 
                 olvColumn_UCClient_TCEdit_laywer_name.AspectGetter = delegate (object obj)
                 {
@@ -140,6 +140,8 @@ namespace GUI
                     Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
                     return caseEmployee.FullName;
                 };
+
+                dataListView_UCClientTCEdit.SetObjects(Caselist);
             }
             catch (Exception)
             {
