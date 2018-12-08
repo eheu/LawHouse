@@ -15,7 +15,7 @@ namespace GUI
     public partial class UserControlClients : UserControl
     {
         GUIForm gui;
-
+        private Client currentClient;
         public UserControlClients(GUIForm guiForm)
         {
             gui = guiForm;
@@ -65,34 +65,34 @@ namespace GUI
                 label_UCClientTCCreate_Save.Text = "Der er sket en fejl";
             }
 
-            textbox_UCClientTCCreate_firstName.Clear();
-            textbox_UCClientTCCreate_lastName.Clear();
-            textbox_UCClientTCCreate_phone.Clear();
-            textbox_UCClientTCCreate_addresse.Clear();
-            textbox_UCClientTCCreate_email.Clear();
+            //Clear textBoxes
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateClient.Controls);
         }
 
+        /// <summary>
+        /// Send Client object to Manage Client tab
+        /// </summary>
         private void objectListView_UCClientTCFind_FindClient_MouseDoubleClick(object sender, EventArgs e)
         {
             // user clicked an item of objectListView control
             if (objectListView_UCClientTCFind_FindClient.SelectedItems.Count == 1)
             {
-                TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
+                TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
 
-                Client client = (Client)objectListView_UCClientTCFind_FindClient.SelectedObject;
+                currentClient = (Client)objectListView_UCClientTCFind_FindClient.SelectedObject;
 
-                textbox_UCClientTCEdit_firstName.Text = client.FirstName;
-                textbox_UCClientTCEdit_lastName.Text = client.LastName;
-                textbox_UCClientTCEdit_phone.Text = client.Phone;
-                textbox_UCClientTCEdit_addresse.Text = client.Address;
-                textbox_UCClientTCEdit_email.Text = client.Email;
+                label_UCClientTCManage_firstName_Show.Text = currentClient.FirstName;
+                label_UCClientTCManage_lastName_Show.Text = currentClient.LastName;
+                label_UCClientTCManage_phone_Show.Text = currentClient.Phone;
+                label_UCClientTCManage_addresse_Show.Text = currentClient.Address;
+                label_UCClientTCManage_email_Show.Text = currentClient.Email;
 
                 try
                 {
-                    List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(client.ID);
-                    dataListView_UCClientTCEdit.SetObjects(Caselist);
+                    List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
+                    dataListView_UCClientTCManage.SetObjects(Caselist);
 
-                    olvColumn_UCClient_TCEdit_laywer_name.AspectGetter = delegate (object obj)
+                    olvColumn_UCClient_TCManage_laywer_name.AspectGetter = delegate (object obj)
                     {
                         Case clientCase = (Case)obj;
                         Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
@@ -117,6 +117,39 @@ namespace GUI
         {
             this.objectListView_UCClientTCFind_FindClient.UseFiltering = true;
             this.objectListView_UCClientTCFind_FindClient.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCClientTCFind_FindClient, $"{textBox_UCClientTCFind_Search.Text}");
+        }
+
+        private void bottom_UCClientTCManage_Edit_Click(object sender, EventArgs e)
+        {
+            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
+
+            textbox_UCClientTCEdit_firstName.Text = currentClient.FirstName;
+            textbox_UCClientTCEdit_lastName.Text = currentClient.LastName;
+            textbox_UCClientTCEdit_phone.Text = currentClient.Phone;
+            textbox_UCClientTCEdit_addresse.Text = currentClient.Address;
+            textbox_UCClientTCEdit_email.Text = currentClient.Email;
+
+            try
+            {
+                List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
+                dataListView_UCClientTCEdit.SetObjects(Caselist);
+
+                olvColumn_UCClient_TCEdit_laywer_name.AspectGetter = delegate (object obj)
+                {
+                    Case clientCase = (Case)obj;
+                    Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
+                    return caseEmployee.FullName;
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
         }
     }
 }
