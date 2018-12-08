@@ -18,8 +18,8 @@ namespace GUI
         private Employee currentEmployee;
         public UserControlEmployees(GUIForm guiForm)
         {
-            gui = guiForm;
             InitializeComponent();
+            gui = guiForm;
             //Load of clients into the objectlistview
             SetObjectListViewEmployee();
             //Load of Speciality into Combobox
@@ -118,9 +118,10 @@ namespace GUI
         /// </summary>
         private void SetManageEmployeeListbox(Employee employee)
         {
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Clear();
             //List of employee Specialitys showed in listbox on Edit Employee
             List<Speciality> Specialitylist = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DataSource = Specialitylist;
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.AddRange(Specialitylist.ToArray());
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
         }
@@ -131,20 +132,13 @@ namespace GUI
         /// ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality
         private void button_UCEmployeeTCManage_ManageEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
-            Speciality inCombobox = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
-            var inListBox = ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items;
-            foreach (Speciality item in ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items)
+            if (comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem != null)
             {
-                if (item.ID == inCombobox.ID) {
-                    ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.SelectedIndex = -1;
-                    return;
-                }
+                Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
+                List<Speciality> specialitiesInListBox = ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Cast<Speciality>().ToList();
+                var matches = specialitiesInListBox.Where(s => s.ID == selectedSpeciality.ID);
+                if (matches.Count() == 0) ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Add(selectedSpeciality);
             }
-
-            Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
-            gui.SpecialityRepository.AddSpecialityToLawyer(employee, (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem);
-            comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedIndex = -1;
-            SetManageEmployeeListbox(employee);
         }
 
         ///<summary>
@@ -178,13 +172,11 @@ namespace GUI
         /// <summary>
         /// Fills data in the ManageEmployee tap and loads the Specialitys listbox
         /// </summary>
-        private void objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick(object sender, MouseEventArgs e)
+        private void objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
             {
-                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
-
                 Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
 
                 //Set the globel Employee object
@@ -205,6 +197,8 @@ namespace GUI
                 //Load datalstview with employees cases
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
                 dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
+
+                TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
             }
         }
         #endregion
@@ -293,8 +287,6 @@ namespace GUI
 
         private void button_UCEmployeeTCManage_EditEmployee_Click(object sender, EventArgs e)
         {
-            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
-
             textbox_UCEmployeeTCEdit_firstName.Text = currentEmployee.FirstName;
             textbox_UCEmployeeTCEdit_lastName.Text = currentEmployee.LastName;
             textbox_UCEmployeeTCEdit_email.Text = currentEmployee.Email;
@@ -307,6 +299,8 @@ namespace GUI
             //Load datalstview with employees cases
             List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);
             dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
+
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
         }
     }
 }

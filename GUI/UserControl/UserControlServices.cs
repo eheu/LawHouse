@@ -189,9 +189,9 @@ namespace GUI
         {
             if (comboBox_UCServicesTCManage_AddSpeciality.SelectedItem != null)
             {
-                List<Speciality> specialitiesOnService = objectListView_UCServicesTCManage_ManageService.Objects.Cast<Speciality>().ToList(); //stackoverflow.com/a/7617784
+                List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCManage_ManageService.Objects.Cast<Speciality>().ToList(); //stackoverflow.com/a/7617784
                 Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCManage_AddSpeciality.SelectedItem;
-                var matches = specialitiesOnService.Where(s => s.ID == selectedSpeciality.ID);
+                var matches = specialitiesInObjectListView.Where(s => s.ID == selectedSpeciality.ID);
                 if (matches.Count() == 0) objectListView_UCServicesTCManage_ManageService.AddObject(selectedSpeciality);
             }
         }
