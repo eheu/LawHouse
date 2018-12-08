@@ -44,7 +44,25 @@ namespace DataAccess
 
         public void Delete(Service service)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [Service]
+                                        WHERE ID = @ID";
+                    cmd.AddParameter("ID", service.ID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public Service Get(int ID)
@@ -85,7 +103,7 @@ namespace DataAccess
                 using (var command = _connection.CreateCommand())
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT ID, name, price, isHourly 
+                    command.CommandText = @"SELECT ID, name, price, isHourly, description 
                                         FROM Service";
                     return MapCollection(command);
                 }
@@ -103,17 +121,45 @@ namespace DataAccess
         }
 
 
-        public void Update(Service entity)
+        public void Update(Service service)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"UPDATE [Service] SET
+                                            name = @name, 
+                                            price = @price, 
+                                            isHourly = @isHourly, 
+                                            description = @description 
+                                            WHERE ID = @ID";
+                    command.AddParameter("ID", service.ID);
+                    command.AddParameter("name", service.Name);
+                    command.AddParameter("price", service.Price);
+                    command.AddParameter("isHourly", service.IsHourly);
+                    command.AddParameter("description", service.Description);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         private static void Map(SqlDataReader reader, Service service)
         {
-            service.ID = (int)reader[0];
-            service.Name = (string)reader[1];
-            service.Price = Convert.ToSingle(reader[2]);
-            service.IsHourly = (bool)reader[3];
+            service.ID = (int)reader["ID"];
+            service.Name = (string)reader["name"];
+            service.Price = (double)reader["price"];
+            service.IsHourly = (bool)reader["isHourly"];
+            service.Description = reader["description"] == DBNull.Value ? "" : (string)reader["description"];
         }
         private static List<Service> MapCollection(SqlCommand command)
         {

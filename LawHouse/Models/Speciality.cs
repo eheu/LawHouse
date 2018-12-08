@@ -9,10 +9,10 @@
         public Speciality(string name, string decription)
         {
             Name = name;
-            Decription = decription;
+            Description = decription;
         }
 
         public string Name { get; set; }
-        public string Decription { get; set; }
+        public string Description { get; set; }
     }
 }

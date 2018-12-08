@@ -30,15 +30,13 @@
         {
             this.TabControl_UCSpecialities = new System.Windows.Forms.TabControl();
             this.TC_UCSpecialityTC_FindSpeciality = new System.Windows.Forms.TabPage();
-            this.TC_UCSpecialityTC_CreateSpeciality = new System.Windows.Forms.TabPage();
-            this.TC_UCSpecialityTC_EditSpeciality = new System.Windows.Forms.TabPage();
-            this.TC_UCSpecialityTC_ManageSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCFind_Search = new System.Windows.Forms.Label();
             this.textBox_UCSpecialityTCFind_Search = new System.Windows.Forms.TextBox();
             this.button_UCCSpecialityTCFind_CreateSpeciality = new System.Windows.Forms.Button();
             this.label_UCCSpecialityTCFind_FindSpeciality = new System.Windows.Forms.Label();
             this.objectListView_UCSpecialityTCFind_FindSpeciality = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.TC_UCSpecialityTC_CreateSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCCreate_Description = new System.Windows.Forms.Label();
             this.label_UCSpecialityTCCreate_Service = new System.Windows.Forms.Label();
             this.richTextBox_UCSpecialityTCCreate_Description = new System.Windows.Forms.RichTextBox();
@@ -51,6 +49,7 @@
             this.label_UCCSpecialityTCCreate_Name = new System.Windows.Forms.Label();
             this.button_UCSpecialityTCCreate_FindSpeciality = new System.Windows.Forms.Button();
             this.label_UCCSpecialityTCCreate_Create = new System.Windows.Forms.Label();
+            this.TC_UCSpecialityTC_EditSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCEdit_CurrentName = new System.Windows.Forms.Label();
             this.objectListView_UCSpecialityTCEdit_Services = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -65,6 +64,7 @@
             this.button_UCSpecialityTCEdit_ManageSpeciality = new System.Windows.Forms.Button();
             this.label_UCSpecialityTCEdit_EditSpeciality = new System.Windows.Forms.Label();
             this.button_UCSpecialityTCEdit_FindSpeciality = new System.Windows.Forms.Button();
+            this.TC_UCSpecialityTC_ManageSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCManage_ManageService = new System.Windows.Forms.Label();
             this.objectListView_UCSpecialityTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -81,12 +81,12 @@
             this.richTextBox_UCSpecialityTCManage_Description = new System.Windows.Forms.RichTextBox();
             this.TabControl_UCSpecialities.SuspendLayout();
             this.TC_UCSpecialityTC_FindSpeciality.SuspendLayout();
-            this.TC_UCSpecialityTC_CreateSpeciality.SuspendLayout();
-            this.TC_UCSpecialityTC_EditSpeciality.SuspendLayout();
-            this.TC_UCSpecialityTC_ManageSpeciality.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCFind_FindSpeciality)).BeginInit();
+            this.TC_UCSpecialityTC_CreateSpeciality.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCCreate_Service)).BeginInit();
+            this.TC_UCSpecialityTC_EditSpeciality.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCEdit_Services)).BeginInit();
+            this.TC_UCSpecialityTC_ManageSpeciality.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ManageService)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,72 +124,6 @@
             this.TC_UCSpecialityTC_FindSpeciality.Text = "Find efterud";
             this.TC_UCSpecialityTC_FindSpeciality.UseVisualStyleBackColor = true;
             // 
-            // TC_UCSpecialityTC_CreateSpeciality
-            // 
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Description);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Service);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCCreate_Description);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.objectListView_UCSpecialityTCCreate_Service);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_AddService);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Service);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.comboBox_UCSpecialityTCCreate_AddService);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.bottom_UCSpecialityTCCreate_Create);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.textbox_UCCServiceTCCreate_Name);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Name);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_FindSpeciality);
-            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Create);
-            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCSpecialityTC_CreateSpeciality.Name = "TC_UCSpecialityTC_CreateSpeciality";
-            this.TC_UCSpecialityTC_CreateSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCSpecialityTC_CreateSpeciality.TabIndex = 1;
-            this.TC_UCSpecialityTC_CreateSpeciality.Text = "Opret";
-            this.TC_UCSpecialityTC_CreateSpeciality.UseVisualStyleBackColor = true;
-            // 
-            // TC_UCSpecialityTC_EditSpeciality
-            // 
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_CurrentName);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.objectListView_UCSpecialityTCEdit_Services);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ServiceView);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_Description);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_SaveChange);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_RemoveService);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCEdit_Description);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_DeleteSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.textBox_UCSpecialityTCEdit_ChangeName);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ChangeName);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_ManageSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_EditSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_FindSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCSpecialityTC_EditSpeciality.Name = "TC_UCSpecialityTC_EditSpeciality";
-            this.TC_UCSpecialityTC_EditSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCSpecialityTC_EditSpeciality.TabIndex = 2;
-            this.TC_UCSpecialityTC_EditSpeciality.Text = "Rediger";
-            this.TC_UCSpecialityTC_EditSpeciality.UseVisualStyleBackColor = true;
-            // 
-            // TC_UCSpecialityTC_ManageSpeciality
-            // 
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_ManageService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.objectListView_UCSpecialityTCManage_ManageService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_Save);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_AddService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.comboBox_UCSpecialityTCManage_AddService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_AddService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_SpecialityName);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_EditSpeciality);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_FindSpeciality);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_Description);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCManage_Description);
-            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCSpecialityTC_ManageSpeciality.Name = "TC_UCSpecialityTC_ManageSpeciality";
-            this.TC_UCSpecialityTC_ManageSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCSpecialityTC_ManageSpeciality.TabIndex = 3;
-            this.TC_UCSpecialityTC_ManageSpeciality.Text = "Administrer";
-            this.TC_UCSpecialityTC_ManageSpeciality.UseVisualStyleBackColor = true;
-            // 
             // label_UCSpecialityTCFind_Search
             // 
             this.label_UCSpecialityTCFind_Search.AutoSize = true;
@@ -214,6 +148,7 @@
             this.button_UCCSpecialityTCFind_CreateSpeciality.TabIndex = 20;
             this.button_UCCSpecialityTCFind_CreateSpeciality.Text = "Opret";
             this.button_UCCSpecialityTCFind_CreateSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCCSpecialityTCFind_CreateSpeciality.Click += new System.EventHandler(this.button_UCCSpecialityTCFind_CreateSpeciality_Click);
             // 
             // label_UCCSpecialityTCFind_FindSpeciality
             // 
@@ -241,12 +176,35 @@
             this.objectListView_UCSpecialityTCFind_FindSpeciality.TabIndex = 18;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCFind_FindSpeciality.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCSpecialityTCFind_FindSpeciality_MouseDoubleClick);
             // 
             // olvColumn1
             // 
-            this.olvColumn1.AspectName = "Ydelser";
+            this.olvColumn1.AspectName = "Name";
             this.olvColumn1.Text = "Efteruddannelser";
             this.olvColumn1.Width = 1130;
+            // 
+            // TC_UCSpecialityTC_CreateSpeciality
+            // 
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Description);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Service);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCCreate_Description);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.objectListView_UCSpecialityTCCreate_Service);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_AddService);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Service);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.comboBox_UCSpecialityTCCreate_AddService);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.bottom_UCSpecialityTCCreate_Create);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.textbox_UCCServiceTCCreate_Name);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Name);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_FindSpeciality);
+            this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Create);
+            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_CreateSpeciality.Name = "TC_UCSpecialityTC_CreateSpeciality";
+            this.TC_UCSpecialityTC_CreateSpeciality.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_CreateSpeciality.TabIndex = 1;
+            this.TC_UCSpecialityTC_CreateSpeciality.Text = "Opret";
+            this.TC_UCSpecialityTC_CreateSpeciality.UseVisualStyleBackColor = true;
             // 
             // label_UCSpecialityTCCreate_Description
             // 
@@ -319,6 +277,7 @@
             this.bottom_UCSpecialityTCCreate_Create.TabIndex = 45;
             this.bottom_UCSpecialityTCCreate_Create.Text = "Opret efteruddannelse";
             this.bottom_UCSpecialityTCCreate_Create.UseVisualStyleBackColor = true;
+            this.bottom_UCSpecialityTCCreate_Create.Click += new System.EventHandler(this.bottom_UCSpecialityTCCreate_Create_Click);
             // 
             // textbox_UCCServiceTCCreate_Name
             // 
@@ -344,6 +303,7 @@
             this.button_UCSpecialityTCCreate_FindSpeciality.TabIndex = 39;
             this.button_UCSpecialityTCCreate_FindSpeciality.Text = "Find efteruddannelse";
             this.button_UCSpecialityTCCreate_FindSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCCreate_FindSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCCreate_FindSpeciality_Click);
             // 
             // label_UCCSpecialityTCCreate_Create
             // 
@@ -353,6 +313,29 @@
             this.label_UCCSpecialityTCCreate_Create.Size = new System.Drawing.Size(174, 18);
             this.label_UCCSpecialityTCCreate_Create.TabIndex = 38;
             this.label_UCCSpecialityTCCreate_Create.Text = "Opret efteruddannelse";
+            // 
+            // TC_UCSpecialityTC_EditSpeciality
+            // 
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_CurrentName);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.objectListView_UCSpecialityTCEdit_Services);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ServiceView);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_Description);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_SaveChange);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_RemoveService);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCEdit_Description);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_DeleteSpeciality);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.textBox_UCSpecialityTCEdit_ChangeName);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ChangeName);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_ManageSpeciality);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_EditSpeciality);
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_FindSpeciality);
+            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_EditSpeciality.Name = "TC_UCSpecialityTC_EditSpeciality";
+            this.TC_UCSpecialityTC_EditSpeciality.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_EditSpeciality.TabIndex = 2;
+            this.TC_UCSpecialityTC_EditSpeciality.Text = "Rediger";
+            this.TC_UCSpecialityTC_EditSpeciality.UseVisualStyleBackColor = true;
             // 
             // label_UCSpecialityTCEdit_CurrentName
             // 
@@ -412,6 +395,7 @@
             this.button_UCSpecialityTCEdit_SaveChange.Tag = "";
             this.button_UCSpecialityTCEdit_SaveChange.Text = "Gem Ændringer";
             this.button_UCSpecialityTCEdit_SaveChange.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_SaveChange.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_SaveChange_Click);
             // 
             // button_UCSpecialityTCEdit_RemoveService
             // 
@@ -440,6 +424,7 @@
             this.button_UCSpecialityTCEdit_DeleteSpeciality.Tag = "";
             this.button_UCSpecialityTCEdit_DeleteSpeciality.Text = "Slet efteruddannelse";
             this.button_UCSpecialityTCEdit_DeleteSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_DeleteSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_DeleteSpeciality_Click);
             // 
             // textBox_UCSpecialityTCEdit_ChangeName
             // 
@@ -465,6 +450,7 @@
             this.button_UCSpecialityTCEdit_ManageSpeciality.TabIndex = 52;
             this.button_UCSpecialityTCEdit_ManageSpeciality.Text = "Administrer efteruddannelse";
             this.button_UCSpecialityTCEdit_ManageSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_ManageSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_ManageSpeciality_Click);
             // 
             // label_UCSpecialityTCEdit_EditSpeciality
             // 
@@ -484,6 +470,28 @@
             this.button_UCSpecialityTCEdit_FindSpeciality.Tag = "";
             this.button_UCSpecialityTCEdit_FindSpeciality.Text = "Find efteruddannelse";
             this.button_UCSpecialityTCEdit_FindSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_FindSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_FindSpeciality_Click);
+            // 
+            // TC_UCSpecialityTC_ManageSpeciality
+            // 
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_ManageService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.objectListView_UCSpecialityTCManage_ManageService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_Save);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_AddService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.comboBox_UCSpecialityTCManage_AddService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_AddService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_SpecialityName);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_EditSpeciality);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_FindSpeciality);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_Description);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCManage_Description);
+            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_ManageSpeciality.Name = "TC_UCSpecialityTC_ManageSpeciality";
+            this.TC_UCSpecialityTC_ManageSpeciality.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_ManageSpeciality.TabIndex = 3;
+            this.TC_UCSpecialityTC_ManageSpeciality.Text = "Administrer";
+            this.TC_UCSpecialityTC_ManageSpeciality.UseVisualStyleBackColor = true;
             // 
             // label_UCSpecialityTCManage_ManageService
             // 
@@ -542,6 +550,7 @@
             this.button_UCSpecialityTCManage_Save.Tag = "";
             this.button_UCSpecialityTCManage_Save.Text = "Gem";
             this.button_UCSpecialityTCManage_Save.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCManage_Save.Click += new System.EventHandler(this.button_UCSpecialityTCManage_Save_Click);
             // 
             // button_UCSpecialityTCManage_AddService
             // 
@@ -593,6 +602,7 @@
             this.button_UCSpecialityTCManage_EditSpeciality.Tag = "";
             this.button_UCSpecialityTCManage_EditSpeciality.Text = "Rediger ydelse";
             this.button_UCSpecialityTCManage_EditSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCManage_EditSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCManage_EditSpeciality_Click);
             // 
             // button_UCSpecialityTCManage_FindSpeciality
             // 
@@ -603,6 +613,7 @@
             this.button_UCSpecialityTCManage_FindSpeciality.Tag = "";
             this.button_UCSpecialityTCManage_FindSpeciality.Text = "Find efteruddannelse";
             this.button_UCSpecialityTCManage_FindSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCManage_FindSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCManage_FindSpeciality_Click);
             // 
             // label_UCSpecialityTCManage_Description
             // 
@@ -631,15 +642,15 @@
             this.TabControl_UCSpecialities.ResumeLayout(false);
             this.TC_UCSpecialityTC_FindSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_FindSpeciality.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCFind_FindSpeciality)).EndInit();
             this.TC_UCSpecialityTC_CreateSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_CreateSpeciality.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCCreate_Service)).EndInit();
             this.TC_UCSpecialityTC_EditSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_EditSpeciality.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCEdit_Services)).EndInit();
             this.TC_UCSpecialityTC_ManageSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_ManageSpeciality.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCFind_FindSpeciality)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCCreate_Service)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCEdit_Services)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ManageService)).EndInit();
             this.ResumeLayout(false);
 
