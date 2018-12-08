@@ -13,6 +13,7 @@ namespace DataAccess
     public class ServiceRepository : IServiceRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
+
         public void Create(Service service)
         {
             using (var cmd = _connection.CreateCommand())
@@ -39,29 +40,6 @@ namespace DataAccess
                     _connection.Close();
                 }
 
-            }
-        }
-
-        public void Delete(Service service)
-        {
-            using (var cmd = _connection.CreateCommand())
-            {
-                try
-                {
-                    _connection.Open();
-                    cmd.CommandText = @"DELETE FROM [Service]
-                                        WHERE ID = @ID";
-                    cmd.AddParameter("ID", service.ID);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
             }
         }
 
@@ -120,7 +98,6 @@ namespace DataAccess
 
         }
 
-
         public void Update(Service service)
         {
             using (var command = _connection.CreateCommand())
@@ -144,6 +121,29 @@ namespace DataAccess
                 catch (Exception)
                 {
 
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
+        public void Delete(Service service)
+        {
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [Service]
+                                        WHERE ID = @ID";
+                    cmd.AddParameter("ID", service.ID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
                     throw;
                 }
                 finally

@@ -26,16 +26,18 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
 
-            // objectlistview 
-            SetObjectListViewServices();
-
-            //comboBox_UCServicesTCManage_AddSpeciality
-            //comboBox_UCServicesTCManage_AddSpeciality.Items = gui.Service
-
-
+            InitializeFindServicesObjectListView();
         }
 
-        private void SetObjectListViewServices()
+        private void InitializeAddSpecialityCombobox()
+        {
+            comboBox_UCServicesTCManage_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
+            comboBox_UCServicesTCManage_AddSpeciality.DisplayMember = "Name";
+            comboBox_UCServicesTCManage_AddSpeciality.ValueMember = "ID";
+            comboBox_UCServicesTCManage_AddSpeciality.SelectedIndex = -1;
+        }
+
+        private void InitializeFindServicesObjectListView()
         {
             olvColumn_UCServiceTCFind_IsHourly.AspectGetter = delegate (object obj)
             {
@@ -48,19 +50,19 @@ namespace GUI
 
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCServiceTC_CreateService.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_CreateService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
         }
 
         private void button_UCServicesTCCreate_FindService_Click(object sender, EventArgs e)
         {
-            SetObjectListViewServices();
+            InitializeFindServicesObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
         private void button_UCServicesTCEdit_FindService_Click(object sender, EventArgs e)
         {
-            SetObjectListViewServices();
+            InitializeFindServicesObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
@@ -71,7 +73,7 @@ namespace GUI
 
         private void button_UCServicesTCManage_FindService_Click(object sender, EventArgs e)
         {
-            SetObjectListViewServices();
+            InitializeFindServicesObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
@@ -98,13 +100,25 @@ namespace GUI
 
         private void objectListView_UCServiceTCFind_FindService_MousedoubleClick(object sender, MouseEventArgs e)
         {
+            SetCurrentService();
+
+            InitializeAddSpecialityCombobox();
+
+            // Initialize ManageService ObjectListView
+            objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
+
+            TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
+
+        }
+
+        private void SetCurrentService()
+        {
             Service service = (Service)objectListView_UCServiceTCFind_FindService.SelectedObject;
             label_UCServicesTCManage_ServiceName.Text = service.Name;
             richTextBox_UCServicesTCManage_Description.Text = service.Description;
             currentService = service;
-
-            TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
         }
+
         /// <summary>
         /// creates service
         /// </summary>
@@ -123,9 +137,10 @@ namespace GUI
                 service.IsHourly = false;
             }
             gui.ServiceRepository.Create(service);
-            SetObjectListViewServices();
+            InitializeFindServicesObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
+
         /// <summary>
         /// Saves in Manage service tab
         /// </summary>
@@ -159,15 +174,26 @@ namespace GUI
             //Change tab and update
             richTextBox_UCServicesTCManage_Description.Text = currentService.Description;
             label_UCServicesTCManage_ServiceName.Text = currentService.Name;
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCServiceTC_EditService.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_EditService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
         }
 
         private void button_UCServicesTCEdit_DeleteService_Click(object sender, EventArgs e)
         {
             gui.ServiceRepository.Delete(currentService);
-            SetObjectListViewServices();
+            InitializeFindServicesObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+        }
+
+        private void button_UCServicesTCManage_AddSpeciality_Click(object sender, EventArgs e)
+        {
+            if (comboBox_UCServicesTCManage_AddSpeciality.SelectedItem != null)
+            {
+                List<Speciality> specialitiesOnService = objectListView_UCServicesTCManage_ManageService.Objects.Cast<Speciality>().ToList(); //stackoverflow.com/a/7617784
+                Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCManage_AddSpeciality.SelectedItem;
+                var matches = specialitiesOnService.Where(s => s.ID == selectedSpeciality.ID);
+                if (matches.Count() == 0) objectListView_UCServicesTCManage_ManageService.AddObject(selectedSpeciality);
+            }
         }
     }
 }

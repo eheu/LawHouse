@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 
@@ -10,12 +8,14 @@ namespace DataAccess
 {
     public class ServiceSpecialityRepository : IServiceSpecialityRepository
     {
-        public void Create(ServiceSpeciality entity)
+        private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
+
+        public void Create(ServiceSpeciality serviceSpeciality)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(ServiceSpeciality entity)
+        public void Delete(ServiceSpeciality serviceSpeciality)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,9 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public void Update(ServiceSpeciality entity)
+
+
+        public void Update(ServiceSpeciality serviceSpeciality)
         {
             throw new NotImplementedException();
         }

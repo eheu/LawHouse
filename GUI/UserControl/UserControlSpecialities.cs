@@ -34,7 +34,7 @@ namespace GUI
 
         private void button_UCCSpecialityTCFind_CreateSpeciality_Click(object sender, EventArgs e)
         {
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCSpecialityTC_CreateSpeciality.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_CreateSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_CreateSpeciality;
         }
 
@@ -108,7 +108,7 @@ namespace GUI
             //Change tab and update
             label_UCSpecialityTCManage_SpecialityName.Text = currentSpeciality.Name;
             richTextBox_UCSpecialityTCManage_Description.Text = currentSpeciality.Description;
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCSpecialityTC_EditSpeciality.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_EditSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
         }
 

@@ -9,5 +9,6 @@ namespace BusinessLogic.Interfaces
 {
     public interface IServiceSpecialityRepository : IRepository<ServiceSpeciality>
     {
+        //Dictionary<ServiceSpeciality, ServiceSpeciality> GetSpecialitiesByServiceSpecialityFromService(Service service);
     }
 }

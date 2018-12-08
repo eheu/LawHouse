@@ -105,7 +105,7 @@ namespace DataAccess
             }
 
         }
-        public List<CaseService> GetServicesOnCase(Case @case)
+        public List<CaseService> GetServicesOnCase(Case @case) // fjern? bruges ikke og returnerer CaseService, ikke Case
         {
             using (var command = _connection.CreateCommand())
             {

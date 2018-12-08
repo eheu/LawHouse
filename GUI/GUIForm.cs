@@ -17,15 +17,14 @@ namespace GUI
         public IEmployeeSpecialityRepository EmployeeSpecialityRepository { get; private set; }
 
         public IServiceSpecialityRepository ServiceSpecialityRepository { get; private set; }
-        /// <summary>
-        /// Refererer til user controls
-        /// </summary>
+
         UserControlCases userControlCases;
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlSpecialities userControlSpecialities;
         UserControlServices userControlServices;
         UserControlHelp userControlHelp;
+
         public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository, IServiceSpecialityRepository serviceSpecialityRepository)
         {
             CaseRepository = caseRepository;
@@ -286,7 +285,7 @@ namespace GUI
         /// Clear all Controls in the given ControlCollection
         /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
-        public void ClearTextboxesAndCompoboxesAndlistboxes(System.Windows.Forms.Control.ControlCollection ctrls)
+        public void ClearTextBoxesAndComboBoxesAndListBoxes(System.Windows.Forms.Control.ControlCollection ctrls)
         {
             foreach (Control ctrl in ctrls)
             {
@@ -302,7 +301,7 @@ namespace GUI
                     ((RichTextBox)ctrl).Text = string.Empty;
                 else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
-                ClearTextboxesAndCompoboxesAndlistboxes(ctrl.Controls);
+                ClearTextBoxesAndComboBoxesAndListBoxes(ctrl.Controls);
             }
         }
     }

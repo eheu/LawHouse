@@ -144,7 +144,7 @@ namespace GUI
                 gui.CaseServiceRepository.AddServiceToCase(service, @case);
             }
 
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCCaseTC_CreateCase.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
         }
 
         private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
@@ -162,8 +162,8 @@ namespace GUI
         
         private void LoadCaseservicesTObjectListView(Case @case)
         {
-            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
-            objectListView_UCCaseTCManage_ManageService.SetObjects(caseNameDictionary);
+            Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
+            objectListView_UCCaseTCManage_ManageService.SetObjects(servicesByCaseService);
         }
 
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
@@ -223,8 +223,8 @@ namespace GUI
             CaseService caseService = caseServiceServiceKeyValuePair.Key;
             gui.CaseServiceRepository.Delete(caseService);
             // refresh objectlistview 
-            Dictionary<CaseService, Service> caseNameDictionary = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
-            objectListView_UCCaseTCEdit_Services.SetObjects(caseNameDictionary);
+            Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
+            objectListView_UCCaseTCEdit_Services.SetObjects(servicesByCaseService);
         }
 
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)

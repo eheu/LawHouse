@@ -37,6 +37,68 @@ namespace DataAccess
             }
         }
 
+        public void AddSpecialityToLawyer(Employee lawyer, Speciality speciality)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) 
+                                            VALUES (@employeeID, @S_ID)";
+
+                    command.AddParameter("S_ID", speciality.ID);
+                    command.AddParameter("employeeID", lawyer.ID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
+        public void AddSpecialitiesToLawyer(Employee lawyer, List<Speciality> specialitylist)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) VALUES";
+
+                    for (int i = 0; i < specialitylist.Count; i++)
+                    {
+                        command.CommandText += " (@employeeID, @S_ID" + i + ")";
+                        command.AddParameter("S_ID" + i, specialitylist[i].ID);
+                        if (i < specialitylist.Count - 1)
+                        {
+                            command.CommandText += ",";
+                        }
+                    }
+
+                    command.AddParameter("employeeID", lawyer.ID);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
         public Speciality Get(int id)
         {
             throw new NotImplementedException();
@@ -64,69 +126,7 @@ namespace DataAccess
             }
         }
 
-        public void AddOneSpecialityOnLaywer(int employeeID, Speciality speciality)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                try
-                {
-                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) 
-                                            VALUES (@employeeID, @S_ID)";
-
-                    command.AddParameter("S_ID", speciality.ID);
-                    command.AddParameter("employeeID", employeeID);
-                    _connection.Open();
-                    command.ExecuteNonQuery();
-                }
-
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
-            }
-        }
-
-        public void SetAllSpecialityesOnOnelaywer(int employeeID, List<Speciality> Specialitylist)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                try
-                {
-                    command.CommandText = @"INSERT INTO [EmployeeSpeciality]([employeeID], [specialityID]) VALUES";
-
-                    for (int i = 0; i < Specialitylist.Count; i++)
-                    {
-                        command.CommandText += " (@employeeID, @S_ID"+i+")";
-                        command.AddParameter("S_ID"+i, Specialitylist[i].ID);
-                        if (i < Specialitylist.Count - 1)
-                        {
-                            command.CommandText += ",";
-                        }
-                    }
-
-                    command.AddParameter("employeeID", employeeID);
-                    _connection.Open();
-                    command.ExecuteNonQuery();
-                }
-
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
-            }
-        }
-
-        public List<Speciality> GetAllSpecialityesFromOnelaywer(int employeeID)
+        public List<Speciality> GetSpecialitiesFromLawyer(Employee employee)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -134,10 +134,37 @@ namespace DataAccess
                 {
                     _connection.Open();
                     command.CommandText = @"SELECT [ID], [Name], [Description] 
-                    FROM [Speciality]
-                    INNER JOIN [EmployeeSpeciality] ON [EmployeeSpeciality].[specialityID] = [Speciality].[ID] 
-                    AND [EmployeeSpeciality].[employeeID] = @employeeID";
-                    command.AddParameter("employeeID", @employeeID);
+                                            FROM [Speciality]
+                                            INNER JOIN [EmployeeSpeciality] ON [EmployeeSpeciality].[specialityID] = [Speciality].[ID] 
+                                            WHERE [EmployeeSpeciality].[employeeID] = @employeeID";
+                    command.AddParameter("employeeID", employee.ID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
+        public List<Speciality> GetSpecialitiesFromService(Service service)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT [ID], [Name], [Description] 
+                                            FROM [Speciality]
+                                            INNER JOIN [ServiceSpeciality] ON [ServiceSpeciality].[specialityID] = [Speciality].[ID]
+                                            WHERE [ServiceSpeciality].[serviceID] = @serviceID";
+                    command.AddParameter("serviceID", service.ID);
                     return MapCollection(command);
                 }
                 catch (Exception)
@@ -209,6 +236,7 @@ namespace DataAccess
             speciality.Name = (string)reader[1];
             speciality.Description = (string)reader[2];
         }
+
         private static List<Speciality> MapCollection(SqlCommand command)
         {
             using (var reader = command.ExecuteReader())
