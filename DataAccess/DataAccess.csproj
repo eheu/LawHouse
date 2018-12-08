@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="RoleRepository.cs" />
     <Compile Include="ServiceRepository.cs" />
+    <Compile Include="ServiceSpecialityRepository.cs" />
     <Compile Include="SpecialityRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -673,7 +673,7 @@
             // 
             // olvColumn_UCCaseTCManage_ManageService_Name
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_Name.AspectName = "Value.Name";
+            this.olvColumn_UCCaseTCManage_ManageService_Name.AspectName = "Name";
             this.olvColumn_UCCaseTCManage_ManageService_Name.Text = "Titel";
             this.olvColumn_UCCaseTCManage_ManageService_Name.Width = 320;
             // 
@@ -690,22 +690,18 @@
             // 
             // button_UCServicesTCManage_AddSpeciality
             // 
-            this.button_UCServicesTCManage_AddSpeciality.Location = new System.Drawing.Point(375, 109);
+            this.button_UCServicesTCManage_AddSpeciality.Location = new System.Drawing.Point(375, 106);
             this.button_UCServicesTCManage_AddSpeciality.Name = "button_UCServicesTCManage_AddSpeciality";
             this.button_UCServicesTCManage_AddSpeciality.Size = new System.Drawing.Size(120, 31);
             this.button_UCServicesTCManage_AddSpeciality.TabIndex = 35;
             this.button_UCServicesTCManage_AddSpeciality.Tag = "";
             this.button_UCServicesTCManage_AddSpeciality.Text = "Tilføj";
             this.button_UCServicesTCManage_AddSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCManage_AddSpeciality.Click += new System.EventHandler(this.button_UCServicesTCManage_AddSpeciality_Click);
             // 
             // comboBox_UCServicesTCManage_AddSpeciality
             // 
             this.comboBox_UCServicesTCManage_AddSpeciality.FormattingEnabled = true;
-            this.comboBox_UCServicesTCManage_AddSpeciality.Items.AddRange(new object[] {
-            "kasper thorsen",
-            "kasper nielsen",
-            "stig thorsen",
-            "stig nielsen"});
             this.comboBox_UCServicesTCManage_AddSpeciality.Location = new System.Drawing.Point(248, 109);
             this.comboBox_UCServicesTCManage_AddSpeciality.Name = "comboBox_UCServicesTCManage_AddSpeciality";
             this.comboBox_UCServicesTCManage_AddSpeciality.Size = new System.Drawing.Size(121, 26);

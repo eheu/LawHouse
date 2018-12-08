@@ -13,6 +13,7 @@ namespace DataAccess
     public class ServiceRepository : IServiceRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
+
         public void Create(Service service)
         {
             using (var cmd = _connection.CreateCommand())
@@ -42,29 +43,6 @@ namespace DataAccess
             }
         }
 
-        public void Delete(Service service)
-        {
-            using (var cmd = _connection.CreateCommand())
-            {
-                try
-                {
-                    _connection.Open();
-                    cmd.CommandText = @"DELETE FROM [Service]
-                                        WHERE ID = @ID";
-                    cmd.AddParameter("ID", service.ID);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
-            }
-        }
-
         public Service Get(int ID)
         {
             try
@@ -72,7 +50,7 @@ namespace DataAccess
                 using (var command = _connection.CreateCommand())
                 {
                     command.CommandText = @"SELECT [ID], [name], [price], [isHourly]
-                                        FROM [Service]
+                                            FROM [Service]
                                             WHERE ID = @ID";
                     command.AddParameter("ID", ID);
                     _connection.Open();
@@ -103,14 +81,13 @@ namespace DataAccess
                 using (var command = _connection.CreateCommand())
                 {
                     _connection.Open();
-                    command.CommandText = @"SELECT ID, name, price, isHourly, description 
-                                        FROM Service";
+                    command.CommandText = @"SELECT [ID], [name], [price], [isHourly], [description] 
+                                            FROM [Service]";
                     return MapCollection(command);
                 }
             }
             catch (Exception)
-            {
-
+            { 
                 throw;
             }
             finally
@@ -120,6 +97,32 @@ namespace DataAccess
 
         }
 
+        public List<Service> GetServicesFromSpeciality(Speciality speciality)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT [ID], [name], [price], [isHourly], [description]
+                                            FROM [Service]
+                                            INNER JOIN [ServiceSpeciality] ON [ServiceSpeciality].[serviceID] = [Service].[ID]
+                                            WHERE [ServiceSpeciality].[specialityID] = @specialityID";
+                    command.AddParameter("specialityID", speciality.ID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
 
         public void Update(Service service)
         {
@@ -153,6 +156,29 @@ namespace DataAccess
             }
         }
 
+        public void Delete(Service service)
+        {
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [Service]
+                                        WHERE ID = @ID";
+                    cmd.AddParameter("ID", service.ID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+
         private static void Map(SqlDataReader reader, Service service)
         {
             service.ID = (int)reader["ID"];
@@ -161,6 +187,7 @@ namespace DataAccess
             service.IsHourly = (bool)reader["isHourly"];
             service.Description = reader["description"] == DBNull.Value ? "" : (string)reader["description"];
         }
+
         private static List<Service> MapCollection(SqlCommand command)
         {
             using (var reader = command.ExecuteReader())

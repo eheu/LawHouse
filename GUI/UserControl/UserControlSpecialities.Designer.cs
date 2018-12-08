@@ -66,10 +66,10 @@
             this.button_UCSpecialityTCEdit_FindSpeciality = new System.Windows.Forms.Button();
             this.TC_UCSpecialityTC_ManageSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCManage_ManageService = new System.Windows.Forms.Label();
-            this.objectListView_UCSpecialityTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCSpecialityTCManage_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCSpecialityTCManage_Price = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCSpecialityTCManage_IsHourly = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCSpecialityTCManage_Save = new System.Windows.Forms.Button();
             this.button_UCSpecialityTCManage_AddService = new System.Windows.Forms.Button();
             this.comboBox_UCSpecialityTCManage_AddService = new System.Windows.Forms.ComboBox();
@@ -87,7 +87,7 @@
             this.TC_UCSpecialityTC_EditSpeciality.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCEdit_Services)).BeginInit();
             this.TC_UCSpecialityTC_ManageSpeciality.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ManageService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCSpecialities
@@ -475,7 +475,7 @@
             // TC_UCSpecialityTC_ManageSpeciality
             // 
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_ManageService);
-            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.objectListView_UCSpecialityTCManage_ManageService);
+            this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_Save);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_AddService);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.comboBox_UCSpecialityTCManage_AddService);
@@ -502,44 +502,47 @@
             this.label_UCSpecialityTCManage_ManageService.TabIndex = 49;
             this.label_UCSpecialityTCManage_ManageService.Text = "Rediger efteruddannelse";
             // 
-            // objectListView_UCSpecialityTCManage_ManageService
+            // objectListView_UCSpecialityTCManage_ManageSpeciality
             // 
-            this.objectListView_UCSpecialityTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Name);
-            this.objectListView_UCSpecialityTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses);
-            this.objectListView_UCSpecialityTCManage_ManageService.AllColumns.Add(this.olvColumn_UCCaseTCManage_ManageService_Hourses);
-            this.objectListView_UCSpecialityTCManage_ManageService.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
-            this.objectListView_UCSpecialityTCManage_ManageService.CellEditUseWholeCell = false;
-            this.objectListView_UCSpecialityTCManage_ManageService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn_UCCaseTCManage_ManageService_Name,
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses,
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses});
-            this.objectListView_UCSpecialityTCManage_ManageService.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView_UCSpecialityTCManage_ManageService.HasCollapsibleGroups = false;
-            this.objectListView_UCSpecialityTCManage_ManageService.Location = new System.Drawing.Point(30, 148);
-            this.objectListView_UCSpecialityTCManage_ManageService.Name = "objectListView_UCSpecialityTCManage_ManageService";
-            this.objectListView_UCSpecialityTCManage_ManageService.ShowGroups = false;
-            this.objectListView_UCSpecialityTCManage_ManageService.Size = new System.Drawing.Size(562, 319);
-            this.objectListView_UCSpecialityTCManage_ManageService.TabIndex = 48;
-            this.objectListView_UCSpecialityTCManage_ManageService.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCSpecialityTCManage_ManageService.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AllColumns.Add(this.olvColumn_UCSpecialityTCManage_Name);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AllColumns.Add(this.olvColumn_UCSpecialityTCManage_Price);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AllColumns.Add(this.olvColumn_UCSpecialityTCManage_IsHourly);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.CellEditUseWholeCell = false;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn_UCSpecialityTCManage_Name,
+            this.olvColumn_UCSpecialityTCManage_Price,
+            this.olvColumn_UCSpecialityTCManage_IsHourly});
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.HasCollapsibleGroups = false;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Location = new System.Drawing.Point(30, 148);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Name = "objectListView_UCSpecialityTCManage_ManageSpeciality";
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.ShowGroups = false;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Size = new System.Drawing.Size(562, 319);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.TabIndex = 48;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.View = System.Windows.Forms.View.Details;
             // 
-            // olvColumn_UCCaseTCManage_ManageService_Name
+            // olvColumn_UCSpecialityTCManage_Name
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_Name.AspectName = "Value.Name";
-            this.olvColumn_UCCaseTCManage_ManageService_Name.Text = "Titel";
-            this.olvColumn_UCCaseTCManage_ManageService_Name.Width = 320;
+            this.olvColumn_UCSpecialityTCManage_Name.AspectName = "Name";
+            this.olvColumn_UCSpecialityTCManage_Name.IsEditable = false;
+            this.olvColumn_UCSpecialityTCManage_Name.Text = "Titel";
+            this.olvColumn_UCSpecialityTCManage_Name.Width = 320;
             // 
-            // olvColumn_UCCaseTCManage_ManageService_EstimatedHourses
+            // olvColumn_UCSpecialityTCManage_Price
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.AspectName = "Key.Hours";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Text = "Pris";
-            this.olvColumn_UCCaseTCManage_ManageService_EstimatedHourses.Width = 110;
+            this.olvColumn_UCSpecialityTCManage_Price.AspectName = "Price";
+            this.olvColumn_UCSpecialityTCManage_Price.IsEditable = false;
+            this.olvColumn_UCSpecialityTCManage_Price.Text = "Pris";
+            this.olvColumn_UCSpecialityTCManage_Price.Width = 110;
             // 
-            // olvColumn_UCCaseTCManage_ManageService_Hourses
+            // olvColumn_UCSpecialityTCManage_IsHourly
             // 
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.AspectName = "Key.EstimatedHours";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Text = "Afregning";
-            this.olvColumn_UCCaseTCManage_ManageService_Hourses.Width = 110;
+            this.olvColumn_UCSpecialityTCManage_IsHourly.AspectName = "IsHourly";
+            this.olvColumn_UCSpecialityTCManage_IsHourly.IsEditable = false;
+            this.olvColumn_UCSpecialityTCManage_IsHourly.Text = "Afregning";
+            this.olvColumn_UCSpecialityTCManage_IsHourly.Width = 110;
             // 
             // button_UCSpecialityTCManage_Save
             // 
@@ -561,6 +564,7 @@
             this.button_UCSpecialityTCManage_AddService.Tag = "";
             this.button_UCSpecialityTCManage_AddService.Text = "Tilføj";
             this.button_UCSpecialityTCManage_AddService.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCManage_AddService.Click += new System.EventHandler(this.button_UCSpecialityTCManage_AddService_Click);
             // 
             // comboBox_UCSpecialityTCManage_AddService
             // 
@@ -651,7 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCEdit_Services)).EndInit();
             this.TC_UCSpecialityTC_ManageSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_ManageSpeciality.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ManageService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -696,10 +700,10 @@
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_EditSpeciality;
         private System.Windows.Forms.Button button_UCSpecialityTCEdit_FindSpeciality;
         private System.Windows.Forms.Label label_UCSpecialityTCManage_ManageService;
-        private BrightIdeasSoftware.ObjectListView objectListView_UCSpecialityTCManage_ManageService;
-        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Name;
-        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_EstimatedHourses;
-        private BrightIdeasSoftware.OLVColumn olvColumn_UCCaseTCManage_ManageService_Hourses;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCSpecialityTCManage_ServicesOnSpeciality;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCManage_Name;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCManage_Price;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCManage_IsHourly;
         private System.Windows.Forms.Button button_UCSpecialityTCManage_Save;
         private System.Windows.Forms.Button button_UCSpecialityTCManage_AddService;
         private System.Windows.Forms.ComboBox comboBox_UCSpecialityTCManage_AddService;

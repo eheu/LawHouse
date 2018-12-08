@@ -7,24 +7,25 @@ namespace GUI
 {
     public partial class GUIForm : Form
     {
-        public ICaseRepository CaseRepository { get; set; }
-        public IClientRepository ClientRepository { get; set; }
-        public IEmployeeRepository EmployeeRepository { get; set; }
-        public IServiceRepository ServiceRepository { get; set; }
-        public ICaseServiceRepository CaseServiceRepository { get; set; }
-        public ISpecialityRepository SpecialityRepository { get; set; }
-        public IRoleRepository RoleRepository { get; set; }
-        public IEmployeeSpecialityRepository EmployeeSpecialityRepository { get; set; }
-        /// <summary>
-        /// Refererer til user controls
-        /// </summary>
+        public ICaseRepository CaseRepository { get; private set; }
+        public IClientRepository ClientRepository { get; private set; }
+        public IEmployeeRepository EmployeeRepository { get; private set; }
+        public IServiceRepository ServiceRepository { get; private set; }
+        public ICaseServiceRepository CaseServiceRepository { get; private set; }
+        public ISpecialityRepository SpecialityRepository { get; private set; }
+        public IRoleRepository RoleRepository { get; private set; }
+        public IEmployeeSpecialityRepository EmployeeSpecialityRepository { get; private set; }
+
+        public IServiceSpecialityRepository ServiceSpecialityRepository { get; private set; }
+
         UserControlCases userControlCases;
         UserControlEmployees userControlEmployees;
         UserControlClients userControlClients;
         UserControlSpecialities userControlSpecialities;
         UserControlServices userControlServices;
         UserControlHelp userControlHelp;
-        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository)
+
+        public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository, IServiceSpecialityRepository serviceSpecialityRepository)
         {
             CaseRepository = caseRepository;
             ClientRepository = clientRepository;
@@ -34,6 +35,7 @@ namespace GUI
             SpecialityRepository = specialityRepository;
             RoleRepository = roleRepository;
             EmployeeSpecialityRepository = employeeSpecialityRepository;
+            ServiceSpecialityRepository = serviceSpecialityRepository;
             userControlCases = new UserControlCases(this);
             userControlEmployees = new UserControlEmployees(this);
             userControlClients = new UserControlClients(this);
@@ -283,7 +285,7 @@ namespace GUI
         /// Clear all Controls in the given ControlCollection
         /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
-        public void ClearTextboxesAndCompoboxesAndlistboxes(System.Windows.Forms.Control.ControlCollection ctrls)
+        public void ClearTextBoxesAndComboBoxesAndListBoxes(System.Windows.Forms.Control.ControlCollection ctrls)
         {
             foreach (Control ctrl in ctrls)
             {
@@ -299,7 +301,7 @@ namespace GUI
                     ((RichTextBox)ctrl).Text = string.Empty;
                 else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
-                ClearTextboxesAndCompoboxesAndlistboxes(ctrl.Controls);
+                ClearTextBoxesAndComboBoxesAndListBoxes(ctrl.Controls);
             }
         }
     }

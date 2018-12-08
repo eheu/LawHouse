@@ -9,10 +9,10 @@ namespace BusinessLogic.Interfaces
     public interface ISpecialityRepository : IRepository<Speciality>
     {
 
-        List<Speciality> GetAllSpecialityesFromOnelaywer(int employeeID);
+        List<Speciality> GetSpecialitiesFromLawyer(Employee employee);
+        List<Speciality> GetSpecialitiesFromService(Service service);
+        void AddSpecialitiesToLawyer(Employee employee, List<Speciality> Specialitylist);
 
-        void SetAllSpecialityesOnOnelaywer(int employeeID, List<Speciality> Specialitylist);
-
-        void AddOneSpecialityOnLaywer(int employeeID, Speciality speciality);
+        void AddSpecialityToLawyer(Employee employee, Speciality speciality);
     }
 }

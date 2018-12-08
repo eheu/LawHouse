@@ -103,11 +103,11 @@ namespace GUI
         /// <summary>
         /// Sets the EditEmployee Listbox
         /// </summary>
-        private void SetEditEmployeeListbox(int employee_ID)
+        private void SetEditEmployeeListbox(Employee employee)
         {
             //List of employee Specialitys showed in listbox on Edit Employee
-            List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee_ID);
-            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = Specialitylist;
+            List<Speciality> SpecialityList = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = SpecialityList;
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
@@ -116,10 +116,10 @@ namespace GUI
         /// <summary>
         /// Sets the EditEmployee Listbox
         /// </summary>
-        private void SetManageEmployeeListbox(int employee_ID)
+        private void SetManageEmployeeListbox(Employee employee)
         {
             //List of employee Specialitys showed in listbox on Edit Employee
-            List<Speciality> Specialitylist = gui.SpecialityRepository.GetAllSpecialityesFromOnelaywer(employee_ID);
+            List<Speciality> Specialitylist = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DataSource = Specialitylist;
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
@@ -142,9 +142,9 @@ namespace GUI
             }
 
             Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
-            gui.SpecialityRepository.AddOneSpecialityOnLaywer(employee.ID, (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem);
+            gui.SpecialityRepository.AddSpecialityToLawyer(employee, (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem);
             comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedIndex = -1;
-            SetManageEmployeeListbox(employee.ID);
+            SetManageEmployeeListbox(employee);
         }
 
         ///<summary>
@@ -165,7 +165,7 @@ namespace GUI
             gui.EmployeeRepository.Update(employee);
 
             //Clear text/Compoboxes
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv
             SetObjectListViewEmployee();
@@ -200,7 +200,7 @@ namespace GUI
                 label_UCEmployeeTCManage_role_Show.Text = RoleInfo.Name;
 
                 //Load List of employee Specialitys showed in listbox on Manage Employee
-                SetManageEmployeeListbox(employee.ID);
+                SetManageEmployeeListbox(employee);
 
                 //Load datalstview with employees cases
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
@@ -222,30 +222,30 @@ namespace GUI
         }
 
         /// <summary>
-        /// Saves the Employee and the Employee's Speciality's
+        /// Saves the Employee and the Employee's Specialities
         /// </summary>
         private void button_UCEmployeeTCCreate_CreateEmployee_SaveEmployee_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.FirstName = textbox_UCEmployeeTCCreate_firstName.Text;
-            employee.LastName = textbox_UCEmployeeTCCreate_lastName.Text;
-            employee.Email = textbox_UCEmployeeTCCreate_emailName.Text;
-            employee.Phone = textbox_UCEmployeeTCCreate_phone.Text;
-            employee.RoleID = (int)combo_UCEmployeeTCCreate_Role.SelectedValue;
+            Employee employee = new Employee(
+                textbox_UCEmployeeTCCreate_firstName.Text,
+                 textbox_UCEmployeeTCCreate_lastName.Text,
+                 (int)combo_UCEmployeeTCCreate_Role.SelectedValue,
+                  textbox_UCEmployeeTCCreate_emailName.Text,
+                  textbox_UCEmployeeTCCreate_phone.Text);
             //Create the employee
             gui.EmployeeRepository.Create(employee);
 
-            //Set the Employee's Specialityes
-            List<Speciality> Specialitylist = new List<Speciality>();
+            //Set the Employee's Specialities
+            List<Speciality> specialities = new List<Speciality>();
             foreach (Speciality item in ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items)
             {
-                Specialitylist.Add(item);
+                specialities.Add(item);
             }
-            gui.SpecialityRepository.SetAllSpecialityesOnOnelaywer(employee.ID, Specialitylist);
+            gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
 
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         }
-            #endregion
+        #endregion
 
         /// <summary>
         /// Makes the search field sort the list view
@@ -271,7 +271,7 @@ namespace GUI
             }
             
             //label_UCEmployeeTCEdit_DeleteEmployee
-            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_EditEmployee.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv
             SetObjectListViewEmployee();
@@ -288,7 +288,7 @@ namespace GUI
             gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
 
             //Load List of employee Specialitys showed in listbox on Edit Employee
-            SetEditEmployeeListbox(currentEmployee.ID);
+            SetEditEmployeeListbox(currentEmployee);
         }
 
         private void button_UCEmployeeTCManage_EditEmployee_Click(object sender, EventArgs e)
@@ -302,7 +302,7 @@ namespace GUI
             combo_UCEmployeeTCEdit_Role.SelectedValue = currentEmployee.RoleID;
 
             //Load List of employee Specialitys showed in listbox on Edit Employee
-            SetEditEmployeeListbox(currentEmployee.ID);
+            SetEditEmployeeListbox(currentEmployee);
 
             //Load datalstview with employees cases
             List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);

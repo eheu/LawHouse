@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic.Models
 {
-    public abstract class Entity : BaseEntity
+    public abstract class IDEntity : BaseEntity
     {
         public int ID { get; set; }
     }
