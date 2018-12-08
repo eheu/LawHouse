@@ -98,9 +98,10 @@ namespace GUI
 
         private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
-            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
             //her skal indlæses sager
             LoadCaseservicesTObjectListView(currentCase);
+
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
         }
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
@@ -201,11 +202,13 @@ namespace GUI
                 currentCase.Title = textBox_UCCaseTCEdit_ChangeName.Text;
             }
             gui.CaseRepository.Update(currentCase);
-            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
             // clear tab
             textBox_UCCaseTCEdit_ChangeName.Clear();
             comboBox_UCCaseTCEdit_ChangeClient.SelectedIndex = -1;
             comboBox_UCCaseTCEdit_ChangeLawyer.SelectedIndex = -1;
+
+            TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+
         }
 
         private void button_UCCaseTCEdit_DeleteCase_Click(object sender, EventArgs e)

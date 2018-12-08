@@ -77,8 +77,6 @@ namespace GUI
             // user clicked an item of objectListView control
             if (objectListView_UCClientTCFind_FindClient.SelectedItems.Count == 1)
             {
-                TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
-
                 currentClient = (Client)objectListView_UCClientTCFind_FindClient.SelectedObject;
 
                 label_UCClientTCManage_firstName_Show.Text = currentClient.FirstName;
@@ -87,7 +85,7 @@ namespace GUI
                 label_UCClientTCManage_addresse_Show.Text = currentClient.Address;
                 label_UCClientTCManage_email_Show.Text = currentClient.Email;
 
-                try
+                try //why?
                 {
                     List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
 
@@ -109,6 +107,8 @@ namespace GUI
                 {
 
                 }
+
+                TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
             }
         }
         /// <summary>
@@ -122,15 +122,13 @@ namespace GUI
 
         private void bottom_UCClientTCManage_Edit_Click(object sender, EventArgs e)
         {
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
-
             textbox_UCClientTCEdit_firstName.Text = currentClient.FirstName;
             textbox_UCClientTCEdit_lastName.Text = currentClient.LastName;
             textbox_UCClientTCEdit_phone.Text = currentClient.Phone;
             textbox_UCClientTCEdit_addresse.Text = currentClient.Address;
             textbox_UCClientTCEdit_email.Text = currentClient.Email;
 
-            try
+            try //why?
             {
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
 
@@ -152,6 +150,8 @@ namespace GUI
             {
 
             }
+            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
+
         }
     }
 }

@@ -198,8 +198,8 @@
             this.objectListView_UCEmployeeTCFind_FindEmployee.Size = new System.Drawing.Size(1134, 396);
             this.objectListView_UCEmployeeTCFind_FindEmployee.TabIndex = 0;
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.Details;
-            this.objectListView_UCEmployeeTCFind_FindEmployee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCEmployeeTCFind_FindEmployee_MousedoubleClick);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.LargeIcon;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick);
             this.objectListView_UCEmployeeTCFind_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // olvColumnEmployeeFindID
@@ -210,12 +210,15 @@
             // olvColumnEmployeeFindFirstName
             // 
             this.olvColumnEmployeeFindFirstName.AspectName = "FirstName";
+            this.olvColumnEmployeeFindFirstName.IsTileViewColumn = true;
             this.olvColumnEmployeeFindFirstName.Text = "Fornavn";
             this.olvColumnEmployeeFindFirstName.Width = 100;
             // 
             // olvColumnEmployeeFindLastName
             // 
             this.olvColumnEmployeeFindLastName.AspectName = "LastName";
+            this.olvColumnEmployeeFindLastName.IsHeaderVertical = true;
+            this.olvColumnEmployeeFindLastName.IsTileViewColumn = true;
             this.olvColumnEmployeeFindLastName.Text = "Efternavn";
             this.olvColumnEmployeeFindLastName.Width = 100;
             // 
