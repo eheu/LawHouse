@@ -2,7 +2,7 @@
 
 namespace BusinessLogic.Models
 {
-    public class Case : Entity
+    public class Case : IDEntity
     {
         public Case()
         {

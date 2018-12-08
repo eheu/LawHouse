@@ -29,6 +29,9 @@ namespace GUI
             // objectlistview 
             SetObjectListViewServices();
 
+            //comboBox_UCServicesTCManage_AddSpeciality
+            //comboBox_UCServicesTCManage_AddSpeciality.Items = gui.Service
+
 
         }
 

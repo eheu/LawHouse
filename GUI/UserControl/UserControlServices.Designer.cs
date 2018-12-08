@@ -701,11 +701,6 @@
             // comboBox_UCServicesTCManage_AddSpeciality
             // 
             this.comboBox_UCServicesTCManage_AddSpeciality.FormattingEnabled = true;
-            this.comboBox_UCServicesTCManage_AddSpeciality.Items.AddRange(new object[] {
-            "kasper thorsen",
-            "kasper nielsen",
-            "stig thorsen",
-            "stig nielsen"});
             this.comboBox_UCServicesTCManage_AddSpeciality.Location = new System.Drawing.Point(248, 109);
             this.comboBox_UCServicesTCManage_AddSpeciality.Name = "comboBox_UCServicesTCManage_AddSpeciality";
             this.comboBox_UCServicesTCManage_AddSpeciality.Size = new System.Drawing.Size(121, 26);

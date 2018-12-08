@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic.Models
 {
-    public class Client : Entity
+    public class Client : IDEntity
     {
         public Client()
         {

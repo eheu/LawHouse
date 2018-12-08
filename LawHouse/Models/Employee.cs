@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic.Models
 {
-    public class Employee : Entity
+    public class Employee : IDEntity
     {
         public Employee()
         {

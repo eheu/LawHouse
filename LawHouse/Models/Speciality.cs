@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic.Models
 {
-    public class Speciality : Entity
+    public class Speciality : IDEntity
     {
         public Speciality()
         {
