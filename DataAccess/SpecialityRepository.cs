@@ -10,9 +10,31 @@ namespace DataAccess
     public class SpecialityRepository : ISpecialityRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
-        public void Create(Speciality entity)
+        public void Create(Speciality speciality)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = @"INSERT INTO [Speciality] (name, description)
+                                        VALUES(@name, @description);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    cmd.AddParameter("name", speciality.Name);
+                    cmd.AddParameter("description", speciality.Description);
+                    _connection.Open();
+                    var ID = (int)cmd.ExecuteScalar();
+                    speciality.ID = ID;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+
+            }
         }
 
         public Speciality Get(int id)
@@ -33,10 +55,8 @@ namespace DataAccess
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
-
                 finally
                 {
                     _connection.Close();
@@ -133,14 +153,54 @@ namespace DataAccess
             }
         }
 
-        public void Update(Speciality entity)
+        public void Update(Speciality speciality)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"UPDATE [Speciality] SET
+                                            name = @name, 
+                                            description = @description 
+                                            WHERE ID = @ID";
+                    command.AddParameter("name", speciality.Name);
+                    command.AddParameter("description", speciality.Description);
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
-        public void Delete(Speciality entity)
+        public void Delete(Speciality speciality)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [Speciality]
+                                        WHERE ID = @ID";
+                    cmd.AddParameter("ID", speciality.ID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         private static void Map(SqlDataReader reader, Speciality speciality)

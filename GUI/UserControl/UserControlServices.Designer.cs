@@ -192,7 +192,7 @@
             this.objectListView_UCServiceTCFind_FindService.TabIndex = 5;
             this.objectListView_UCServiceTCFind_FindService.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCServiceTCFind_FindService.View = System.Windows.Forms.View.Details;
-            this.objectListView_UCServiceTCFind_FindService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCServiceTCFind_FindService_MousefloatClick);
+            this.objectListView_UCServiceTCFind_FindService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCServiceTCFind_FindService_MousedoubleClick);
             // 
             // olvColumn1
             // 
@@ -547,6 +547,7 @@
             this.button_UCServicesTCEdit_SaveChange.Tag = "";
             this.button_UCServicesTCEdit_SaveChange.Text = "Gem Ændringer";
             this.button_UCServicesTCEdit_SaveChange.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCEdit_SaveChange.Click += new System.EventHandler(this.button_UCServicesTCEdit_SaveChange_Click);
             // 
             // button_UCServicesTCEdit_RemoveSpeciality
             // 
@@ -575,6 +576,7 @@
             this.button_UCServicesTCEdit_DeleteService.Tag = "";
             this.button_UCServicesTCEdit_DeleteService.Text = "Slet ydelse";
             this.button_UCServicesTCEdit_DeleteService.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCEdit_DeleteService.Click += new System.EventHandler(this.button_UCServicesTCEdit_DeleteService_Click);
             // 
             // textBox_UCServiceTCEdit_ChangeName
             // 
@@ -684,6 +686,7 @@
             this.button_UCServicesTCManage_Save.Tag = "";
             this.button_UCServicesTCManage_Save.Text = "Gem";
             this.button_UCServicesTCManage_Save.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCManage_Save.Click += new System.EventHandler(this.button_UCServicesTCManage_Save_Click);
             // 
             // button_UCServicesTCManage_AddSpeciality
             // 

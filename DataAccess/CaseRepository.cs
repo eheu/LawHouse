@@ -173,9 +173,10 @@ namespace DataAccess
 
         public void Update(Case @case)
         {
-            try
+
+            using (var command = _connection.CreateCommand())
             {
-                using (var command = _connection.CreateCommand())
+                try
                 {
                     command.CommandText = @"UPDATE [Case] SET
                                             title = @title, 
@@ -193,16 +194,15 @@ namespace DataAccess
                     _connection.Open();
                     command.ExecuteNonQuery();
                 }
+                catch (Exception)
+                {
 
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                _connection.Close();
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
             }
         }
 
