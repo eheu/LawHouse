@@ -26,7 +26,7 @@ namespace GUI
             gui = guiForm;
             InitializeComponent();
 
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
         }
 
         private void InitializeAddSpecialityCombobox()
@@ -37,7 +37,7 @@ namespace GUI
             comboBox_UCServicesTCManage_AddSpeciality.SelectedIndex = -1;
         }
 
-        private void InitializeFindServicesObjectListView()
+        private void InitializeFindServiceObjectListView()
         {
             olvColumn_UCServiceTCFind_IsHourly.AspectGetter = delegate (object obj)
             {
@@ -56,13 +56,13 @@ namespace GUI
 
         private void button_UCServicesTCCreate_FindService_Click(object sender, EventArgs e)
         {
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
         private void button_UCServicesTCEdit_FindService_Click(object sender, EventArgs e)
         {
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
@@ -73,7 +73,7 @@ namespace GUI
 
         private void button_UCServicesTCManage_FindService_Click(object sender, EventArgs e)
         {
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
@@ -137,7 +137,7 @@ namespace GUI
                 service.IsHourly = false;
             }
             gui.ServiceRepository.Create(service);
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 
@@ -181,7 +181,7 @@ namespace GUI
         private void button_UCServicesTCEdit_DeleteService_Click(object sender, EventArgs e)
         {
             gui.ServiceRepository.Delete(currentService);
-            InitializeFindServicesObjectListView();
+            InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
         }
 

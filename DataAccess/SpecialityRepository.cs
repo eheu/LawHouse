@@ -192,6 +192,7 @@ namespace DataAccess
                                             WHERE ID = @ID";
                     command.AddParameter("name", speciality.Name);
                     command.AddParameter("description", speciality.Description);
+                    command.AddParameter("ID", speciality.ID);
                     _connection.Open();
                     command.ExecuteNonQuery();
                 }

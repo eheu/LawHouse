@@ -87,8 +87,30 @@ namespace GUI
             label_UCSpecialityTCManage_SpecialityName.Text = speciality.Name;
             richTextBox_UCSpecialityTCManage_Description.Text = speciality.Description;
             currentSpeciality = speciality;
+
+            InitializeAddServiceComboBox();
+            InitializeServicesOnSpecialityObjectListView();
+
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
         }
+
+        private void InitializeServicesOnSpecialityObjectListView()
+        {
+            olvColumn_UCSpecialityTCManage_IsHourly.AspectGetter = delegate (object obj)
+            {
+                Service service = (Service)obj;
+                return service.IsHourly == true ? "Timepris" : "Fastpris";
+            };
+            objectListView_UCSpecialityTCManage_ServicesOnSpeciality.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
+        }
+
+        private void InitializeAddServiceComboBox()
+        {
+            comboBox_UCSpecialityTCManage_AddService.DataSource = gui.ServiceRepository.GetAll();
+            comboBox_UCSpecialityTCManage_AddService.DisplayMember = "Name";
+            comboBox_UCSpecialityTCManage_AddService.ValueMember = "ID";
+        }
+
         /// <summary>
         /// Saves in manage speciality tab
         /// </summary>
@@ -108,6 +130,7 @@ namespace GUI
             //Change tab and update
             label_UCSpecialityTCManage_SpecialityName.Text = currentSpeciality.Name;
             richTextBox_UCSpecialityTCManage_Description.Text = currentSpeciality.Description;
+
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_EditSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
         }
@@ -117,6 +140,17 @@ namespace GUI
             gui.SpecialityRepository.Delete(currentSpeciality);
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+        }
+
+        private void button_UCSpecialityTCManage_AddService_Click(object sender, EventArgs e)
+        {
+            if (comboBox_UCSpecialityTCManage_AddService.SelectedItem != null)
+            {
+                List<Service> servicesOnSpeciality = objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Objects.Cast<Service>().ToList(); //stackoverflow.com/a/7617784
+                Service selectedService = (Service)comboBox_UCSpecialityTCManage_AddService.SelectedItem;
+                var matches = servicesOnSpeciality.Where(s => s.ID == selectedService.ID);
+                if (matches.Count() == 0) objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AddObject(selectedService);
+            }
         }
     }
 }

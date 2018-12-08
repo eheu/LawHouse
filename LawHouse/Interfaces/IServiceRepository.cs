@@ -8,6 +8,6 @@ namespace BusinessLogic.Interfaces
     /// </summary>
     public interface IServiceRepository : IRepository<Service>
     {
-        
+        List<Service> GetServicesFromSpeciality(Speciality speciality);
     }
 }
