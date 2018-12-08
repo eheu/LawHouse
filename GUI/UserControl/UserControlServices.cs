@@ -45,7 +45,7 @@ namespace GUI
 
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
-            gui.ClearTextboxesAndCompoboxes(TC_UCServiceTC_CreateService.Controls);
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCServiceTC_CreateService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
         }
 
@@ -156,7 +156,7 @@ namespace GUI
             //Change tab and update
             richTextBox_UCServicesTCManage_Description.Text = currentService.Description;
             label_UCServicesTCManage_ServiceName.Text = currentService.Name;
-            gui.ClearTextboxesAndCompoboxes(TC_UCServiceTC_EditService.Controls);
+            gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCServiceTC_EditService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
         }
 
