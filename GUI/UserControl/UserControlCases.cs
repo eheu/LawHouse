@@ -34,12 +34,7 @@ namespace GUI
             SetComboboxService(comboBox_UCCaseTCCreate_ChooseService);
             SetComboboxService(comboBox_UCCaseTCManage_AddService);
             //object list view
-            SetObjectListViewCases();
-            // liste af valgte ydelser, opret sag
-            List<Service> serviceList = new List<Service>();
-            listBox_UCCaseTCCreate_Service.DisplayMember = "Name";
-            listBox_UCCaseTCCreate_Service.ValueMember = "ID";
-            
+            SetObjectListViewCases();            
         }
 
         private void SetComboBoxClient(ComboBox comboBox)
@@ -143,7 +138,7 @@ namespace GUI
             gui.CaseRepository.Create(@case);
             SetObjectListViewCases();
 
-            foreach(Service service in listBox_UCCaseTCCreate_Service.Items)
+            foreach(Service service in objectListView_UCCaseTCCreate_Service.Objects)
             {
                 gui.CaseServiceRepository.AddServiceToCase(service, @case);
             }
@@ -172,8 +167,10 @@ namespace GUI
 
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
         {
-            if (!listBox_UCCaseTCCreate_Service.Items.Contains((Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem))
-                listBox_UCCaseTCCreate_Service.Items.Add((Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem);
+            List<Service> servicesInObjectListView = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
+            Service selectedService = (Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem;
+            bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
+            if (!exists) objectListView_UCCaseTCCreate_Service.AddObject(selectedService);
         }
 
         private void button_UCCaseTCManage_AddService_Click(object sender, EventArgs e)
@@ -235,11 +232,7 @@ namespace GUI
 
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
         {
-            List<Service> services = new List<Service>();
-            foreach (Service service in listBox_UCCaseTCCreate_Service.Items)
-            {
-                services.Add(service);
-            }
+            List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
             comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
             comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
         }
