@@ -27,6 +27,14 @@ namespace GUI
             InitializeComponent();
 
             InitializeFindServiceObjectListView();
+            InitializeAddServiceCombobox();
+        }
+
+        private void InitializeAddServiceCombobox()
+        {
+            comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
+            comboBox_UCServicesTCCreate_AddSpeciality.DisplayMember = "Name";
+            comboBox_UCServicesTCCreate_AddSpeciality.ValueMember = "ID";
         }
 
         private void InitializeAddSpecialityCombobox()
@@ -191,9 +199,32 @@ namespace GUI
             {
                 List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCManage_ManageService.Objects.Cast<Speciality>().ToList(); //stackoverflow.com/a/7617784
                 Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCManage_AddSpeciality.SelectedItem;
-                var matches = specialitiesInObjectListView.Where(s => s.ID == selectedSpeciality.ID);
-                if (matches.Count() == 0) objectListView_UCServicesTCManage_ManageService.AddObject(selectedSpeciality);
+                bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+                if (!exists) gui.ServiceSpecialityRepository.Create(new ServiceSpeciality(currentService.ID, selectedSpeciality.ID));
+                objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
             }
+        }
+
+        private void button_UCServicesTCCreate_AddSpeciality_Click(object sender, EventArgs e)
+        {
+            if (comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null)
+            {
+                List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
+                Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
+                bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+                if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+            }
+        }
+
+        private void textBox_UCServicesTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCServiceTCFind_FindService.UseFiltering = true;
+            this.objectListView_UCServiceTCFind_FindService.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCServiceTCFind_FindService, $"{textBox_UCServicesTCFind_Search.Text}");
+        }
+
+        private void UserControlServices_MouseEnter(object sender, EventArgs e)
+        {
+            gui.toggleMenuPanel(); 
         }
     }
 }

@@ -51,7 +51,7 @@
             this.label_UCCSpecialityTCCreate_Create = new System.Windows.Forms.Label();
             this.TC_UCSpecialityTC_EditSpeciality = new System.Windows.Forms.TabPage();
             this.objectListView_UCSpecialityTCEdit_Services = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCSpecialityTCEdit_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCSpecialityTCEdit_ServiceView = new System.Windows.Forms.Label();
             this.label_UCSpecialityTCEdit_Description = new System.Windows.Forms.Label();
             this.button_UCSpecialityTCEdit_SaveChange = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.TabControl_UCSpecialities.Controls.Add(this.TC_UCSpecialityTC_ManageSpeciality);
             this.TabControl_UCSpecialities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCSpecialities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(100, 50);
+            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCSpecialities.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCSpecialities.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCSpecialities.Name = "TabControl_UCSpecialities";
@@ -110,18 +110,19 @@
             // 
             // TC_UCSpecialityTC_FindSpeciality
             // 
+            this.TC_UCSpecialityTC_FindSpeciality.BackColor = System.Drawing.Color.White;
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.label_UCSpecialityTCFind_Search);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.textBox_UCSpecialityTCFind_Search);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.button_UCCSpecialityTCFind_CreateSpeciality);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.label_UCCSpecialityTCFind_FindSpeciality);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.objectListView_UCSpecialityTCFind_FindSpeciality);
-            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 5);
             this.TC_UCSpecialityTC_FindSpeciality.Name = "TC_UCSpecialityTC_FindSpeciality";
             this.TC_UCSpecialityTC_FindSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCSpecialityTC_FindSpeciality.TabIndex = 0;
             this.TC_UCSpecialityTC_FindSpeciality.Text = "Find efterud";
-            this.TC_UCSpecialityTC_FindSpeciality.UseVisualStyleBackColor = true;
+            this.TC_UCSpecialityTC_FindSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCFind_Search
             // 
@@ -138,6 +139,7 @@
             this.textBox_UCSpecialityTCFind_Search.Name = "textBox_UCSpecialityTCFind_Search";
             this.textBox_UCSpecialityTCFind_Search.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCSpecialityTCFind_Search.TabIndex = 21;
+            this.textBox_UCSpecialityTCFind_Search.TextChanged += new System.EventHandler(this.textBox_UCSpecialityTCFind_Search_TextChanged);
             // 
             // button_UCCSpecialityTCFind_CreateSpeciality
             // 
@@ -171,11 +173,12 @@
             this.objectListView_UCSpecialityTCFind_FindSpeciality.Location = new System.Drawing.Point(9, 103);
             this.objectListView_UCSpecialityTCFind_FindSpeciality.Name = "objectListView_UCSpecialityTCFind_FindSpeciality";
             this.objectListView_UCSpecialityTCFind_FindSpeciality.ShowGroups = false;
-            this.objectListView_UCSpecialityTCFind_FindSpeciality.Size = new System.Drawing.Size(1134, 396);
+            this.objectListView_UCSpecialityTCFind_FindSpeciality.Size = new System.Drawing.Size(1134, 439);
             this.objectListView_UCSpecialityTCFind_FindSpeciality.TabIndex = 18;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.View = System.Windows.Forms.View.Details;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCSpecialityTCFind_FindSpeciality_MouseDoubleClick);
+            this.objectListView_UCSpecialityTCFind_FindSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -185,6 +188,7 @@
             // 
             // TC_UCSpecialityTC_CreateSpeciality
             // 
+            this.TC_UCSpecialityTC_CreateSpeciality.BackColor = System.Drawing.Color.White;
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Description);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCSpecialityTCCreate_Service);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCCreate_Description);
@@ -197,13 +201,13 @@
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Name);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_FindSpeciality);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Create);
-            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 14);
             this.TC_UCSpecialityTC_CreateSpeciality.Name = "TC_UCSpecialityTC_CreateSpeciality";
             this.TC_UCSpecialityTC_CreateSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCSpecialityTC_CreateSpeciality.TabIndex = 1;
             this.TC_UCSpecialityTC_CreateSpeciality.Text = "Opret";
-            this.TC_UCSpecialityTC_CreateSpeciality.UseVisualStyleBackColor = true;
+            this.TC_UCSpecialityTC_CreateSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCCreate_Description
             // 
@@ -227,7 +231,7 @@
             // 
             this.richTextBox_UCSpecialityTCCreate_Description.Location = new System.Drawing.Point(716, 41);
             this.richTextBox_UCSpecialityTCCreate_Description.Name = "richTextBox_UCSpecialityTCCreate_Description";
-            this.richTextBox_UCSpecialityTCCreate_Description.Size = new System.Drawing.Size(421, 454);
+            this.richTextBox_UCSpecialityTCCreate_Description.Size = new System.Drawing.Size(421, 494);
             this.richTextBox_UCSpecialityTCCreate_Description.TabIndex = 50;
             this.richTextBox_UCSpecialityTCCreate_Description.Text = "";
             // 
@@ -237,10 +241,11 @@
             this.objectListView_UCSpecialityTCCreate_Service.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCCreate_Service.Location = new System.Drawing.Point(482, 41);
             this.objectListView_UCSpecialityTCCreate_Service.Name = "objectListView_UCSpecialityTCCreate_Service";
-            this.objectListView_UCSpecialityTCCreate_Service.Size = new System.Drawing.Size(201, 454);
+            this.objectListView_UCSpecialityTCCreate_Service.Size = new System.Drawing.Size(201, 494);
             this.objectListView_UCSpecialityTCCreate_Service.TabIndex = 49;
             this.objectListView_UCSpecialityTCCreate_Service.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCCreate_Service.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCCreate_Service.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // button_UCSpecialityTCCreate_AddService
             // 
@@ -250,6 +255,7 @@
             this.button_UCSpecialityTCCreate_AddService.TabIndex = 48;
             this.button_UCSpecialityTCCreate_AddService.Text = "Tilføj";
             this.button_UCSpecialityTCCreate_AddService.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCCreate_AddService.Click += new System.EventHandler(this.button_UCSpecialityTCCreate_AddService_Click);
             // 
             // label_UCCSpecialityTCCreate_Service
             // 
@@ -267,10 +273,11 @@
             this.comboBox_UCSpecialityTCCreate_AddService.Name = "comboBox_UCSpecialityTCCreate_AddService";
             this.comboBox_UCSpecialityTCCreate_AddService.Size = new System.Drawing.Size(144, 26);
             this.comboBox_UCSpecialityTCCreate_AddService.TabIndex = 46;
+            this.comboBox_UCSpecialityTCCreate_AddService.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // bottom_UCSpecialityTCCreate_Create
             // 
-            this.bottom_UCSpecialityTCCreate_Create.Location = new System.Drawing.Point(47, 465);
+            this.bottom_UCSpecialityTCCreate_Create.Location = new System.Drawing.Point(47, 505);
             this.bottom_UCSpecialityTCCreate_Create.Name = "bottom_UCSpecialityTCCreate_Create";
             this.bottom_UCSpecialityTCCreate_Create.Size = new System.Drawing.Size(190, 30);
             this.bottom_UCSpecialityTCCreate_Create.TabIndex = 45;
@@ -284,6 +291,7 @@
             this.textbox_UCCServiceTCCreate_Name.Name = "textbox_UCCServiceTCCreate_Name";
             this.textbox_UCCServiceTCCreate_Name.Size = new System.Drawing.Size(144, 24);
             this.textbox_UCCServiceTCCreate_Name.TabIndex = 43;
+            this.textbox_UCCServiceTCCreate_Name.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCCSpecialityTCCreate_Name
             // 
@@ -315,6 +323,8 @@
             // 
             // TC_UCSpecialityTC_EditSpeciality
             // 
+            this.TC_UCSpecialityTC_EditSpeciality.BackColor = System.Drawing.Color.White;
+            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_CurrentName);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.objectListView_UCSpecialityTCEdit_Services);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ServiceView);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_Description);
@@ -327,35 +337,36 @@
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_ManageSpeciality);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_EditSpeciality);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_FindSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 14);
             this.TC_UCSpecialityTC_EditSpeciality.Name = "TC_UCSpecialityTC_EditSpeciality";
             this.TC_UCSpecialityTC_EditSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCSpecialityTC_EditSpeciality.TabIndex = 2;
             this.TC_UCSpecialityTC_EditSpeciality.Text = "Rediger";
-            this.TC_UCSpecialityTC_EditSpeciality.UseVisualStyleBackColor = true;
+            this.TC_UCSpecialityTC_EditSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // objectListView_UCSpecialityTCEdit_Services
             // 
-            this.objectListView_UCSpecialityTCEdit_Services.AllColumns.Add(this.olvColumn4);
+            this.objectListView_UCSpecialityTCEdit_Services.AllColumns.Add(this.olvColumn_UCSpecialityTCEdit_Name);
             this.objectListView_UCSpecialityTCEdit_Services.CellEditUseWholeCell = false;
             this.objectListView_UCSpecialityTCEdit_Services.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn4});
+            this.olvColumn_UCSpecialityTCEdit_Name});
             this.objectListView_UCSpecialityTCEdit_Services.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCEdit_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.objectListView_UCSpecialityTCEdit_Services.Location = new System.Drawing.Point(501, 46);
             this.objectListView_UCSpecialityTCEdit_Services.Name = "objectListView_UCSpecialityTCEdit_Services";
             this.objectListView_UCSpecialityTCEdit_Services.ShowGroups = false;
-            this.objectListView_UCSpecialityTCEdit_Services.Size = new System.Drawing.Size(204, 358);
+            this.objectListView_UCSpecialityTCEdit_Services.Size = new System.Drawing.Size(204, 449);
             this.objectListView_UCSpecialityTCEdit_Services.TabIndex = 61;
             this.objectListView_UCSpecialityTCEdit_Services.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCEdit_Services.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCEdit_Services.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
-            // olvColumn4
+            // olvColumn_UCSpecialityTCEdit_Name
             // 
-            this.olvColumn4.AspectName = "Value.Name";
-            this.olvColumn4.Text = "Ydelsesnavne";
-            this.olvColumn4.Width = 200;
+            this.olvColumn_UCSpecialityTCEdit_Name.AspectName = "Name";
+            this.olvColumn_UCSpecialityTCEdit_Name.Text = "Ydelsesnavne";
+            this.olvColumn_UCSpecialityTCEdit_Name.Width = 200;
             // 
             // label_UCSpecialityTCEdit_ServiceView
             // 
@@ -377,7 +388,7 @@
             // 
             // button_UCSpecialityTCEdit_SaveChange
             // 
-            this.button_UCSpecialityTCEdit_SaveChange.Location = new System.Drawing.Point(979, 447);
+            this.button_UCSpecialityTCEdit_SaveChange.Location = new System.Drawing.Point(979, 501);
             this.button_UCSpecialityTCEdit_SaveChange.Name = "button_UCSpecialityTCEdit_SaveChange";
             this.button_UCSpecialityTCEdit_SaveChange.Size = new System.Drawing.Size(153, 31);
             this.button_UCSpecialityTCEdit_SaveChange.TabIndex = 58;
@@ -388,25 +399,26 @@
             // 
             // button_UCSpecialityTCEdit_RemoveService
             // 
-            this.button_UCSpecialityTCEdit_RemoveService.Location = new System.Drawing.Point(501, 410);
+            this.button_UCSpecialityTCEdit_RemoveService.Location = new System.Drawing.Point(490, 501);
             this.button_UCSpecialityTCEdit_RemoveService.Name = "button_UCSpecialityTCEdit_RemoveService";
             this.button_UCSpecialityTCEdit_RemoveService.Size = new System.Drawing.Size(204, 31);
             this.button_UCSpecialityTCEdit_RemoveService.TabIndex = 57;
             this.button_UCSpecialityTCEdit_RemoveService.Tag = "";
             this.button_UCSpecialityTCEdit_RemoveService.Text = "Fjern Ydelse";
             this.button_UCSpecialityTCEdit_RemoveService.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_RemoveService.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_RemoveService_Click);
             // 
             // richTextBox_UCSpecialityTCEdit_Description
             // 
             this.richTextBox_UCSpecialityTCEdit_Description.Location = new System.Drawing.Point(711, 46);
             this.richTextBox_UCSpecialityTCEdit_Description.Name = "richTextBox_UCSpecialityTCEdit_Description";
-            this.richTextBox_UCSpecialityTCEdit_Description.Size = new System.Drawing.Size(421, 395);
+            this.richTextBox_UCSpecialityTCEdit_Description.Size = new System.Drawing.Size(421, 449);
             this.richTextBox_UCSpecialityTCEdit_Description.TabIndex = 56;
             this.richTextBox_UCSpecialityTCEdit_Description.Text = "";
             // 
             // button_UCSpecialityTCEdit_DeleteSpeciality
             // 
-            this.button_UCSpecialityTCEdit_DeleteSpeciality.Location = new System.Drawing.Point(30, 447);
+            this.button_UCSpecialityTCEdit_DeleteSpeciality.Location = new System.Drawing.Point(30, 501);
             this.button_UCSpecialityTCEdit_DeleteSpeciality.Name = "button_UCSpecialityTCEdit_DeleteSpeciality";
             this.button_UCSpecialityTCEdit_DeleteSpeciality.Size = new System.Drawing.Size(177, 31);
             this.button_UCSpecialityTCEdit_DeleteSpeciality.TabIndex = 55;
@@ -421,6 +433,7 @@
             this.textBox_UCSpecialityTCEdit_ChangeName.Name = "textBox_UCSpecialityTCEdit_ChangeName";
             this.textBox_UCSpecialityTCEdit_ChangeName.Size = new System.Drawing.Size(258, 24);
             this.textBox_UCSpecialityTCEdit_ChangeName.TabIndex = 54;
+            this.textBox_UCSpecialityTCEdit_ChangeName.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCEdit_ChangeName
             // 
@@ -463,6 +476,7 @@
             // 
             // TC_UCSpecialityTC_ManageSpeciality
             // 
+            this.TC_UCSpecialityTC_ManageSpeciality.BackColor = System.Drawing.Color.White;
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_ManageService);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_Save);
@@ -474,13 +488,13 @@
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_FindSpeciality);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_Description);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCManage_Description);
-            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 14);
             this.TC_UCSpecialityTC_ManageSpeciality.Name = "TC_UCSpecialityTC_ManageSpeciality";
             this.TC_UCSpecialityTC_ManageSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCSpecialityTC_ManageSpeciality.TabIndex = 3;
             this.TC_UCSpecialityTC_ManageSpeciality.Text = "Administrer";
-            this.TC_UCSpecialityTC_ManageSpeciality.UseVisualStyleBackColor = true;
+            this.TC_UCSpecialityTC_ManageSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCManage_ManageService
             // 
@@ -507,10 +521,11 @@
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Location = new System.Drawing.Point(30, 148);
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Name = "objectListView_UCSpecialityTCManage_ServicesOnSpeciality";
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.ShowGroups = false;
-            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Size = new System.Drawing.Size(562, 319);
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Size = new System.Drawing.Size(562, 348);
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.TabIndex = 48;
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // olvColumn_UCSpecialityTCManage_Name
             // 
@@ -535,7 +550,7 @@
             // 
             // button_UCSpecialityTCManage_Save
             // 
-            this.button_UCSpecialityTCManage_Save.Location = new System.Drawing.Point(1016, 473);
+            this.button_UCSpecialityTCManage_Save.Location = new System.Drawing.Point(1016, 502);
             this.button_UCSpecialityTCManage_Save.Name = "button_UCSpecialityTCManage_Save";
             this.button_UCSpecialityTCManage_Save.Size = new System.Drawing.Size(120, 31);
             this.button_UCSpecialityTCManage_Save.TabIndex = 47;
@@ -567,6 +582,7 @@
             this.comboBox_UCSpecialityTCManage_AddService.Name = "comboBox_UCSpecialityTCManage_AddService";
             this.comboBox_UCSpecialityTCManage_AddService.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCSpecialityTCManage_AddService.TabIndex = 45;
+            this.comboBox_UCSpecialityTCManage_AddService.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCManage_AddService
             // 
@@ -621,9 +637,10 @@
             // 
             this.richTextBox_UCSpecialityTCManage_Description.Location = new System.Drawing.Point(715, 29);
             this.richTextBox_UCSpecialityTCManage_Description.Name = "richTextBox_UCSpecialityTCManage_Description";
-            this.richTextBox_UCSpecialityTCManage_Description.Size = new System.Drawing.Size(421, 438);
+            this.richTextBox_UCSpecialityTCManage_Description.Size = new System.Drawing.Size(421, 467);
             this.richTextBox_UCSpecialityTCManage_Description.TabIndex = 39;
             this.richTextBox_UCSpecialityTCManage_Description.Text = "";
+            this.richTextBox_UCSpecialityTCManage_Description.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // UserControlSpecialities
             // 
@@ -632,6 +649,7 @@
             this.Controls.Add(this.TabControl_UCSpecialities);
             this.Name = "UserControlSpecialities";
             this.Size = new System.Drawing.Size(1157, 566);
+            this.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             this.TabControl_UCSpecialities.ResumeLayout(false);
             this.TC_UCSpecialityTC_FindSpeciality.ResumeLayout(false);
             this.TC_UCSpecialityTC_FindSpeciality.PerformLayout();
@@ -675,7 +693,7 @@
         private System.Windows.Forms.Button button_UCSpecialityTCCreate_FindSpeciality;
         private System.Windows.Forms.Label label_UCCSpecialityTCCreate_Create;
         private BrightIdeasSoftware.ObjectListView objectListView_UCSpecialityTCEdit_Services;
-        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCEdit_Name;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_ServiceView;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_Description;
         private System.Windows.Forms.Button button_UCSpecialityTCEdit_SaveChange;

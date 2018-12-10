@@ -79,6 +79,7 @@
             this.label_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
+            this.button_UCCaseTCManage_CloseCase = new System.Windows.Forms.Button();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_UCCaseTCManage_ManageService_EstimatedHours = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -114,7 +115,7 @@
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManageCase);
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 50);
+            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCCases.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCCases.Name = "TabControl_UCCases";
@@ -123,6 +124,7 @@
             this.TabControl_UCCases.Size = new System.Drawing.Size(1157, 566);
             this.TabControl_UCCases.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TabControl_UCCases.TabIndex = 0;
+            this.TabControl_UCCases.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // TC_UCCaseTC_FindCase
             // 
@@ -133,22 +135,22 @@
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
-            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_FindCase.Name = "TC_UCCaseTC_FindCase";
             this.TC_UCCaseTC_FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
-            this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.FindCase_MouseEnter);
+            this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // checkBox_UCCaseTCFind_IsFinished
             // 
             this.checkBox_UCCaseTCFind_IsFinished.AutoSize = true;
             this.checkBox_UCCaseTCFind_IsFinished.Location = new System.Drawing.Point(9, 67);
             this.checkBox_UCCaseTCFind_IsFinished.Name = "checkBox_UCCaseTCFind_IsFinished";
-            this.checkBox_UCCaseTCFind_IsFinished.Size = new System.Drawing.Size(186, 22);
+            this.checkBox_UCCaseTCFind_IsFinished.Size = new System.Drawing.Size(155, 22);
             this.checkBox_UCCaseTCFind_IsFinished.TabIndex = 13;
-            this.checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
+            this.checkBox_UCCaseTCFind_IsFinished.Text = "Se færdige sager";
             this.checkBox_UCCaseTCFind_IsFinished.UseVisualStyleBackColor = true;
             this.checkBox_UCCaseTCFind_IsFinished.CheckedChanged += new System.EventHandler(this.checkBox_UCCaseTCFind_IsFinished_CheckedChanged);
             // 
@@ -161,11 +163,12 @@
             this.objectListView_UCCaseTCFind_FindCase.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCCaseTCFind_FindCase.Location = new System.Drawing.Point(9, 97);
             this.objectListView_UCCaseTCFind_FindCase.Name = "objectListView_UCCaseTCFind_FindCase";
-            this.objectListView_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(1134, 405);
+            this.objectListView_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(1134, 445);
             this.objectListView_UCCaseTCFind_FindCase.TabIndex = 12;
             this.objectListView_UCCaseTCFind_FindCase.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCFind_FindCase.View = System.Windows.Forms.View.Details;
             this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_floatClick);
+            this.objectListView_UCCaseTCFind_FindCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // olvColumnName
             // 
@@ -212,6 +215,7 @@
             // 
             // TC_UCCaseTC_EditCase
             // 
+            this.TC_UCCaseTC_EditCase.BackColor = System.Drawing.Color.White;
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_CurrentLawyer);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_CurrentClient);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_CurrentName);
@@ -231,18 +235,18 @@
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_ManageCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_EditCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_FindCase);
-            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_EditCase.Name = "TC_UCCaseTC_EditCase";
             this.TC_UCCaseTC_EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_EditCase.TabIndex = 1;
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
-            this.TC_UCCaseTC_EditCase.UseVisualStyleBackColor = true;
+            this.TC_UCCaseTC_EditCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // label_UCCaseTCEdit_CurrentLawyer
             // 
             this.label_UCCaseTCEdit_CurrentLawyer.AutoSize = true;
-            this.label_UCCaseTCEdit_CurrentLawyer.Location = new System.Drawing.Point(160, 215);
+            this.label_UCCaseTCEdit_CurrentLawyer.Location = new System.Drawing.Point(17, 295);
             this.label_UCCaseTCEdit_CurrentLawyer.Name = "label_UCCaseTCEdit_CurrentLawyer";
             this.label_UCCaseTCEdit_CurrentLawyer.Size = new System.Drawing.Size(79, 18);
             this.label_UCCaseTCEdit_CurrentLawyer.TabIndex = 26;
@@ -251,7 +255,7 @@
             // label_UCCaseTCEdit_CurrentClient
             // 
             this.label_UCCaseTCEdit_CurrentClient.AutoSize = true;
-            this.label_UCCaseTCEdit_CurrentClient.Location = new System.Drawing.Point(160, 180);
+            this.label_UCCaseTCEdit_CurrentClient.Location = new System.Drawing.Point(17, 235);
             this.label_UCCaseTCEdit_CurrentClient.Name = "label_UCCaseTCEdit_CurrentClient";
             this.label_UCCaseTCEdit_CurrentClient.Size = new System.Drawing.Size(60, 18);
             this.label_UCCaseTCEdit_CurrentClient.TabIndex = 25;
@@ -260,7 +264,7 @@
             // label_UCCaseTCEdit_CurrentName
             // 
             this.label_UCCaseTCEdit_CurrentName.AutoSize = true;
-            this.label_UCCaseTCEdit_CurrentName.Location = new System.Drawing.Point(160, 145);
+            this.label_UCCaseTCEdit_CurrentName.Location = new System.Drawing.Point(17, 172);
             this.label_UCCaseTCEdit_CurrentName.Name = "label_UCCaseTCEdit_CurrentName";
             this.label_UCCaseTCEdit_CurrentName.Size = new System.Drawing.Size(55, 18);
             this.label_UCCaseTCEdit_CurrentName.TabIndex = 24;
@@ -277,10 +281,11 @@
             this.objectListView_UCCaseTCEdit_Services.Location = new System.Drawing.Point(480, 35);
             this.objectListView_UCCaseTCEdit_Services.Name = "objectListView_UCCaseTCEdit_Services";
             this.objectListView_UCCaseTCEdit_Services.ShowGroups = false;
-            this.objectListView_UCCaseTCEdit_Services.Size = new System.Drawing.Size(204, 382);
+            this.objectListView_UCCaseTCEdit_Services.Size = new System.Drawing.Size(204, 455);
             this.objectListView_UCCaseTCEdit_Services.TabIndex = 23;
             this.objectListView_UCCaseTCEdit_Services.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCEdit_Services.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCCaseTCEdit_Services.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // olvColumn1
             // 
@@ -308,7 +313,7 @@
             // 
             // button_UCCaseTCEdit_SaveChange
             // 
-            this.button_UCCaseTCEdit_SaveChange.Location = new System.Drawing.Point(969, 423);
+            this.button_UCCaseTCEdit_SaveChange.Location = new System.Drawing.Point(969, 496);
             this.button_UCCaseTCEdit_SaveChange.Name = "button_UCCaseTCEdit_SaveChange";
             this.button_UCCaseTCEdit_SaveChange.Size = new System.Drawing.Size(153, 31);
             this.button_UCCaseTCEdit_SaveChange.TabIndex = 20;
@@ -319,7 +324,7 @@
             // 
             // button_UCCaseTCEdit_RemoveService
             // 
-            this.button_UCCaseTCEdit_RemoveService.Location = new System.Drawing.Point(480, 423);
+            this.button_UCCaseTCEdit_RemoveService.Location = new System.Drawing.Point(480, 496);
             this.button_UCCaseTCEdit_RemoveService.Name = "button_UCCaseTCEdit_RemoveService";
             this.button_UCCaseTCEdit_RemoveService.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCEdit_RemoveService.TabIndex = 19;
@@ -332,13 +337,13 @@
             // 
             this.richTextBox_UCCaseTCEdit_Description.Location = new System.Drawing.Point(701, 35);
             this.richTextBox_UCCaseTCEdit_Description.Name = "richTextBox_UCCaseTCEdit_Description";
-            this.richTextBox_UCCaseTCEdit_Description.Size = new System.Drawing.Size(421, 382);
+            this.richTextBox_UCCaseTCEdit_Description.Size = new System.Drawing.Size(421, 455);
             this.richTextBox_UCCaseTCEdit_Description.TabIndex = 18;
             this.richTextBox_UCCaseTCEdit_Description.Text = "";
             // 
             // button_UCCaseTCEdit_DeleteCase
             // 
-            this.button_UCCaseTCEdit_DeleteCase.Location = new System.Drawing.Point(20, 423);
+            this.button_UCCaseTCEdit_DeleteCase.Location = new System.Drawing.Point(18, 496);
             this.button_UCCaseTCEdit_DeleteCase.Name = "button_UCCaseTCEdit_DeleteCase";
             this.button_UCCaseTCEdit_DeleteCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCEdit_DeleteCase.TabIndex = 16;
@@ -350,10 +355,11 @@
             // comboBox_UCCaseTCEdit_ChangeLawyer
             // 
             this.comboBox_UCCaseTCEdit_ChangeLawyer.FormattingEnabled = true;
-            this.comboBox_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(295, 207);
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(330, 287);
             this.comboBox_UCCaseTCEdit_ChangeLawyer.Name = "comboBox_UCCaseTCEdit_ChangeLawyer";
             this.comboBox_UCCaseTCEdit_ChangeLawyer.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCEdit_ChangeLawyer.TabIndex = 15;
+            this.comboBox_UCCaseTCEdit_ChangeLawyer.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // comboBox_UCCaseTCEdit_ChangeClient
             // 
@@ -363,22 +369,24 @@
             "kasper nielsen",
             "stig thorsen",
             "stig nielsen"});
-            this.comboBox_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(295, 172);
+            this.comboBox_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(330, 227);
             this.comboBox_UCCaseTCEdit_ChangeClient.Name = "comboBox_UCCaseTCEdit_ChangeClient";
             this.comboBox_UCCaseTCEdit_ChangeClient.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCEdit_ChangeClient.TabIndex = 14;
+            this.comboBox_UCCaseTCEdit_ChangeClient.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // textBox_UCCaseTCEdit_ChangeName
             // 
-            this.textBox_UCCaseTCEdit_ChangeName.Location = new System.Drawing.Point(295, 139);
+            this.textBox_UCCaseTCEdit_ChangeName.Location = new System.Drawing.Point(330, 166);
             this.textBox_UCCaseTCEdit_ChangeName.Name = "textBox_UCCaseTCEdit_ChangeName";
             this.textBox_UCCaseTCEdit_ChangeName.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCCaseTCEdit_ChangeName.TabIndex = 10;
+            this.textBox_UCCaseTCEdit_ChangeName.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // label_UCCaseTCEdit_ChangeLawyer
             // 
             this.label_UCCaseTCEdit_ChangeLawyer.AutoSize = true;
-            this.label_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(17, 215);
+            this.label_UCCaseTCEdit_ChangeLawyer.Location = new System.Drawing.Point(17, 266);
             this.label_UCCaseTCEdit_ChangeLawyer.Name = "label_UCCaseTCEdit_ChangeLawyer";
             this.label_UCCaseTCEdit_ChangeLawyer.Size = new System.Drawing.Size(121, 18);
             this.label_UCCaseTCEdit_ChangeLawyer.TabIndex = 8;
@@ -387,7 +395,7 @@
             // label_UCCaseTCEdit_ChangeClient
             // 
             this.label_UCCaseTCEdit_ChangeClient.AutoSize = true;
-            this.label_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(17, 180);
+            this.label_UCCaseTCEdit_ChangeClient.Location = new System.Drawing.Point(17, 207);
             this.label_UCCaseTCEdit_ChangeClient.Name = "label_UCCaseTCEdit_ChangeClient";
             this.label_UCCaseTCEdit_ChangeClient.Size = new System.Drawing.Size(102, 18);
             this.label_UCCaseTCEdit_ChangeClient.TabIndex = 7;
@@ -434,6 +442,7 @@
             // 
             // TC_UCCaseTC_CreateCase
             // 
+            this.TC_UCCaseTC_CreateCase.BackColor = System.Drawing.Color.White;
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.listBox_UCCaseTCCreate_Service);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_All);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.radioButton_UCCaseTCCreate_Qualified);
@@ -452,13 +461,13 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CreateCase);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
-            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
             this.TC_UCCaseTC_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_CreateCase.TabIndex = 2;
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
-            this.TC_UCCaseTC_CreateCase.UseVisualStyleBackColor = true;
+            this.TC_UCCaseTC_CreateCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // listBox_UCCaseTCCreate_Service
             // 
@@ -466,8 +475,9 @@
             this.listBox_UCCaseTCCreate_Service.ItemHeight = 18;
             this.listBox_UCCaseTCCreate_Service.Location = new System.Drawing.Point(477, 30);
             this.listBox_UCCaseTCCreate_Service.Name = "listBox_UCCaseTCCreate_Service";
-            this.listBox_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 454);
+            this.listBox_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 472);
             this.listBox_UCCaseTCCreate_Service.TabIndex = 24;
+            this.listBox_UCCaseTCCreate_Service.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // radioButton_UCCaseTCCreate_All
             // 
@@ -495,7 +505,7 @@
             // 
             // button_UCCaseTCCreate_CreateCase
             // 
-            this.button_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(9, 451);
+            this.button_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(9, 472);
             this.button_UCCaseTCCreate_CreateCase.Name = "button_UCCaseTCCreate_CreateCase";
             this.button_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(136, 30);
             this.button_UCCaseTCCreate_CreateCase.TabIndex = 21;
@@ -512,6 +522,7 @@
             this.button_UCCaseTCCreate_AddService.Text = "Tilføj";
             this.button_UCCaseTCCreate_AddService.UseVisualStyleBackColor = true;
             this.button_UCCaseTCCreate_AddService.Click += new System.EventHandler(this.button_UCCaseTCCreate_AddService_Click);
+            this.button_UCCaseTCCreate_AddService.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // label_UCCaseTCCreate_ServiceView
             // 
@@ -526,7 +537,7 @@
             // 
             this.richTextBox_UCCaseTCCreate_Description.Location = new System.Drawing.Point(703, 27);
             this.richTextBox_UCCaseTCCreate_Description.Name = "richTextBox_UCCaseTCCreate_Description";
-            this.richTextBox_UCCaseTCCreate_Description.Size = new System.Drawing.Size(421, 454);
+            this.richTextBox_UCCaseTCCreate_Description.Size = new System.Drawing.Size(421, 475);
             this.richTextBox_UCCaseTCCreate_Description.TabIndex = 17;
             this.richTextBox_UCCaseTCCreate_Description.Text = "";
             // 
@@ -537,6 +548,7 @@
             this.comboBox_UCCaseTCCreate_ChooseLawyer.Name = "comboBox_UCCaseTCCreate_ChooseLawyer";
             this.comboBox_UCCaseTCCreate_ChooseLawyer.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCCreate_ChooseLawyer.TabIndex = 15;
+            this.comboBox_UCCaseTCCreate_ChooseLawyer.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // comboBox_UCCaseTCCreate_ChooseService
             // 
@@ -545,6 +557,7 @@
             this.comboBox_UCCaseTCCreate_ChooseService.Name = "comboBox_UCCaseTCCreate_ChooseService";
             this.comboBox_UCCaseTCCreate_ChooseService.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCCreate_ChooseService.TabIndex = 14;
+            this.comboBox_UCCaseTCCreate_ChooseService.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // comboBox_UCCaseTCCreate_ChooseClient
             // 
@@ -553,6 +566,7 @@
             this.comboBox_UCCaseTCCreate_ChooseClient.Name = "comboBox_UCCaseTCCreate_ChooseClient";
             this.comboBox_UCCaseTCCreate_ChooseClient.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCCreate_ChooseClient.TabIndex = 13;
+            this.comboBox_UCCaseTCCreate_ChooseClient.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // textBox_UCCaseTCCreate_Title
             // 
@@ -560,6 +574,7 @@
             this.textBox_UCCaseTCCreate_Title.Name = "textBox_UCCaseTCCreate_Title";
             this.textBox_UCCaseTCCreate_Title.Size = new System.Drawing.Size(121, 24);
             this.textBox_UCCaseTCCreate_Title.TabIndex = 9;
+            this.textBox_UCCaseTCCreate_Title.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // label_UCCaseTCCreate_ChooseService
             // 
@@ -627,6 +642,8 @@
             // 
             // TC_UCCaseTC_ManageCase
             // 
+            this.TC_UCCaseTC_ManageCase.BackColor = System.Drawing.Color.White;
+            this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_CloseCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.objectListView_UCCaseTCManage_ManageService);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_Save);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_AddService);
@@ -637,13 +654,24 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_ManageCase.TabIndex = 3;
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
-            this.TC_UCCaseTC_ManageCase.UseVisualStyleBackColor = true;
+            this.TC_UCCaseTC_ManageCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
+            // 
+            // button_UCCaseTCManage_CloseCase
+            // 
+            this.button_UCCaseTCManage_CloseCase.Location = new System.Drawing.Point(9, 496);
+            this.button_UCCaseTCManage_CloseCase.Name = "button_UCCaseTCManage_CloseCase";
+            this.button_UCCaseTCManage_CloseCase.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCManage_CloseCase.TabIndex = 28;
+            this.button_UCCaseTCManage_CloseCase.Tag = "";
+            this.button_UCCaseTCManage_CloseCase.Text = "Afslut Sag";
+            this.button_UCCaseTCManage_CloseCase.UseVisualStyleBackColor = true;
+            this.button_UCCaseTCManage_CloseCase.Click += new System.EventHandler(this.button_UCCaseTCManage_CloseCase_Click);
             // 
             // objectListView_UCCaseTCManage_ManageService
             // 
@@ -662,12 +690,13 @@
             this.objectListView_UCCaseTCManage_ManageService.Location = new System.Drawing.Point(9, 125);
             this.objectListView_UCCaseTCManage_ManageService.Name = "objectListView_UCCaseTCManage_ManageService";
             this.objectListView_UCCaseTCManage_ManageService.ShowGroups = false;
-            this.objectListView_UCCaseTCManage_ManageService.Size = new System.Drawing.Size(562, 298);
+            this.objectListView_UCCaseTCManage_ManageService.Size = new System.Drawing.Size(545, 365);
             this.objectListView_UCCaseTCManage_ManageService.TabIndex = 27;
             this.objectListView_UCCaseTCManage_ManageService.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCCaseTCManage_ManageService.View = System.Windows.Forms.View.Details;
             this.objectListView_UCCaseTCManage_ManageService.CellEditFinished += new BrightIdeasSoftware.CellEditEventHandler(this.objectListView_UCCaseTCManage_ManageService_CellEditFinished);
             this.objectListView_UCCaseTCManage_ManageService.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.objectListView_UCCaseTCManage_ManageService_CellEditFinishing);
+            this.objectListView_UCCaseTCManage_ManageService.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // olvColumn_UCCaseTCManage_ManageService_Name
             // 
@@ -689,7 +718,7 @@
             // 
             // button_UCCaseTCManage_Save
             // 
-            this.button_UCCaseTCManage_Save.Location = new System.Drawing.Point(995, 429);
+            this.button_UCCaseTCManage_Save.Location = new System.Drawing.Point(995, 496);
             this.button_UCCaseTCManage_Save.Name = "button_UCCaseTCManage_Save";
             this.button_UCCaseTCManage_Save.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCManage_Save.TabIndex = 26;
@@ -708,6 +737,7 @@
             this.button_UCCaseTCManage_AddService.Text = "Tilføj";
             this.button_UCCaseTCManage_AddService.UseVisualStyleBackColor = true;
             this.button_UCCaseTCManage_AddService.Click += new System.EventHandler(this.button_UCCaseTCManage_AddService_Click);
+            this.button_UCCaseTCManage_AddService.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // comboBox_UCCaseTCManage_AddService
             // 
@@ -721,6 +751,7 @@
             this.comboBox_UCCaseTCManage_AddService.Name = "comboBox_UCCaseTCManage_AddService";
             this.comboBox_UCCaseTCManage_AddService.Size = new System.Drawing.Size(121, 26);
             this.comboBox_UCCaseTCManage_AddService.TabIndex = 24;
+            this.comboBox_UCCaseTCManage_AddService.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
             // label_UCCaseTCManage_AddService
             // 
@@ -775,7 +806,7 @@
             // 
             this.richTextBox_UCCaseTCManage_Description.Location = new System.Drawing.Point(694, 29);
             this.richTextBox_UCCaseTCManage_Description.Name = "richTextBox_UCCaseTCManage_Description";
-            this.richTextBox_UCCaseTCManage_Description.Size = new System.Drawing.Size(421, 394);
+            this.richTextBox_UCCaseTCManage_Description.Size = new System.Drawing.Size(421, 461);
             this.richTextBox_UCCaseTCManage_Description.TabIndex = 18;
             this.richTextBox_UCCaseTCManage_Description.Text = "";
             // 
@@ -877,5 +908,6 @@
         private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer1;
         private BrightIdeasSoftware.HighlightTextRenderer highlightTextRenderer2;
         private System.Windows.Forms.CheckBox checkBox_UCCaseTCFind_IsFinished;
+        private System.Windows.Forms.Button button_UCCaseTCManage_CloseCase;
     }
 }

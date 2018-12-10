@@ -99,6 +99,28 @@ namespace DataAccess
                 }
             }
         }
+        public List<Case> GetAllOpenCases()
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                        FROM [Case] WHERE status = 0";
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
         public List<Case> GetAllDoneCases()
         {
             using (var command = _connection.CreateCommand())
@@ -183,7 +205,8 @@ namespace DataAccess
                                             description = @description, 
                                             status = @status, 
                                             clientID = @clientID, 
-                                            employeeID = @employeeID
+                                            employeeID = @employeeID,
+                                            endDate = @endDate
                                             WHERE ID = @ID";
                     command.AddParameter("ID", @case.ID);
                     command.AddParameter("title", @case.Title);
@@ -191,6 +214,11 @@ namespace DataAccess
                     command.AddParameter("status", @case.Status);
                     command.AddParameter("clientID", @case.ClientID);
                     command.AddParameter("employeeID", @case.EmployeeID);
+                    if (@case.EndDate == DateTime.MinValue )
+                    {
+                        command.AddParameter("endDate", DBNull.Value);
+                    }
+                    else command.AddParameter("endDate", @case.EndDate);
                     _connection.Open();
                     command.ExecuteNonQuery();
                 }

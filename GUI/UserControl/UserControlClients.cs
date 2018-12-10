@@ -24,6 +24,18 @@ namespace GUI
             SetObjectListViewClients();
         }
 
+        void SetCaseAndEmployeeObjectListViews(ObjectListView ObjectListViewName)
+        {
+            List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
+            var CaseAndEmployeeDictionary = new Dictionary<Case, Employee>();
+            foreach (Case item in Caselist)
+            {
+                Employee caseEmployee = gui.EmployeeRepository.Get(item.EmployeeID);
+                CaseAndEmployeeDictionary.Add(item, caseEmployee);
+            }
+            ObjectListViewName.SetObjects(CaseAndEmployeeDictionary);
+        }
+
         private void UserControlClients_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
@@ -85,27 +97,8 @@ namespace GUI
                 label_UCClientTCManage_addresse_Show.Text = currentClient.Address;
                 label_UCClientTCManage_email_Show.Text = currentClient.Email;
 
-                try //why?
-                {
-                    List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
-                    dataListView_UCClientTCManage.SetObjects(Caselist);
-
-                    olvColumn_UCClient_TCManage_laywer_name.AspectGetter = delegate (object obj)
-                    {
-                        Case clientCase = (Case)obj;
-                        Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
-                        return caseEmployee.FullName;
-                    };
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                finally
-                {
-
-                }
+                //Load Cases and Laywers
+                SetCaseAndEmployeeObjectListViews(ObjectListView_UCClientTCManage);
 
                 TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
             }
@@ -127,29 +120,16 @@ namespace GUI
             textbox_UCClientTCEdit_addresse.Text = currentClient.Address;
             textbox_UCClientTCEdit_email.Text = currentClient.Email;
 
-            try //why?
-            {
-                List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
-                dataListView_UCClientTCEdit.SetObjects(Caselist);
+            //Load Cases and Laywers
+            SetCaseAndEmployeeObjectListViews(ObjectListView_UCClientTCEdit);
 
-                olvColumn_UCClient_TCEdit_laywer_name.AspectGetter = delegate (object obj)
-                {
-                    Case clientCase = (Case)obj;
-                    Employee caseEmployee = gui.EmployeeRepository.Get(clientCase.EmployeeID);
-                    return caseEmployee.FullName;
-                };
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-
-            }
             TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
 
+        }
+
+        private void button_UCClientTCCreate_FindClient_Click(object sender, EventArgs e)
+        {
+            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_FindClient;
         }
     }
 }
