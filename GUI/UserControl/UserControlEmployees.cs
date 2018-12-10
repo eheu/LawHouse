@@ -268,7 +268,7 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
         {
-            Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
+            Speciality selectedSpeciality = (Speciality)ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.SelectedItem;
             EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality(currentEmployee.ID, selectedSpeciality.ID);
             gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
 
