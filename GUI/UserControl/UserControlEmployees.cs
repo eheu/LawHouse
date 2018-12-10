@@ -182,6 +182,8 @@ namespace GUI
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(selectedEmployee.ID);
                 dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
 
+                objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
+
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
             }
         }
