@@ -235,9 +235,17 @@ namespace GUI
             {
                 specialities.Add(item);
             }
-            gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
 
+            //Check if specialities-List is not empty
+            if ((specialities != null) && (specialities.Count != 0))
+            {
+                gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
+            }
+            
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+
+            //Refresh OlvEmployee
+            SetObjectListViewEmployee();
         }
         #endregion
 
