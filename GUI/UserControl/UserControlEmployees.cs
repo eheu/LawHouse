@@ -28,8 +28,6 @@ namespace GUI
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
             ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ValueMember = "ID";
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -117,11 +115,7 @@ namespace GUI
         /// </summary>
         private void SetManageEmployeeListbox(Employee employee)
         {
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Clear();
-            //List of employee Specialitys showed in listbox on Edit Employee
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DataSource = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
+            objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee));
         }
 
         /// <summary>
@@ -133,10 +127,10 @@ namespace GUI
             if (comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem != null)
             {
                 Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
-                List<Speciality> specialitiesInListBox = ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Cast<Speciality>().ToList();
-                var matches = specialitiesInListBox.Where(s => s.ID == selectedSpeciality.ID);
-                if (matches.Count() == 0) gui.EmployeeSpecialityRepository.Create(new EmployeeSpeciality(currentEmployee.ID,selectedSpeciality.ID));
-                SetManageEmployeeListbox(currentEmployee);
+                List<Speciality> specialitiesInListBox = objectListView__UCEmployeeTCManage_Specialities.Objects.Cast<Speciality>().ToList();
+                bool exists = specialitiesInListBox.Any(s => s.ID == selectedSpeciality.ID);
+                if (!exists) gui.EmployeeSpecialityRepository.Create(new EmployeeSpeciality(currentEmployee.ID,selectedSpeciality.ID));
+                objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
             }
         }
 
@@ -176,25 +170,25 @@ namespace GUI
             // user clicked an item of objectListView control
             if (objectListView_UCEmployeeTCFind_FindEmployee.SelectedItems.Count == 1)
             {
-                Employee employee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
+                Employee selectedEmployee = (Employee)objectListView_UCEmployeeTCFind_FindEmployee.SelectedObject;
 
                 //Set the globel Employee object
-                currentEmployee = employee;
+                currentEmployee = selectedEmployee;
 
-                label_UCEmployeeTCManage_firstName_Show.Text = employee.FirstName;
-                label_UCEmployeeTCManage_lastName_Show.Text = employee.LastName;
-                label_UCEmployeeTCManage_email_Show.Text = employee.Email;
-                label_UCEmployeeTCManage_phone_Show.Text = employee.Phone;
+                label_UCEmployeeTCManage_firstName_Show.Text = selectedEmployee.FirstName;
+                label_UCEmployeeTCManage_lastName_Show.Text = selectedEmployee.LastName;
+                label_UCEmployeeTCManage_email_Show.Text = selectedEmployee.Email;
+                label_UCEmployeeTCManage_phone_Show.Text = selectedEmployee.Phone;
 
                 //Get Role
-                Role RoleInfo = gui.RoleRepository.Get(employee.RoleID);
+                Role RoleInfo = gui.RoleRepository.Get(selectedEmployee.RoleID);
                 label_UCEmployeeTCManage_role_Show.Text = RoleInfo.Name;
 
                 //Load List of employee Specialitys showed in listbox on Manage Employee
-                SetManageEmployeeListbox(employee);
+                objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(selectedEmployee));
 
                 //Load datalstview with employees cases
-                List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(employee.ID);
+                List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(selectedEmployee.ID);
                 dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
 
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
@@ -251,10 +245,10 @@ namespace GUI
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
-        private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
+        private void textBox_UCEmployeeTCFind_Search_TextChanged(object sender, EventArgs e)
         {
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
-            this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
+            this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCEmployeeTCFind_Search.Text}");
         }
 
         private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
@@ -307,6 +301,22 @@ namespace GUI
             dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
 
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+        }
+
+        private void checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox_UCEmployeeTCManage_IsFinished.Checked)
+            {
+                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle færdige sager";
+                //caselist = gui.CaseRepository.GetAllOpenCases();
+                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
+            if (checkBox_UCEmployeeTCManage_IsFinished.Checked)
+            {
+                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle igangværende sager";
+                //caselist = gui.CaseRepository.GetAllDoneCases();
+                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
         }
     }
 }

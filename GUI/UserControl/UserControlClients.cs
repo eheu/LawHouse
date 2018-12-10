@@ -126,5 +126,10 @@ namespace GUI
             TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
 
         }
+
+        private void button_UCClientTCCreate_FindClient_Click(object sender, EventArgs e)
+        {
+            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_FindClient;
+        }
     }
 }
