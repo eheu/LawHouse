@@ -180,7 +180,7 @@ namespace GUI
 
                 //Load datalstview with employees cases
                 List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(selectedEmployee.ID);
-                dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
+                objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
 
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
 
@@ -291,7 +291,7 @@ namespace GUI
 
             //Load datalstview with employees cases
             List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);
-            dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
+            objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
 
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
         }

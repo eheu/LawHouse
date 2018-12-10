@@ -40,7 +40,7 @@
             this.TC_UCEmployeeTC_EditEmployee = new System.Windows.Forms.TabPage();
             this.button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases = new BrightIdeasSoftware.DataListView();
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCEmployeeTCEdit_DeleteEmployee = new System.Windows.Forms.Label();
             this.button_UCEmployeeTCEdit_DeleteEmployee = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@
             this.label_UCEmployeeTCManage_lastName_Show = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_firstName_Show = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases = new BrightIdeasSoftware.DataListView();
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases = new BrightIdeasSoftware.DataListView();
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCEmployeeTCManage_ManageEmployee_AddSpeciality = new System.Windows.Forms.Button();
             this.comboBox_UCEmployeeTCManage_ManageEmployee_Speciality = new System.Windows.Forms.ComboBox();
@@ -102,11 +102,11 @@
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
             this.TC_UCEmployeeTC_EditEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases)).BeginInit();
             this.TC_UCEmployeeTC_CreateEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_ManageEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCEmployee
@@ -221,7 +221,7 @@
             this.TC_UCEmployeeTC_EditEmployee.BackColor = System.Drawing.Color.White;
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label16);
-            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases);
+            this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label_UCEmployeeTCEdit_DeleteEmployee);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.button_UCEmployeeTCEdit_DeleteEmployee);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality);
@@ -268,21 +268,20 @@
             // 
             // dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases
             // 
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.AllColumns.Add(this.olvColumn1);
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.CellEditUseWholeCell = false;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.AllColumns.Add(this.olvColumn1);
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.CellEditUseWholeCell = false;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1});
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.DataSource = null;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.FullRowSelect = true;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.GridLines = true;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Location = new System.Drawing.Point(802, 59);
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Name = "dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases";
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.ShowGroups = false;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Size = new System.Drawing.Size(341, 436);
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.TabIndex = 20;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.UseCompatibleStateImageBehavior = false;
-            this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.FullRowSelect = true;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.GridLines = true;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Location = new System.Drawing.Point(802, 59);
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Name = "dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases";
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.ShowGroups = false;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.Size = new System.Drawing.Size(341, 436);
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.TabIndex = 20;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn1
             // 
@@ -634,7 +633,7 @@
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_lastName_Show);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_firstName_Show);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label17);
-            this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases);
+            this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.button_UCEmployeeTCManage_ManageEmployee_AddSpeciality);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.comboBox_UCEmployeeTCManage_ManageEmployee_Speciality);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label18);
@@ -748,21 +747,20 @@
             // 
             // dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases
             // 
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.AllColumns.Add(this.olvColumn2);
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.CellEditUseWholeCell = false;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.AllColumns.Add(this.olvColumn2);
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.CellEditUseWholeCell = false;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn2});
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.DataSource = null;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.FullRowSelect = true;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.GridLines = true;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Location = new System.Drawing.Point(792, 57);
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Name = "dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases";
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.ShowGroups = false;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Size = new System.Drawing.Size(341, 450);
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.TabIndex = 31;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.UseCompatibleStateImageBehavior = false;
-            this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.FullRowSelect = true;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.GridLines = true;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Location = new System.Drawing.Point(792, 57);
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Name = "dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases";
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.ShowGroups = false;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.Size = new System.Drawing.Size(341, 450);
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.TabIndex = 31;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn2
             // 
@@ -858,13 +856,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).EndInit();
             this.TC_UCEmployeeTC_EditEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_EditEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases)).EndInit();
             this.TC_UCEmployeeTC_CreateEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_CreateEmployee.PerformLayout();
             this.TC_UCEmployeeTC_ManageEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_ManageEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -916,13 +914,13 @@
         private System.Windows.Forms.Button button_UCEmployeeTCEdit_DeleteEmployee;
         private System.Windows.Forms.Label label_UCEmployeeTCEdit_DeleteEmployee;
         private System.Windows.Forms.Label label16;
-        private BrightIdeasSoftware.DataListView dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.Button button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality;
         private System.Windows.Forms.TabPage TC_UCEmployeeTC_ManageEmployee;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label17;
-        private BrightIdeasSoftware.DataListView dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases;
         private BrightIdeasSoftware.OLVColumn olvColumn2;
         private System.Windows.Forms.Button button_UCEmployeeTCManage_ManageEmployee_AddSpeciality;
         private System.Windows.Forms.ComboBox comboBox_UCEmployeeTCManage_ManageEmployee_Speciality;
