@@ -89,7 +89,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases = new BrightIdeasSoftware.DataListView();
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality = new System.Windows.Forms.ListBox();
             this.button_UCEmployeeTCManage_ManageEmployee_AddSpeciality = new System.Windows.Forms.Button();
             this.comboBox_UCEmployeeTCManage_ManageEmployee_Speciality = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -98,6 +97,7 @@
             this.label_UCEmployeeTCManage_email = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_lastName = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_firstName = new System.Windows.Forms.Label();
+            this.objectListView__UCEmployeeTCManage_Specialities = new BrightIdeasSoftware.ObjectListView();
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -106,6 +106,7 @@
             this.TC_UCEmployeeTC_CreateEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_ManageEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCEmployee
@@ -616,6 +617,7 @@
             // 
             // TC_UCEmployeeTC_ManageEmployee
             // 
+            this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.objectListView__UCEmployeeTCManage_Specialities);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.button_UCEmployeeTCManage_EditEmployee);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.button_UCEmployeeTCManage_FindEmployee);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_role_Show);
@@ -625,7 +627,6 @@
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_firstName_Show);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label17);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases);
-            this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.button_UCEmployeeTCManage_ManageEmployee_AddSpeciality);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.comboBox_UCEmployeeTCManage_ManageEmployee_Speciality);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label18);
@@ -740,15 +741,6 @@
             this.olvColumn2.Text = "Sags title";
             this.olvColumn2.Width = 91;
             // 
-            // ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality
-            // 
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.FormattingEnabled = true;
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ItemHeight = 18;
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Location = new System.Drawing.Point(504, 89);
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Name = "ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality";
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Size = new System.Drawing.Size(281, 418);
-            this.ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.TabIndex = 30;
-            // 
             // button_UCEmployeeTCManage_ManageEmployee_AddSpeciality
             // 
             this.button_UCEmployeeTCManage_ManageEmployee_AddSpeciality.Location = new System.Drawing.Point(683, 55);
@@ -821,6 +813,16 @@
             this.label_UCEmployeeTCManage_firstName.TabIndex = 22;
             this.label_UCEmployeeTCManage_firstName.Text = "Fornavn";
             // 
+            // objectListView__UCEmployeeTCManage_Specialities
+            // 
+            this.objectListView__UCEmployeeTCManage_Specialities.CellEditUseWholeCell = false;
+            this.objectListView__UCEmployeeTCManage_Specialities.Location = new System.Drawing.Point(506, 91);
+            this.objectListView__UCEmployeeTCManage_Specialities.Name = "objectListView__UCEmployeeTCManage_Specialities";
+            this.objectListView__UCEmployeeTCManage_Specialities.Size = new System.Drawing.Size(279, 416);
+            this.objectListView__UCEmployeeTCManage_Specialities.TabIndex = 40;
+            this.objectListView__UCEmployeeTCManage_Specialities.UseCompatibleStateImageBehavior = false;
+            this.objectListView__UCEmployeeTCManage_Specialities.View = System.Windows.Forms.View.Details;
+            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,6 +844,7 @@
             this.TC_UCEmployeeTC_ManageEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_ManageEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -902,7 +905,6 @@
         private System.Windows.Forms.Label label17;
         private BrightIdeasSoftware.DataListView dataListView_UCEmployeeTCManage_ManageEmployee_ShowCases;
         private BrightIdeasSoftware.OLVColumn olvColumn2;
-        private System.Windows.Forms.ListBox ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality;
         private System.Windows.Forms.Button button_UCEmployeeTCManage_ManageEmployee_AddSpeciality;
         private System.Windows.Forms.ComboBox comboBox_UCEmployeeTCManage_ManageEmployee_Speciality;
         private System.Windows.Forms.Label label18;
@@ -918,5 +920,6 @@
         private System.Windows.Forms.Label label_UCEmployeeTCManage_email_Show;
         private System.Windows.Forms.Label label_UCEmployeeTCManage_lastName_Show;
         private System.Windows.Forms.Label label_UCEmployeeTCManage_firstName_Show;
+        private BrightIdeasSoftware.ObjectListView objectListView__UCEmployeeTCManage_Specialities;
     }
 }
