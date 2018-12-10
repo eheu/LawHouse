@@ -200,7 +200,7 @@ namespace GUI
                 List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCManage_ManageService.Objects.Cast<Speciality>().ToList(); //stackoverflow.com/a/7617784
                 Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCManage_AddSpeciality.SelectedItem;
                 bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
-                if (!exists) gui.ServiceSpecialityRepository.Create(new ServiceSpeciality(currentService.ID,selectedSpeciality.ID));
+                if (!exists) gui.ServiceSpecialityRepository.Create(new ServiceSpeciality(currentService.ID, selectedSpeciality.ID));
                 objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
             }
         }
@@ -215,4 +215,5 @@ namespace GUI
                 if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
             }
         }
+    }
 }

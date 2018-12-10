@@ -25,6 +25,7 @@ namespace GUI
             // objectlistview 
             SetObjectListViewSpecialities();
             SetAddServiceComboBox();
+            objectListView_UCSpecialityTCEdit_Services.SetObjects
         }
 
         private void SetObjectListViewSpecialities()
