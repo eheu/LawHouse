@@ -167,10 +167,13 @@ namespace GUI
 
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
         {
-            List<Service> servicesInObjectListView = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
+            List<Service> servicesInObjectListView = new List<Service>();
+            if (objectListView_UCCaseTCCreate_Service.Objects != null)
+                servicesInObjectListView = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
             Service selectedService = (Service)comboBox_UCCaseTCCreate_ChooseService.SelectedItem;
             bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
-            if (!exists) objectListView_UCCaseTCCreate_Service.AddObject(selectedService);
+            if (!exists)
+                objectListView_UCCaseTCCreate_Service.AddObject(selectedService);
         }
 
         private void button_UCCaseTCManage_AddService_Click(object sender, EventArgs e)

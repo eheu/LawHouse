@@ -646,10 +646,10 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 54);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCCaseTC_ManageCase.TabIndex = 3;
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -817,6 +817,7 @@
             this.objectListView_UCCaseTCCreate_Service.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.objectListView_UCCaseTCCreate_Service.Location = new System.Drawing.Point(477, 30);
             this.objectListView_UCCaseTCCreate_Service.Name = "objectListView_UCCaseTCCreate_Service";
+            this.objectListView_UCCaseTCCreate_Service.ShowGroups = false;
             this.objectListView_UCCaseTCCreate_Service.Size = new System.Drawing.Size(201, 472);
             this.objectListView_UCCaseTCCreate_Service.TabIndex = 25;
             this.objectListView_UCCaseTCCreate_Service.UseCompatibleStateImageBehavior = false;
@@ -825,6 +826,7 @@
             // olvColumn_UCCaseTCCreate_Name
             // 
             this.olvColumn_UCCaseTCCreate_Name.AspectName = "Name";
+            this.olvColumn_UCCaseTCCreate_Name.FillsFreeSpace = true;
             this.olvColumn_UCCaseTCCreate_Name.Text = "Name";
             // 
             // UserControlCases
