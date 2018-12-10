@@ -24,6 +24,7 @@ namespace GUI
             gui = guiForm;
             // objectlistview 
             SetObjectListViewSpecialities();
+            SetAddServiceComboBox();
         }
 
         private void SetObjectListViewSpecialities()
@@ -36,6 +37,13 @@ namespace GUI
         {
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_CreateSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_CreateSpeciality;
+        }
+
+        private void SetAddServiceComboBox()
+        {
+            comboBox_UCSpecialityTCCreate_AddService.DataSource = gui.ServiceRepository.GetAll();
+            comboBox_UCSpecialityTCCreate_AddService.DisplayMember = "Name";
+            comboBox_UCSpecialityTCCreate_AddService.ValueMember = "ID";
         }
 
         private void button_UCSpecialityTCCreate_FindSpeciality_Click(object sender, EventArgs e)
@@ -64,8 +72,9 @@ namespace GUI
         private void button_UCSpecialityTCManage_EditSpeciality_Click(object sender, EventArgs e)
         {
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_EditSpeciality;
+            objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
         }
-        
+
         /// <summary>
         /// Button create speciality
         /// </summary>
@@ -148,8 +157,29 @@ namespace GUI
             {
                 List<Service> servicesOnSpeciality = objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Objects.Cast<Service>().ToList(); //stackoverflow.com/a/7617784
                 Service selectedService = (Service)comboBox_UCSpecialityTCManage_AddService.SelectedItem;
-                var matches = servicesOnSpeciality.Where(s => s.ID == selectedService.ID);
-                if (matches.Count() == 0) objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AddObject(selectedService);
+                bool exists = servicesOnSpeciality.Any(s => s.ID == selectedService.ID);
+                if (!exists) gui.ServiceSpecialityRepository.Create(new ServiceSpeciality(selectedService.ID,currentSpeciality.ID));
+            }
+        }
+
+        private void button_UCSpecialityTCCreate_AddService_Click(object sender, EventArgs e)
+        {
+            if (comboBox_UCSpecialityTCCreate_AddService.SelectedItem != null)
+            {
+                Service selectedService = (Service)comboBox_UCSpecialityTCCreate_AddService.SelectedItem;
+                List<Service> servicesInObjectListView = objectListView_UCSpecialityTCCreate_Service.Objects.Cast<Service>().ToList();
+                bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
+                if (!exists) objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+            }
+        }
+
+        private void button_UCSpecialityTCEdit_RemoveService_Click(object sender, EventArgs e)
+        {
+            if (objectListView_UCSpecialityTCEdit_Services.SelectedObject != null)
+            {
+                Service selectedService = (Service)objectListView_UCSpecialityTCEdit_Services.SelectedObject;
+                gui.ServiceSpecialityRepository.Delete(new ServiceSpeciality(selectedService.ID,currentSpeciality.ID));
+                objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
             }
         }
 

@@ -120,8 +120,7 @@ namespace GUI
         {
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Clear();
             //List of employee Specialitys showed in listbox on Edit Employee
-            List<Speciality> Specialitylist = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
-            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.AddRange(Specialitylist.ToArray());
+            ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DataSource = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.ValueMember = "ID";
         }
@@ -137,7 +136,8 @@ namespace GUI
                 Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
                 List<Speciality> specialitiesInListBox = ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Cast<Speciality>().ToList();
                 var matches = specialitiesInListBox.Where(s => s.ID == selectedSpeciality.ID);
-                if (matches.Count() == 0) ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality.Items.Add(selectedSpeciality);
+                if (matches.Count() == 0) gui.EmployeeSpecialityRepository.Create(new EmployeeSpeciality(currentEmployee.ID,selectedSpeciality.ID));
+                SetManageEmployeeListbox(currentEmployee);
             }
         }
 
@@ -235,9 +235,17 @@ namespace GUI
             {
                 specialities.Add(item);
             }
-            gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
 
+            //Check if specialities-List is not empty
+            if ((specialities != null) && (specialities.Count != 0))
+            {
+                gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
+            }
+            
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+
+            //Refresh OlvEmployee
+            SetObjectListViewEmployee();
         }
         #endregion
 
@@ -276,9 +284,8 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
         {
-            EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality();
-            employeeSpeciality.employeeID = currentEmployee.ID;
-            employeeSpeciality.specialityID = Convert.ToInt32(ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.SelectedValue.ToString());
+            Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem;
+            EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality(currentEmployee.ID, selectedSpeciality.ID);
             gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
 
             //Load List of employee Specialitys showed in listbox on Edit Employee
