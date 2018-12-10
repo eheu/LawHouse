@@ -251,6 +251,7 @@
             this.button_UCSpecialityTCCreate_AddService.TabIndex = 48;
             this.button_UCSpecialityTCCreate_AddService.Text = "Tilføj";
             this.button_UCSpecialityTCCreate_AddService.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCCreate_AddService.Click += new System.EventHandler(this.button_UCSpecialityTCCreate_AddService_Click);
             // 
             // label_UCCSpecialityTCCreate_Service
             // 
@@ -502,7 +503,7 @@
             this.label_UCSpecialityTCManage_ManageService.TabIndex = 49;
             this.label_UCSpecialityTCManage_ManageService.Text = "Rediger efteruddannelse";
             // 
-            // objectListView_UCSpecialityTCManage_ManageSpeciality
+            // objectListView_UCSpecialityTCManage_ServicesOnSpeciality
             // 
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AllColumns.Add(this.olvColumn_UCSpecialityTCManage_Name);
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.AllColumns.Add(this.olvColumn_UCSpecialityTCManage_Price);
@@ -516,7 +517,7 @@
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.HasCollapsibleGroups = false;
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Location = new System.Drawing.Point(30, 148);
-            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Name = "objectListView_UCSpecialityTCManage_ManageSpeciality";
+            this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Name = "objectListView_UCSpecialityTCManage_ServicesOnSpeciality";
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.ShowGroups = false;
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.Size = new System.Drawing.Size(562, 319);
             this.objectListView_UCSpecialityTCManage_ServicesOnSpeciality.TabIndex = 48;
