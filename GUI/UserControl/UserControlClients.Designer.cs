@@ -110,7 +110,7 @@
             this.TabControl_UCClient.Controls.Add(this.TC_UCEmployeeTC_ManageClient);
             this.TabControl_UCClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCClient.ItemSize = new System.Drawing.Size(50, 50);
+            this.TabControl_UCClient.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCClient.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCClient.Name = "TabControl_UCClient";
             this.TabControl_UCClient.Padding = new System.Drawing.Point(0, 0);
@@ -571,10 +571,10 @@
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_lastName);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label21);
-            this.TC_UCEmployeeTC_ManageClient.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCEmployeeTC_ManageClient.Location = new System.Drawing.Point(4, 5);
             this.TC_UCEmployeeTC_ManageClient.Name = "TC_UCEmployeeTC_ManageClient";
             this.TC_UCEmployeeTC_ManageClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_ManageClient.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCEmployeeTC_ManageClient.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCEmployeeTC_ManageClient.TabIndex = 3;
             this.TC_UCEmployeeTC_ManageClient.Text = "Administrer";
             this.TC_UCEmployeeTC_ManageClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
