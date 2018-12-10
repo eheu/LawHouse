@@ -306,6 +306,7 @@
             this.button_UCServicesTCCreate_AddSpeciality.TabIndex = 31;
             this.button_UCServicesTCCreate_AddSpeciality.Text = "Tilføj";
             this.button_UCServicesTCCreate_AddSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCCreate_AddSpeciality.Click += new System.EventHandler(this.button_UCServicesTCCreate_AddSpeciality_Click);
             // 
             // label_UCCServiceTCCreate_Speciality
             // 
