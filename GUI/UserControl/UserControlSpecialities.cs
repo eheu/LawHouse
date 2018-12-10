@@ -179,7 +179,7 @@ namespace GUI
             {
                 Service selectedService = (Service)objectListView_UCSpecialityTCEdit_Services.SelectedObject;
                 gui.ServiceSpecialityRepository.Delete(new ServiceSpeciality(selectedService.ID,currentSpeciality.ID));
-                objectListView_UCSpecialityTCEdit_Services.RemoveObject(selectedService);
+                objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
             }
         }
     }
