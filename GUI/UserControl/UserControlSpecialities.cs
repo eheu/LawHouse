@@ -63,6 +63,8 @@ namespace GUI
 
         private void button_UCSpecialityTCManage_EditSpeciality_Click(object sender, EventArgs e)
         {
+            textBox_UCSpecialityTCEdit_ChangeName.Text = currentSpeciality.Name;
+            richTextBox_UCSpecialityTCEdit_Description.Text = currentSpeciality.Description;
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_EditSpeciality;
         }
         

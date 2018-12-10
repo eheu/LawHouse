@@ -106,6 +106,7 @@ namespace GUI
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
         }   
 

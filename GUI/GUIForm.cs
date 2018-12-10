@@ -293,7 +293,8 @@ namespace GUI
                     ((TextBox)ctrl).Text = string.Empty;
                 else if (ctrl is ComboBox)
                     ((ComboBox)ctrl).SelectedIndex = -1;
-                else if (ctrl is ListBox) {
+                else if (ctrl is ListBox)
+                {
                     ((ListBox)ctrl).DataSource = null;
                     ((ListBox)ctrl).Items.Clear();
                 }
@@ -301,6 +302,8 @@ namespace GUI
                     ((RichTextBox)ctrl).Text = string.Empty;
                 else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
+                //else if (ctrl is NumericUpDown)
+                //    ((NumericUpDown)ctrl). = ;
                 ClearTextBoxesAndComboBoxesAndListBoxes(ctrl.Controls);
             }
         }
