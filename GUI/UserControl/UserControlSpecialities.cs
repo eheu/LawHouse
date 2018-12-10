@@ -182,5 +182,16 @@ namespace GUI
                 objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
             }
         }
+
+        private void textBox_UCSpecialityTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCSpecialityTCFind_FindSpeciality.UseFiltering = true;
+            this.objectListView_UCSpecialityTCFind_FindSpeciality.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCSpecialityTCFind_FindSpeciality, $"{textBox_UCSpecialityTCFind_Search.Text}");
+        }
+
+        private void UserControlSpecialities_MouseEnter(object sender, EventArgs e)
+        {
+            gui.toggleMenuPanel();
+        }
     }
 }

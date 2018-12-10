@@ -229,19 +229,27 @@ namespace GUI
             {
                 specialities.Add(item);
             }
-            gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
 
+            //Check if specialities-List is not empty
+            if ((specialities != null) && (specialities.Count != 0))
+            {
+                gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
+            }
+            
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+
+            //Refresh OlvEmployee
+            SetObjectListViewEmployee();
         }
         #endregion
 
         /// <summary>
         /// Makes the search field sort the list view
         /// </summary>
-        private void textBox_UCCaseTCFind_Search_TextChanged(object sender, EventArgs e)
+        private void textBox_UCEmployeeTCFind_Search_TextChanged(object sender, EventArgs e)
         {
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseFiltering = true; 
-            this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCCaseTCFind_Search.Text}");
+            this.objectListView_UCEmployeeTCFind_FindEmployee.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCEmployeeTCFind_FindEmployee, $"{textBox_UCEmployeeTCFind_Search.Text}");
         }
 
         private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
@@ -294,6 +302,22 @@ namespace GUI
             dataListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
 
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+        }
+
+        private void checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox_UCEmployeeTCManage_IsFinished.Checked)
+            {
+                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle færdige sager";
+                //caselist = gui.CaseRepository.GetAllOpenCases();
+                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
+            if (checkBox_UCEmployeeTCManage_IsFinished.Checked)
+            {
+                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle igangværende sager";
+                //caselist = gui.CaseRepository.GetAllDoneCases();
+                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+            }
         }
     }
 }

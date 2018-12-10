@@ -82,7 +82,7 @@
             this.SpecialitiesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SpecialitiesBtn.Location = new System.Drawing.Point(0, 330);
             this.SpecialitiesBtn.Name = "SpecialitiesBtn";
-            this.SpecialitiesBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.SpecialitiesBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.SpecialitiesBtn.Size = new System.Drawing.Size(347, 68);
             this.SpecialitiesBtn.TabIndex = 6;
             this.SpecialitiesBtn.Text = "     Efteruddannelser";
@@ -102,7 +102,7 @@
             this.servicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.servicesBtn.Location = new System.Drawing.Point(0, 390);
             this.servicesBtn.Name = "servicesBtn";
-            this.servicesBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.servicesBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.servicesBtn.Size = new System.Drawing.Size(347, 68);
             this.servicesBtn.TabIndex = 6;
             this.servicesBtn.Text = "     Ydelser";
@@ -153,7 +153,7 @@
             this.ClientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ClientBtn.Location = new System.Drawing.Point(0, 270);
             this.ClientBtn.Name = "ClientBtn";
-            this.ClientBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.ClientBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.ClientBtn.Size = new System.Drawing.Size(347, 68);
             this.ClientBtn.TabIndex = 4;
             this.ClientBtn.Text = "     Klienter";
@@ -173,7 +173,7 @@
             this.EmployeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EmployeeBtn.Location = new System.Drawing.Point(0, 210);
             this.EmployeeBtn.Name = "EmployeeBtn";
-            this.EmployeeBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.EmployeeBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.EmployeeBtn.Size = new System.Drawing.Size(347, 68);
             this.EmployeeBtn.TabIndex = 4;
             this.EmployeeBtn.Text = "     Ansatte";
@@ -193,7 +193,7 @@
             this.CaseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CaseBtn.Location = new System.Drawing.Point(0, 150);
             this.CaseBtn.Name = "CaseBtn";
-            this.CaseBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.CaseBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.CaseBtn.Size = new System.Drawing.Size(347, 68);
             this.CaseBtn.TabIndex = 4;
             this.CaseBtn.Text = "     Sager";
@@ -270,9 +270,9 @@
             // UcContainer
             // 
             this.UcContainer.BackColor = System.Drawing.Color.Transparent;
-            this.UcContainer.Location = new System.Drawing.Point(68, 37);
+            this.UcContainer.Location = new System.Drawing.Point(68, 29);
             this.UcContainer.Name = "UcContainer";
-            this.UcContainer.Size = new System.Drawing.Size(1158, 566);
+            this.UcContainer.Size = new System.Drawing.Size(1165, 577);
             this.UcContainer.TabIndex = 3;
             // 
             // dragControl2

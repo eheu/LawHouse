@@ -215,5 +215,16 @@ namespace GUI
                 if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
             }
         }
+
+        private void textBox_UCServicesTCFind_Search_TextChanged(object sender, EventArgs e)
+        {
+            this.objectListView_UCServiceTCFind_FindService.UseFiltering = true;
+            this.objectListView_UCServiceTCFind_FindService.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCServiceTCFind_FindService, $"{textBox_UCServicesTCFind_Search.Text}");
+        }
+
+        private void UserControlServices_MouseEnter(object sender, EventArgs e)
+        {
+            gui.toggleMenuPanel(); 
+        }
     }
 }
