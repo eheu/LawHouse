@@ -183,25 +183,25 @@
             // 
             this.olvColumn1.AspectName = "FirstName";
             this.olvColumn1.Text = "Fornavn";
-            this.olvColumn1.Width = 126;
+            this.olvColumn1.Width = 151;
             // 
             // olvColumn2
             // 
             this.olvColumn2.AspectName = "LastName";
             this.olvColumn2.Text = "Efternavn";
-            this.olvColumn2.Width = 137;
+            this.olvColumn2.Width = 174;
             // 
             // olvColumn3
             // 
             this.olvColumn3.AspectName = "Phone";
             this.olvColumn3.Text = "Telefon";
-            this.olvColumn3.Width = 131;
+            this.olvColumn3.Width = 165;
             // 
             // olvColumn4
             // 
             this.olvColumn4.AspectName = "Address";
             this.olvColumn4.Text = "Adresse";
-            this.olvColumn4.Width = 222;
+            this.olvColumn4.Width = 272;
             // 
             // olvColumn5
             // 

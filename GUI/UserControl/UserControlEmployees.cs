@@ -104,8 +104,7 @@ namespace GUI
         private void SetEditEmployeeListbox(Employee employee)
         {
             //List of employee Specialitys showed in listbox on Edit Employee
-            List<Speciality> SpecialityList = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
-            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = SpecialityList;
+            ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DataSource = gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee);
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.DisplayMember = "Name";
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
