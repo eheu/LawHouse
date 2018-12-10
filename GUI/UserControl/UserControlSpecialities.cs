@@ -25,7 +25,6 @@ namespace GUI
             // objectlistview 
             SetObjectListViewSpecialities();
             SetAddServiceComboBox();
-            objectListView_UCSpecialityTCEdit_Services.SetObjects
         }
 
         private void SetObjectListViewSpecialities()
@@ -73,8 +72,9 @@ namespace GUI
         private void button_UCSpecialityTCManage_EditSpeciality_Click(object sender, EventArgs e)
         {
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_EditSpeciality;
+            objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
         }
-        
+
         /// <summary>
         /// Button create speciality
         /// </summary>
@@ -170,6 +170,16 @@ namespace GUI
                 List<Service> servicesInObjectListView = objectListView_UCSpecialityTCCreate_Service.Objects.Cast<Service>().ToList();
                 bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
                 if (!exists) objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+            }
+        }
+
+        private void button_UCSpecialityTCEdit_RemoveService_Click(object sender, EventArgs e)
+        {
+            if (objectListView_UCSpecialityTCEdit_Services.SelectedObject != null)
+            {
+                Service selectedService = (Service)objectListView_UCSpecialityTCEdit_Services.SelectedObject;
+                gui.ServiceSpecialityRepository.Delete(new ServiceSpeciality(selectedService.ID,currentSpeciality.ID));
+                objectListView_UCSpecialityTCEdit_Services.RemoveObject(selectedService);
             }
         }
     }

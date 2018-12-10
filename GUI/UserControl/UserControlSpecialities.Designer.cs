@@ -52,7 +52,7 @@
             this.TC_UCSpecialityTC_EditSpeciality = new System.Windows.Forms.TabPage();
             this.label_UCSpecialityTCEdit_CurrentName = new System.Windows.Forms.Label();
             this.objectListView_UCSpecialityTCEdit_Services = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_UCSpecialityTCEdit_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCSpecialityTCEdit_ServiceView = new System.Windows.Forms.Label();
             this.label_UCSpecialityTCEdit_Description = new System.Windows.Forms.Label();
             this.button_UCSpecialityTCEdit_SaveChange = new System.Windows.Forms.Button();
@@ -349,10 +349,10 @@
             // 
             // objectListView_UCSpecialityTCEdit_Services
             // 
-            this.objectListView_UCSpecialityTCEdit_Services.AllColumns.Add(this.olvColumn4);
+            this.objectListView_UCSpecialityTCEdit_Services.AllColumns.Add(this.olvColumn_UCSpecialityTCEdit_Name);
             this.objectListView_UCSpecialityTCEdit_Services.CellEditUseWholeCell = false;
             this.objectListView_UCSpecialityTCEdit_Services.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn4});
+            this.olvColumn_UCSpecialityTCEdit_Name});
             this.objectListView_UCSpecialityTCEdit_Services.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCEdit_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.objectListView_UCSpecialityTCEdit_Services.Location = new System.Drawing.Point(490, 46);
@@ -363,11 +363,11 @@
             this.objectListView_UCSpecialityTCEdit_Services.UseCompatibleStateImageBehavior = false;
             this.objectListView_UCSpecialityTCEdit_Services.View = System.Windows.Forms.View.Details;
             // 
-            // olvColumn4
+            // olvColumn_UCSpecialityTCEdit_Name
             // 
-            this.olvColumn4.AspectName = "Value.Name";
-            this.olvColumn4.Text = "Ydelsesnavne";
-            this.olvColumn4.Width = 200;
+            this.olvColumn_UCSpecialityTCEdit_Name.AspectName = "Name";
+            this.olvColumn_UCSpecialityTCEdit_Name.Text = "Ydelsesnavne";
+            this.olvColumn_UCSpecialityTCEdit_Name.Width = 200;
             // 
             // label_UCSpecialityTCEdit_ServiceView
             // 
@@ -407,6 +407,7 @@
             this.button_UCSpecialityTCEdit_RemoveService.Tag = "";
             this.button_UCSpecialityTCEdit_RemoveService.Text = "Fjern Ydelse";
             this.button_UCSpecialityTCEdit_RemoveService.UseVisualStyleBackColor = true;
+            this.button_UCSpecialityTCEdit_RemoveService.Click += new System.EventHandler(this.button_UCSpecialityTCEdit_RemoveService_Click);
             // 
             // richTextBox_UCSpecialityTCEdit_Description
             // 
@@ -688,7 +689,7 @@
         private System.Windows.Forms.Label label_UCCSpecialityTCCreate_Create;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_CurrentName;
         private BrightIdeasSoftware.ObjectListView objectListView_UCSpecialityTCEdit_Services;
-        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCEdit_Name;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_ServiceView;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_Description;
         private System.Windows.Forms.Button button_UCSpecialityTCEdit_SaveChange;
