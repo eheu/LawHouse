@@ -46,6 +46,7 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_Back_ManageEmployee_Click(object sender, EventArgs e)
         {
+            //her mangler vi at reloade UCEmployeeTCManage controlsne
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
         }
 
@@ -104,6 +105,7 @@ namespace GUI
                 bool exists = specialitiesInListBox.Any(s => s.ID == selectedSpeciality.ID);
                 if (!exists) gui.EmployeeSpecialityRepository.Create(new EmployeeSpeciality(currentEmployee.ID,selectedSpeciality.ID));
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
+                objectListView__UCEmployeeTCManage_Services.SetObjects(gui.ServiceRepository.GetServicesFromEmployee(currentEmployee));
             }
         }
 
@@ -166,6 +168,8 @@ namespace GUI
                 objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
 
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
+
+                objectListView__UCEmployeeTCManage_Services.SetObjects(gui.ServiceRepository.GetServicesFromEmployee(currentEmployee));
 
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
             }

@@ -12,7 +12,27 @@ namespace DataAccess
 
         public void Create(ServiceSpeciality serviceSpeciality)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [ServiceSpeciality] 
+                                            VALUES (@serviceID, @specialityID)";
+                    command.AddParameter("serviceID", serviceSpeciality.ServiceID);
+                    command.AddParameter("specialityID", serviceSpeciality.SpecialityID);
+                    // no need for sqlparameter when handling IDs - SQL injection impossible?
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public void Delete(ServiceSpeciality serviceSpeciality)
