@@ -110,15 +110,6 @@ namespace GUI
             ListBox_UCEmployeeTCEdit_EditEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
-        
-        /// <summary>
-        /// Sets the EditEmployee Listbox
-        /// </summary>
-        private void SetManageEmployeeListbox(Employee employee)
-        {
-            objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(employee));
-        }
-
         /// <summary>
         /// Inserts Speciality's in Edit Employee's SpecialityListbox and checks if the Employee already have them
         /// </summary>
