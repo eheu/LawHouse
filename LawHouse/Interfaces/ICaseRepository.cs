@@ -22,6 +22,10 @@ namespace BusinessLogic.Interfaces
         /// </summary>
         List<Case> GetCasesFromLawyer(int lawyerID);
         /// <summary>
+        ///     Load all existing entities that has status 0 (not done)
+        /// </summary>
+        List<Case> GetAllOpenCases();
+        /// <summary>
         ///     Load all existing entities that has status 1 (done). 
         /// </summary>
         List<Case> GetAllDoneCases();
@@ -30,5 +34,6 @@ namespace BusinessLogic.Interfaces
         ///     Check if a lawyer has one or more cases.
         /// </summary>
         int CheckIflawyerHasCases(int lawyerID);
+
     }
 }

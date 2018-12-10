@@ -77,11 +77,13 @@ namespace GUI
 
         private void SetObjectListViewCases()
         {
-            caselist = gui.CaseRepository.GetAll();
+            caselist = gui.CaseRepository.GetAllOpenCases();
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
-
-        private void FindCase_MouseEnter(object sender, EventArgs e)
+        /// <summary>
+        ///     Menubar toggle event. Gets called multiple times by objects on same usercontrol. 
+        /// </summary>
+        private void objectListView_UCCaseTCFind_FindCase_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
         }
@@ -137,6 +139,7 @@ namespace GUI
             @case.Title = textBox_UCCaseTCCreate_Title.Text;
             @case.ClientID = (int)comboBox_UCCaseTCCreate_ChooseClient.SelectedValue;
             @case.EmployeeID = (int)comboBox_UCCaseTCCreate_ChooseLawyer.SelectedValue;
+            @case.StartDate = DateTime.Now;
             gui.CaseRepository.Create(@case);
             SetObjectListViewCases();
 
@@ -291,16 +294,44 @@ namespace GUI
         {
             if (!checkBox_UCCaseTCFind_IsFinished.Checked)
             {
-                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
-                caselist = gui.CaseRepository.GetAll();
+                //checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
+                caselist = gui.CaseRepository.GetAllOpenCases();
                 objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
             }
             if (checkBox_UCCaseTCFind_IsFinished.Checked)
             {
-                checkBox_UCCaseTCFind_IsFinished.Text = "Se alle igangværende sager";
+                //checkBox_UCCaseTCFind_IsFinished.Text = "Se alle igangværende sager";
                 caselist = gui.CaseRepository.GetAllDoneCases();
                 objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
             }
+        }
+
+        private void button_UCCaseTCManage_CloseCase_Click(object sender, EventArgs e)
+        {
+            if (currentCase.Status)
+            {
+                currentCase.Status = false;
+                currentCase.EndDate = DateTime.MinValue;
+                gui.CaseRepository.Update(currentCase);
+                button_UCCaseTCManage_CloseCase.Text = "Afslut sag";
+                //Refresh Find case object list view
+                SetObjectListViewCases();
+                TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+                if (checkBox_UCCaseTCFind_IsFinished.Checked)
+                    checkBox_UCCaseTCFind_IsFinished.Checked = false;
+            }
+            else if (!currentCase.Status)
+            {
+                currentCase.Status = true;
+                currentCase.EndDate = DateTime.Now;
+                gui.CaseRepository.Update(currentCase);
+                button_UCCaseTCManage_CloseCase.Text = "Genåben sag";
+                //Refresh Find case object list view
+                SetObjectListViewCases();
+                TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+
+            }
+            
         }
     }
 }
