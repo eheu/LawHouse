@@ -172,7 +172,7 @@
             this.olvColumnName.AspectName = "Title";
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
-            this.olvColumnName.Width = 100;
+            this.olvColumnName.Width = 250;
             // 
             // textBox_UCCaseTCFind_Search
             // 

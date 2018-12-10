@@ -35,7 +35,6 @@
             this.button_UCEmployeeTCFind_CreateEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.objectListView_UCEmployeeTCFind_FindEmployee = new BrightIdeasSoftware.DataListView();
-            this.olvColumnEmployeeFindID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnEmployeeFindFirstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnEmployeeFindLastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TC_UCEmployeeTC_EditEmployee = new System.Windows.Forms.TabPage();
@@ -180,12 +179,10 @@
             // 
             // objectListView_UCEmployeeTCFind_FindEmployee
             // 
-            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindID);
             this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindFirstName);
             this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindLastName);
             this.objectListView_UCEmployeeTCFind_FindEmployee.CellEditUseWholeCell = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumnEmployeeFindID,
             this.olvColumnEmployeeFindFirstName,
             this.olvColumnEmployeeFindLastName});
             this.objectListView_UCEmployeeTCFind_FindEmployee.Cursor = System.Windows.Forms.Cursors.Default;
@@ -198,14 +195,9 @@
             this.objectListView_UCEmployeeTCFind_FindEmployee.Size = new System.Drawing.Size(1134, 396);
             this.objectListView_UCEmployeeTCFind_FindEmployee.TabIndex = 0;
             this.objectListView_UCEmployeeTCFind_FindEmployee.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.LargeIcon;
+            this.objectListView_UCEmployeeTCFind_FindEmployee.View = System.Windows.Forms.View.Details;
             this.objectListView_UCEmployeeTCFind_FindEmployee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectListView_UCEmployeeTCFind_FindEmployee_MouseDoubleClick);
             this.objectListView_UCEmployeeTCFind_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
-            // 
-            // olvColumnEmployeeFindID
-            // 
-            this.olvColumnEmployeeFindID.AspectName = "ID";
-            this.olvColumnEmployeeFindID.Text = "Id";
             // 
             // olvColumnEmployeeFindFirstName
             // 
@@ -217,7 +209,6 @@
             // olvColumnEmployeeFindLastName
             // 
             this.olvColumnEmployeeFindLastName.AspectName = "LastName";
-            this.olvColumnEmployeeFindLastName.IsHeaderVertical = true;
             this.olvColumnEmployeeFindLastName.IsTileViewColumn = true;
             this.olvColumnEmployeeFindLastName.Text = "Efternavn";
             this.olvColumnEmployeeFindLastName.Width = 100;
@@ -857,7 +848,6 @@
         private BrightIdeasSoftware.DataListView objectListView_UCEmployeeTCFind_FindEmployee;
         private System.Windows.Forms.TextBox textBox_UCCaseTCFind_Search;
         private System.Windows.Forms.Label label_UCCaseTCFind_Search;
-        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindID;
         private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindFirstName;
         private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindLastName;
         private System.Windows.Forms.Label label7;

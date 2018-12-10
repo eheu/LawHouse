@@ -198,7 +198,7 @@
             // 
             this.olvColumn1.AspectName = "Name";
             this.olvColumn1.Text = "Ydelser";
-            this.olvColumn1.Width = 126;
+            this.olvColumn1.Width = 247;
             // 
             // olvColumn2
             // 
@@ -210,7 +210,7 @@
             // 
             this.olvColumn_UCServiceTCFind_IsHourly.AspectName = "IsHourly";
             this.olvColumn_UCServiceTCFind_IsHourly.Text = "Afregning";
-            this.olvColumn_UCServiceTCFind_IsHourly.Width = 185;
+            this.olvColumn_UCServiceTCFind_IsHourly.Width = 207;
             // 
             // TC_UCServiceTC_CreateService
             // 
