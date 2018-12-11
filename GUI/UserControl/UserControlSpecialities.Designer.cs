@@ -324,7 +324,6 @@
             // TC_UCSpecialityTC_EditSpeciality
             // 
             this.TC_UCSpecialityTC_EditSpeciality.BackColor = System.Drawing.Color.White;
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_CurrentName);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.objectListView_UCSpecialityTCEdit_Services);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ServiceView);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_Description);

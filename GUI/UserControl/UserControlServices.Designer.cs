@@ -457,15 +457,6 @@
             this.textBox_UCServiceTCEdit_ChangePrice.TabIndex = 48;
             this.textBox_UCServiceTCEdit_ChangePrice.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
             // 
-            // label_UCServicesTCEdit_CurrentIsHourly
-            // 
-            this.label_UCServicesTCEdit_CurrentIsHourly.AutoSize = true;
-            this.label_UCServicesTCEdit_CurrentIsHourly.Location = new System.Drawing.Point(151, 235);
-            this.label_UCServicesTCEdit_CurrentIsHourly.Name = "label_UCServicesTCEdit_CurrentIsHourly";
-            this.label_UCServicesTCEdit_CurrentIsHourly.Size = new System.Drawing.Size(89, 18);
-            this.label_UCServicesTCEdit_CurrentIsHourly.TabIndex = 47;
-            this.label_UCServicesTCEdit_CurrentIsHourly.Text = "\"afregning\"";
-            // 
             // label_UCServicesTCEdit_ChangeIsHourly
             // 
             this.label_UCServicesTCEdit_ChangeIsHourly.AutoSize = true;
