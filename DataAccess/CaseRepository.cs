@@ -215,7 +215,30 @@ namespace DataAccess
                 }
             }
         }
-
+        public int GetCaseCountFromLawyer(int lawyerID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT COUNT(*)
+                                            FROM [Case] 
+                                            WHERE employeeID = @lawyerID";
+                    command.AddParameter("lawyerID", lawyerID);
+                    int countCases = (int)command.ExecuteScalar();
+                    return countCases;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
         public void Update(Case @case)
         {
 
@@ -237,7 +260,7 @@ namespace DataAccess
                     command.AddParameter("status", @case.Status);
                     command.AddParameter("clientID", @case.ClientID);
                     command.AddParameter("employeeID", @case.EmployeeID);
-                    if (@case.EndDate == DateTime.MinValue )
+                    if (@case.EndDate == default(DateTime))
                     {
                         command.AddParameter("endDate", DBNull.Value);
                     }
@@ -303,31 +326,6 @@ namespace DataAccess
                     items.Add(item);
                 }
                 return items;
-            }
-        }
-
-        public int CheckIflawyerHasCases(int lawyerID)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                try
-                {
-                    _connection.Open();
-                    command.CommandText = @"SELECT COUNT(*)
-                                            FROM [Case] 
-                                            WHERE employeeID = @lawyerID";
-                    command.AddParameter("lawyerID", lawyerID);
-                    int rowsAffected = (Int32) command.ExecuteScalar();
-                    return rowsAffected;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
             }
         }
     }

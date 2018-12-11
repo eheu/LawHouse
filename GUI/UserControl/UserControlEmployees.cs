@@ -235,9 +235,8 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_DeleteEmployee_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID));
-
-            if (gui.CaseRepository.CheckIflawyerHasCases(currentEmployee.ID) == 0)
+            Console.WriteLine(gui.CaseRepository.GetCaseCountFromLawyer(currentEmployee.ID));
+            if (gui.CaseRepository.GetCaseCountFromLawyer(currentEmployee.ID) == 0)
             {
                 gui.EmployeeRepository.Delete(currentEmployee);
             }

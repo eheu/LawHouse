@@ -309,7 +309,7 @@ namespace GUI
             if (currentCase.Status)
             {
                 currentCase.Status = false;
-                currentCase.EndDate = DateTime.MinValue;
+                //currentCase.EndDate = DateTime.MinValue; unnecessary because default(DateTime) == DateTime.MinValue
                 gui.CaseRepository.Update(currentCase);
                 button_UCCaseTCManage_CloseCase.Text = "Afslut sag";
                 //Refresh Find case object list view

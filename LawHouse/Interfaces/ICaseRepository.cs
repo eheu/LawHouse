@@ -36,7 +36,7 @@ namespace BusinessLogic.Interfaces
         /// <summary>
         ///     Check if a lawyer has one or more cases.
         /// </summary>
-        int CheckIflawyerHasCases(int lawyerID);
+        int GetCaseCountFromLawyer(int lawyerID);
 
     }
 }
