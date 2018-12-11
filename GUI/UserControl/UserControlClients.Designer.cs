@@ -44,7 +44,7 @@
             this.bottom_UCClientTCEdit_Back = new System.Windows.Forms.Button();
             this.bottom_UCClientTCEdit_Save = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.ObjectListView_UCClientTCEdit = new BrightIdeasSoftware.ObjectListView();
+            this.objectListView_UCClientTCEdit = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCClient_TCEdit_cases_name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_UCClient_TCEdit_laywer_name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textbox_UCClientTCEdit_email = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             this.label_UCClientTCManage_firstName_Show = new System.Windows.Forms.Label();
             this.bottom_UCClientTCManage_Back = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.ObjectListView_UCClientTCManage = new BrightIdeasSoftware.ObjectListView();
+            this.objectListView_UCClientTCManage = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn6 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_UCClient_TCManage_laywer_name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCClientTCManage_email = new System.Windows.Forms.Label();
@@ -95,10 +95,10 @@
             this.TC_UCEmployeeTC_FindClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCFind_FindClient)).BeginInit();
             this.TC_UCEmployeeTC_EditClient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ObjectListView_UCClientTCEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCEdit)).BeginInit();
             this.TC_UCEmployeeTC_CreateClient.SuspendLayout();
             this.TC_UCEmployeeTC_ManageClient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ObjectListView_UCClientTCManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCManage)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCClient
@@ -126,10 +126,10 @@
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.objectListView_UCClientTCFind_FindClient);
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.button_UCClientTCFind_CreateClient);
             this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label2);
-            this.TC_UCEmployeeTC_FindClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_FindClient.Location = new System.Drawing.Point(4, 54);
             this.TC_UCEmployeeTC_FindClient.Name = "TC_UCEmployeeTC_FindClient";
             this.TC_UCEmployeeTC_FindClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_FindClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_FindClient.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCEmployeeTC_FindClient.TabIndex = 0;
             this.TC_UCEmployeeTC_FindClient.Text = "Find";
             this.TC_UCEmployeeTC_FindClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
@@ -183,25 +183,25 @@
             // 
             this.olvColumn1.AspectName = "FirstName";
             this.olvColumn1.Text = "Fornavn";
-            this.olvColumn1.Width = 126;
+            this.olvColumn1.Width = 151;
             // 
             // olvColumn2
             // 
             this.olvColumn2.AspectName = "LastName";
             this.olvColumn2.Text = "Efternavn";
-            this.olvColumn2.Width = 137;
+            this.olvColumn2.Width = 174;
             // 
             // olvColumn3
             // 
             this.olvColumn3.AspectName = "Phone";
             this.olvColumn3.Text = "Telefon";
-            this.olvColumn3.Width = 131;
+            this.olvColumn3.Width = 165;
             // 
             // olvColumn4
             // 
             this.olvColumn4.AspectName = "Address";
             this.olvColumn4.Text = "Adresse";
-            this.olvColumn4.Width = 222;
+            this.olvColumn4.Width = 272;
             // 
             // olvColumn5
             // 
@@ -234,7 +234,7 @@
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_Back);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_Save);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label14);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.ObjectListView_UCClientTCEdit);
+            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.objectListView_UCClientTCEdit);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_email);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_addresse);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_phone);
@@ -246,10 +246,10 @@
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label12);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label13);
             this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label3);
-            this.TC_UCEmployeeTC_EditClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_EditClient.Location = new System.Drawing.Point(4, 54);
             this.TC_UCEmployeeTC_EditClient.Name = "TC_UCEmployeeTC_EditClient";
             this.TC_UCEmployeeTC_EditClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_EditClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_EditClient.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCEmployeeTC_EditClient.TabIndex = 1;
             this.TC_UCEmployeeTC_EditClient.Text = "Ændre";
             this.TC_UCEmployeeTC_EditClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
@@ -282,23 +282,23 @@
             this.label14.TabIndex = 23;
             this.label14.Text = "Liste over klients sager";
             // 
-            // ObjectListView_UCClientTCEdit
+            // objectListView_UCClientTCEdit
             // 
-            this.ObjectListView_UCClientTCEdit.AllColumns.Add(this.olvColumn_UCClient_TCEdit_cases_name);
-            this.ObjectListView_UCClientTCEdit.AllColumns.Add(this.olvColumn_UCClient_TCEdit_laywer_name);
-            this.ObjectListView_UCClientTCEdit.CellEditUseWholeCell = false;
-            this.ObjectListView_UCClientTCEdit.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.objectListView_UCClientTCEdit.AllColumns.Add(this.olvColumn_UCClient_TCEdit_cases_name);
+            this.objectListView_UCClientTCEdit.AllColumns.Add(this.olvColumn_UCClient_TCEdit_laywer_name);
+            this.objectListView_UCClientTCEdit.CellEditUseWholeCell = false;
+            this.objectListView_UCClientTCEdit.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn_UCClient_TCEdit_cases_name,
             this.olvColumn_UCClient_TCEdit_laywer_name});
-            this.ObjectListView_UCClientTCEdit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ObjectListView_UCClientTCEdit.GridLines = true;
-            this.ObjectListView_UCClientTCEdit.Location = new System.Drawing.Point(352, 48);
-            this.ObjectListView_UCClientTCEdit.Name = "ObjectListView_UCClientTCEdit";
-            this.ObjectListView_UCClientTCEdit.ShowGroups = false;
-            this.ObjectListView_UCClientTCEdit.Size = new System.Drawing.Size(781, 351);
-            this.ObjectListView_UCClientTCEdit.TabIndex = 22;
-            this.ObjectListView_UCClientTCEdit.UseCompatibleStateImageBehavior = false;
-            this.ObjectListView_UCClientTCEdit.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCClientTCEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCClientTCEdit.GridLines = true;
+            this.objectListView_UCClientTCEdit.Location = new System.Drawing.Point(352, 48);
+            this.objectListView_UCClientTCEdit.Name = "objectListView_UCClientTCEdit";
+            this.objectListView_UCClientTCEdit.ShowGroups = false;
+            this.objectListView_UCClientTCEdit.Size = new System.Drawing.Size(781, 351);
+            this.objectListView_UCClientTCEdit.TabIndex = 22;
+            this.objectListView_UCClientTCEdit.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCClientTCEdit.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn_UCClient_TCEdit_cases_name
             // 
@@ -423,10 +423,10 @@
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label4);
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.button_UCClientTCCreate_FindClient);
             this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label1);
-            this.TC_UCEmployeeTC_CreateClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_CreateClient.Location = new System.Drawing.Point(4, 54);
             this.TC_UCEmployeeTC_CreateClient.Name = "TC_UCEmployeeTC_CreateClient";
             this.TC_UCEmployeeTC_CreateClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_CreateClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_CreateClient.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCEmployeeTC_CreateClient.TabIndex = 2;
             this.TC_UCEmployeeTC_CreateClient.Text = "Opret";
             this.TC_UCEmployeeTC_CreateClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
@@ -564,7 +564,7 @@
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName_Show);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.bottom_UCClientTCManage_Back);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label15);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.ObjectListView_UCClientTCManage);
+            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.objectListView_UCClientTCManage);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_email);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_addresse);
             this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_phone);
@@ -653,23 +653,23 @@
             this.label15.TabIndex = 38;
             this.label15.Text = "Liste over klients sager";
             // 
-            // ObjectListView_UCClientTCManage
+            // objectListView_UCClientTCManage
             // 
-            this.ObjectListView_UCClientTCManage.AllColumns.Add(this.olvColumn6);
-            this.ObjectListView_UCClientTCManage.AllColumns.Add(this.olvColumn_UCClient_TCManage_laywer_name);
-            this.ObjectListView_UCClientTCManage.CellEditUseWholeCell = false;
-            this.ObjectListView_UCClientTCManage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.objectListView_UCClientTCManage.AllColumns.Add(this.olvColumn6);
+            this.objectListView_UCClientTCManage.AllColumns.Add(this.olvColumn_UCClient_TCManage_laywer_name);
+            this.objectListView_UCClientTCManage.CellEditUseWholeCell = false;
+            this.objectListView_UCClientTCManage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn6,
             this.olvColumn_UCClient_TCManage_laywer_name});
-            this.ObjectListView_UCClientTCManage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ObjectListView_UCClientTCManage.GridLines = true;
-            this.ObjectListView_UCClientTCManage.Location = new System.Drawing.Point(352, 48);
-            this.ObjectListView_UCClientTCManage.Name = "ObjectListView_UCClientTCManage";
-            this.ObjectListView_UCClientTCManage.ShowGroups = false;
-            this.ObjectListView_UCClientTCManage.Size = new System.Drawing.Size(781, 351);
-            this.ObjectListView_UCClientTCManage.TabIndex = 37;
-            this.ObjectListView_UCClientTCManage.UseCompatibleStateImageBehavior = false;
-            this.ObjectListView_UCClientTCManage.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCClientTCManage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCClientTCManage.GridLines = true;
+            this.objectListView_UCClientTCManage.Location = new System.Drawing.Point(352, 48);
+            this.objectListView_UCClientTCManage.Name = "objectListView_UCClientTCManage";
+            this.objectListView_UCClientTCManage.ShowGroups = false;
+            this.objectListView_UCClientTCManage.Size = new System.Drawing.Size(781, 351);
+            this.objectListView_UCClientTCManage.TabIndex = 37;
+            this.objectListView_UCClientTCManage.UseCompatibleStateImageBehavior = false;
+            this.objectListView_UCClientTCManage.View = System.Windows.Forms.View.Details;
             // 
             // olvColumn6
             // 
@@ -752,12 +752,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCFind_FindClient)).EndInit();
             this.TC_UCEmployeeTC_EditClient.ResumeLayout(false);
             this.TC_UCEmployeeTC_EditClient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ObjectListView_UCClientTCEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCEdit)).EndInit();
             this.TC_UCEmployeeTC_CreateClient.ResumeLayout(false);
             this.TC_UCEmployeeTC_CreateClient.PerformLayout();
             this.TC_UCEmployeeTC_ManageClient.ResumeLayout(false);
             this.TC_UCEmployeeTC_ManageClient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ObjectListView_UCClientTCManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCManage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,7 +775,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_UCClientTCFind_Search;
         private System.Windows.Forms.Label label_UCClientTCFind_Search;
-        private BrightIdeasSoftware.ObjectListView ObjectListView_UCClientTCEdit;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCClientTCEdit;
         private System.Windows.Forms.TextBox textbox_UCClientTCEdit_email;
         private System.Windows.Forms.TextBox textbox_UCClientTCEdit_addresse;
         private System.Windows.Forms.TextBox textbox_UCClientTCEdit_phone;
@@ -818,7 +818,7 @@
         private System.Windows.Forms.Label label_UCClientTCManage_firstName_Show;
         private System.Windows.Forms.Button bottom_UCClientTCManage_Back;
         private System.Windows.Forms.Label label15;
-        private BrightIdeasSoftware.ObjectListView ObjectListView_UCClientTCManage;
+        private BrightIdeasSoftware.ObjectListView objectListView_UCClientTCManage;
         private BrightIdeasSoftware.OLVColumn olvColumn6;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCClient_TCManage_laywer_name;
         private System.Windows.Forms.Label label_UCClientTCManage_email;

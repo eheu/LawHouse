@@ -98,7 +98,7 @@ namespace GUI
                 label_UCClientTCManage_email_Show.Text = currentClient.Email;
 
                 //Load Cases and Laywers
-                SetCaseAndEmployeeObjectListViews(ObjectListView_UCClientTCManage);
+                SetCaseAndEmployeeObjectListViews(objectListView_UCClientTCManage);
 
                 TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
             }
@@ -121,7 +121,7 @@ namespace GUI
             textbox_UCClientTCEdit_email.Text = currentClient.Email;
 
             //Load Cases and Laywers
-            SetCaseAndEmployeeObjectListViews(ObjectListView_UCClientTCEdit);
+            SetCaseAndEmployeeObjectListViews(objectListView_UCClientTCEdit);
 
             TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
 

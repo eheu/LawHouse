@@ -9,5 +9,6 @@ namespace BusinessLogic.Interfaces
     public interface IServiceRepository : IRepository<Service>
     {
         List<Service> GetServicesFromSpeciality(Speciality speciality);
+        List<Service> GetServicesFromEmployee(Employee employee);
     }
 }

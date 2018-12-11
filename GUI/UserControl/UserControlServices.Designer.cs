@@ -126,10 +126,10 @@
             this.TC_UCServiceTC_FindService.Controls.Add(this.button_UCCServicesTCFind_CreateService);
             this.TC_UCServiceTC_FindService.Controls.Add(this.label_UCCServicesTCFind_FindService);
             this.TC_UCServiceTC_FindService.Controls.Add(this.objectListView_UCServiceTCFind_FindService);
-            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 54);
             this.TC_UCServiceTC_FindService.Name = "TC_UCServiceTC_FindService";
             this.TC_UCServiceTC_FindService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCServiceTC_FindService.TabIndex = 0;
             this.TC_UCServiceTC_FindService.Text = "Find ydelser";
             this.TC_UCServiceTC_FindService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -198,7 +198,7 @@
             // 
             this.olvColumn1.AspectName = "Name";
             this.olvColumn1.Text = "Ydelser";
-            this.olvColumn1.Width = 126;
+            this.olvColumn1.Width = 247;
             // 
             // olvColumn2
             // 
@@ -210,7 +210,7 @@
             // 
             this.olvColumn_UCServiceTCFind_IsHourly.AspectName = "IsHourly";
             this.olvColumn_UCServiceTCFind_IsHourly.Text = "Afregning";
-            this.olvColumn_UCServiceTCFind_IsHourly.Width = 185;
+            this.olvColumn_UCServiceTCFind_IsHourly.Width = 207;
             // 
             // TC_UCServiceTC_CreateService
             // 
@@ -232,10 +232,10 @@
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Name);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.button_UCServicesTCCreate_FindService);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Create);
-            this.TC_UCServiceTC_CreateService.Location = new System.Drawing.Point(4, 14);
+            this.TC_UCServiceTC_CreateService.Location = new System.Drawing.Point(4, 5);
             this.TC_UCServiceTC_CreateService.Name = "TC_UCServiceTC_CreateService";
             this.TC_UCServiceTC_CreateService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_CreateService.Size = new System.Drawing.Size(1149, 548);
+            this.TC_UCServiceTC_CreateService.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCServiceTC_CreateService.TabIndex = 1;
             this.TC_UCServiceTC_CreateService.Text = "Opret";
             this.TC_UCServiceTC_CreateService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -419,10 +419,10 @@
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_ManageService);
             this.TC_UCServiceTC_EditService.Controls.Add(this.label_UCServicesTCEdit_EditService);
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_FindService);
-            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 14);
+            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 54);
             this.TC_UCServiceTC_EditService.Name = "TC_UCServiceTC_EditService";
             this.TC_UCServiceTC_EditService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 548);
+            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCServiceTC_EditService.TabIndex = 2;
             this.TC_UCServiceTC_EditService.Text = "Rediger";
             this.TC_UCServiceTC_EditService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -617,10 +617,10 @@
             this.TC_UCServiceTC_ManageService.Controls.Add(this.button_UCServicesTCManage_FindService);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.label_UCServicesTCManage_Description);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.richTextBox_UCServicesTCManage_Description);
-            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 14);
+            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 54);
             this.TC_UCServiceTC_ManageService.Name = "TC_UCServiceTC_ManageService";
             this.TC_UCServiceTC_ManageService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 548);
+            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 508);
             this.TC_UCServiceTC_ManageService.TabIndex = 3;
             this.TC_UCServiceTC_ManageService.Text = "Administrer";
             this.TC_UCServiceTC_ManageService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);

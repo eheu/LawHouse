@@ -124,6 +124,33 @@ namespace DataAccess
             }
         }
 
+        public List<Service> GetServicesFromEmployee(Employee employee)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT [ID], [name], [price], [isHourly], [description]
+                                            FROM [Service]
+                                            INNER JOIN [ServiceSpeciality] ON [ServiceSpeciality].[serviceID] = [Service].[ID]
+                                            INNER JOIN [EmployeeSpeciality] ON [EmployeeSpeciality].[specialityID] = [ServiceSpeciality].[specialityID]
+                                            WHERE [EmployeeSpeciality].[employeeID] = @employeeID";
+                    command.AddParameter("employeeID", employee.ID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
         public void Update(Service service)
         {
             using (var command = _connection.CreateCommand())
@@ -202,6 +229,5 @@ namespace DataAccess
                 return services;
             }
         }
-
     }
 }

@@ -12,9 +12,29 @@ namespace DataAccess
     public class EmployeeSpecialityRepository : IEmployeeSpecialityRepository
     {
         private readonly SqlConnection _connection = new SqlConnection(Properties.Settings.Default.ConnectionString);
-        public void Create(EmployeeSpeciality entity)
+        public void Create(EmployeeSpeciality employeeSpeciality)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"INSERT INTO [EmployeeSpeciality] 
+                                            VALUES (@employeeID, @specialityID)";
+                    command.AddParameter("employeeID", employeeSpeciality.employeeID);
+                    command.AddParameter("specialityID", employeeSpeciality.specialityID);
+                    // no need for SqlParameter when handling IDS - sql injection impossible?
+                    _connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public void Delete(EmployeeSpeciality entity)
