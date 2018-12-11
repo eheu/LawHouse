@@ -25,8 +25,6 @@ namespace GUI
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
             //Load of Speciality into Combobox
             SetComboBoxSpeciality();
-            ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.DisplayMember = "Name";
-            ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.ValueMember = "ID";
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -181,9 +179,16 @@ namespace GUI
         /// </summary>
         private void button_UCEmployeeTCCreate_CreateEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
-            if (!ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Contains((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem))
+            Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem;
+            bool exists = false;
+            if (objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects != null)
             {
-                ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items.Add((Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem);
+                List<Speciality> specialitiesInObjectListView = objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects.Cast<Speciality>().ToList();
+                exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+            }
+            if (!exists)
+            {
+                objectListView_UCEmployeeTCCreate_ShowSpeciality.AddObject(selectedSpeciality);
                 comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedIndex = -1;
             }
         }
@@ -203,11 +208,7 @@ namespace GUI
             gui.EmployeeRepository.Create(employee);
 
             //Set the Employee's Specialities
-            List<Speciality> specialities = new List<Speciality>();
-            foreach (Speciality item in ListBox_UCEmployeeTCCreate_CreateEmployee_ShowSpeciality.Items)
-            {
-                specialities.Add(item);
-            }
+            List<Speciality> specialities = objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects.Cast<Speciality>().ToList();
 
             //Check if specialities-List is not empty
             if ((specialities != null) && (specialities.Count != 0))
