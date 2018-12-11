@@ -79,8 +79,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.TC_UCEmployeeTC_ManageEmployee = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.objectListView__UCEmployeeTCManage_Services = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCEmployeeTCManage_ServiceName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.checkBox_UCEmployeeTCManage_IsFinished = new System.Windows.Forms.CheckBox();
             this.objectListView__UCEmployeeTCManage_Specialities = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCEmployeeTCManage_SpecialityName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCEmployeeTCManage_EditEmployee = new System.Windows.Forms.Button();
             this.button_UCEmployeeTCManage_FindEmployee = new System.Windows.Forms.Button();
             this.label_UCEmployeeTCManage_role_Show = new System.Windows.Forms.Label();
@@ -99,10 +103,6 @@
             this.label_UCEmployeeTCManage_email = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_lastName = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_firstName = new System.Windows.Forms.Label();
-            this.objectListView__UCEmployeeTCManage_Services = new BrightIdeasSoftware.ObjectListView();
-            this.label19 = new System.Windows.Forms.Label();
-            this.olvColumn_UCEmployeeTCManage_SpecialityName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_UCEmployeeTCManage_ServiceName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -111,9 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases)).BeginInit();
             this.TC_UCEmployeeTC_CreateEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_ManageEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Services)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Services)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCEmployee
@@ -143,10 +143,10 @@
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.button_UCEmployeeTCFind_CreateEmployee);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.label1);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.objectListView_UCEmployeeTCFind_FindEmployee);
-            this.TC_UCEmployeeTC_FindEmployee.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCEmployeeTC_FindEmployee.Location = new System.Drawing.Point(4, 5);
             this.TC_UCEmployeeTC_FindEmployee.Name = "TC_UCEmployeeTC_FindEmployee";
             this.TC_UCEmployeeTC_FindEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_FindEmployee.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCEmployeeTC_FindEmployee.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCEmployeeTC_FindEmployee.TabIndex = 0;
             this.TC_UCEmployeeTC_FindEmployee.Text = "Find ansat";
             this.TC_UCEmployeeTC_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -246,10 +246,10 @@
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label4);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label3);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label2);
-            this.TC_UCEmployeeTC_EditEmployee.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCEmployeeTC_EditEmployee.Location = new System.Drawing.Point(4, 5);
             this.TC_UCEmployeeTC_EditEmployee.Name = "TC_UCEmployeeTC_EditEmployee";
             this.TC_UCEmployeeTC_EditEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_EditEmployee.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCEmployeeTC_EditEmployee.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCEmployeeTC_EditEmployee.TabIndex = 1;
             this.TC_UCEmployeeTC_EditEmployee.Text = "Rediger";
             this.TC_UCEmployeeTC_EditEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -480,10 +480,10 @@
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label11);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label12);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label13);
-            this.TC_UCEmployeeTC_CreateEmployee.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCEmployeeTC_CreateEmployee.Location = new System.Drawing.Point(4, 5);
             this.TC_UCEmployeeTC_CreateEmployee.Name = "TC_UCEmployeeTC_CreateEmployee";
             this.TC_UCEmployeeTC_CreateEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_CreateEmployee.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCEmployeeTC_CreateEmployee.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCEmployeeTC_CreateEmployee.TabIndex = 2;
             this.TC_UCEmployeeTC_CreateEmployee.Text = "Opret";
             this.TC_UCEmployeeTC_CreateEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -671,15 +671,47 @@
             this.TC_UCEmployeeTC_ManageEmployee.Text = "Administrere";
             this.TC_UCEmployeeTC_ManageEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(504, 269);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(173, 18);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Kvalificeret til ydelser:";
+            // 
+            // objectListView__UCEmployeeTCManage_Services
+            // 
+            this.objectListView__UCEmployeeTCManage_Services.AllColumns.Add(this.olvColumn_UCEmployeeTCManage_ServiceName);
+            this.objectListView__UCEmployeeTCManage_Services.CellEditUseWholeCell = false;
+            this.objectListView__UCEmployeeTCManage_Services.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn_UCEmployeeTCManage_ServiceName});
+            this.objectListView__UCEmployeeTCManage_Services.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView__UCEmployeeTCManage_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.objectListView__UCEmployeeTCManage_Services.Location = new System.Drawing.Point(506, 290);
+            this.objectListView__UCEmployeeTCManage_Services.Name = "objectListView__UCEmployeeTCManage_Services";
+            this.objectListView__UCEmployeeTCManage_Services.ShowGroups = false;
+            this.objectListView__UCEmployeeTCManage_Services.Size = new System.Drawing.Size(279, 218);
+            this.objectListView__UCEmployeeTCManage_Services.TabIndex = 41;
+            this.objectListView__UCEmployeeTCManage_Services.UseCompatibleStateImageBehavior = false;
+            this.objectListView__UCEmployeeTCManage_Services.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn_UCEmployeeTCManage_ServiceName
+            // 
+            this.olvColumn_UCEmployeeTCManage_ServiceName.AspectName = "Name";
+            this.olvColumn_UCEmployeeTCManage_ServiceName.FillsFreeSpace = true;
+            this.olvColumn_UCEmployeeTCManage_ServiceName.Text = "Name";
+            // 
             // checkBox_UCEmployeeTCManage_IsFinished
             // 
             this.checkBox_UCEmployeeTCManage_IsFinished.AutoSize = true;
             this.checkBox_UCEmployeeTCManage_IsFinished.Location = new System.Drawing.Point(792, 513);
             this.checkBox_UCEmployeeTCManage_IsFinished.Name = "checkBox_UCEmployeeTCManage_IsFinished";
-            this.checkBox_UCEmployeeTCManage_IsFinished.Size = new System.Drawing.Size(186, 22);
+            this.checkBox_UCEmployeeTCManage_IsFinished.Size = new System.Drawing.Size(155, 22);
             this.checkBox_UCEmployeeTCManage_IsFinished.TabIndex = 40;
-            this.checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle færdige sager";
+            this.checkBox_UCEmployeeTCManage_IsFinished.Text = "Se færdige sager";
             this.checkBox_UCEmployeeTCManage_IsFinished.UseVisualStyleBackColor = true;
+            this.checkBox_UCEmployeeTCManage_IsFinished.CheckedChanged += new System.EventHandler(this.checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged);
             // 
             // objectListView__UCEmployeeTCManage_Specialities
             // 
@@ -696,6 +728,12 @@
             this.objectListView__UCEmployeeTCManage_Specialities.TabIndex = 40;
             this.objectListView__UCEmployeeTCManage_Specialities.UseCompatibleStateImageBehavior = false;
             this.objectListView__UCEmployeeTCManage_Specialities.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn_UCEmployeeTCManage_SpecialityName
+            // 
+            this.olvColumn_UCEmployeeTCManage_SpecialityName.AspectName = "Name";
+            this.olvColumn_UCEmployeeTCManage_SpecialityName.FillsFreeSpace = true;
+            this.olvColumn_UCEmployeeTCManage_SpecialityName.Text = "Name";
             // 
             // button_UCEmployeeTCManage_EditEmployee
             // 
@@ -868,43 +906,6 @@
             this.label_UCEmployeeTCManage_firstName.TabIndex = 22;
             this.label_UCEmployeeTCManage_firstName.Text = "Fornavn";
             // 
-            // objectListView__UCEmployeeTCManage_Services
-            // 
-            this.objectListView__UCEmployeeTCManage_Services.AllColumns.Add(this.olvColumn_UCEmployeeTCManage_ServiceName);
-            this.objectListView__UCEmployeeTCManage_Services.CellEditUseWholeCell = false;
-            this.objectListView__UCEmployeeTCManage_Services.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn_UCEmployeeTCManage_ServiceName});
-            this.objectListView__UCEmployeeTCManage_Services.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView__UCEmployeeTCManage_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.objectListView__UCEmployeeTCManage_Services.Location = new System.Drawing.Point(506, 290);
-            this.objectListView__UCEmployeeTCManage_Services.Name = "objectListView__UCEmployeeTCManage_Services";
-            this.objectListView__UCEmployeeTCManage_Services.ShowGroups = false;
-            this.objectListView__UCEmployeeTCManage_Services.Size = new System.Drawing.Size(279, 218);
-            this.objectListView__UCEmployeeTCManage_Services.TabIndex = 41;
-            this.objectListView__UCEmployeeTCManage_Services.UseCompatibleStateImageBehavior = false;
-            this.objectListView__UCEmployeeTCManage_Services.View = System.Windows.Forms.View.Details;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(504, 269);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(173, 18);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "Kvalificeret til ydelser:";
-            // 
-            // olvColumn_UCEmployeeTCManage_SpecialityName
-            // 
-            this.olvColumn_UCEmployeeTCManage_SpecialityName.AspectName = "Name";
-            this.olvColumn_UCEmployeeTCManage_SpecialityName.FillsFreeSpace = true;
-            this.olvColumn_UCEmployeeTCManage_SpecialityName.Text = "Name";
-            // 
-            // olvColumn_UCEmployeeTCManage_ServiceName
-            // 
-            this.olvColumn_UCEmployeeTCManage_ServiceName.AspectName = "Name";
-            this.olvColumn_UCEmployeeTCManage_ServiceName.FillsFreeSpace = true;
-            this.olvColumn_UCEmployeeTCManage_ServiceName.Text = "Name";
-            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -926,9 +927,9 @@
             this.TC_UCEmployeeTC_CreateEmployee.PerformLayout();
             this.TC_UCEmployeeTC_ManageEmployee.ResumeLayout(false);
             this.TC_UCEmployeeTC_ManageEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Services)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Specialities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView__UCEmployeeTCManage_Services)).EndInit();
             this.ResumeLayout(false);
 
         }

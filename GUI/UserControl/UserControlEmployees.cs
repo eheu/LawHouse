@@ -164,7 +164,7 @@ namespace GUI
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(selectedEmployee));
 
                 //Load datalstview with employees cases
-                List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(selectedEmployee.ID);
+                List<Case> Caselist = gui.CaseRepository.GetOpenCasesFromLawyer(selectedEmployee.ID);
                 objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
 
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
@@ -276,7 +276,7 @@ namespace GUI
             objectListView_UCEmployeeTCEdit_EditEmployee_Speciality.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
 
             //Load objectListView with employees cases
-            List<Case> Caselist = gui.CaseRepository.GetCasesFromLawyer(currentEmployee.ID);
+            List<Case> Caselist = gui.CaseRepository.GetOpenCasesFromLawyer(currentEmployee.ID);
             objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
 
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
@@ -284,17 +284,16 @@ namespace GUI
 
         private void checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged(object sender, EventArgs e)
         {
+            List<Case> Caselist;
             if (!checkBox_UCEmployeeTCManage_IsFinished.Checked)
             {
-                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle færdige sager";
-                //caselist = gui.CaseRepository.GetAllOpenCases();
-                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+                Caselist = gui.CaseRepository.GetOpenCasesFromLawyer(currentEmployee.ID);
+                objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
             }
             if (checkBox_UCEmployeeTCManage_IsFinished.Checked)
             {
-                checkBox_UCEmployeeTCManage_IsFinished.Text = "Se alle igangværende sager";
-                //caselist = gui.CaseRepository.GetAllDoneCases();
-                //objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
+                Caselist = gui.CaseRepository.GetClosedCasesFromLawyer(currentEmployee.ID);
+                objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
             }
         }
     }

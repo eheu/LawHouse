@@ -168,7 +168,7 @@ namespace DataAccess
             }
         }
 
-        public List<Case> GetCasesFromLawyer(int lawyerID)
+        public List<Case> GetOpenCasesFromLawyer(int lawyerID)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -177,7 +177,7 @@ namespace DataAccess
                     _connection.Open();
                     command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
                                             FROM [Case] 
-                                            WHERE employeeID = @lawyerID";
+                                            WHERE employeeID = @lawyerID AND status = 0";
                     command.AddParameter("lawyerID", lawyerID);
                     return MapCollection(command);
                 }
@@ -191,7 +191,30 @@ namespace DataAccess
                 }
             }
         }
+        public List<Case> GetClosedCasesFromLawyer(int lawyerID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                            FROM [Case]
+                                            WHERE employeeID = @lawyerID AND status = 1";
+                    command.AddParameter("lawyerID", lawyerID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
 
         public void Update(Case @case)
         {
