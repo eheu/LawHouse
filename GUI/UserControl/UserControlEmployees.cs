@@ -181,14 +181,14 @@ namespace GUI
         {
             Speciality selectedSpeciality = (Speciality)comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedItem;
             bool exists = false;
-            if (objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects != null)
+            if (objectListView_UCEmployeeTCCreate_Speciality.Objects != null)
             {
-                List<Speciality> specialitiesInObjectListView = objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects.Cast<Speciality>().ToList();
+                List<Speciality> specialitiesInObjectListView = objectListView_UCEmployeeTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
                 exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
             }
             if (!exists)
             {
-                objectListView_UCEmployeeTCCreate_ShowSpeciality.AddObject(selectedSpeciality);
+                objectListView_UCEmployeeTCCreate_Speciality.AddObject(selectedSpeciality);
                 comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality.SelectedIndex = -1;
             }
         }
@@ -208,7 +208,7 @@ namespace GUI
             gui.EmployeeRepository.Create(employee);
 
             //Set the Employee's Specialities
-            List<Speciality> specialities = objectListView_UCEmployeeTCCreate_ShowSpeciality.Objects.Cast<Speciality>().ToList();
+            List<Speciality> specialities = objectListView_UCEmployeeTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
 
             //Check if specialities-List is not empty
             if ((specialities != null) && (specialities.Count != 0))
