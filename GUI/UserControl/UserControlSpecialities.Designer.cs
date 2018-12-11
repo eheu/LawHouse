@@ -50,7 +50,6 @@
             this.button_UCSpecialityTCCreate_FindSpeciality = new System.Windows.Forms.Button();
             this.label_UCCSpecialityTCCreate_Create = new System.Windows.Forms.Label();
             this.TC_UCSpecialityTC_EditSpeciality = new System.Windows.Forms.TabPage();
-            this.label_UCSpecialityTCEdit_CurrentName = new System.Windows.Forms.Label();
             this.objectListView_UCSpecialityTCEdit_Services = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCSpecialityTCEdit_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label_UCSpecialityTCEdit_ServiceView = new System.Windows.Forms.Label();
@@ -325,7 +324,6 @@
             // TC_UCSpecialityTC_EditSpeciality
             // 
             this.TC_UCSpecialityTC_EditSpeciality.BackColor = System.Drawing.Color.White;
-            this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_CurrentName);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.objectListView_UCSpecialityTCEdit_Services);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ServiceView);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_Description);
@@ -346,15 +344,6 @@
             this.TC_UCSpecialityTC_EditSpeciality.Text = "Rediger";
             this.TC_UCSpecialityTC_EditSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
-            // label_UCSpecialityTCEdit_CurrentName
-            // 
-            this.label_UCSpecialityTCEdit_CurrentName.AutoSize = true;
-            this.label_UCSpecialityTCEdit_CurrentName.Location = new System.Drawing.Point(164, 169);
-            this.label_UCSpecialityTCEdit_CurrentName.Name = "label_UCSpecialityTCEdit_CurrentName";
-            this.label_UCSpecialityTCEdit_CurrentName.Size = new System.Drawing.Size(55, 18);
-            this.label_UCSpecialityTCEdit_CurrentName.TabIndex = 62;
-            this.label_UCSpecialityTCEdit_CurrentName.Text = "\"navn\"";
-            // 
             // objectListView_UCSpecialityTCEdit_Services
             // 
             this.objectListView_UCSpecialityTCEdit_Services.AllColumns.Add(this.olvColumn_UCSpecialityTCEdit_Name);
@@ -363,7 +352,7 @@
             this.olvColumn_UCSpecialityTCEdit_Name});
             this.objectListView_UCSpecialityTCEdit_Services.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCEdit_Services.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.objectListView_UCSpecialityTCEdit_Services.Location = new System.Drawing.Point(490, 46);
+            this.objectListView_UCSpecialityTCEdit_Services.Location = new System.Drawing.Point(501, 46);
             this.objectListView_UCSpecialityTCEdit_Services.Name = "objectListView_UCSpecialityTCEdit_Services";
             this.objectListView_UCSpecialityTCEdit_Services.ShowGroups = false;
             this.objectListView_UCSpecialityTCEdit_Services.Size = new System.Drawing.Size(204, 449);
@@ -381,7 +370,7 @@
             // label_UCSpecialityTCEdit_ServiceView
             // 
             this.label_UCSpecialityTCEdit_ServiceView.AutoSize = true;
-            this.label_UCSpecialityTCEdit_ServiceView.Location = new System.Drawing.Point(487, 25);
+            this.label_UCSpecialityTCEdit_ServiceView.Location = new System.Drawing.Point(498, 25);
             this.label_UCSpecialityTCEdit_ServiceView.Name = "label_UCSpecialityTCEdit_ServiceView";
             this.label_UCSpecialityTCEdit_ServiceView.Size = new System.Drawing.Size(127, 18);
             this.label_UCSpecialityTCEdit_ServiceView.TabIndex = 60;
@@ -439,9 +428,9 @@
             // 
             // textBox_UCSpecialityTCEdit_ChangeName
             // 
-            this.textBox_UCSpecialityTCEdit_ChangeName.Location = new System.Drawing.Point(305, 163);
+            this.textBox_UCSpecialityTCEdit_ChangeName.Location = new System.Drawing.Point(170, 169);
             this.textBox_UCSpecialityTCEdit_ChangeName.Name = "textBox_UCSpecialityTCEdit_ChangeName";
-            this.textBox_UCSpecialityTCEdit_ChangeName.Size = new System.Drawing.Size(121, 24);
+            this.textBox_UCSpecialityTCEdit_ChangeName.Size = new System.Drawing.Size(258, 24);
             this.textBox_UCSpecialityTCEdit_ChangeName.TabIndex = 54;
             this.textBox_UCSpecialityTCEdit_ChangeName.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
@@ -511,9 +500,9 @@
             this.label_UCSpecialityTCManage_ManageService.AutoSize = true;
             this.label_UCSpecialityTCManage_ManageService.Location = new System.Drawing.Point(12, 5);
             this.label_UCSpecialityTCManage_ManageService.Name = "label_UCSpecialityTCManage_ManageService";
-            this.label_UCSpecialityTCManage_ManageService.Size = new System.Drawing.Size(190, 18);
+            this.label_UCSpecialityTCManage_ManageService.Size = new System.Drawing.Size(217, 18);
             this.label_UCSpecialityTCManage_ManageService.TabIndex = 49;
-            this.label_UCSpecialityTCManage_ManageService.Text = "Rediger efteruddannelse";
+            this.label_UCSpecialityTCManage_ManageService.Text = "Administrer efteruddannelse";
             // 
             // objectListView_UCSpecialityTCManage_ServicesOnSpeciality
             // 
@@ -702,7 +691,6 @@
         private System.Windows.Forms.Label label_UCCSpecialityTCCreate_Name;
         private System.Windows.Forms.Button button_UCSpecialityTCCreate_FindSpeciality;
         private System.Windows.Forms.Label label_UCCSpecialityTCCreate_Create;
-        private System.Windows.Forms.Label label_UCSpecialityTCEdit_CurrentName;
         private BrightIdeasSoftware.ObjectListView objectListView_UCSpecialityTCEdit_Services;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCSpecialityTCEdit_Name;
         private System.Windows.Forms.Label label_UCSpecialityTCEdit_ServiceView;

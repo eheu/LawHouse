@@ -103,6 +103,7 @@ namespace GUI
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
         }   
 
@@ -117,12 +118,13 @@ namespace GUI
             // objectlistview 
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
             objectListView_UCCaseTCEdit_Services.SetObjects(servicesByCaseService);
-            //labels
+            //import current values
             Client client = gui.ClientRepository.Get(currentCase.ClientID);
             Employee employee = gui.EmployeeRepository.Get(currentCase.EmployeeID);
-            label_UCCaseTCEdit_CurrentName.Text = currentCase.Title;
-            label_UCCaseTCEdit_CurrentClient.Text = client.FullName;
-            label_UCCaseTCEdit_CurrentLawyer.Text = employee.FullName;
+
+            textBox_UCCaseTCEdit_ChangeName.Text = currentCase.Title;
+            comboBox_UCCaseTCEdit_ChangeClient.SelectedValue = client.ID;
+            comboBox_UCCaseTCEdit_ChangeLawyer.SelectedValue = employee.ID;
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
         }

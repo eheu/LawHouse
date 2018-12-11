@@ -87,22 +87,22 @@ namespace GUI
 
         private void button_UCServicesTCManage_EditService_Click(object sender, EventArgs e)
         {
+            
+
             richTextBox_UCServicesTCEdit_Description.Text = currentService.Description;
-
-            TabControl_UCServices.SelectedTab = TC_UCServiceTC_EditService;
-
             //labels
-            label_UCServicesTCEdit_CurrentName.Text = currentService.Name;
-            label_UCServicesTCEdit_CurrentPrice.Text = Convert.ToString(currentService.Price);
+            textBox_UCServiceTCEdit_ChangeName.Text = currentService.Name;
+            textBox_UCServiceTCEdit_ChangePrice.Text = Convert.ToString(currentService.Price);
             if (currentService.IsHourly == true)
             {
-                label_UCServicesTCEdit_CurrentIsHourly.Text = "Timepris";
+                radioButton_UCCServiceTCEdit_IsHourlyYes.Checked = true;
             }
             else
             {
-                label_UCServicesTCEdit_CurrentIsHourly.Text = "Fastpris";
+                radioButton_UCCServiceTCEdit_IsHourlyNo.Checked = true;
             }
 
+            TabControl_UCServices.SelectedTab = TC_UCServiceTC_EditService;
 
         }
 
