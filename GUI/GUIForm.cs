@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+//using BrightIdeasSoftware;
 using BusinessLogic.Interfaces;
 
 namespace GUI
@@ -302,8 +303,9 @@ namespace GUI
                     ((RichTextBox)ctrl).Text = string.Empty;
                 else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
-                //else if (ctrl is NumericUpDown)
-                //    ((NumericUpDown)ctrl). = ;
+                else if (ctrl is BrightIdeasSoftware.ObjectListView) 
+                    ((BrightIdeasSoftware.ObjectListView)ctrl).Clear();
+
                 ClearTextBoxesAndComboBoxesAndListBoxes(ctrl.Controls);
             }
         }
