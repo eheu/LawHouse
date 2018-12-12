@@ -16,11 +16,14 @@ namespace BusinessLogic.Interfaces
         ///     Load all cases with a relation to the client.
         /// </summary>
         List<Case> GetCasesFromClient(int clientID);
-
         /// <summary>
-        ///     Load all cases with a relation to the lawyer.
+        ///     Load all open cases with a relation to the lawyer.
         /// </summary>
-        List<Case> GetCasesFromLawyer(int lawyerID);
+        List<Case> GetOpenCasesFromLawyer(int lawyerID);
+        /// <summary>
+        ///     Load all closed cases with a relation to the lawyer
+        /// </summary>
+        List<Case> GetClosedCasesFromLawyer(int lawyerID);
         /// <summary>
         ///     Load all existing entities that has status 0 (not done)
         /// </summary>
@@ -33,7 +36,7 @@ namespace BusinessLogic.Interfaces
         /// <summary>
         ///     Check if a lawyer has one or more cases.
         /// </summary>
-        int CheckIflawyerHasCases(int lawyerID);
+        int GetCaseCountFromLawyer(int lawyerID);
 
     }
 }

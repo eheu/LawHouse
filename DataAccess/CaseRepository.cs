@@ -168,7 +168,7 @@ namespace DataAccess
             }
         }
 
-        public List<Case> GetCasesFromLawyer(int lawyerID)
+        public List<Case> GetOpenCasesFromLawyer(int lawyerID)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -177,7 +177,7 @@ namespace DataAccess
                     _connection.Open();
                     command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
                                             FROM [Case] 
-                                            WHERE employeeID = @lawyerID";
+                                            WHERE employeeID = @lawyerID AND status = 0";
                     command.AddParameter("lawyerID", lawyerID);
                     return MapCollection(command);
                 }
@@ -191,8 +191,54 @@ namespace DataAccess
                 }
             }
         }
+        public List<Case> GetClosedCasesFromLawyer(int lawyerID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT ID, title, description, status, startDate, endDate, clientID, employeeID
+                                            FROM [Case]
+                                            WHERE employeeID = @lawyerID AND status = 1";
+                    command.AddParameter("lawyerID", lawyerID);
+                    return MapCollection(command);
+                }
+                catch (Exception)
+                {
 
-
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
+        public int GetCaseCountFromLawyer(int lawyerID)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    command.CommandText = @"SELECT COUNT(*)
+                                            FROM [Case] 
+                                            WHERE employeeID = @lawyerID";
+                    command.AddParameter("lawyerID", lawyerID);
+                    int countCases = (int)command.ExecuteScalar();
+                    return countCases;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
+        }
         public void Update(Case @case)
         {
 
@@ -214,7 +260,7 @@ namespace DataAccess
                     command.AddParameter("status", @case.Status);
                     command.AddParameter("clientID", @case.ClientID);
                     command.AddParameter("employeeID", @case.EmployeeID);
-                    if (@case.EndDate == DateTime.MinValue )
+                    if (@case.EndDate == default(DateTime))
                     {
                         command.AddParameter("endDate", DBNull.Value);
                     }
@@ -280,31 +326,6 @@ namespace DataAccess
                     items.Add(item);
                 }
                 return items;
-            }
-        }
-
-        public int CheckIflawyerHasCases(int lawyerID)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                try
-                {
-                    _connection.Open();
-                    command.CommandText = @"SELECT COUNT(*)
-                                            FROM [Case] 
-                                            WHERE employeeID = @lawyerID";
-                    command.AddParameter("lawyerID", lawyerID);
-                    int rowsAffected = (Int32) command.ExecuteScalar();
-                    return rowsAffected;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _connection.Close();
-                }
             }
         }
     }
