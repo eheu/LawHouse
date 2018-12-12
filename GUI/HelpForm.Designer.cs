@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
-            this.HelpPDFReader = new AxAcroPDFLib.AxAcroPDF();
-            ((System.ComponentModel.ISupportInitialize)(this.HelpPDFReader)).BeginInit();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // HelpPDFReader
+            // webBrowser1
             // 
-            this.HelpPDFReader.Enabled = true;
-            this.HelpPDFReader.Location = new System.Drawing.Point(12, 43);
-            this.HelpPDFReader.Name = "HelpPDFReader";
-            this.HelpPDFReader.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("HelpPDFReader.OcxState")));
-            this.HelpPDFReader.Size = new System.Drawing.Size(707, 493);
-            this.HelpPDFReader.TabIndex = 0;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(731, 576);
+            this.webBrowser1.TabIndex = 0;
             // 
             // HelpForm
             // 
@@ -48,17 +46,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(731, 576);
-            this.Controls.Add(this.HelpPDFReader);
+            this.Controls.Add(this.webBrowser1);
             this.Name = "HelpForm";
             this.Text = "HelpForm";
             this.Load += new System.EventHandler(this.HelpForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.HelpPDFReader)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private AxAcroPDFLib.AxAcroPDF HelpPDFReader;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
