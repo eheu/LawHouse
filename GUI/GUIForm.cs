@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-//using BrightIdeasSoftware;
 using BusinessLogic.Interfaces;
 
 namespace GUI
@@ -264,15 +263,19 @@ namespace GUI
         }
         private void HelpBtn_Click(object sender, EventArgs e)
         {
-            buttonBackColor(HelpBtn);
-            userControlCases.Hide();
-            userControlEmployees.Hide();
-            userControlClients.Hide();
-            userControlSpecialities.Hide();
-            userControlServices.Hide();
-            userControlHelp.Show();
-            userControlHelp.Dock = DockStyle.Fill;
-            UcContainer.Controls.Add(userControlHelp);
+            //buttonBackColor(HelpBtn);
+            //userControlCases.Hide();
+            //userControlEmployees.Hide();
+            //userControlClients.Hide();
+            //userControlSpecialities.Hide();
+            //userControlServices.Hide();
+            //userControlHelp.Show();
+            //userControlHelp.Dock = DockStyle.Fill;
+            //UcContainer.Controls.Add(userControlHelp);
+
+
+            HelpForm HelpForm = new HelpForm();
+            HelpForm.Show();
         }
 
         private void Menu_leave(object sender, EventArgs e)
