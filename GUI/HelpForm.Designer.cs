@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.HelpPDFReader = new Spire.PdfViewer.Forms.PdfDocumentViewer();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // HelpPDFReader
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(731, 576);
-            this.webBrowser1.TabIndex = 0;
+            this.HelpPDFReader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.HelpPDFReader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HelpPDFReader.Location = new System.Drawing.Point(0, 0);
+            this.HelpPDFReader.MultiPagesThreshold = 60;
+            this.HelpPDFReader.Name = "HelpPDFReader";
+            this.HelpPDFReader.Size = new System.Drawing.Size(720, 554);
+            this.HelpPDFReader.TabIndex = 0;
+            this.HelpPDFReader.Text = "pdfDocumentViewer1";
+            this.HelpPDFReader.Threshold = 60;
+            this.HelpPDFReader.ZoomMode = Spire.PdfViewer.Forms.ZoomMode.Default;
             // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(731, 576);
-            this.Controls.Add(this.webBrowser1);
+            this.ClientSize = new System.Drawing.Size(720, 554);
+            this.Controls.Add(this.HelpPDFReader);
             this.Name = "HelpForm";
             this.Text = "HelpForm";
             this.Load += new System.EventHandler(this.HelpForm_Load);
@@ -56,6 +60,6 @@
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private Spire.PdfViewer.Forms.PdfDocumentViewer HelpPDFReader;
     }
 }
