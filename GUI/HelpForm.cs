@@ -23,7 +23,7 @@ namespace GUI
             doc.LoadFromFile(path);
             PdfDestination destination = new PdfDestination(doc.Pages[2]);
             PdfGoToAction action = new PdfGoToAction(destination);
-            //action.Destination.Zoom = 1F;
+            action.Destination.Zoom = 1F;
             doc.AfterOpenAction = action;
             doc.SaveToFile("PDFTest.pdf", FileFormat.PDF);
 
