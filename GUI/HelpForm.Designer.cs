@@ -53,6 +53,7 @@
             this.Controls.Add(this.HelpPDFReader);
             this.Name = "HelpForm";
             this.Text = "HelpForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HelpForm_FormClosed);
             this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
 

@@ -261,21 +261,22 @@ namespace GUI
         {
             buttonForeColorLeave(HelpBtn);
         }
+
+        /// <summary>
+        /// Starts helpform or Brings it To Front
+        /// </summary>
+        public HelpForm helpForm = null;
         private void HelpBtn_Click(object sender, EventArgs e)
         {
-            //buttonBackColor(HelpBtn);
-            //userControlCases.Hide();
-            //userControlEmployees.Hide();
-            //userControlClients.Hide();
-            //userControlSpecialities.Hide();
-            //userControlServices.Hide();
-            //userControlHelp.Show();
-            //userControlHelp.Dock = DockStyle.Fill;
-            //UcContainer.Controls.Add(userControlHelp);
-
-
-            HelpForm HelpForm = new HelpForm();
-            HelpForm.Show();
+            if (helpForm != null)
+            {
+                helpForm.BringToFront();
+            }
+            else
+            {
+                helpForm = new HelpForm(this);
+                helpForm.Show();
+            }
         }
 
         private void Menu_leave(object sender, EventArgs e)
