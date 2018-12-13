@@ -35,17 +35,23 @@ namespace GUI
         private void button_UCEmployeeTCFind_CreateEmployee_Click(object sender, EventArgs e)
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_CreateEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Ansat");
         }
 
         private void button_UCEmployeeTCCreate_FindEmployee_Click(object sender, EventArgs e)
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ansat");
         }
 
-        private void button_UCEmployeeTCEdit_Back_ManageEmployee_Click(object sender, EventArgs e)
+        private void button_UCEmployeeTCEdit_FindEmployee_Click(object sender, EventArgs e)
         {
             //her mangler vi at reloade UCEmployeeTCManage controlsne
-            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ansat");
         }
 
 
@@ -133,6 +139,8 @@ namespace GUI
 
             //Go back to Find Employee
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ansat");
         }
 
 
@@ -170,6 +178,8 @@ namespace GUI
                 objectListView__UCEmployeeTCManage_Services.SetObjects(gui.ServiceRepository.GetServicesFromEmployee(currentEmployee));
 
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
+                //GUINavigationLabel
+                gui.setGUINavigationLabel("Administrer Ansat");
             }
         }
         #endregion
@@ -254,6 +264,8 @@ namespace GUI
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
             //Go back to Find Employee
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ansat");
         }
 
         private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
@@ -280,6 +292,8 @@ namespace GUI
             objectListView_UCEmployeeTCEdit_EditEmployee_ShowCases.SetObjects(Caselist);
 
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_EditEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Ansat");
         }
 
         private void checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged(object sender, EventArgs e)
@@ -295,6 +309,13 @@ namespace GUI
                 Caselist = gui.CaseRepository.GetClosedCasesFromLawyer(currentEmployee.ID);
                 objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
             }
+        }
+
+        private void button_UCEmployeeTCEdit_ManageCase_Click(object sender, EventArgs e)
+        {
+            TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ansat");
         }
     }
 }

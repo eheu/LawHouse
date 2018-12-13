@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.TabControl_UCClient = new System.Windows.Forms.TabControl();
-            this.TC_UCEmployeeTC_FindClient = new System.Windows.Forms.TabPage();
+            this.TC_UCClientTC_FindClient = new System.Windows.Forms.TabPage();
             this.textBox_UCClientTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCClientTCFind_Search = new System.Windows.Forms.Label();
             this.objectListView_UCClientTCFind_FindClient = new BrightIdeasSoftware.DataListView();
@@ -39,9 +39,9 @@
             this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCClientTCFind_CreateClient = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TC_UCEmployeeTC_EditClient = new System.Windows.Forms.TabPage();
-            this.bottom_UCClientTCEdit_Back = new System.Windows.Forms.Button();
+            this.TC_UCClientTC_EditClient = new System.Windows.Forms.TabPage();
+            this.button_UCClientTCEdit_ManageClient = new System.Windows.Forms.Button();
+            this.bottom_UCClientTCEdit_FindCase = new System.Windows.Forms.Button();
             this.bottom_UCClientTCEdit_Save = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.objectListView_UCClientTCEdit = new BrightIdeasSoftware.ObjectListView();
@@ -57,8 +57,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TC_UCEmployeeTC_CreateClient = new System.Windows.Forms.TabPage();
+            this.TC_UCClientTC_CreateClient = new System.Windows.Forms.TabPage();
             this.label_UCClientTCCreate_Save = new System.Windows.Forms.Label();
             this.bottom_UCClientTCCreate_Save = new System.Windows.Forms.Button();
             this.textbox_UCClientTCCreate_email = new System.Windows.Forms.TextBox();
@@ -72,8 +71,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button_UCClientTCCreate_FindClient = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TC_UCEmployeeTC_ManageClient = new System.Windows.Forms.TabPage();
+            this.TC_UCClientTC_ManageClient = new System.Windows.Forms.TabPage();
             this.bottom_UCClientTCManage_Edit = new System.Windows.Forms.Button();
             this.label_UCClientTCManage_email_Show = new System.Windows.Forms.Label();
             this.label_UCClientTCManage_addresse_Show = new System.Windows.Forms.Label();
@@ -90,24 +88,23 @@
             this.label_UCClientTCManage_phone = new System.Windows.Forms.Label();
             this.label_UCClientTCManage_lastName = new System.Windows.Forms.Label();
             this.label_UCClientTCManage_firstName = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.TabControl_UCClient.SuspendLayout();
-            this.TC_UCEmployeeTC_FindClient.SuspendLayout();
+            this.TC_UCClientTC_FindClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCFind_FindClient)).BeginInit();
-            this.TC_UCEmployeeTC_EditClient.SuspendLayout();
+            this.TC_UCClientTC_EditClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCEdit)).BeginInit();
-            this.TC_UCEmployeeTC_CreateClient.SuspendLayout();
-            this.TC_UCEmployeeTC_ManageClient.SuspendLayout();
+            this.TC_UCClientTC_CreateClient.SuspendLayout();
+            this.TC_UCClientTC_ManageClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCManage)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_UCClient
             // 
             this.TabControl_UCClient.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.TabControl_UCClient.Controls.Add(this.TC_UCEmployeeTC_FindClient);
-            this.TabControl_UCClient.Controls.Add(this.TC_UCEmployeeTC_EditClient);
-            this.TabControl_UCClient.Controls.Add(this.TC_UCEmployeeTC_CreateClient);
-            this.TabControl_UCClient.Controls.Add(this.TC_UCEmployeeTC_ManageClient);
+            this.TabControl_UCClient.Controls.Add(this.TC_UCClientTC_FindClient);
+            this.TabControl_UCClient.Controls.Add(this.TC_UCClientTC_EditClient);
+            this.TabControl_UCClient.Controls.Add(this.TC_UCClientTC_CreateClient);
+            this.TabControl_UCClient.Controls.Add(this.TC_UCClientTC_ManageClient);
             this.TabControl_UCClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.TabControl_UCClient.ItemSize = new System.Drawing.Size(0, 1);
@@ -118,21 +115,20 @@
             this.TabControl_UCClient.Size = new System.Drawing.Size(1157, 566);
             this.TabControl_UCClient.TabIndex = 0;
             // 
-            // TC_UCEmployeeTC_FindClient
+            // TC_UCClientTC_FindClient
             // 
-            this.TC_UCEmployeeTC_FindClient.BackColor = System.Drawing.Color.White;
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.textBox_UCClientTCFind_Search);
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label_UCClientTCFind_Search);
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.objectListView_UCClientTCFind_FindClient);
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.button_UCClientTCFind_CreateClient);
-            this.TC_UCEmployeeTC_FindClient.Controls.Add(this.label2);
-            this.TC_UCEmployeeTC_FindClient.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCEmployeeTC_FindClient.Name = "TC_UCEmployeeTC_FindClient";
-            this.TC_UCEmployeeTC_FindClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_FindClient.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCEmployeeTC_FindClient.TabIndex = 0;
-            this.TC_UCEmployeeTC_FindClient.Text = "Find";
-            this.TC_UCEmployeeTC_FindClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
+            this.TC_UCClientTC_FindClient.BackColor = System.Drawing.Color.White;
+            this.TC_UCClientTC_FindClient.Controls.Add(this.textBox_UCClientTCFind_Search);
+            this.TC_UCClientTC_FindClient.Controls.Add(this.label_UCClientTCFind_Search);
+            this.TC_UCClientTC_FindClient.Controls.Add(this.objectListView_UCClientTCFind_FindClient);
+            this.TC_UCClientTC_FindClient.Controls.Add(this.button_UCClientTCFind_CreateClient);
+            this.TC_UCClientTC_FindClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCClientTC_FindClient.Name = "TC_UCClientTC_FindClient";
+            this.TC_UCClientTC_FindClient.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCClientTC_FindClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCClientTC_FindClient.TabIndex = 0;
+            this.TC_UCClientTC_FindClient.Text = "Find";
+            this.TC_UCClientTC_FindClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             // 
             // textBox_UCClientTCFind_Search
             // 
@@ -219,50 +215,51 @@
             this.button_UCClientTCFind_CreateClient.UseVisualStyleBackColor = true;
             this.button_UCClientTCFind_CreateClient.Click += new System.EventHandler(this.button_UCClientTCFind_CreateClient_Click);
             // 
-            // label2
+            // TC_UCClientTC_EditClient
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Find klient";
+            this.TC_UCClientTC_EditClient.BackColor = System.Drawing.Color.White;
+            this.TC_UCClientTC_EditClient.Controls.Add(this.button_UCClientTCEdit_ManageClient);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_FindCase);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_Save);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label14);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.objectListView_UCClientTCEdit);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_email);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_addresse);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_phone);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_lastName);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_firstName);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label9);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label10);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label11);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label12);
+            this.TC_UCClientTC_EditClient.Controls.Add(this.label13);
+            this.TC_UCClientTC_EditClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCClientTC_EditClient.Name = "TC_UCClientTC_EditClient";
+            this.TC_UCClientTC_EditClient.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCClientTC_EditClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCClientTC_EditClient.TabIndex = 1;
+            this.TC_UCClientTC_EditClient.Text = "Ændre";
+            this.TC_UCClientTC_EditClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             // 
-            // TC_UCEmployeeTC_EditClient
+            // button_UCClientTCEdit_ManageClient
             // 
-            this.TC_UCEmployeeTC_EditClient.BackColor = System.Drawing.Color.White;
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_Back);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.bottom_UCClientTCEdit_Save);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label14);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.objectListView_UCClientTCEdit);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_email);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_addresse);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_phone);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_lastName);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.textbox_UCClientTCEdit_firstName);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label9);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label10);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label11);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label12);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label13);
-            this.TC_UCEmployeeTC_EditClient.Controls.Add(this.label3);
-            this.TC_UCEmployeeTC_EditClient.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCEmployeeTC_EditClient.Name = "TC_UCEmployeeTC_EditClient";
-            this.TC_UCEmployeeTC_EditClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_EditClient.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCEmployeeTC_EditClient.TabIndex = 1;
-            this.TC_UCEmployeeTC_EditClient.Text = "Ændre";
-            this.TC_UCEmployeeTC_EditClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
+            this.button_UCClientTCEdit_ManageClient.Location = new System.Drawing.Point(132, 27);
+            this.button_UCClientTCEdit_ManageClient.Name = "button_UCClientTCEdit_ManageClient";
+            this.button_UCClientTCEdit_ManageClient.Size = new System.Drawing.Size(149, 31);
+            this.button_UCClientTCEdit_ManageClient.TabIndex = 26;
+            this.button_UCClientTCEdit_ManageClient.Text = "Administrer Klient";
+            this.button_UCClientTCEdit_ManageClient.UseVisualStyleBackColor = true;
+            this.button_UCClientTCEdit_ManageClient.Click += new System.EventHandler(this.button_UCClientTCEdit_ManageClient_Click);
             // 
-            // bottom_UCClientTCEdit_Back
+            // bottom_UCClientTCEdit_FindCase
             // 
-            this.bottom_UCClientTCEdit_Back.Location = new System.Drawing.Point(6, 27);
-            this.bottom_UCClientTCEdit_Back.Name = "bottom_UCClientTCEdit_Back";
-            this.bottom_UCClientTCEdit_Back.Size = new System.Drawing.Size(102, 30);
-            this.bottom_UCClientTCEdit_Back.TabIndex = 25;
-            this.bottom_UCClientTCEdit_Back.Text = "Tilbage";
-            this.bottom_UCClientTCEdit_Back.UseVisualStyleBackColor = true;
-            this.bottom_UCClientTCEdit_Back.Click += new System.EventHandler(this.bottom_UCClientTCEdit_Back_Click);
+            this.bottom_UCClientTCEdit_FindCase.Location = new System.Drawing.Point(6, 27);
+            this.bottom_UCClientTCEdit_FindCase.Name = "bottom_UCClientTCEdit_FindCase";
+            this.bottom_UCClientTCEdit_FindCase.Size = new System.Drawing.Size(102, 30);
+            this.bottom_UCClientTCEdit_FindCase.TabIndex = 25;
+            this.bottom_UCClientTCEdit_FindCase.Text = "Find Klient";
+            this.bottom_UCClientTCEdit_FindCase.UseVisualStyleBackColor = true;
+            this.bottom_UCClientTCEdit_FindCase.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
             // 
             // bottom_UCClientTCEdit_Save
             // 
@@ -397,39 +394,29 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Fornavn";
             // 
-            // label3
+            // TC_UCClientTC_CreateClient
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 18);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Ændre klient";
-            // 
-            // TC_UCEmployeeTC_CreateClient
-            // 
-            this.TC_UCEmployeeTC_CreateClient.BackColor = System.Drawing.Color.White;
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label_UCClientTCCreate_Save);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.bottom_UCClientTCCreate_Save);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_email);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_addresse);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_phone);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_lastName);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_firstName);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label8);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label7);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label6);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label5);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label4);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.button_UCClientTCCreate_FindClient);
-            this.TC_UCEmployeeTC_CreateClient.Controls.Add(this.label1);
-            this.TC_UCEmployeeTC_CreateClient.Location = new System.Drawing.Point(4, 54);
-            this.TC_UCEmployeeTC_CreateClient.Name = "TC_UCEmployeeTC_CreateClient";
-            this.TC_UCEmployeeTC_CreateClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_CreateClient.Size = new System.Drawing.Size(1149, 508);
-            this.TC_UCEmployeeTC_CreateClient.TabIndex = 2;
-            this.TC_UCEmployeeTC_CreateClient.Text = "Opret";
-            this.TC_UCEmployeeTC_CreateClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
+            this.TC_UCClientTC_CreateClient.BackColor = System.Drawing.Color.White;
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label_UCClientTCCreate_Save);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.bottom_UCClientTCCreate_Save);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_email);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_addresse);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_phone);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_lastName);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.textbox_UCClientTCCreate_firstName);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label8);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label7);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label6);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label5);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.label4);
+            this.TC_UCClientTC_CreateClient.Controls.Add(this.button_UCClientTCCreate_FindClient);
+            this.TC_UCClientTC_CreateClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCClientTC_CreateClient.Name = "TC_UCClientTC_CreateClient";
+            this.TC_UCClientTC_CreateClient.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCClientTC_CreateClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCClientTC_CreateClient.TabIndex = 2;
+            this.TC_UCClientTC_CreateClient.Text = "Opret";
+            this.TC_UCClientTC_CreateClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             // 
             // label_UCClientTCCreate_Save
             // 
@@ -542,50 +529,40 @@
             this.button_UCClientTCCreate_FindClient.TabIndex = 1;
             this.button_UCClientTCCreate_FindClient.Text = "Find klient";
             this.button_UCClientTCCreate_FindClient.UseVisualStyleBackColor = true;
-            this.button_UCClientTCCreate_FindClient.Click += new System.EventHandler(this.bottom_UCClientTCEdit_Back_Click);
+            this.button_UCClientTCCreate_FindClient.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
             // 
-            // label1
+            // TC_UCClientTC_ManageClient
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Opret klient";
-            // 
-            // TC_UCEmployeeTC_ManageClient
-            // 
-            this.TC_UCEmployeeTC_ManageClient.BackColor = System.Drawing.Color.White;
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.bottom_UCClientTCManage_Edit);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_email_Show);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_addresse_Show);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_phone_Show);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_lastName_Show);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName_Show);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.bottom_UCClientTCManage_Back);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label15);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.objectListView_UCClientTCManage);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_email);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_addresse);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_phone);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_lastName);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName);
-            this.TC_UCEmployeeTC_ManageClient.Controls.Add(this.label21);
-            this.TC_UCEmployeeTC_ManageClient.Location = new System.Drawing.Point(4, 5);
-            this.TC_UCEmployeeTC_ManageClient.Name = "TC_UCEmployeeTC_ManageClient";
-            this.TC_UCEmployeeTC_ManageClient.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_ManageClient.Size = new System.Drawing.Size(1149, 557);
-            this.TC_UCEmployeeTC_ManageClient.TabIndex = 3;
-            this.TC_UCEmployeeTC_ManageClient.Text = "Administrer";
-            this.TC_UCEmployeeTC_ManageClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
+            this.TC_UCClientTC_ManageClient.BackColor = System.Drawing.Color.White;
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.bottom_UCClientTCManage_Edit);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_email_Show);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_addresse_Show);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_phone_Show);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_lastName_Show);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName_Show);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.bottom_UCClientTCManage_Back);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label15);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.objectListView_UCClientTCManage);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_email);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_addresse);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_phone);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_lastName);
+            this.TC_UCClientTC_ManageClient.Controls.Add(this.label_UCClientTCManage_firstName);
+            this.TC_UCClientTC_ManageClient.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCClientTC_ManageClient.Name = "TC_UCClientTC_ManageClient";
+            this.TC_UCClientTC_ManageClient.Padding = new System.Windows.Forms.Padding(3);
+            this.TC_UCClientTC_ManageClient.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCClientTC_ManageClient.TabIndex = 3;
+            this.TC_UCClientTC_ManageClient.Text = "Administrer";
+            this.TC_UCClientTC_ManageClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             // 
             // bottom_UCClientTCManage_Edit
             // 
-            this.bottom_UCClientTCManage_Edit.Location = new System.Drawing.Point(114, 27);
+            this.bottom_UCClientTCManage_Edit.Location = new System.Drawing.Point(132, 27);
             this.bottom_UCClientTCManage_Edit.Name = "bottom_UCClientTCManage_Edit";
-            this.bottom_UCClientTCManage_Edit.Size = new System.Drawing.Size(102, 30);
+            this.bottom_UCClientTCManage_Edit.Size = new System.Drawing.Size(123, 30);
             this.bottom_UCClientTCManage_Edit.TabIndex = 45;
-            this.bottom_UCClientTCManage_Edit.Text = "Redigere";
+            this.bottom_UCClientTCManage_Edit.Text = "Rediger Klient";
             this.bottom_UCClientTCManage_Edit.UseVisualStyleBackColor = true;
             this.bottom_UCClientTCManage_Edit.Click += new System.EventHandler(this.bottom_UCClientTCManage_Edit_Click);
             // 
@@ -640,9 +617,9 @@
             this.bottom_UCClientTCManage_Back.Name = "bottom_UCClientTCManage_Back";
             this.bottom_UCClientTCManage_Back.Size = new System.Drawing.Size(102, 30);
             this.bottom_UCClientTCManage_Back.TabIndex = 39;
-            this.bottom_UCClientTCManage_Back.Text = "Tilbage";
+            this.bottom_UCClientTCManage_Back.Text = "Find Klient";
             this.bottom_UCClientTCManage_Back.UseVisualStyleBackColor = true;
-            this.bottom_UCClientTCManage_Back.Click += new System.EventHandler(this.bottom_UCClientTCEdit_Back_Click);
+            this.bottom_UCClientTCManage_Back.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
             // 
             // label15
             // 
@@ -728,15 +705,6 @@
             this.label_UCClientTCManage_firstName.TabIndex = 27;
             this.label_UCClientTCManage_firstName.Text = "Fornavn";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 6);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(102, 18);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "Ændre klient";
-            // 
             // UserControlClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,16 +715,16 @@
             this.Size = new System.Drawing.Size(1157, 566);
             this.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             this.TabControl_UCClient.ResumeLayout(false);
-            this.TC_UCEmployeeTC_FindClient.ResumeLayout(false);
-            this.TC_UCEmployeeTC_FindClient.PerformLayout();
+            this.TC_UCClientTC_FindClient.ResumeLayout(false);
+            this.TC_UCClientTC_FindClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCFind_FindClient)).EndInit();
-            this.TC_UCEmployeeTC_EditClient.ResumeLayout(false);
-            this.TC_UCEmployeeTC_EditClient.PerformLayout();
+            this.TC_UCClientTC_EditClient.ResumeLayout(false);
+            this.TC_UCClientTC_EditClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCEdit)).EndInit();
-            this.TC_UCEmployeeTC_CreateClient.ResumeLayout(false);
-            this.TC_UCEmployeeTC_CreateClient.PerformLayout();
-            this.TC_UCEmployeeTC_ManageClient.ResumeLayout(false);
-            this.TC_UCEmployeeTC_ManageClient.PerformLayout();
+            this.TC_UCClientTC_CreateClient.ResumeLayout(false);
+            this.TC_UCClientTC_CreateClient.PerformLayout();
+            this.TC_UCClientTC_ManageClient.ResumeLayout(false);
+            this.TC_UCClientTC_ManageClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCClientTCManage)).EndInit();
             this.ResumeLayout(false);
 
@@ -765,14 +733,12 @@
         #endregion
 
         private System.Windows.Forms.TabControl TabControl_UCClient;
-        private System.Windows.Forms.TabPage TC_UCEmployeeTC_FindClient;
-        private System.Windows.Forms.TabPage TC_UCEmployeeTC_EditClient;
-        private System.Windows.Forms.TabPage TC_UCEmployeeTC_CreateClient;
+        private System.Windows.Forms.TabPage TC_UCClientTC_FindClient;
+        private System.Windows.Forms.TabPage TC_UCClientTC_EditClient;
+        private System.Windows.Forms.TabPage TC_UCClientTC_CreateClient;
         private System.Windows.Forms.Button button_UCClientTCCreate_FindClient;
-        private System.Windows.Forms.Label label1;
         private BrightIdeasSoftware.DataListView objectListView_UCClientTCFind_FindClient;
         private System.Windows.Forms.Button button_UCClientTCFind_CreateClient;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_UCClientTCFind_Search;
         private System.Windows.Forms.Label label_UCClientTCFind_Search;
         private BrightIdeasSoftware.ObjectListView objectListView_UCClientTCEdit;
@@ -786,7 +752,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textbox_UCClientTCCreate_email;
         private System.Windows.Forms.TextBox textbox_UCClientTCCreate_addresse;
         private System.Windows.Forms.TextBox textbox_UCClientTCCreate_phone;
@@ -806,10 +771,10 @@
         private BrightIdeasSoftware.OLVColumn olvColumn5;
         private System.Windows.Forms.Button bottom_UCClientTCCreate_Save;
         private System.Windows.Forms.Label label_UCClientTCCreate_Save;
-        private System.Windows.Forms.Button bottom_UCClientTCEdit_Back;
+        private System.Windows.Forms.Button bottom_UCClientTCEdit_FindCase;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCClient_TCEdit_cases_name;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCClient_TCEdit_laywer_name;
-        private System.Windows.Forms.TabPage TC_UCEmployeeTC_ManageClient;
+        private System.Windows.Forms.TabPage TC_UCClientTC_ManageClient;
         private System.Windows.Forms.Button bottom_UCClientTCManage_Edit;
         private System.Windows.Forms.Label label_UCClientTCManage_email_Show;
         private System.Windows.Forms.Label label_UCClientTCManage_addresse_Show;
@@ -826,6 +791,6 @@
         private System.Windows.Forms.Label label_UCClientTCManage_phone;
         private System.Windows.Forms.Label label_UCClientTCManage_lastName;
         private System.Windows.Forms.Label label_UCClientTCManage_firstName;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button_UCClientTCEdit_ManageClient;
     }
 }

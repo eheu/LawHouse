@@ -86,11 +86,15 @@ namespace GUI
         private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_CreateCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Sag");
         }
 
         private void button_UCCaseTCEdit_FindCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Sag");
         }
 
         private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
@@ -99,17 +103,23 @@ namespace GUI
             LoadCaseservicesTObjectListView(currentCase);
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Sag");
         }
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Sag");
         }   
 
         private void button_UCCaseTCManage_FindCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Sag");
         }
 
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
@@ -127,6 +137,8 @@ namespace GUI
             comboBox_UCCaseTCEdit_ChangeLawyer.SelectedValue = employee.ID;
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_EditCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Sag");
         }
 
         private void button_UCCaseTCCreate_CreateCase_Click(object sender, EventArgs e)
@@ -158,6 +170,8 @@ namespace GUI
 
             currentCase = @case;
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Sag");
         }
 
         
@@ -213,6 +227,8 @@ namespace GUI
             comboBox_UCCaseTCEdit_ChangeLawyer.SelectedIndex = -1;
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Sag");
 
         }
 
@@ -223,6 +239,8 @@ namespace GUI
             //Refresh Find case object list view
             SetObjectListViewCases();
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Sag");
         }
 
         private void button_UCCaseTCEdit_RemoveService_Click(object sender, EventArgs e)
@@ -292,13 +310,11 @@ namespace GUI
         {
             if (!checkBox_UCCaseTCFind_IsFinished.Checked)
             {
-                //checkBox_UCCaseTCFind_IsFinished.Text = "Se alle færdige sager";
                 caselist = gui.CaseRepository.GetAllOpenCases();
                 objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
             }
             if (checkBox_UCCaseTCFind_IsFinished.Checked)
             {
-                //checkBox_UCCaseTCFind_IsFinished.Text = "Se alle igangværende sager";
                 caselist = gui.CaseRepository.GetAllDoneCases();
                 objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
             }
@@ -317,6 +333,8 @@ namespace GUI
                 TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
                 if (checkBox_UCCaseTCFind_IsFinished.Checked)
                     checkBox_UCCaseTCFind_IsFinished.Checked = false;
+                //GUINavigationLabel
+                gui.setGUINavigationLabel("Find Sag");
             }
             else if (!currentCase.Status)
             {
@@ -327,6 +345,8 @@ namespace GUI
                 //Refresh Find case object list view
                 SetObjectListViewCases();
                 TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
+                //GUINavigationLabel
+                gui.setGUINavigationLabel("Find Sag");
 
             }
             

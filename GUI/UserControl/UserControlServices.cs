@@ -60,29 +60,39 @@ namespace GUI
         {
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_CreateService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Ydelse");
         }
 
         private void button_UCServicesTCCreate_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCEdit_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCEdit_ManageService_Click(object sender, EventArgs e)
         {
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void button_UCServicesTCManage_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCManage_EditService_Click(object sender, EventArgs e)
@@ -103,7 +113,8 @@ namespace GUI
             }
 
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_EditService;
-
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Ydelse");
         }
 
         private void objectListView_UCServiceTCFind_FindService_MousedoubleClick(object sender, MouseEventArgs e)
@@ -116,7 +127,8 @@ namespace GUI
             objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
 
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
-
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void SetCurrentService()
@@ -147,6 +159,8 @@ namespace GUI
             gui.ServiceRepository.Create(service);
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         /// <summary>
@@ -184,6 +198,8 @@ namespace GUI
             label_UCServicesTCManage_ServiceName.Text = currentService.Name;
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_EditService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void button_UCServicesTCEdit_DeleteService_Click(object sender, EventArgs e)
@@ -191,6 +207,8 @@ namespace GUI
             gui.ServiceRepository.Delete(currentService);
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCManage_AddSpeciality_Click(object sender, EventArgs e)
