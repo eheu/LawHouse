@@ -37,6 +37,8 @@ namespace GUI
         {
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_CreateSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_CreateSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Efteruddannelse");
         }
 
         private void SetAddServiceComboBox()
@@ -50,23 +52,31 @@ namespace GUI
         {
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Efteruddannelse");
         }
 
         private void button_UCSpecialityTCEdit_FindSpeciality_Click(object sender, EventArgs e)
         {
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Efteruddannelse");
         }
 
         private void button_UCSpecialityTCEdit_ManageSpeciality_Click(object sender, EventArgs e)
         {
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
 
         private void button_UCSpecialityTCManage_FindSpeciality_Click(object sender, EventArgs e)
         {
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Efteruddannelse");
         }
 
         private void button_UCSpecialityTCManage_EditSpeciality_Click(object sender, EventArgs e)
@@ -75,6 +85,8 @@ namespace GUI
             richTextBox_UCSpecialityTCEdit_Description.Text = currentSpeciality.Description;
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_EditSpeciality;
             objectListView_UCSpecialityTCEdit_Services.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Efteruddannelse");
         }
 
         /// <summary>
@@ -88,6 +100,8 @@ namespace GUI
             gui.SpecialityRepository.Create(speciality);
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Efteruddannelse");
         }
         /// <summary>
         /// Doubleclick event in find speciality
@@ -103,6 +117,8 @@ namespace GUI
             InitializeServicesOnSpecialityObjectListView();
 
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
 
         private void InitializeServicesOnSpecialityObjectListView()
@@ -144,6 +160,8 @@ namespace GUI
 
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_EditSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
 
         private void button_UCSpecialityTCEdit_DeleteSpeciality_Click(object sender, EventArgs e)
@@ -151,6 +169,8 @@ namespace GUI
             gui.SpecialityRepository.Delete(currentSpeciality);
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Efteruddannelse");
         }
 
         private void button_UCSpecialityTCManage_AddService_Click(object sender, EventArgs e)

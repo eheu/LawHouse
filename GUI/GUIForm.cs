@@ -65,6 +65,7 @@ namespace GUI
                 MenuSlideTimer.Start();
             else
                 MenuSlideTimer.Start();
+
         }
         /// <summary>
         ///     Makes the menu bar slide out or in depending on the state in which it is when the event is raised.
@@ -161,7 +162,11 @@ namespace GUI
             userControlCases.Show();
             userControlCases.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlCases);
-            
+
+            TabControl tabControl = (TabControl)userControlCases.Controls["TabControl_UCCases"];
+            tabControl.SelectedTab = tabControl.TabPages["TC_UCCaseTC_FindCase"];
+            //GUINavigationLabel
+            setGUINavigationLabel("Find Sag");
         }
         #endregion
         #region Events for EmployeeBtn
@@ -184,6 +189,11 @@ namespace GUI
             userControlEmployees.Show();
             userControlEmployees.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlEmployees);
+
+            TabControl tabControl = (TabControl)userControlEmployees.Controls["TabControl_UCEmployee"];
+            tabControl.SelectedTab = tabControl.TabPages["TC_UCEmployeeTC_FindEmployee"];
+            //GUINavigationLabel
+            setGUINavigationLabel("Find Ansat");
         }
         #endregion  
         #region Events for ClientBtn
@@ -206,6 +216,11 @@ namespace GUI
             userControlClients.Show();
             userControlClients.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlClients);
+
+            TabControl tabControl = (TabControl)userControlClients.Controls["TabControl_UCClient"];
+            tabControl.SelectedTab = tabControl.TabPages["TC_UCClientTC_FindClient"];
+            //GUINavigationLabel
+            setGUINavigationLabel("Find Klient");
         }
         #endregion
         #region Events for SpecialitiesBtn
@@ -228,6 +243,11 @@ namespace GUI
             userControlSpecialities.Show();
             userControlSpecialities.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlSpecialities);
+
+            TabControl tabControl = (TabControl)userControlSpecialities.Controls["TabControl_UCSpecialities"];
+            tabControl.SelectedTab = tabControl.TabPages["TC_UCSpecialityTC_FindSpeciality"];
+            //GUINavigationLabel
+            setGUINavigationLabel("Find Efteruddannelse");
         }
         #endregion
         #region Events for ServicesBtn
@@ -250,6 +270,11 @@ namespace GUI
             userControlServices.Show();
             userControlServices.Dock = DockStyle.Fill;
             UcContainer.Controls.Add(userControlServices);
+
+            TabControl tabControl = (TabControl)userControlServices.Controls["TabControl_UCServices"];
+            tabControl.SelectedTab = tabControl.TabPages["TC_UCServiceTC_FindService"];
+            //GUINavigationLabel
+            setGUINavigationLabel("Find Ydelse");
         }
         #endregion
         #region  Events for HelpBtn
@@ -286,6 +311,12 @@ namespace GUI
 
         #endregion
 
+        public void setGUINavigationLabel(string text)
+        {
+            GUINavigationLabel.Text = text;
+        }
+            
+        
         /// <summary>
         /// Clear all Controls in the given ControlCollection
         /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
