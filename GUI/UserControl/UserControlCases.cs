@@ -76,7 +76,7 @@ namespace GUI
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
         /// <summary>
-        ///     Menubar toggle event. Gets called multiple times by objects on same usercontrol. 
+        ///     Menubar toggle event. This event gets called multiple times by objects on same usercontrol. 
         /// </summary>
         private void objectListView_UCCaseTCFind_FindCase_MouseEnter(object sender, EventArgs e)
         {
