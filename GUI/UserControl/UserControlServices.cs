@@ -27,17 +27,17 @@ namespace GUI
             InitializeComponent();
 
             InitializeFindServiceObjectListView();
-            InitializeAddServiceCombobox();
         }
 
-        private void InitializeAddServiceCombobox()
+        private void Set_ComboBox_UCServicesTCCreate_AddSpeciality()
         {
             comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
             comboBox_UCServicesTCCreate_AddSpeciality.DisplayMember = "Name";
             comboBox_UCServicesTCCreate_AddSpeciality.ValueMember = "ID";
+            comboBox_UCServicesTCCreate_AddSpeciality.SelectedIndex = -1;   
         }
 
-        private void InitializeAddSpecialityCombobox()
+        private void Set_ComboBox_UCServicesTCManage_AddSpeciality()
         {
             comboBox_UCServicesTCManage_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
             comboBox_UCServicesTCManage_AddSpeciality.DisplayMember = "Name";
@@ -59,6 +59,7 @@ namespace GUI
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
             gui.ClearControlCollection(TC_UCServiceTC_CreateService.Controls);
+            Set_ComboBox_UCServicesTCCreate_AddSpeciality();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Ydelse");
@@ -121,7 +122,7 @@ namespace GUI
         {
             SetCurrentService();
 
-            InitializeAddSpecialityCombobox();
+            Set_ComboBox_UCServicesTCManage_AddSpeciality();
 
             // Initialize ManageService ObjectListView
             objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
