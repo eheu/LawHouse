@@ -76,7 +76,7 @@ namespace GUI
             }
 
             //Clear textBoxes
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCClientTC_CreateClient.Controls);
+            gui.ClearControlCollection(TC_UCClientTC_CreateClient.Controls);
 
             //Refreash olv
             SetObjectListViewClients();

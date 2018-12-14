@@ -109,7 +109,7 @@ namespace GUI
 
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
+            gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Sag");
@@ -167,7 +167,7 @@ namespace GUI
                 gui.CaseServiceRepository.AddServiceToCase(service, @case);
             }
 
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCCaseTC_CreateCase.Controls);
+            gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
         }
 
         private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)

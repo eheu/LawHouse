@@ -58,7 +58,7 @@ namespace GUI
 
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_CreateService.Controls);
+            gui.ClearControlCollection(TC_UCServiceTC_CreateService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Ydelse");
@@ -196,7 +196,7 @@ namespace GUI
             //Change tab and update
             richTextBox_UCServicesTCManage_Description.Text = currentService.Description;
             label_UCServicesTCManage_ServiceName.Text = currentService.Name;
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_EditService.Controls);
+            gui.ClearControlCollection(TC_UCServiceTC_EditService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Ydelse");

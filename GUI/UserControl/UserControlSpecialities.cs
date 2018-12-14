@@ -35,7 +35,7 @@ namespace GUI
 
         private void button_UCCSpecialityTCFind_CreateSpeciality_Click(object sender, EventArgs e)
         {
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_CreateSpeciality.Controls);
+            gui.ClearControlCollection(TC_UCSpecialityTC_CreateSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_CreateSpeciality;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Efteruddannelse");
@@ -158,7 +158,7 @@ namespace GUI
             label_UCSpecialityTCManage_SpecialityName.Text = currentSpeciality.Name;
             richTextBox_UCSpecialityTCManage_Description.Text = currentSpeciality.Description;
 
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCSpecialityTC_EditSpeciality.Controls);
+            gui.ClearControlCollection(TC_UCSpecialityTC_EditSpeciality.Controls);
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Efteruddannelse");

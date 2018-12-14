@@ -136,7 +136,7 @@ namespace GUI
             gui.EmployeeRepository.Update(employee);
 
             //Clear text/Compoboxes
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_EditEmployee.Controls);
+            gui.ClearControlCollection(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv
             List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
@@ -230,7 +230,7 @@ namespace GUI
                 gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
             }
 
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+            gui.ClearControlCollection(TC_UCEmployeeTC_CreateEmployee.Controls);
 
             //Refresh OlvEmployee
             SetObjectListViewEmployee();
@@ -260,7 +260,7 @@ namespace GUI
             }
             
             //label_UCEmployeeTCEdit_DeleteEmployee
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_EditEmployee.Controls);
+            gui.ClearControlCollection(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv
             SetObjectListViewEmployee();

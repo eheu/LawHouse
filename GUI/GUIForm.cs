@@ -321,7 +321,7 @@ namespace GUI
         /// Clear all Controls in the given ControlCollection
         /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
-        public void ClearTextBoxesAndComboBoxesAndListBoxes(System.Windows.Forms.Control.ControlCollection ctrls)
+        public void ClearControlCollection(System.Windows.Forms.Control.ControlCollection ctrls)
         {
             foreach (Control ctrl in ctrls)
             {
@@ -341,7 +341,7 @@ namespace GUI
                 else if (ctrl is BrightIdeasSoftware.ObjectListView) 
                     ((BrightIdeasSoftware.ObjectListView)ctrl).Clear();
 
-                ClearTextBoxesAndComboBoxesAndListBoxes(ctrl.Controls);
+                ClearControlCollection(ctrl.Controls);
             }
         }
     }
