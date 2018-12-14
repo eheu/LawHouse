@@ -466,7 +466,7 @@
             this.button_UCCaseTCCreate_CreateCase.Name = "button_UCCaseTCCreate_CreateCase";
             this.button_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(136, 30);
             this.button_UCCaseTCCreate_CreateCase.TabIndex = 21;
-            this.button_UCCaseTCCreate_CreateCase.Text = "Opret sag";
+            this.button_UCCaseTCCreate_CreateCase.Text = "Gem sag";
             this.button_UCCaseTCCreate_CreateCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCCreate_CreateCase.Click += new System.EventHandler(this.button_UCCaseTCCreate_CreateCase_Click);
             // 
