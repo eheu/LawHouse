@@ -143,12 +143,22 @@ namespace GUI
 
         private void button_UCCaseTCCreate_CreateCase_Click(object sender, EventArgs e)
         {
-            Case @case = new Case();
-            @case.Description = richTextBox_UCCaseTCCreate_Description.Text;
-            @case.Title = textBox_UCCaseTCCreate_Title.Text;
-            @case.ClientID = (int)comboBox_UCCaseTCCreate_ChooseClient.SelectedValue;
-            @case.EmployeeID = (int)comboBox_UCCaseTCCreate_ChooseLawyer.SelectedValue;
-            @case.StartDate = DateTime.Now;
+            Case @case = null;
+            try
+            {
+                @case = new Case
+                    (
+                    textBox_UCCaseTCCreate_Title.Text,
+                    richTextBox_UCCaseTCCreate_Description.Text,
+                    DateTime.Now,
+                    (int)comboBox_UCCaseTCCreate_ChooseClient.SelectedValue,
+                    (int)comboBox_UCCaseTCCreate_ChooseLawyer.SelectedValue
+                    );
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Kunne ikke oprette sagen! Advokat og klient må ikke være tomme.");
+            }
             gui.CaseRepository.Create(@case);
             SetObjectListViewCases();
 

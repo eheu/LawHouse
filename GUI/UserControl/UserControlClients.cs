@@ -76,13 +76,13 @@ namespace GUI
             }
 
             //Clear textBoxes
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateClient.Controls);
+            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCClientTC_CreateClient.Controls);
 
             //Refreash olv
             SetObjectListViewClients();
 
             //User send back to Find_Client
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_FindClient;
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
         }
 
         /// <summary>
