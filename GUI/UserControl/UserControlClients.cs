@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
@@ -83,6 +77,12 @@ namespace GUI
 
             //Clear textBoxes
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCClientTC_CreateClient.Controls);
+
+            //Refreash olv
+            SetObjectListViewClients();
+
+            //User send back to Find_Client
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
         }
 
         /// <summary>

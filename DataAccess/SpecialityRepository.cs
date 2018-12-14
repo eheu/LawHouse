@@ -220,6 +220,10 @@ namespace DataAccess
                     cmd.AddParameter("ID", speciality.ID);
                     cmd.ExecuteNonQuery();
                 }
+                catch(SqlException exception)
+                {
+                    throw new DataException(exception.Message);
+                }
                 catch (Exception)
                 {
                     throw;

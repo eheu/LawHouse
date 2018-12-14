@@ -1,35 +1,40 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Spire.Pdf;
+using Spire.Pdf.Actions;
+using Spire.Pdf.General;
+using Spire.PdfViewer.Forms;
 
 namespace GUI
 {
     public partial class HelpForm : Form
     {
-        public HelpForm()
+        GUIForm gui;
+        public HelpForm(GUIForm guiForm)
         {
             InitializeComponent();
+            gui = guiForm;
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
         {
             string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
 
-            ////Adobe Reader.
-            //HelpPDFReader.LoadFile(path);
+            PdfDocument doc = new PdfDocument();
+            doc.LoadFromFile(path);
+            PdfDestination destination = new PdfDestination(doc.Pages[2]);
+            PdfGoToAction action = new PdfGoToAction(destination);
+            action.Destination.Zoom = 1F;
+            doc.AfterOpenAction = action;
+            doc.SaveToFile("PDFTest.pdf", FileFormat.PDF);
 
-            ////File open
-            //Process process = new Process();
-            //ProcessStartInfo startInfo = new ProcessStartInfo();
-            //process.StartInfo = startInfo;
-            //startInfo.Arguments = "/A \"page=2\"";
-            //startInfo.Arguments = path;
+            this.HelpPDFReader.LoadFromFile(path);
+        }
 
-            //Console.WriteLine(path);
-            //startInfo.FileName = path;
-            //process.Start();
-
-            webBrowser1.Navigate(path);
+        private void HelpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gui.helpForm = null;
         }
     }
 }

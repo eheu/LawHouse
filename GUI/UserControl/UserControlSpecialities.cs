@@ -166,7 +166,14 @@ namespace GUI
 
         private void button_UCSpecialityTCEdit_DeleteSpeciality_Click(object sender, EventArgs e)
         {
-            gui.SpecialityRepository.Delete(currentSpeciality);
+            try
+            {
+                gui.SpecialityRepository.Delete(currentSpeciality);
+            }
+            catch (DataException)
+            {
+                MessageBox.Show("Kan ikke slette efteruddannelsen! Måske er den i brug?");
+            }
             SetObjectListViewSpecialities();
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_FindSpeciality;
             //GUINavigationLabel

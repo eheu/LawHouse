@@ -20,11 +20,16 @@ namespace GUI
         {
             InitializeComponent();
             gui = guiForm;
-            //Load of clients into the objectlistview
-            List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
-            objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
+            //Load of Employees into the objectlistview
+            SetObjectListViewEmployee();
             //Load of Speciality into Combobox
             SetComboBoxSpeciality();
+        }
+
+        private void SetObjectListViewEmployee()
+        {
+            List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
+            objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
 
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
@@ -210,27 +215,25 @@ namespace GUI
         {
             Employee employee = new Employee(
                 textbox_UCEmployeeTCCreate_firstName.Text,
-                 textbox_UCEmployeeTCCreate_lastName.Text,
-                 (int)combo_UCEmployeeTCCreate_Role.SelectedValue,
-                  textbox_UCEmployeeTCCreate_emailName.Text,
-                  textbox_UCEmployeeTCCreate_phone.Text);
+                textbox_UCEmployeeTCCreate_lastName.Text,
+                (int)combo_UCEmployeeTCCreate_Role.SelectedValue,
+                textbox_UCEmployeeTCCreate_emailName.Text,
+                textbox_UCEmployeeTCCreate_phone.Text
+            );
             //Create the employee
             gui.EmployeeRepository.Create(employee);
 
-            //Set the Employee's Specialities
-            List<Speciality> specialities = objectListView_UCEmployeeTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
-
-            //Check if specialities-List is not empty
-            if ((specialities != null) && (specialities.Count != 0))
+            if (objectListView_UCEmployeeTCCreate_Speciality.Objects != null)
             {
+                //Set the Employee's Specialities
+                List<Speciality> specialities = objectListView_UCEmployeeTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
                 gui.SpecialityRepository.AddSpecialitiesToLawyer(employee, specialities);
             }
-            
+
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateEmployee.Controls);
 
             //Refresh OlvEmployee
-            List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
-            objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
+            SetObjectListViewEmployee();
         }
         #endregion
 
@@ -260,8 +263,7 @@ namespace GUI
             gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_EditEmployee.Controls);
 
             //Refresh Employee Olv
-            List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
-            objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
+            SetObjectListViewEmployee();
             //Go back to Find Employee
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
             //GUINavigationLabel

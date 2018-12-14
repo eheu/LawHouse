@@ -8,13 +8,11 @@ namespace BusinessLogic.Models
         {
         }
 
-        public Case(string title, string description, bool status, DateTime startDate, DateTime endDate, int clientID, int employeeID)
+        public Case(string title, string description, DateTime startDate, int clientID, int employeeID)
         {
             Title = title;
             Description = description;
-            Status = status;
             StartDate = startDate;
-            EndDate = endDate;
             ClientID = clientID;
             EmployeeID = employeeID;
         }
