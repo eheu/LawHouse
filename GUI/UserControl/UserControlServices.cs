@@ -34,7 +34,7 @@ namespace GUI
             comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
             comboBox_UCServicesTCCreate_AddSpeciality.DisplayMember = "Name";
             comboBox_UCServicesTCCreate_AddSpeciality.ValueMember = "ID";
-            comboBox_UCServicesTCCreate_AddSpeciality.SelectedIndex = -1;   
+            comboBox_UCServicesTCCreate_AddSpeciality.SelectedIndex = -1;
         }
 
         private void Set_ComboBox_UCServicesTCManage_AddSpeciality()
@@ -98,7 +98,7 @@ namespace GUI
 
         private void button_UCServicesTCManage_EditService_Click(object sender, EventArgs e)
         {
-            
+
 
             richTextBox_UCServicesTCEdit_Description.Text = currentService.Description;
             //labels
@@ -228,10 +228,16 @@ namespace GUI
         {
             if (comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null)
             {
-                List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
                 Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
-                bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
-                if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                if (objectListView_UCServicesTCCreate_Speciality.Objects == null)
+                    objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                else
+                {
+                    List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
+                    bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+                    if (!exists)
+                        objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                }
             }
         }
 
@@ -243,7 +249,21 @@ namespace GUI
 
         private void UserControlServices_MouseEnter(object sender, EventArgs e)
         {
-            gui.toggleMenuPanel(); 
+            gui.toggleMenuPanel();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            objectListView2.AddObject(new Test("a"));
+        }
+    }
+}
+class Test
+{
+    public string a { get; set; }
+
+    public Test(string a)
+    {
+        this.a = a;
     }
 }

@@ -193,12 +193,21 @@ namespace GUI
 
         private void button_UCSpecialityTCCreate_AddService_Click(object sender, EventArgs e)
         {
+            Service selectedService = (Service)comboBox_UCSpecialityTCCreate_AddService.SelectedItem;
+            objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+
             if (comboBox_UCSpecialityTCCreate_AddService.SelectedItem != null)
             {
-                Service selectedService = (Service)comboBox_UCSpecialityTCCreate_AddService.SelectedItem;
-                List<Service> servicesInObjectListView = objectListView_UCSpecialityTCCreate_Service.Objects.Cast<Service>().ToList();
-                bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
-                if (!exists) objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+                //Service selectedService = (Service)comboBox_UCSpecialityTCCreate_AddService.SelectedItem;
+                if (objectListView_UCSpecialityTCCreate_Service.Objects == null)
+                    objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+                else
+                {
+                    List<Service> servicesInObjectListView = objectListView_UCSpecialityTCCreate_Service.Objects.Cast<Service>().ToList();
+                    bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
+                    if (!exists)
+                        objectListView_UCSpecialityTCCreate_Service.AddObject(selectedService);
+                }
             }
         }
 

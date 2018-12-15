@@ -339,7 +339,7 @@ namespace GUI
                 else if (ctrl is RadioButton)
                     ((RadioButton)ctrl).Checked = false;
                 else if (ctrl is BrightIdeasSoftware.ObjectListView) 
-                    ((BrightIdeasSoftware.ObjectListView)ctrl).Clear();
+                    ((BrightIdeasSoftware.ObjectListView)ctrl).ClearObjects();
 
                 ClearControlCollection(ctrl.Controls);
             }

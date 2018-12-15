@@ -40,6 +40,7 @@
             this.label_UCSpecialityTCCreate_Service = new System.Windows.Forms.Label();
             this.richTextBox_UCSpecialityTCCreate_Description = new System.Windows.Forms.RichTextBox();
             this.objectListView_UCSpecialityTCCreate_Service = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCSpecialityTCCreate_AddService = new System.Windows.Forms.Button();
             this.label_UCCSpecialityTCCreate_Service = new System.Windows.Forms.Label();
             this.comboBox_UCSpecialityTCCreate_AddService = new System.Windows.Forms.ComboBox();
@@ -222,15 +223,22 @@
             // 
             // objectListView_UCSpecialityTCCreate_Service
             // 
+            this.objectListView_UCSpecialityTCCreate_Service.AllColumns.Add(this.olvColumn4);
             this.objectListView_UCSpecialityTCCreate_Service.CellEditUseWholeCell = false;
+            this.objectListView_UCSpecialityTCCreate_Service.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn4});
             this.objectListView_UCSpecialityTCCreate_Service.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCSpecialityTCCreate_Service.Location = new System.Drawing.Point(482, 41);
             this.objectListView_UCSpecialityTCCreate_Service.Name = "objectListView_UCSpecialityTCCreate_Service";
             this.objectListView_UCSpecialityTCCreate_Service.Size = new System.Drawing.Size(201, 494);
             this.objectListView_UCSpecialityTCCreate_Service.TabIndex = 49;
             this.objectListView_UCSpecialityTCCreate_Service.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCSpecialityTCCreate_Service.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCSpecialityTCCreate_Service.View = System.Windows.Forms.View.List;
             this.objectListView_UCSpecialityTCCreate_Service.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "Name";
             // 
             // button_UCSpecialityTCCreate_AddService
             // 
@@ -670,5 +678,6 @@
         private System.Windows.Forms.Label label_UCSpecialityTCManage_Description;
         private System.Windows.Forms.RichTextBox richTextBox_UCSpecialityTCManage_Description;
         private System.Windows.Forms.Label label_UCSpecialityTCFind_Search;
+        private BrightIdeasSoftware.OLVColumn olvColumn4;
     }
 }
