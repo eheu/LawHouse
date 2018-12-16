@@ -44,6 +44,8 @@
             this.label_UCServicesTCCreate_Speciality = new System.Windows.Forms.Label();
             this.richTextBox_UCServicesTCCreate_Description = new System.Windows.Forms.RichTextBox();
             this.objectListView_UCServicesTCCreate_Speciality = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCServiceTCCreate_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCServicesTCCreate_AddSpeciality = new System.Windows.Forms.Button();
             this.label_UCCServiceTCCreate_Speciality = new System.Windows.Forms.Label();
             this.comboBox_UCServicesTCCreate_AddSpeciality = new System.Windows.Forms.ComboBox();
@@ -275,15 +277,33 @@
             // 
             // objectListView_UCServicesTCCreate_Speciality
             // 
+            this.objectListView_UCServicesTCCreate_Speciality.AllColumns.Add(this.olvColumn_UCServiceTCCreate_Name);
+            this.objectListView_UCServicesTCCreate_Speciality.AllColumns.Add(this.olvColumn3);
             this.objectListView_UCServicesTCCreate_Speciality.CellEditUseWholeCell = false;
+            this.objectListView_UCServicesTCCreate_Speciality.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn_UCServiceTCCreate_Name,
+            this.olvColumn3});
             this.objectListView_UCServicesTCCreate_Speciality.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCServicesTCCreate_Speciality.FullRowSelect = true;
             this.objectListView_UCServicesTCCreate_Speciality.Location = new System.Drawing.Point(477, 30);
             this.objectListView_UCServicesTCCreate_Speciality.Name = "objectListView_UCServicesTCCreate_Speciality";
+            this.objectListView_UCServicesTCCreate_Speciality.ShowGroups = false;
             this.objectListView_UCServicesTCCreate_Speciality.Size = new System.Drawing.Size(201, 495);
             this.objectListView_UCServicesTCCreate_Speciality.TabIndex = 32;
             this.objectListView_UCServicesTCCreate_Speciality.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCServicesTCCreate_Speciality.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCServicesTCCreate_Speciality.View = System.Windows.Forms.View.Tile;
             this.objectListView_UCServicesTCCreate_Speciality.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
+            // 
+            // olvColumn_UCServiceTCCreate_Name
+            // 
+            this.olvColumn_UCServiceTCCreate_Name.AspectName = "Name";
+            this.olvColumn_UCServiceTCCreate_Name.FillsFreeSpace = true;
+            this.olvColumn_UCServiceTCCreate_Name.Text = "Navn";
+            this.olvColumn_UCServiceTCCreate_Name.Width = 173;
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "ID";
             // 
             // button_UCServicesTCCreate_AddSpeciality
             // 
@@ -785,5 +805,7 @@
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyYes;
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyNo;
         private System.Windows.Forms.TextBox textBox_UCServiceTCEdit_ChangePrice;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCServiceTCCreate_Name;
+        private BrightIdeasSoftware.OLVColumn olvColumn3;
     }
 }
