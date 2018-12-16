@@ -225,12 +225,16 @@ namespace GUI
 
         private void button_UCServicesTCCreate_AddSpeciality_Click(object sender, EventArgs e)
         {
-            if (comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null)
+            if ((comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null) && (objectListView_UCServicesTCCreate_Speciality.Objects != null))
             {
-                List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
-                Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
-                bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
-                if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                    List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
+                    Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
+                    bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+                    if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+            }
+            else if((comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null) && (objectListView_UCServicesTCCreate_Speciality.Objects == null)) {
+                    Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
+                    objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
             }
         }
 

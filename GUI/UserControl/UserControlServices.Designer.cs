@@ -104,7 +104,7 @@
             this.TabControl_UCServices.Controls.Add(this.TC_UCServiceTC_ManageService);
             this.TabControl_UCServices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCServices.ItemSize = new System.Drawing.Size(0, 1);
+            this.TabControl_UCServices.ItemSize = new System.Drawing.Size(100, 10);
             this.TabControl_UCServices.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCServices.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCServices.Name = "TabControl_UCServices";
@@ -121,10 +121,10 @@
             this.TC_UCServiceTC_FindService.Controls.Add(this.textBox_UCServicesTCFind_Search);
             this.TC_UCServiceTC_FindService.Controls.Add(this.button_UCCServicesTCFind_CreateService);
             this.TC_UCServiceTC_FindService.Controls.Add(this.objectListView_UCServiceTCFind_FindService);
-            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 14);
             this.TC_UCServiceTC_FindService.Name = "TC_UCServiceTC_FindService";
             this.TC_UCServiceTC_FindService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCServiceTC_FindService.TabIndex = 0;
             this.TC_UCServiceTC_FindService.Text = "Find ydelser";
             this.TC_UCServiceTC_FindService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -217,10 +217,10 @@
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Price);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Name);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.button_UCServicesTCCreate_FindService);
-            this.TC_UCServiceTC_CreateService.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCServiceTC_CreateService.Location = new System.Drawing.Point(4, 14);
             this.TC_UCServiceTC_CreateService.Name = "TC_UCServiceTC_CreateService";
             this.TC_UCServiceTC_CreateService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_CreateService.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCServiceTC_CreateService.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCServiceTC_CreateService.TabIndex = 1;
             this.TC_UCServiceTC_CreateService.Text = "Opret";
             this.TC_UCServiceTC_CreateService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
