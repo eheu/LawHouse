@@ -198,7 +198,7 @@
             // 
             this.olvColumn_UCServiceTCFind_IsHourly.AspectName = "IsHourly";
             this.olvColumn_UCServiceTCFind_IsHourly.Text = "Afregning";
-            this.olvColumn_UCServiceTCFind_IsHourly.Width = 207;
+            this.olvColumn_UCServiceTCFind_IsHourly.Width = 198;
             // 
             // TC_UCServiceTC_CreateService
             // 

@@ -251,11 +251,6 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            objectListView2.AddObject(new Test("a"));
-        }
     }
 }
 class Test
