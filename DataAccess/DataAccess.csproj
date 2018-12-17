@@ -59,17 +59,17 @@
     <Compile Include="SpecialityRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LawHouse\BusinessLogic.csproj">
-      <Project>{bd1fa036-c42c-45b8-af18-50a46c49989c}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{bd1fa036-c42c-45b8-af18-50a46c49989c}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
