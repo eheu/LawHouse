@@ -27,17 +27,17 @@ namespace GUI
             InitializeComponent();
 
             InitializeFindServiceObjectListView();
-            InitializeAddServiceCombobox();
         }
 
-        private void InitializeAddServiceCombobox()
+        private void Set_ComboBox_UCServicesTCCreate_AddSpeciality()
         {
             comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
             comboBox_UCServicesTCCreate_AddSpeciality.DisplayMember = "Name";
             comboBox_UCServicesTCCreate_AddSpeciality.ValueMember = "ID";
+            comboBox_UCServicesTCCreate_AddSpeciality.SelectedIndex = -1;
         }
 
-        private void InitializeAddSpecialityCombobox()
+        private void Set_ComboBox_UCServicesTCManage_AddSpeciality()
         {
             comboBox_UCServicesTCManage_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
             comboBox_UCServicesTCManage_AddSpeciality.DisplayMember = "Name";
@@ -58,36 +58,47 @@ namespace GUI
 
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_CreateService.Controls);
+            gui.ClearControlCollection(TC_UCServiceTC_CreateService.Controls);
+            Set_ComboBox_UCServicesTCCreate_AddSpeciality();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_CreateService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Ydelse");
         }
 
         private void button_UCServicesTCCreate_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCEdit_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCEdit_ManageService_Click(object sender, EventArgs e)
         {
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void button_UCServicesTCManage_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCManage_EditService_Click(object sender, EventArgs e)
         {
-            
+
 
             richTextBox_UCServicesTCEdit_Description.Text = currentService.Description;
             //labels
@@ -103,20 +114,22 @@ namespace GUI
             }
 
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_EditService;
-
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Ydelse");
         }
 
         private void objectListView_UCServiceTCFind_FindService_MousedoubleClick(object sender, MouseEventArgs e)
         {
             SetCurrentService();
 
-            InitializeAddSpecialityCombobox();
+            Set_ComboBox_UCServicesTCManage_AddSpeciality();
 
             // Initialize ManageService ObjectListView
             objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
 
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
-
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void SetCurrentService()
@@ -147,6 +160,8 @@ namespace GUI
             gui.ServiceRepository.Create(service);
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         /// <summary>
@@ -182,8 +197,10 @@ namespace GUI
             //Change tab and update
             richTextBox_UCServicesTCManage_Description.Text = currentService.Description;
             label_UCServicesTCManage_ServiceName.Text = currentService.Name;
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCServiceTC_EditService.Controls);
+            gui.ClearControlCollection(TC_UCServiceTC_EditService.Controls);
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Ydelse");
         }
 
         private void button_UCServicesTCEdit_DeleteService_Click(object sender, EventArgs e)
@@ -191,6 +208,8 @@ namespace GUI
             gui.ServiceRepository.Delete(currentService);
             InitializeFindServiceObjectListView();
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_FindService;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Ydelse");
         }
 
         private void button_UCServicesTCManage_AddSpeciality_Click(object sender, EventArgs e)
@@ -209,10 +228,16 @@ namespace GUI
         {
             if (comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null)
             {
-                List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
                 Speciality selectedSpeciality = (Speciality)comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem;
-                bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
-                if (!exists) objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                if (objectListView_UCServicesTCCreate_Speciality.Objects == null)
+                    objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                else
+                {
+                    List<Speciality> specialitiesInObjectListView = objectListView_UCServicesTCCreate_Speciality.Objects.Cast<Speciality>().ToList();
+                    bool exists = specialitiesInObjectListView.Any(s => s.ID == selectedSpeciality.ID);
+                    if (!exists)
+                        objectListView_UCServicesTCCreate_Speciality.AddObject(selectedSpeciality);
+                }
             }
         }
 
@@ -224,7 +249,16 @@ namespace GUI
 
         private void UserControlServices_MouseEnter(object sender, EventArgs e)
         {
-            gui.toggleMenuPanel(); 
+            gui.toggleMenuPanel();
         }
+    }
+}
+class Test
+{
+    public string a { get; set; }
+
+    public Test(string a)
+    {
+        this.a = a;
     }
 }

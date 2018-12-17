@@ -36,7 +36,6 @@
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
-            this.label_UCCaseTCFind_FindCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_EditCase = new System.Windows.Forms.TabPage();
             this.objectListView_UCCaseTCEdit_Services = new BrightIdeasSoftware.ObjectListView();
@@ -54,7 +53,6 @@
             this.label_UCCaseTCEdit_ChangeClient = new System.Windows.Forms.Label();
             this.label_UCCaseTCEdit_ChangeName = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_ManageCase = new System.Windows.Forms.Button();
-            this.label_UCCaseTCEdit_EditCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCEdit_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_CreateCase = new System.Windows.Forms.TabPage();
             this.objectListView_UCCaseTCCreate_Service = new BrightIdeasSoftware.ObjectListView();
@@ -74,7 +72,6 @@
             this.label_UCCaseTCCreate_ChooseClient = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_Description = new System.Windows.Forms.Label();
             this.label_UCCaseTCCreate_CaseTitel = new System.Windows.Forms.Label();
-            this.label_UCCaseTCCreate_CreateCase = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
             this.button_UCCaseTCManage_CloseCase = new System.Windows.Forms.Button();
@@ -132,12 +129,11 @@
             this.TC_UCCaseTC_FindCase.Controls.Add(this.objectListView_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
-            this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_FindCase);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
-            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_FindCase.Name = "TC_UCCaseTC_FindCase";
             this.TC_UCCaseTC_FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
             this.TC_UCCaseTC_FindCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -193,15 +189,6 @@
             this.label_UCCaseTCFind_Search.TabIndex = 4;
             this.label_UCCaseTCFind_Search.Text = "søg";
             // 
-            // label_UCCaseTCFind_FindCase
-            // 
-            this.label_UCCaseTCFind_FindCase.AutoSize = true;
-            this.label_UCCaseTCFind_FindCase.Location = new System.Drawing.Point(6, 6);
-            this.label_UCCaseTCFind_FindCase.Name = "label_UCCaseTCFind_FindCase";
-            this.label_UCCaseTCFind_FindCase.Size = new System.Drawing.Size(72, 18);
-            this.label_UCCaseTCFind_FindCase.TabIndex = 1;
-            this.label_UCCaseTCFind_FindCase.Text = "Find sag";
-            // 
             // button_UCCaseTCFind_CreateCase
             // 
             this.button_UCCaseTCFind_CreateCase.Location = new System.Drawing.Point(6, 27);
@@ -229,12 +216,11 @@
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeClient);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeName);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_ManageCase);
-            this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_EditCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_FindCase);
-            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_EditCase.Name = "TC_UCCaseTC_EditCase";
             this.TC_UCCaseTC_EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_EditCase.TabIndex = 1;
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
             this.TC_UCCaseTC_EditCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -295,7 +281,7 @@
             // 
             this.button_UCCaseTCEdit_RemoveService.Location = new System.Drawing.Point(480, 496);
             this.button_UCCaseTCEdit_RemoveService.Name = "button_UCCaseTCEdit_RemoveService";
-            this.button_UCCaseTCEdit_RemoveService.Size = new System.Drawing.Size(120, 31);
+            this.button_UCCaseTCEdit_RemoveService.Size = new System.Drawing.Size(204, 31);
             this.button_UCCaseTCEdit_RemoveService.TabIndex = 19;
             this.button_UCCaseTCEdit_RemoveService.Tag = "";
             this.button_UCCaseTCEdit_RemoveService.Text = "Fjern ydelse";
@@ -312,7 +298,7 @@
             // 
             // button_UCCaseTCEdit_DeleteCase
             // 
-            this.button_UCCaseTCEdit_DeleteCase.Location = new System.Drawing.Point(18, 496);
+            this.button_UCCaseTCEdit_DeleteCase.Location = new System.Drawing.Point(6, 496);
             this.button_UCCaseTCEdit_DeleteCase.Name = "button_UCCaseTCEdit_DeleteCase";
             this.button_UCCaseTCEdit_DeleteCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCEdit_DeleteCase.TabIndex = 16;
@@ -381,7 +367,7 @@
             // 
             // button_UCCaseTCEdit_ManageCase
             // 
-            this.button_UCCaseTCEdit_ManageCase.Location = new System.Drawing.Point(144, 35);
+            this.button_UCCaseTCEdit_ManageCase.Location = new System.Drawing.Point(132, 27);
             this.button_UCCaseTCEdit_ManageCase.Name = "button_UCCaseTCEdit_ManageCase";
             this.button_UCCaseTCEdit_ManageCase.Size = new System.Drawing.Size(146, 31);
             this.button_UCCaseTCEdit_ManageCase.TabIndex = 2;
@@ -389,18 +375,9 @@
             this.button_UCCaseTCEdit_ManageCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCEdit_ManageCase.Click += new System.EventHandler(this.button_UCCaseTCEdit_ManageCase_Click);
             // 
-            // label_UCCaseTCEdit_EditCase
-            // 
-            this.label_UCCaseTCEdit_EditCase.AutoSize = true;
-            this.label_UCCaseTCEdit_EditCase.Location = new System.Drawing.Point(6, 6);
-            this.label_UCCaseTCEdit_EditCase.Name = "label_UCCaseTCEdit_EditCase";
-            this.label_UCCaseTCEdit_EditCase.Size = new System.Drawing.Size(98, 18);
-            this.label_UCCaseTCEdit_EditCase.TabIndex = 1;
-            this.label_UCCaseTCEdit_EditCase.Text = "Rediger sag";
-            // 
             // button_UCCaseTCEdit_FindCase
             // 
-            this.button_UCCaseTCEdit_FindCase.Location = new System.Drawing.Point(6, 35);
+            this.button_UCCaseTCEdit_FindCase.Location = new System.Drawing.Point(6, 27);
             this.button_UCCaseTCEdit_FindCase.Name = "button_UCCaseTCEdit_FindCase";
             this.button_UCCaseTCEdit_FindCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCEdit_FindCase.TabIndex = 0;
@@ -428,12 +405,11 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_ChooseClient);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_Description);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
-            this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CreateCase);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
-            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
             this.TC_UCCaseTC_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_CreateCase.TabIndex = 2;
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -486,11 +462,11 @@
             // 
             // button_UCCaseTCCreate_CreateCase
             // 
-            this.button_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(9, 472);
+            this.button_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(4, 496);
             this.button_UCCaseTCCreate_CreateCase.Name = "button_UCCaseTCCreate_CreateCase";
             this.button_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(136, 30);
             this.button_UCCaseTCCreate_CreateCase.TabIndex = 21;
-            this.button_UCCaseTCCreate_CreateCase.Text = "Opret sag";
+            this.button_UCCaseTCCreate_CreateCase.Text = "Gem sag";
             this.button_UCCaseTCCreate_CreateCase.UseVisualStyleBackColor = true;
             this.button_UCCaseTCCreate_CreateCase.Click += new System.EventHandler(this.button_UCCaseTCCreate_CreateCase_Click);
             // 
@@ -602,18 +578,9 @@
             this.label_UCCaseTCCreate_CaseTitel.TabIndex = 2;
             this.label_UCCaseTCCreate_CaseTitel.Text = "Sags title";
             // 
-            // label_UCCaseTCCreate_CreateCase
-            // 
-            this.label_UCCaseTCCreate_CreateCase.AutoSize = true;
-            this.label_UCCaseTCCreate_CreateCase.Location = new System.Drawing.Point(6, 6);
-            this.label_UCCaseTCCreate_CreateCase.Name = "label_UCCaseTCCreate_CreateCase";
-            this.label_UCCaseTCCreate_CreateCase.Size = new System.Drawing.Size(82, 18);
-            this.label_UCCaseTCCreate_CreateCase.TabIndex = 1;
-            this.label_UCCaseTCCreate_CreateCase.Text = "Opret sag";
-            // 
             // button_UCCaseTCCreate_FindCase
             // 
-            this.button_UCCaseTCCreate_FindCase.Location = new System.Drawing.Point(6, 35);
+            this.button_UCCaseTCCreate_FindCase.Location = new System.Drawing.Point(6, 27);
             this.button_UCCaseTCCreate_FindCase.Name = "button_UCCaseTCCreate_FindCase";
             this.button_UCCaseTCCreate_FindCase.Size = new System.Drawing.Size(102, 30);
             this.button_UCCaseTCCreate_FindCase.TabIndex = 0;
@@ -645,7 +612,7 @@
             // 
             // button_UCCaseTCManage_CloseCase
             // 
-            this.button_UCCaseTCManage_CloseCase.Location = new System.Drawing.Point(9, 496);
+            this.button_UCCaseTCManage_CloseCase.Location = new System.Drawing.Point(6, 496);
             this.button_UCCaseTCManage_CloseCase.Name = "button_UCCaseTCManage_CloseCase";
             this.button_UCCaseTCManage_CloseCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCManage_CloseCase.TabIndex = 28;
@@ -668,7 +635,7 @@
             this.objectListView_UCCaseTCManage_ManageService.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCCaseTCManage_ManageService.FullRowSelect = true;
             this.objectListView_UCCaseTCManage_ManageService.HasCollapsibleGroups = false;
-            this.objectListView_UCCaseTCManage_ManageService.Location = new System.Drawing.Point(9, 125);
+            this.objectListView_UCCaseTCManage_ManageService.Location = new System.Drawing.Point(6, 125);
             this.objectListView_UCCaseTCManage_ManageService.Name = "objectListView_UCCaseTCManage_ManageService";
             this.objectListView_UCCaseTCManage_ManageService.ShowGroups = false;
             this.objectListView_UCCaseTCManage_ManageService.Size = new System.Drawing.Size(545, 365);
@@ -746,7 +713,7 @@
             // label_UCCaseTCManage_CaseName
             // 
             this.label_UCCaseTCManage_CaseName.AutoSize = true;
-            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(3, 54);
+            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(3, 63);
             this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
             this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(96, 18);
             this.label_UCCaseTCManage_CaseName.TabIndex = 22;
@@ -754,7 +721,7 @@
             // 
             // button_UCCaseTCManage_EditCase
             // 
-            this.button_UCCaseTCManage_EditCase.Location = new System.Drawing.Point(132, 6);
+            this.button_UCCaseTCManage_EditCase.Location = new System.Drawing.Point(132, 27);
             this.button_UCCaseTCManage_EditCase.Name = "button_UCCaseTCManage_EditCase";
             this.button_UCCaseTCManage_EditCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCManage_EditCase.TabIndex = 21;
@@ -765,7 +732,7 @@
             // 
             // button_UCCaseTCManage_FindCase
             // 
-            this.button_UCCaseTCManage_FindCase.Location = new System.Drawing.Point(6, 6);
+            this.button_UCCaseTCManage_FindCase.Location = new System.Drawing.Point(6, 27);
             this.button_UCCaseTCManage_FindCase.Name = "button_UCCaseTCManage_FindCase";
             this.button_UCCaseTCManage_FindCase.Size = new System.Drawing.Size(120, 31);
             this.button_UCCaseTCManage_FindCase.TabIndex = 20;
@@ -832,9 +799,6 @@
         private System.Windows.Forms.Button button_UCCaseTCFind_CreateCase;
         private System.Windows.Forms.Button button_UCCaseTCEdit_FindCase;
         private System.Windows.Forms.Button button_UCCaseTCCreate_FindCase;
-        private System.Windows.Forms.Label label_UCCaseTCFind_FindCase;
-        private System.Windows.Forms.Label label_UCCaseTCEdit_EditCase;
-        private System.Windows.Forms.Label label_UCCaseTCCreate_CreateCase;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseLawyer;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseService;
         private System.Windows.Forms.ComboBox comboBox_UCCaseTCCreate_ChooseClient;

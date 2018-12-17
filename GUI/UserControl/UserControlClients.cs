@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
@@ -42,12 +36,16 @@ namespace GUI
         }
         private void button_UCClientTCFind_CreateClient_Click(object sender, EventArgs e)
         {
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_CreateClient;
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_CreateClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Opret Klient");
         }
 
-        private void bottom_UCClientTCEdit_Back_Click(object sender, EventArgs e)
+        private void bottom_UCClientTCEdit_FindCase_Click(object sender, EventArgs e)
         {
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_FindClient;
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Klient");
         }
 
         private void SetObjectListViewClients()
@@ -78,7 +76,13 @@ namespace GUI
             }
 
             //Clear textBoxes
-            gui.ClearTextBoxesAndComboBoxesAndListBoxes(TC_UCEmployeeTC_CreateClient.Controls);
+            gui.ClearControlCollection(TC_UCClientTC_CreateClient.Controls);
+
+            //Refreash olv
+            SetObjectListViewClients();
+
+            //User send back to Find_Client
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
         }
 
         /// <summary>
@@ -100,7 +104,9 @@ namespace GUI
                 //Load Cases and Laywers
                 SetCaseAndEmployeeObjectListViews(objectListView_UCClientTCManage);
 
-                TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_ManageClient;
+                TabControl_UCClient.SelectedTab = TC_UCClientTC_ManageClient;
+                //GUINavigationLabel
+                gui.setGUINavigationLabel("Administrer Klient");
             }
         }
         /// <summary>
@@ -123,13 +129,24 @@ namespace GUI
             //Load Cases and Laywers
             SetCaseAndEmployeeObjectListViews(objectListView_UCClientTCEdit);
 
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_EditClient;
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_EditClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Rediger Klient");
 
         }
 
         private void button_UCClientTCCreate_FindClient_Click(object sender, EventArgs e)
         {
-            TabControl_UCClient.SelectedTab = TC_UCEmployeeTC_FindClient;
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Klient");
+        }
+
+        private void button_UCClientTCEdit_ManageClient_Click(object sender, EventArgs e)
+        {
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_ManageClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Administrer Klient");
         }
     }
 }

@@ -33,7 +33,6 @@
             this.label_UCServicesTCFind_Search = new System.Windows.Forms.Label();
             this.textBox_UCServicesTCFind_Search = new System.Windows.Forms.TextBox();
             this.button_UCCServicesTCFind_CreateService = new System.Windows.Forms.Button();
-            this.label_UCCServicesTCFind_FindService = new System.Windows.Forms.Label();
             this.objectListView_UCServiceTCFind_FindService = new BrightIdeasSoftware.DataListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -45,6 +44,8 @@
             this.label_UCServicesTCCreate_Speciality = new System.Windows.Forms.Label();
             this.richTextBox_UCServicesTCCreate_Description = new System.Windows.Forms.RichTextBox();
             this.objectListView_UCServicesTCCreate_Speciality = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn_UCServiceTCCreate_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCServicesTCCreate_AddSpeciality = new System.Windows.Forms.Button();
             this.label_UCCServiceTCCreate_Speciality = new System.Windows.Forms.Label();
             this.comboBox_UCServicesTCCreate_AddSpeciality = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.label_UCCServiceTCCreate_Price = new System.Windows.Forms.Label();
             this.label_UCCServiceTCCreate_Name = new System.Windows.Forms.Label();
             this.button_UCServicesTCCreate_FindService = new System.Windows.Forms.Button();
-            this.label_UCCServiceTCCreate_Create = new System.Windows.Forms.Label();
             this.TC_UCServiceTC_EditService = new System.Windows.Forms.TabPage();
             this.radioButton_UCCServiceTCEdit_IsHourlyNo = new System.Windows.Forms.RadioButton();
             this.radioButton_UCCServiceTCEdit_IsHourlyYes = new System.Windows.Forms.RadioButton();
@@ -72,10 +72,8 @@
             this.textBox_UCServiceTCEdit_ChangeName = new System.Windows.Forms.TextBox();
             this.label_UCServicesTCEdit_ChangeName = new System.Windows.Forms.Label();
             this.button_UCServicesTCEdit_ManageService = new System.Windows.Forms.Button();
-            this.label_UCServicesTCEdit_EditService = new System.Windows.Forms.Label();
             this.button_UCServicesTCEdit_FindService = new System.Windows.Forms.Button();
             this.TC_UCServiceTC_ManageService = new System.Windows.Forms.TabPage();
-            this.label_UCServicesTCManage_ManageService = new System.Windows.Forms.Label();
             this.objectListView_UCServicesTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn_UCCaseTCManage_ManageService_Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.button_UCServicesTCManage_Save = new System.Windows.Forms.Button();
@@ -124,12 +122,11 @@
             this.TC_UCServiceTC_FindService.Controls.Add(this.label_UCServicesTCFind_Search);
             this.TC_UCServiceTC_FindService.Controls.Add(this.textBox_UCServicesTCFind_Search);
             this.TC_UCServiceTC_FindService.Controls.Add(this.button_UCCServicesTCFind_CreateService);
-            this.TC_UCServiceTC_FindService.Controls.Add(this.label_UCCServicesTCFind_FindService);
             this.TC_UCServiceTC_FindService.Controls.Add(this.objectListView_UCServiceTCFind_FindService);
-            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCServiceTC_FindService.Location = new System.Drawing.Point(4, 5);
             this.TC_UCServiceTC_FindService.Name = "TC_UCServiceTC_FindService";
             this.TC_UCServiceTC_FindService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCServiceTC_FindService.TabIndex = 0;
             this.TC_UCServiceTC_FindService.Text = "Find ydelser";
             this.TC_UCServiceTC_FindService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -153,22 +150,13 @@
             // 
             // button_UCCServicesTCFind_CreateService
             // 
-            this.button_UCCServicesTCFind_CreateService.Location = new System.Drawing.Point(9, 24);
+            this.button_UCCServicesTCFind_CreateService.Location = new System.Drawing.Point(6, 27);
             this.button_UCCServicesTCFind_CreateService.Name = "button_UCCServicesTCFind_CreateService";
             this.button_UCCServicesTCFind_CreateService.Size = new System.Drawing.Size(102, 30);
             this.button_UCCServicesTCFind_CreateService.TabIndex = 7;
             this.button_UCCServicesTCFind_CreateService.Text = "Opret";
             this.button_UCCServicesTCFind_CreateService.UseVisualStyleBackColor = true;
             this.button_UCCServicesTCFind_CreateService.Click += new System.EventHandler(this.button_UCCServicesTCFind_CreateService_Click);
-            // 
-            // label_UCCServicesTCFind_FindService
-            // 
-            this.label_UCCServicesTCFind_FindService.AutoSize = true;
-            this.label_UCCServicesTCFind_FindService.Location = new System.Drawing.Point(6, 3);
-            this.label_UCCServicesTCFind_FindService.Name = "label_UCCServicesTCFind_FindService";
-            this.label_UCCServicesTCFind_FindService.Size = new System.Drawing.Size(93, 18);
-            this.label_UCCServicesTCFind_FindService.TabIndex = 6;
-            this.label_UCCServicesTCFind_FindService.Text = "Find ydelse";
             // 
             // objectListView_UCServiceTCFind_FindService
             // 
@@ -210,7 +198,7 @@
             // 
             this.olvColumn_UCServiceTCFind_IsHourly.AspectName = "IsHourly";
             this.olvColumn_UCServiceTCFind_IsHourly.Text = "Afregning";
-            this.olvColumn_UCServiceTCFind_IsHourly.Width = 207;
+            this.olvColumn_UCServiceTCFind_IsHourly.Width = 198;
             // 
             // TC_UCServiceTC_CreateService
             // 
@@ -231,7 +219,6 @@
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Price);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Name);
             this.TC_UCServiceTC_CreateService.Controls.Add(this.button_UCServicesTCCreate_FindService);
-            this.TC_UCServiceTC_CreateService.Controls.Add(this.label_UCCServiceTCCreate_Create);
             this.TC_UCServiceTC_CreateService.Location = new System.Drawing.Point(4, 5);
             this.TC_UCServiceTC_CreateService.Name = "TC_UCServiceTC_CreateService";
             this.TC_UCServiceTC_CreateService.Padding = new System.Windows.Forms.Padding(3);
@@ -290,15 +277,33 @@
             // 
             // objectListView_UCServicesTCCreate_Speciality
             // 
+            this.objectListView_UCServicesTCCreate_Speciality.AllColumns.Add(this.olvColumn_UCServiceTCCreate_Name);
+            this.objectListView_UCServicesTCCreate_Speciality.AllColumns.Add(this.olvColumn3);
             this.objectListView_UCServicesTCCreate_Speciality.CellEditUseWholeCell = false;
+            this.objectListView_UCServicesTCCreate_Speciality.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn_UCServiceTCCreate_Name,
+            this.olvColumn3});
             this.objectListView_UCServicesTCCreate_Speciality.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCServicesTCCreate_Speciality.FullRowSelect = true;
             this.objectListView_UCServicesTCCreate_Speciality.Location = new System.Drawing.Point(477, 30);
             this.objectListView_UCServicesTCCreate_Speciality.Name = "objectListView_UCServicesTCCreate_Speciality";
+            this.objectListView_UCServicesTCCreate_Speciality.ShowGroups = false;
             this.objectListView_UCServicesTCCreate_Speciality.Size = new System.Drawing.Size(201, 495);
             this.objectListView_UCServicesTCCreate_Speciality.TabIndex = 32;
             this.objectListView_UCServicesTCCreate_Speciality.UseCompatibleStateImageBehavior = false;
-            this.objectListView_UCServicesTCCreate_Speciality.View = System.Windows.Forms.View.Details;
+            this.objectListView_UCServicesTCCreate_Speciality.View = System.Windows.Forms.View.Tile;
             this.objectListView_UCServicesTCCreate_Speciality.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
+            // 
+            // olvColumn_UCServiceTCCreate_Name
+            // 
+            this.olvColumn_UCServiceTCCreate_Name.AspectName = "Name";
+            this.olvColumn_UCServiceTCCreate_Name.FillsFreeSpace = true;
+            this.olvColumn_UCServiceTCCreate_Name.Text = "Navn";
+            this.olvColumn_UCServiceTCCreate_Name.Width = 173;
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "ID";
             // 
             // button_UCServicesTCCreate_AddSpeciality
             // 
@@ -330,7 +335,7 @@
             // 
             // bottom_UCServiceTCCreate_Create
             // 
-            this.bottom_UCServiceTCCreate_Create.Location = new System.Drawing.Point(30, 495);
+            this.bottom_UCServiceTCCreate_Create.Location = new System.Drawing.Point(6, 495);
             this.bottom_UCServiceTCCreate_Create.Name = "bottom_UCServiceTCCreate_Create";
             this.bottom_UCServiceTCCreate_Create.Size = new System.Drawing.Size(138, 30);
             this.bottom_UCServiceTCCreate_Create.TabIndex = 26;
@@ -383,22 +388,13 @@
             // 
             // button_UCServicesTCCreate_FindService
             // 
-            this.button_UCServicesTCCreate_FindService.Location = new System.Drawing.Point(6, 24);
+            this.button_UCServicesTCCreate_FindService.Location = new System.Drawing.Point(6, 27);
             this.button_UCServicesTCCreate_FindService.Name = "button_UCServicesTCCreate_FindService";
             this.button_UCServicesTCCreate_FindService.Size = new System.Drawing.Size(102, 30);
             this.button_UCServicesTCCreate_FindService.TabIndex = 2;
             this.button_UCServicesTCCreate_FindService.Text = "Find ydelse";
             this.button_UCServicesTCCreate_FindService.UseVisualStyleBackColor = true;
             this.button_UCServicesTCCreate_FindService.Click += new System.EventHandler(this.button_UCServicesTCCreate_FindService_Click);
-            // 
-            // label_UCCServiceTCCreate_Create
-            // 
-            this.label_UCCServiceTCCreate_Create.AutoSize = true;
-            this.label_UCCServiceTCCreate_Create.Location = new System.Drawing.Point(6, 3);
-            this.label_UCCServiceTCCreate_Create.Name = "label_UCCServiceTCCreate_Create";
-            this.label_UCCServiceTCCreate_Create.Size = new System.Drawing.Size(103, 18);
-            this.label_UCCServiceTCCreate_Create.TabIndex = 1;
-            this.label_UCCServiceTCCreate_Create.Text = "Opret ydelse";
             // 
             // TC_UCServiceTC_EditService
             // 
@@ -417,12 +413,11 @@
             this.TC_UCServiceTC_EditService.Controls.Add(this.textBox_UCServiceTCEdit_ChangeName);
             this.TC_UCServiceTC_EditService.Controls.Add(this.label_UCServicesTCEdit_ChangeName);
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_ManageService);
-            this.TC_UCServiceTC_EditService.Controls.Add(this.label_UCServicesTCEdit_EditService);
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_FindService);
-            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 5);
             this.TC_UCServiceTC_EditService.Name = "TC_UCServiceTC_EditService";
             this.TC_UCServiceTC_EditService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCServiceTC_EditService.TabIndex = 2;
             this.TC_UCServiceTC_EditService.Text = "Rediger";
             this.TC_UCServiceTC_EditService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -448,14 +443,6 @@
             this.radioButton_UCCServiceTCEdit_IsHourlyYes.TabStop = true;
             this.radioButton_UCCServiceTCEdit_IsHourlyYes.Text = "Timepris";
             this.radioButton_UCCServiceTCEdit_IsHourlyYes.UseVisualStyleBackColor = true;
-            // 
-            // textBox_UCServiceTCEdit_ChangePrice
-            // 
-            this.textBox_UCServiceTCEdit_ChangePrice.Location = new System.Drawing.Point(287, 180);
-            this.textBox_UCServiceTCEdit_ChangePrice.Name = "textBox_UCServiceTCEdit_ChangePrice";
-            this.textBox_UCServiceTCEdit_ChangePrice.Size = new System.Drawing.Size(121, 24);
-            this.textBox_UCServiceTCEdit_ChangePrice.TabIndex = 48;
-            this.textBox_UCServiceTCEdit_ChangePrice.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
             // 
             // label_UCServicesTCEdit_ChangeIsHourly
             // 
@@ -518,7 +505,7 @@
             // 
             // button_UCServicesTCEdit_SaveChange
             // 
-            this.button_UCServicesTCEdit_SaveChange.Location = new System.Drawing.Point(966, 491);
+            this.button_UCServicesTCEdit_SaveChange.Location = new System.Drawing.Point(966, 496);
             this.button_UCServicesTCEdit_SaveChange.Name = "button_UCServicesTCEdit_SaveChange";
             this.button_UCServicesTCEdit_SaveChange.Size = new System.Drawing.Size(153, 31);
             this.button_UCServicesTCEdit_SaveChange.TabIndex = 39;
@@ -529,7 +516,7 @@
             // 
             // button_UCServicesTCEdit_RemoveSpeciality
             // 
-            this.button_UCServicesTCEdit_RemoveSpeciality.Location = new System.Drawing.Point(477, 491);
+            this.button_UCServicesTCEdit_RemoveSpeciality.Location = new System.Drawing.Point(488, 496);
             this.button_UCServicesTCEdit_RemoveSpeciality.Name = "button_UCServicesTCEdit_RemoveSpeciality";
             this.button_UCServicesTCEdit_RemoveSpeciality.Size = new System.Drawing.Size(204, 31);
             this.button_UCServicesTCEdit_RemoveSpeciality.TabIndex = 38;
@@ -547,7 +534,7 @@
             // 
             // button_UCServicesTCEdit_DeleteService
             // 
-            this.button_UCServicesTCEdit_DeleteService.Location = new System.Drawing.Point(17, 491);
+            this.button_UCServicesTCEdit_DeleteService.Location = new System.Drawing.Point(6, 496);
             this.button_UCServicesTCEdit_DeleteService.Name = "button_UCServicesTCEdit_DeleteService";
             this.button_UCServicesTCEdit_DeleteService.Size = new System.Drawing.Size(120, 31);
             this.button_UCServicesTCEdit_DeleteService.TabIndex = 36;
@@ -575,7 +562,7 @@
             // 
             // button_UCServicesTCEdit_ManageService
             // 
-            this.button_UCServicesTCEdit_ManageService.Location = new System.Drawing.Point(141, 32);
+            this.button_UCServicesTCEdit_ManageService.Location = new System.Drawing.Point(132, 27);
             this.button_UCServicesTCEdit_ManageService.Name = "button_UCServicesTCEdit_ManageService";
             this.button_UCServicesTCEdit_ManageService.Size = new System.Drawing.Size(159, 31);
             this.button_UCServicesTCEdit_ManageService.TabIndex = 29;
@@ -583,18 +570,9 @@
             this.button_UCServicesTCEdit_ManageService.UseVisualStyleBackColor = true;
             this.button_UCServicesTCEdit_ManageService.Click += new System.EventHandler(this.button_UCServicesTCEdit_ManageService_Click);
             // 
-            // label_UCServicesTCEdit_EditService
-            // 
-            this.label_UCServicesTCEdit_EditService.AutoSize = true;
-            this.label_UCServicesTCEdit_EditService.Location = new System.Drawing.Point(3, 3);
-            this.label_UCServicesTCEdit_EditService.Name = "label_UCServicesTCEdit_EditService";
-            this.label_UCServicesTCEdit_EditService.Size = new System.Drawing.Size(119, 18);
-            this.label_UCServicesTCEdit_EditService.TabIndex = 28;
-            this.label_UCServicesTCEdit_EditService.Text = "Rediger ydelse";
-            // 
             // button_UCServicesTCEdit_FindService
             // 
-            this.button_UCServicesTCEdit_FindService.Location = new System.Drawing.Point(3, 32);
+            this.button_UCServicesTCEdit_FindService.Location = new System.Drawing.Point(6, 27);
             this.button_UCServicesTCEdit_FindService.Name = "button_UCServicesTCEdit_FindService";
             this.button_UCServicesTCEdit_FindService.Size = new System.Drawing.Size(120, 31);
             this.button_UCServicesTCEdit_FindService.TabIndex = 27;
@@ -606,7 +584,6 @@
             // TC_UCServiceTC_ManageService
             // 
             this.TC_UCServiceTC_ManageService.BackColor = System.Drawing.Color.White;
-            this.TC_UCServiceTC_ManageService.Controls.Add(this.label_UCServicesTCManage_ManageService);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.objectListView_UCServicesTCManage_ManageService);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.button_UCServicesTCManage_Save);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.button_UCServicesTCManage_AddSpeciality);
@@ -617,22 +594,13 @@
             this.TC_UCServiceTC_ManageService.Controls.Add(this.button_UCServicesTCManage_FindService);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.label_UCServicesTCManage_Description);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.richTextBox_UCServicesTCManage_Description);
-            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 54);
+            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 5);
             this.TC_UCServiceTC_ManageService.Name = "TC_UCServiceTC_ManageService";
             this.TC_UCServiceTC_ManageService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 508);
+            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCServiceTC_ManageService.TabIndex = 3;
             this.TC_UCServiceTC_ManageService.Text = "Administrer";
             this.TC_UCServiceTC_ManageService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
-            // 
-            // label_UCServicesTCManage_ManageService
-            // 
-            this.label_UCServicesTCManage_ManageService.AutoSize = true;
-            this.label_UCServicesTCManage_ManageService.Location = new System.Drawing.Point(6, 3);
-            this.label_UCServicesTCManage_ManageService.Name = "label_UCServicesTCManage_ManageService";
-            this.label_UCServicesTCManage_ManageService.Size = new System.Drawing.Size(119, 18);
-            this.label_UCServicesTCManage_ManageService.TabIndex = 38;
-            this.label_UCServicesTCManage_ManageService.Text = "Rediger ydelse";
             // 
             // objectListView_UCServicesTCManage_ManageService
             // 
@@ -709,7 +677,7 @@
             // 
             // button_UCServicesTCManage_EditService
             // 
-            this.button_UCServicesTCManage_EditService.Location = new System.Drawing.Point(135, 27);
+            this.button_UCServicesTCManage_EditService.Location = new System.Drawing.Point(132, 27);
             this.button_UCServicesTCManage_EditService.Name = "button_UCServicesTCManage_EditService";
             this.button_UCServicesTCManage_EditService.Size = new System.Drawing.Size(120, 31);
             this.button_UCServicesTCManage_EditService.TabIndex = 31;
@@ -720,7 +688,7 @@
             // 
             // button_UCServicesTCManage_FindService
             // 
-            this.button_UCServicesTCManage_FindService.Location = new System.Drawing.Point(9, 27);
+            this.button_UCServicesTCManage_FindService.Location = new System.Drawing.Point(6, 27);
             this.button_UCServicesTCManage_FindService.Name = "button_UCServicesTCManage_FindService";
             this.button_UCServicesTCManage_FindService.Size = new System.Drawing.Size(120, 31);
             this.button_UCServicesTCManage_FindService.TabIndex = 30;
@@ -750,8 +718,9 @@
             // 
             this.textBox_UCServiceTCEdit_ChangePrice.Location = new System.Drawing.Point(191, 186);
             this.textBox_UCServiceTCEdit_ChangePrice.Name = "textBox_UCServiceTCEdit_ChangePrice";
-            this.textBox_UCServiceTCEdit_ChangePrice.Size = new System.Drawing.Size(216, 24);
+            this.textBox_UCServiceTCEdit_ChangePrice.Size = new System.Drawing.Size(216, 20);
             this.textBox_UCServiceTCEdit_ChangePrice.TabIndex = 52;
+            this.textBox_UCServiceTCEdit_ChangePrice.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
             // 
             // UserControlServices
             // 
@@ -787,11 +756,9 @@
         private BrightIdeasSoftware.DataListView objectListView_UCServiceTCFind_FindService;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BrightIdeasSoftware.OLVColumn olvColumn2;
-        private System.Windows.Forms.Label label_UCCServicesTCFind_FindService;
         private System.Windows.Forms.Button button_UCCServicesTCFind_CreateService;
         private System.Windows.Forms.TextBox textBox_UCServicesTCFind_Search;
         private System.Windows.Forms.Label label_UCServicesTCFind_Search;
-        private System.Windows.Forms.Label label_UCCServiceTCCreate_Create;
         private System.Windows.Forms.Button button_UCServicesTCCreate_FindService;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCServiceTCFind_IsHourly;
         private System.Windows.Forms.Label label_UCCServiceTCCreate_IsHourly;
@@ -832,13 +799,13 @@
         private System.Windows.Forms.TextBox textBox_UCServiceTCEdit_ChangeName;
         private System.Windows.Forms.Label label_UCServicesTCEdit_ChangeName;
         private System.Windows.Forms.Button button_UCServicesTCEdit_ManageService;
-        private System.Windows.Forms.Label label_UCServicesTCEdit_EditService;
         private System.Windows.Forms.Button button_UCServicesTCEdit_FindService;
         private System.Windows.Forms.Label label_UCServicesTCEdit_ChangeIsHourly;
         private System.Windows.Forms.Label label_UCServicesTCEdit_ChangePrice;
-        private System.Windows.Forms.Label label_UCServicesTCManage_ManageService;
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyYes;
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyNo;
         private System.Windows.Forms.TextBox textBox_UCServiceTCEdit_ChangePrice;
+        private BrightIdeasSoftware.OLVColumn olvColumn_UCServiceTCCreate_Name;
+        private BrightIdeasSoftware.OLVColumn olvColumn3;
     }
 }

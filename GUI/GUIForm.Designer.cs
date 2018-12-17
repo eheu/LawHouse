@@ -41,6 +41,7 @@
             this.MenuPictureBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.GUINavigationLabel = new System.Windows.Forms.Label();
             this.minimizeWindowBtn = new System.Windows.Forms.PictureBox();
             this.CloseWindowBtn = new System.Windows.Forms.PictureBox();
             this.MenuSlideTimer = new System.Windows.Forms.Timer(this.components);
@@ -228,6 +229,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.SteelBlue;
+            this.TopPanel.Controls.Add(this.GUINavigationLabel);
             this.TopPanel.Controls.Add(this.minimizeWindowBtn);
             this.TopPanel.Controls.Add(this.CloseWindowBtn);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -235,6 +237,17 @@
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(1226, 37);
             this.TopPanel.TabIndex = 2;
+            // 
+            // GUINavigationLabel
+            // 
+            this.GUINavigationLabel.AutoSize = true;
+            this.GUINavigationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GUINavigationLabel.ForeColor = System.Drawing.Color.White;
+            this.GUINavigationLabel.Location = new System.Drawing.Point(3, 5);
+            this.GUINavigationLabel.Name = "GUINavigationLabel";
+            this.GUINavigationLabel.Size = new System.Drawing.Size(142, 29);
+            this.GUINavigationLabel.TabIndex = 5;
+            this.GUINavigationLabel.Text = "Find Sager";
             // 
             // minimizeWindowBtn
             // 
@@ -296,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MenuPictureBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TopPanel.ResumeLayout(false);
+            this.TopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeWindowBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseWindowBtn)).EndInit();
             this.ResumeLayout(false);
@@ -320,5 +334,6 @@
         private System.Windows.Forms.Button servicesBtn;
         private DragControl dragControl2;
         private System.Windows.Forms.PictureBox minimizeWindowBtn;
+        private System.Windows.Forms.Label GUINavigationLabel;
     }
 }

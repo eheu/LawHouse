@@ -1,43 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spire.Pdf;
+using Spire.Pdf.Actions;
+using Spire.Pdf.General;
+using Spire.PdfViewer.Forms;
 
 namespace GUI
 {
     public partial class HelpForm : Form
     {
-        public HelpForm()
+        GUIForm gui;
+        public HelpForm(GUIForm guiForm)
         {
-            //InitializeComponent();
+            InitializeComponent();
+            gui = guiForm;
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
         {
-            //HelpPDFReader.src = Properties.Resources.PDFTest.ToString();
-            //HelpPDFReader.LoadFile(@"C:\Users\ok\source\repos\LawHouse\GUI\PDFtest.pdf");
-           
+            string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
 
-            //string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
+            PdfDocument doc = new PdfDocument();
+            doc.LoadFromFile(path);
+            PdfDestination destination = new PdfDestination(doc.Pages[2]);
+            PdfGoToAction action = new PdfGoToAction(destination);
+            action.Destination.Zoom = 1F;
+            doc.AfterOpenAction = action;
+            doc.SaveToFile("PDFTest.pdf", FileFormat.PDF);
 
-            //HelpPDFReader.src = path;
+            this.HelpPDFReader.LoadFromFile(path);
+        }
 
-            //Process process = new Process();
-            //ProcessStartInfo startInfo = new ProcessStartInfo();
-            //process.StartInfo = startInfo;
-            //startInfo.Arguments = "/A \"page=2\"";
-            //startInfo.Arguments = path;
-
-            //Console.WriteLine(path);
-            //startInfo.FileName = path;
-            //process.Start();
+        private void HelpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gui.helpForm = null;
         }
     }
 }
