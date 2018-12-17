@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
-using Microsoft.SqlServer.Server;
 using System.Globalization;
 
 namespace DataAccess
