@@ -16,7 +16,7 @@ namespace GUI
     {
         public HelpForm()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
@@ -25,9 +25,9 @@ namespace GUI
             //HelpPDFReader.LoadFile(@"C:\Users\ok\source\repos\LawHouse\GUI\PDFtest.pdf");
            
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
+            //string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
 
-            HelpPDFReader.src = path;
+            //HelpPDFReader.src = path;
 
             //Process process = new Process();
             //ProcessStartInfo startInfo = new ProcessStartInfo();
