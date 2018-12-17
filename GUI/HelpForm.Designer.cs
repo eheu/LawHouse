@@ -57,7 +57,7 @@
             this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
 
-        //}
+        }
 
         #endregion
 
