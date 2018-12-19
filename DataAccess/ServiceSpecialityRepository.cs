@@ -46,7 +46,7 @@ namespace DataAccess
                                         WHERE [serviceID] = @ID1 AND [specialityID] = @ID2";
                     cmd.AddParameter("ID1", serviceSpeciality.ServiceID);
                     cmd.AddParameter("ID2", serviceSpeciality.SpecialityID);
-                    Console.WriteLine(cmd.ExecuteNonQuery()); 
+                    cmd.ExecuteNonQuery(); 
                 }
                 catch (Exception)
                 {
