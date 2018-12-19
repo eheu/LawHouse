@@ -57,6 +57,7 @@
             this.label_UCCServiceTCCreate_Name = new System.Windows.Forms.Label();
             this.button_UCServicesTCCreate_FindService = new System.Windows.Forms.Button();
             this.TC_UCServiceTC_EditService = new System.Windows.Forms.TabPage();
+            this.textBox_UCServiceTCEdit_ChangePrice = new System.Windows.Forms.TextBox();
             this.radioButton_UCCServiceTCEdit_IsHourlyNo = new System.Windows.Forms.RadioButton();
             this.radioButton_UCCServiceTCEdit_IsHourlyYes = new System.Windows.Forms.RadioButton();
             this.label_UCServicesTCEdit_ChangeIsHourly = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.button_UCServicesTCManage_FindService = new System.Windows.Forms.Button();
             this.label_UCServicesTCManage_Description = new System.Windows.Forms.Label();
             this.richTextBox_UCServicesTCManage_Description = new System.Windows.Forms.RichTextBox();
-            this.textBox_UCServiceTCEdit_ChangePrice = new System.Windows.Forms.TextBox();
             this.TabControl_UCServices.SuspendLayout();
             this.TC_UCServiceTC_FindService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCServiceTCFind_FindService)).BeginInit();
@@ -129,6 +129,7 @@
             this.TC_UCServiceTC_FindService.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCServiceTC_FindService.TabIndex = 0;
             this.TC_UCServiceTC_FindService.Text = "Find ydelser";
+            this.TC_UCServiceTC_FindService.Enter += new System.EventHandler(this.ResetSearchBox);
             this.TC_UCServiceTC_FindService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
             // 
             // label_UCServicesTCFind_Search
@@ -399,6 +400,7 @@
             // TC_UCServiceTC_EditService
             // 
             this.TC_UCServiceTC_EditService.BackColor = System.Drawing.Color.White;
+            this.TC_UCServiceTC_EditService.Controls.Add(this.textBox_UCServiceTCEdit_ChangePrice);
             this.TC_UCServiceTC_EditService.Controls.Add(this.radioButton_UCCServiceTCEdit_IsHourlyNo);
             this.TC_UCServiceTC_EditService.Controls.Add(this.radioButton_UCCServiceTCEdit_IsHourlyYes);
             this.TC_UCServiceTC_EditService.Controls.Add(this.label_UCServicesTCEdit_ChangeIsHourly);
@@ -414,13 +416,20 @@
             this.TC_UCServiceTC_EditService.Controls.Add(this.label_UCServicesTCEdit_ChangeName);
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_ManageService);
             this.TC_UCServiceTC_EditService.Controls.Add(this.button_UCServicesTCEdit_FindService);
-            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCServiceTC_EditService.Location = new System.Drawing.Point(4, 14);
             this.TC_UCServiceTC_EditService.Name = "TC_UCServiceTC_EditService";
             this.TC_UCServiceTC_EditService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCServiceTC_EditService.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCServiceTC_EditService.TabIndex = 2;
             this.TC_UCServiceTC_EditService.Text = "Rediger";
             this.TC_UCServiceTC_EditService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
+            // 
+            // textBox_UCServiceTCEdit_ChangePrice
+            // 
+            this.textBox_UCServiceTCEdit_ChangePrice.Location = new System.Drawing.Point(191, 186);
+            this.textBox_UCServiceTCEdit_ChangePrice.Name = "textBox_UCServiceTCEdit_ChangePrice";
+            this.textBox_UCServiceTCEdit_ChangePrice.Size = new System.Drawing.Size(216, 24);
+            this.textBox_UCServiceTCEdit_ChangePrice.TabIndex = 51;
             // 
             // radioButton_UCCServiceTCEdit_IsHourlyNo
             // 
@@ -481,8 +490,8 @@
             // 
             // olvColumn4
             // 
-            this.olvColumn4.AspectName = "Value.Name";
-            this.olvColumn4.Text = "Ydelsesnavne";
+            this.olvColumn4.AspectName = "Name";
+            this.olvColumn4.Text = "EfterUddennelsesnavne";
             this.olvColumn4.Width = 200;
             // 
             // label_UCServicesTCEdit_SpecialityView
@@ -523,6 +532,7 @@
             this.button_UCServicesTCEdit_RemoveSpeciality.Tag = "";
             this.button_UCServicesTCEdit_RemoveSpeciality.Text = "Fjern efteruddannelse";
             this.button_UCServicesTCEdit_RemoveSpeciality.UseVisualStyleBackColor = true;
+            this.button_UCServicesTCEdit_RemoveSpeciality.Click += new System.EventHandler(this.button_UCServicesTCEdit_RemoveSpeciality_Click);
             // 
             // richTextBox_UCServicesTCEdit_Description
             // 
@@ -594,10 +604,10 @@
             this.TC_UCServiceTC_ManageService.Controls.Add(this.button_UCServicesTCManage_FindService);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.label_UCServicesTCManage_Description);
             this.TC_UCServiceTC_ManageService.Controls.Add(this.richTextBox_UCServicesTCManage_Description);
-            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCServiceTC_ManageService.Location = new System.Drawing.Point(4, 14);
             this.TC_UCServiceTC_ManageService.Name = "TC_UCServiceTC_ManageService";
             this.TC_UCServiceTC_ManageService.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCServiceTC_ManageService.Size = new System.Drawing.Size(1149, 548);
             this.TC_UCServiceTC_ManageService.TabIndex = 3;
             this.TC_UCServiceTC_ManageService.Text = "Administrer";
             this.TC_UCServiceTC_ManageService.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
@@ -714,14 +724,6 @@
             this.richTextBox_UCServicesTCManage_Description.TabIndex = 28;
             this.richTextBox_UCServicesTCManage_Description.Text = "";
             // 
-            // textBox_UCServiceTCEdit_ChangePrice
-            // 
-            this.textBox_UCServiceTCEdit_ChangePrice.Location = new System.Drawing.Point(191, 186);
-            this.textBox_UCServiceTCEdit_ChangePrice.Name = "textBox_UCServiceTCEdit_ChangePrice";
-            this.textBox_UCServiceTCEdit_ChangePrice.Size = new System.Drawing.Size(216, 20);
-            this.textBox_UCServiceTCEdit_ChangePrice.TabIndex = 52;
-            this.textBox_UCServiceTCEdit_ChangePrice.MouseEnter += new System.EventHandler(this.UserControlServices_MouseEnter);
-            // 
             // UserControlServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -804,8 +806,8 @@
         private System.Windows.Forms.Label label_UCServicesTCEdit_ChangePrice;
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyYes;
         private System.Windows.Forms.RadioButton radioButton_UCCServiceTCEdit_IsHourlyNo;
-        private System.Windows.Forms.TextBox textBox_UCServiceTCEdit_ChangePrice;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCServiceTCCreate_Name;
         private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private System.Windows.Forms.TextBox textBox_UCServiceTCEdit_ChangePrice;
     }
 }
