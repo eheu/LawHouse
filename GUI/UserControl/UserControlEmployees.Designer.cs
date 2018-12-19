@@ -102,6 +102,8 @@
             this.label_UCEmployeeTCManage_email = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_lastName = new System.Windows.Forms.Label();
             this.label_UCEmployeeTCManage_firstName = new System.Windows.Forms.Label();
+            this.olvColumnEmployeeFindEmail = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnEmployeeFindPhone = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TabControl_UCEmployee.SuspendLayout();
             this.TC_UCEmployeeTC_FindEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCEmployeeTCFind_FindEmployee)).BeginInit();
@@ -125,7 +127,7 @@
             this.TabControl_UCEmployee.Controls.Add(this.TC_UCEmployeeTC_ManageEmployee);
             this.TabControl_UCEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCEmployee.ItemSize = new System.Drawing.Size(0, 1);
+            this.TabControl_UCEmployee.ItemSize = new System.Drawing.Size(100, 30);
             this.TabControl_UCEmployee.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCEmployee.Margin = new System.Windows.Forms.Padding(0);
             this.TabControl_UCEmployee.Name = "TabControl_UCEmployee";
@@ -142,12 +144,13 @@
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.button_UCEmployeeTCFind_CreateEmployee);
             this.TC_UCEmployeeTC_FindEmployee.Controls.Add(this.objectListView_UCEmployeeTCFind_FindEmployee);
-            this.TC_UCEmployeeTC_FindEmployee.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_FindEmployee.Location = new System.Drawing.Point(4, 34);
             this.TC_UCEmployeeTC_FindEmployee.Name = "TC_UCEmployeeTC_FindEmployee";
             this.TC_UCEmployeeTC_FindEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_FindEmployee.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_FindEmployee.Size = new System.Drawing.Size(1149, 528);
             this.TC_UCEmployeeTC_FindEmployee.TabIndex = 0;
             this.TC_UCEmployeeTC_FindEmployee.Text = "Find ansat";
+            this.TC_UCEmployeeTC_FindEmployee.Enter += new System.EventHandler(this.ResetSearchBox);
             this.TC_UCEmployeeTC_FindEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
             // 
             // textBox_UCEmployeeTCFind_Search
@@ -181,10 +184,14 @@
             // 
             this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindFirstName);
             this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindLastName);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindEmail);
+            this.objectListView_UCEmployeeTCFind_FindEmployee.AllColumns.Add(this.olvColumnEmployeeFindPhone);
             this.objectListView_UCEmployeeTCFind_FindEmployee.CellEditUseWholeCell = false;
             this.objectListView_UCEmployeeTCFind_FindEmployee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumnEmployeeFindFirstName,
-            this.olvColumnEmployeeFindLastName});
+            this.olvColumnEmployeeFindLastName,
+            this.olvColumnEmployeeFindEmail,
+            this.olvColumnEmployeeFindPhone});
             this.objectListView_UCEmployeeTCFind_FindEmployee.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView_UCEmployeeTCFind_FindEmployee.DataSource = null;
             this.objectListView_UCEmployeeTCFind_FindEmployee.FullRowSelect = true;
@@ -204,14 +211,14 @@
             this.olvColumnEmployeeFindFirstName.AspectName = "FirstName";
             this.olvColumnEmployeeFindFirstName.IsTileViewColumn = true;
             this.olvColumnEmployeeFindFirstName.Text = "Fornavn";
-            this.olvColumnEmployeeFindFirstName.Width = 100;
+            this.olvColumnEmployeeFindFirstName.Width = 248;
             // 
             // olvColumnEmployeeFindLastName
             // 
             this.olvColumnEmployeeFindLastName.AspectName = "LastName";
             this.olvColumnEmployeeFindLastName.IsTileViewColumn = true;
             this.olvColumnEmployeeFindLastName.Text = "Efternavn";
-            this.olvColumnEmployeeFindLastName.Width = 100;
+            this.olvColumnEmployeeFindLastName.Width = 253;
             // 
             // TC_UCEmployeeTC_EditEmployee
             // 
@@ -236,10 +243,10 @@
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label5);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label4);
             this.TC_UCEmployeeTC_EditEmployee.Controls.Add(this.label3);
-            this.TC_UCEmployeeTC_EditEmployee.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_EditEmployee.Location = new System.Drawing.Point(4, 34);
             this.TC_UCEmployeeTC_EditEmployee.Name = "TC_UCEmployeeTC_EditEmployee";
             this.TC_UCEmployeeTC_EditEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_EditEmployee.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_EditEmployee.Size = new System.Drawing.Size(1149, 528);
             this.TC_UCEmployeeTC_EditEmployee.TabIndex = 1;
             this.TC_UCEmployeeTC_EditEmployee.Text = "Rediger";
             this.TC_UCEmployeeTC_EditEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -472,10 +479,10 @@
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label11);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label12);
             this.TC_UCEmployeeTC_CreateEmployee.Controls.Add(this.label13);
-            this.TC_UCEmployeeTC_CreateEmployee.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_CreateEmployee.Location = new System.Drawing.Point(4, 34);
             this.TC_UCEmployeeTC_CreateEmployee.Name = "TC_UCEmployeeTC_CreateEmployee";
             this.TC_UCEmployeeTC_CreateEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_CreateEmployee.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_CreateEmployee.Size = new System.Drawing.Size(1149, 528);
             this.TC_UCEmployeeTC_CreateEmployee.TabIndex = 2;
             this.TC_UCEmployeeTC_CreateEmployee.Text = "Opret";
             this.TC_UCEmployeeTC_CreateEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -658,10 +665,10 @@
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_email);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_lastName);
             this.TC_UCEmployeeTC_ManageEmployee.Controls.Add(this.label_UCEmployeeTCManage_firstName);
-            this.TC_UCEmployeeTC_ManageEmployee.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCEmployeeTC_ManageEmployee.Location = new System.Drawing.Point(4, 34);
             this.TC_UCEmployeeTC_ManageEmployee.Name = "TC_UCEmployeeTC_ManageEmployee";
             this.TC_UCEmployeeTC_ManageEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCEmployeeTC_ManageEmployee.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCEmployeeTC_ManageEmployee.Size = new System.Drawing.Size(1149, 528);
             this.TC_UCEmployeeTC_ManageEmployee.TabIndex = 3;
             this.TC_UCEmployeeTC_ManageEmployee.Text = "Administrere";
             this.TC_UCEmployeeTC_ManageEmployee.MouseEnter += new System.EventHandler(this.UserControlEmployees_MouseEnter);
@@ -901,6 +908,18 @@
             this.label_UCEmployeeTCManage_firstName.TabIndex = 22;
             this.label_UCEmployeeTCManage_firstName.Text = "Fornavn";
             // 
+            // olvColumnEmployeeFindEmail
+            // 
+            this.olvColumnEmployeeFindEmail.AspectName = "Email";
+            this.olvColumnEmployeeFindEmail.Text = "Email";
+            this.olvColumnEmployeeFindEmail.Width = 367;
+            // 
+            // olvColumnEmployeeFindPhone
+            // 
+            this.olvColumnEmployeeFindPhone.AspectName = "Phone";
+            this.olvColumnEmployeeFindPhone.Text = "Telefon";
+            this.olvColumnEmployeeFindPhone.Width = 260;
+            // 
             // UserControlEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1006,5 +1025,7 @@
         private BrightIdeasSoftware.ObjectListView objectListView_UCEmployeeTCCreate_Speciality;
         private BrightIdeasSoftware.OLVColumn olvColumn_UCEmployeeTCCreate_SpecialityName;
         private System.Windows.Forms.Button button_UCEmployeeTCEdit_ManageCase;
+        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindEmail;
+        private BrightIdeasSoftware.OLVColumn olvColumnEmployeeFindPhone;
     }
 }

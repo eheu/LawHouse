@@ -18,6 +18,11 @@ namespace GUI
             SetObjectListViewClients();
         }
 
+        public void ResetSearchBox(object sender, EventArgs e)
+        {
+            textBox_UCClientTCFind_Search.Text = null;
+        }
+
         void SetCaseAndEmployeeObjectListViews(ObjectListView ObjectListViewName)
         {
             List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
@@ -58,31 +63,40 @@ namespace GUI
         {
             try
             {
-                Client NewClient = new Client
+                if ((string.IsNullOrEmpty(textbox_UCClientTCCreate_firstName.Text)) != true && 
+                    (string.IsNullOrEmpty(textbox_UCClientTCCreate_lastName.Text)) != true &&
+                    (string.IsNullOrEmpty(textbox_UCClientTCCreate_phone.Text)) != true &&
+                    (string.IsNullOrEmpty(textbox_UCClientTCCreate_addresse.Text)) != true &&
+                    (string.IsNullOrEmpty(textbox_UCClientTCCreate_email.Text)) != true)
                 {
-                    FirstName = textbox_UCClientTCCreate_firstName.Text,
-                    LastName = textbox_UCClientTCCreate_lastName.Text,
-                    Phone = textbox_UCClientTCCreate_phone.Text,
-                    Address = textbox_UCClientTCCreate_addresse.Text,
-                    Email = textbox_UCClientTCCreate_email.Text
-                };
-                //Send to DB.
-                gui.ClientRepository.Create(NewClient);
-                label_UCClientTCCreate_Save.Text = "Klienten er nu gemt";
+                    Client NewClient = new Client
+                    {
+                        FirstName = textbox_UCClientTCCreate_firstName.Text,
+                        LastName = textbox_UCClientTCCreate_lastName.Text,
+                        Phone = textbox_UCClientTCCreate_phone.Text,
+                        Address = textbox_UCClientTCCreate_addresse.Text,
+                        Email = textbox_UCClientTCCreate_email.Text
+                    };
+                    //Send to DB.
+                    gui.ClientRepository.Create(NewClient);
+
+                    //Clear textBoxes
+                    gui.ClearControlCollection(TC_UCClientTC_CreateClient.Controls);
+
+                    //Refreash olv
+                    SetObjectListViewClients();
+
+                    //User send back to Find_Client
+                    TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
+                } else
+                {
+                    label_UCClientTCCreate_Save.Text = "Alt skal udfyldes";
+                }
             }
             catch (Exception)
             {
                 label_UCClientTCCreate_Save.Text = "Der er sket en fejl";
             }
-
-            //Clear textBoxes
-            gui.ClearControlCollection(TC_UCClientTC_CreateClient.Controls);
-
-            //Refreash olv
-            SetObjectListViewClients();
-
-            //User send back to Find_Client
-            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
         }
 
         /// <summary>
@@ -147,6 +161,33 @@ namespace GUI
             TabControl_UCClient.SelectedTab = TC_UCClientTC_ManageClient;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Klient");
+        }
+
+        private void bottom_UCClientTCEdit_Save_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+
+            client.ID = currentClient.ID;
+            client.FirstName = textbox_UCClientTCEdit_firstName.Text;
+            client.LastName = textbox_UCClientTCEdit_lastName.Text;
+            client.Email = textbox_UCClientTCEdit_email.Text;
+            client.Phone = textbox_UCClientTCEdit_phone.Text;
+            client.Address = textbox_UCClientTCEdit_addresse.Text;
+
+            //Create the employee
+            gui.ClientRepository.Update(client);
+
+            //Clear text/Compoboxes
+            gui.ClearControlCollection(TC_UCClientTC_EditClient.Controls);
+
+            //Refresh Employee Olv
+            List<Client> Clientlist = gui.ClientRepository.GetAll();
+            objectListView_UCClientTCFind_FindClient.SetObjects(Clientlist);
+
+            //Go back to Find Employee
+            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
+            //GUINavigationLabel
+            gui.setGUINavigationLabel("Find Klient");
         }
     }
 }

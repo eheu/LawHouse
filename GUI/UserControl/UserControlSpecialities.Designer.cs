@@ -95,7 +95,7 @@
             this.TabControl_UCSpecialities.Controls.Add(this.TC_UCSpecialityTC_ManageSpeciality);
             this.TabControl_UCSpecialities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCSpecialities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(0, 1);
+            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(100, 20);
             this.TabControl_UCSpecialities.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCSpecialities.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCSpecialities.Name = "TabControl_UCSpecialities";
@@ -112,12 +112,13 @@
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.textBox_UCSpecialityTCFind_Search);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.button_UCCSpecialityTCFind_CreateSpeciality);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.objectListView_UCSpecialityTCFind_FindSpeciality);
-            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 24);
             this.TC_UCSpecialityTC_FindSpeciality.Name = "TC_UCSpecialityTC_FindSpeciality";
             this.TC_UCSpecialityTC_FindSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 538);
             this.TC_UCSpecialityTC_FindSpeciality.TabIndex = 0;
             this.TC_UCSpecialityTC_FindSpeciality.Text = "Find efterud";
+            this.TC_UCSpecialityTC_FindSpeciality.Enter += new System.EventHandler(this.ResetSearchBox);
             this.TC_UCSpecialityTC_FindSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
             // 
             // label_UCSpecialityTCFind_Search
@@ -187,10 +188,10 @@
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.textbox_UCCServiceTCCreate_Name);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.label_UCCSpecialityTCCreate_Name);
             this.TC_UCSpecialityTC_CreateSpeciality.Controls.Add(this.button_UCSpecialityTCCreate_FindSpeciality);
-            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCSpecialityTC_CreateSpeciality.Location = new System.Drawing.Point(4, 24);
             this.TC_UCSpecialityTC_CreateSpeciality.Name = "TC_UCSpecialityTC_CreateSpeciality";
             this.TC_UCSpecialityTC_CreateSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCSpecialityTC_CreateSpeciality.Size = new System.Drawing.Size(1149, 538);
             this.TC_UCSpecialityTC_CreateSpeciality.TabIndex = 1;
             this.TC_UCSpecialityTC_CreateSpeciality.Text = "Opret";
             this.TC_UCSpecialityTC_CreateSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
@@ -319,10 +320,10 @@
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.label_UCSpecialityTCEdit_ChangeName);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_ManageSpeciality);
             this.TC_UCSpecialityTC_EditSpeciality.Controls.Add(this.button_UCSpecialityTCEdit_FindSpeciality);
-            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCSpecialityTC_EditSpeciality.Location = new System.Drawing.Point(4, 24);
             this.TC_UCSpecialityTC_EditSpeciality.Name = "TC_UCSpecialityTC_EditSpeciality";
             this.TC_UCSpecialityTC_EditSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCSpecialityTC_EditSpeciality.Size = new System.Drawing.Size(1149, 538);
             this.TC_UCSpecialityTC_EditSpeciality.TabIndex = 2;
             this.TC_UCSpecialityTC_EditSpeciality.Text = "Rediger";
             this.TC_UCSpecialityTC_EditSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
@@ -460,10 +461,10 @@
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.button_UCSpecialityTCManage_FindSpeciality);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.label_UCSpecialityTCManage_Description);
             this.TC_UCSpecialityTC_ManageSpeciality.Controls.Add(this.richTextBox_UCSpecialityTCManage_Description);
-            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCSpecialityTC_ManageSpeciality.Location = new System.Drawing.Point(4, 24);
             this.TC_UCSpecialityTC_ManageSpeciality.Name = "TC_UCSpecialityTC_ManageSpeciality";
             this.TC_UCSpecialityTC_ManageSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCSpecialityTC_ManageSpeciality.Size = new System.Drawing.Size(1149, 538);
             this.TC_UCSpecialityTC_ManageSpeciality.TabIndex = 3;
             this.TC_UCSpecialityTC_ManageSpeciality.Text = "Administrer";
             this.TC_UCSpecialityTC_ManageSpeciality.MouseEnter += new System.EventHandler(this.UserControlSpecialities_MouseEnter);
@@ -536,11 +537,6 @@
             // comboBox_UCSpecialityTCManage_AddService
             // 
             this.comboBox_UCSpecialityTCManage_AddService.FormattingEnabled = true;
-            this.comboBox_UCSpecialityTCManage_AddService.Items.AddRange(new object[] {
-            "kasper thorsen",
-            "kasper nielsen",
-            "stig thorsen",
-            "stig nielsen"});
             this.comboBox_UCSpecialityTCManage_AddService.Location = new System.Drawing.Point(321, 111);
             this.comboBox_UCSpecialityTCManage_AddService.Name = "comboBox_UCSpecialityTCManage_AddService";
             this.comboBox_UCSpecialityTCManage_AddService.Size = new System.Drawing.Size(121, 26);
