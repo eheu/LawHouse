@@ -37,7 +37,26 @@ namespace DataAccess
 
         public void Delete(ServiceSpeciality serviceSpeciality)
         {
-            throw new NotImplementedException();
+            using (var cmd = _connection.CreateCommand())
+            {
+                try
+                {
+                    _connection.Open();
+                    cmd.CommandText = @"DELETE FROM [ServiceSpeciality]
+                                        WHERE [serviceID] = @ID1 AND [specialityID] = @ID2";
+                    cmd.AddParameter("ID1", serviceSpeciality.ServiceID);
+                    cmd.AddParameter("ID2", serviceSpeciality.SpecialityID);
+                    Console.WriteLine(cmd.ExecuteNonQuery()); 
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         public ServiceSpeciality Get(int id)

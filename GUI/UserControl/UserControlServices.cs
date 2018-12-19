@@ -29,6 +29,11 @@ namespace GUI
             InitializeFindServiceObjectListView();
         }
 
+        public void ResetSearchBox(object sender, EventArgs e)
+        {
+            textBox_UCServicesTCFind_Search.Text = null;
+        }
+
         private void Set_ComboBox_UCServicesTCCreate_AddSpeciality()
         {
             comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
@@ -112,6 +117,9 @@ namespace GUI
             {
                 radioButton_UCCServiceTCEdit_IsHourlyNo.Checked = true;
             }
+
+            //Load of olv
+            objectListView_UCServicesTCEdit_Speciality.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
 
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_EditService;
             //GUINavigationLabel
@@ -250,6 +258,17 @@ namespace GUI
         private void UserControlServices_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
+        }
+
+        private void button_UCServicesTCEdit_RemoveSpeciality_Click(object sender, EventArgs e)
+        {
+            if (objectListView_UCServicesTCEdit_Speciality.SelectedObject != null)
+            {
+                Speciality selectedSpeciality = (Speciality)objectListView_UCServicesTCEdit_Speciality.SelectedObject;
+                gui.ServiceSpecialityRepository.Delete(new ServiceSpeciality(selectedSpeciality.ID, currentService.ID));
+                objectListView_UCServicesTCEdit_Speciality.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
+                objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
+            }
         }
     }
 }
