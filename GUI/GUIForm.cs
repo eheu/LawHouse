@@ -23,7 +23,6 @@ namespace GUI
         UserControlClients userControlClients;
         UserControlSpecialities userControlSpecialities;
         UserControlServices userControlServices;
-        UserControlHelp userControlHelp;
 
         public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository, IServiceSpecialityRepository serviceSpecialityRepository)
         {
@@ -41,7 +40,6 @@ namespace GUI
             userControlClients = new UserControlClients(this);
             userControlSpecialities = new UserControlSpecialities(this);
             userControlServices = new UserControlServices(this);
-            userControlHelp = new UserControlHelp(this);
             InitializeComponent();
             panelWidth = MenuPanel.Width;
             hidden = true;
@@ -156,7 +154,6 @@ namespace GUI
             buttonBackColor(CaseBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlCases.Show();
@@ -187,7 +184,6 @@ namespace GUI
             buttonBackColor(EmployeeBtn);
             userControlCases.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlEmployees.Show();
@@ -218,7 +214,6 @@ namespace GUI
             buttonBackColor(ClientBtn);
             userControlCases.Hide();
             userControlEmployees.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlClients.Show();
@@ -249,7 +244,6 @@ namespace GUI
             buttonBackColor(SpecialitiesBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlServices.Hide();
             userControlCases.Hide();
             userControlSpecialities.Show();
@@ -280,7 +274,6 @@ namespace GUI
             buttonBackColor(servicesBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlCases.Hide();
             userControlSpecialities.Hide();
             userControlServices.Show();

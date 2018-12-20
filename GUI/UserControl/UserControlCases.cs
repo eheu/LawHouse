@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
-using GUI;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
 using System.Diagnostics;
@@ -154,6 +148,7 @@ namespace GUI
             Client client = gui.ClientRepository.Get(currentCase.ClientID);
             Employee employee = gui.EmployeeRepository.Get(currentCase.EmployeeID);
 
+            label_UCCaseTCEdit_CaseID_Show.Text = Convert.ToString(currentCase.ID);
             textBox_UCCaseTCEdit_ChangeName.Text = currentCase.Title;
             comboBox_UCCaseTCEdit_ChangeClient.SelectedValue = client.ID;
             comboBox_UCCaseTCEdit_ChangeLawyer.SelectedValue = employee.ID;
@@ -192,10 +187,11 @@ namespace GUI
             gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
         }
 
-        private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
+        private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
         {
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
-            label_UCCaseTCManage_CaseName.Text = @case.Title;
+            label_UCCaseTCManage_CaseID_Show.Text = Convert.ToString(@case.ID);
+            label_UCCaseTCManage_CaseName_Show.Text = @case.Title;
             richTextBox_UCCaseTCManage_Description.Text = @case.Description;
             //her skal indlæses sager
             LoadCaseservicesTObjectListView(@case);
@@ -209,7 +205,6 @@ namespace GUI
             gui.setGUINavigationLabel("Administrer Sag");
         }
 
-        
         private void LoadCaseservicesTObjectListView(Case @case)
         {
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
@@ -229,8 +224,34 @@ namespace GUI
 
         private void button_UCCaseTCManage_AddService_Click(object sender, EventArgs e)
         {
-            gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
-            LoadCaseservicesTObjectListView(currentCase);
+            if (objectListView_UCCaseTCManage_ManageService != null)
+            {
+                Service selectedService = (Service)comboBox_UCCaseTCManage_AddService.SelectedItem;
+                List<Service> servicesInObjectListView = new List<Service>();
+                foreach (var item in objectListView_UCCaseTCManage_ManageService.Objects)
+                {
+                    KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)item;
+                    Service service = keyValue.Value;
+                    servicesInObjectListView.Add(service); 
+                }
+                bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
+                if (!exists)
+                {
+                    gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
+                    LoadCaseservicesTObjectListView(currentCase);
+                    comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+                }
+                else
+                {
+                    comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+                }
+            }
+            else
+            {
+                gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
+                LoadCaseservicesTObjectListView(currentCase);
+                comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+            }
         }
 
         private void button_UCCaseTCManage_Save_Click(object sender, EventArgs e)

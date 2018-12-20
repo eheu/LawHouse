@@ -93,7 +93,7 @@ namespace DataAccess
                 {
                      _connection.Open();
                     command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
-                                            FROM Client";
+                                            FROM Client ORDER BY firstName";
                     return MapCollection(command);
                 }
                 catch (Exception)
