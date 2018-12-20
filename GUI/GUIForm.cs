@@ -165,6 +165,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlCases.Controls["TabControl_UCCases"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCCaseTC_FindCase"];
+
+            //Reset the Searchbox
+            userControlCases.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Sag");
         }
@@ -192,6 +196,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlEmployees.Controls["TabControl_UCEmployee"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCEmployeeTC_FindEmployee"];
+
+            //Reset the Searchbox
+            userControlEmployees.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Ansat");
         }
@@ -219,6 +227,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlClients.Controls["TabControl_UCClient"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCClientTC_FindClient"];
+
+            //Reset the Searchbox
+            userControlClients.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Klient");
         }
@@ -246,6 +258,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlSpecialities.Controls["TabControl_UCSpecialities"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCSpecialityTC_FindSpeciality"];
+
+            //Reset the Searchbox
+            userControlSpecialities.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Efteruddannelse");
         }
@@ -273,6 +289,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlServices.Controls["TabControl_UCServices"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCServiceTC_FindService"];
+
+            //Reset the Searchbox
+            userControlServices.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Ydelse");
         }
@@ -315,11 +335,11 @@ namespace GUI
         {
             GUINavigationLabel.Text = text;
         }
-            
-        
+
+
         /// <summary>
         /// Clear all Controls in the given ControlCollection
-        /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+        /// Ex call: gui.ClearControlCollection(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
         public void ClearControlCollection(System.Windows.Forms.Control.ControlCollection ctrls)
         {

@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculationHelper.cs" />
     <Compile Include="Interfaces\ICaseServiceRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Interfaces\IEmployeeSpecialityRepository.cs" />

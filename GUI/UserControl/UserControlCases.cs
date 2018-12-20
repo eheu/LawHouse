@@ -75,6 +75,12 @@ namespace GUI
             caselist = gui.CaseRepository.GetAllOpenCases();
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
+
+        public void ResetSearchBox(object sender, EventArgs e)
+        {
+            textBox_UCCaseTCFind_Search.Text = null;
+        }
+
         /// <summary>
         ///     Menubar toggle event. This event gets called multiple times by objects on same usercontrol. 
         /// </summary>
@@ -85,6 +91,14 @@ namespace GUI
 
         private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
+
+            //vælg klient
+            SetComboBoxClient(comboBox_UCCaseTCCreate_ChooseClient);
+            //vælg advokat
+            SetComboBoxLawyer(comboBox_UCCaseTCCreate_ChooseLawyer);
+            //vælg ydelse
+            SetComboboxService(comboBox_UCCaseTCCreate_ChooseService);
+
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_CreateCase;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Sag");
@@ -101,6 +115,9 @@ namespace GUI
         {
             //her skal indlæses sager
             LoadCaseservicesTObjectListView(currentCase);
+
+            //vælg ydelse
+            SetComboboxService(comboBox_UCCaseTCManage_AddService);
 
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
             //GUINavigationLabel
@@ -124,6 +141,11 @@ namespace GUI
 
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
+            //klient
+            SetComboBoxClient(comboBox_UCCaseTCEdit_ChangeClient);
+            //advokat
+            SetComboBoxLawyer(comboBox_UCCaseTCEdit_ChangeLawyer);
+
             richTextBox_UCCaseTCEdit_Description.Text = currentCase.Description;
             // objectlistview 
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
@@ -177,6 +199,9 @@ namespace GUI
             richTextBox_UCCaseTCManage_Description.Text = @case.Description;
             //her skal indlæses sager
             LoadCaseservicesTObjectListView(@case);
+
+            //ydelse
+            SetComboboxService(comboBox_UCCaseTCManage_AddService);
 
             currentCase = @case;
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_ManageCase;
@@ -265,7 +290,7 @@ namespace GUI
 
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
         {
-            List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
+                List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
             comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
             comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
         }

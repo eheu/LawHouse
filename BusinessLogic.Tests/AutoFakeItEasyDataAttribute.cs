@@ -14,7 +14,7 @@ namespace BusinessLogic.Tests
     {
         public AutoFakeItEasyDataAttribute()
             : base(() => new Fixture().Customize(new AutoFakeItEasyCustomization()))
-        {
+        { 
         }
     }
 }
