@@ -141,14 +141,23 @@ namespace GUI
         }
 #endregion
         #region Events for CaseBtn
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void CaseBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(CaseBtn);
         }
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void CaseBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(CaseBtn);     
         }
+        /// <summary>
+        /// Show Tab Control TC_UCCaseTC_FindCase
+        /// </summary>
         private void CaseBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(CaseBtn);
@@ -171,14 +180,23 @@ namespace GUI
         }
         #endregion
         #region Events for EmployeeBtn
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void EmployeeBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(EmployeeBtn);
         }
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void EmployeeBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(EmployeeBtn);
         }
+        /// <summary>
+        /// Show Tab Control TC_UCEmployeeTC_FindEmployee
+        /// </summary>
         private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(EmployeeBtn);
@@ -199,16 +217,25 @@ namespace GUI
             //GUINavigationLabel
             setGUINavigationLabel("Find Ansat");
         }
-        #endregion  
+        #endregion
         #region Events for ClientBtn
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void ClientBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(ClientBtn);
         }
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void ClientBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(ClientBtn);
         }
+        /// <summary>
+        /// Show Tab Control TC_UCClientTC_FindClient
+        /// </summary>
         private void ClientBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(ClientBtn);
@@ -231,14 +258,23 @@ namespace GUI
         }
         #endregion
         #region Events for SpecialitiesBtn
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void SpecialitiesBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(SpecialitiesBtn);
         }
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void SpecialitiesBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(SpecialitiesBtn);
         }
+        /// <summary>
+        /// Show Tab Control TC_UCSpecialityTC_FindSpeciality
+        /// </summary>
         private void SpecialitiesBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(SpecialitiesBtn);
@@ -261,14 +297,23 @@ namespace GUI
         }
         #endregion
         #region Events for ServicesBtn
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void servicesBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(servicesBtn);
         }
+        /// <summary>
+        /// Hover effect
+        /// </summary>
         private void servicesBtn_MouseLeave(object sender, EventArgs e)
         {
             buttonForeColorLeave(servicesBtn);
         }
+        /// <summary>
+        /// Show Tab Control TC_UCServiceTC_FindService
+        /// </summary>
         private void servicesBtn_Click(object sender, EventArgs e)
         {
             buttonBackColor(servicesBtn);
@@ -291,6 +336,9 @@ namespace GUI
         }
         #endregion
         #region  Events for HelpBtn
+        /// <summary>
+        /// Mouse enter and Leave events
+        /// </summary>
         private void HelpBtn_MouseEnter(object sender, EventArgs e)
         {
             buttonForeColorHover(HelpBtn);
@@ -316,14 +364,18 @@ namespace GUI
                 helpForm.Show();
             }
         }
-
+        /// <summary>
+        /// Toggle menu panel
+        /// </summary>
         private void Menu_leave(object sender, EventArgs e)
         {
             toggleMenuPanel();
         }
 
         #endregion
-
+        /// <summary>
+        /// Set the GUI Navigation Label
+        /// </summary>
         public void setGUINavigationLabel(string text)
         {
             GUINavigationLabel.Text = text;

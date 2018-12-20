@@ -260,7 +260,7 @@
             this.bottom_UCClientTCEdit_FindCase.TabIndex = 25;
             this.bottom_UCClientTCEdit_FindCase.Text = "Find Klient";
             this.bottom_UCClientTCEdit_FindCase.UseVisualStyleBackColor = true;
-            this.bottom_UCClientTCEdit_FindCase.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
+            this.bottom_UCClientTCEdit_FindCase.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindClient_Click);
             // 
             // bottom_UCClientTCEdit_Save
             // 
@@ -531,7 +531,7 @@
             this.button_UCClientTCCreate_FindClient.TabIndex = 1;
             this.button_UCClientTCCreate_FindClient.Text = "Find klient";
             this.button_UCClientTCCreate_FindClient.UseVisualStyleBackColor = true;
-            this.button_UCClientTCCreate_FindClient.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
+            this.button_UCClientTCCreate_FindClient.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindClient_Click);
             // 
             // TC_UCClientTC_ManageClient
             // 
@@ -621,7 +621,7 @@
             this.bottom_UCClientTCManage_Back.TabIndex = 39;
             this.bottom_UCClientTCManage_Back.Text = "Find Klient";
             this.bottom_UCClientTCManage_Back.UseVisualStyleBackColor = true;
-            this.bottom_UCClientTCManage_Back.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindCase_Click);
+            this.bottom_UCClientTCManage_Back.Click += new System.EventHandler(this.bottom_UCClientTCEdit_FindClient_Click);
             // 
             // label15
             // 

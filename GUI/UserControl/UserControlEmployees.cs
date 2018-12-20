@@ -22,17 +22,24 @@ namespace GUI
             SetAllEmployeeComboBoxSpecialityAndRole();
         }
 
+        /// <summary>
+        /// Load the Olv with Employees
+        /// </summary>
         private void SetObjectListViewEmployee()
         {
             List<Employee> Employeelist = gui.EmployeeRepository.GetAll();
             objectListView_UCEmployeeTCFind_FindEmployee.SetObjects(Employeelist);
         }
-
+        /// <summary>
+        /// toggle Menu Panel
+        /// </summary>
         private void UserControlEmployees_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
         }
-
+        /// <summary>
+        /// Switch to the Create Employee tab
+        /// </summary>
         private void button_UCEmployeeTCFind_CreateEmployee_Click(object sender, EventArgs e)
         {
             //Reload of Speciality Combobox
@@ -42,21 +49,24 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Ansat");
         }
-
+        /// <summary>
+        /// Switch to the Find Employee tab
+        /// </summary>
         private void button_UCEmployeeTCCreate_FindEmployee_Click(object sender, EventArgs e)
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ansat");
         }
-
+        /// <summary>
+        /// Switch to the Find Employee tab
+        /// </summary>
         private void button_UCEmployeeTCEdit_FindEmployee_Click(object sender, EventArgs e)
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ansat");
         }
-
 
         /// <summary>
         /// Sets the All comboboxes on startup
@@ -97,11 +107,12 @@ namespace GUI
             combo_UCEmployeeTCEdit_Role.AutoCompleteMode = AutoCompleteMode.Suggest;
             combo_UCEmployeeTCEdit_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Set Employee ComboBox Speciality 
+        /// </summary>
         private void SetEmployeeComboBoxSpeciality(ComboBox ctrl)
         {
             List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
-
             ctrl.DataSource = SpecialityList;
             ctrl.DisplayMember = "Name";
             ctrl.ValueMember = "ID";
@@ -109,7 +120,9 @@ namespace GUI
             ctrl.AutoCompleteMode = AutoCompleteMode.Suggest;
             ctrl.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Reset Search Box
+        /// </summary>
         public void ResetSearchBox(object sender, EventArgs e)
         {
             textBox_UCEmployeeTCFind_Search.Text = null;
@@ -118,7 +131,6 @@ namespace GUI
         /// <summary>
         /// Inserts Speciality's in Manage Employee's SpecialityListbox and checks if the Employee already have them
         /// </summary>
-        /// ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality
         private void button_UCEmployeeTCManage_ManageEmployee_AddSpeciality_Click(object sender, EventArgs e)
         {
             if (comboBox_UCEmployeeTCManage_ManageEmployee_Speciality.SelectedItem != null)
@@ -288,15 +300,20 @@ namespace GUI
             gui.setGUINavigationLabel("Find Ansat");
         }
 
+        /// <summary>
+        /// Delete Speciality From Employee
+        /// </summary>
         private void button_UCEmployeeTCEdit_EditEmployee_DeleteSpeciality_Click(object sender, EventArgs e)
         {
             Speciality selectedSpeciality = (Speciality)objectListView_UCEmployeeTCEdit_EditEmployee_Speciality.SelectedObject;
             EmployeeSpeciality employeeSpeciality = new EmployeeSpeciality(currentEmployee.ID, selectedSpeciality.ID);
             gui.EmployeeSpecialityRepository.Delete(employeeSpeciality);
-
             objectListView_UCEmployeeTCEdit_EditEmployee_Speciality.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
         }
 
+        /// <summary>
+        /// Saves the edited Employee
+        /// </summary>
         private void button_UCEmployeeTCManage_EditEmployee_Click(object sender, EventArgs e)
         {
             textbox_UCEmployeeTCEdit_firstName.Text = currentEmployee.FirstName;
@@ -315,7 +332,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Rediger Ansat");
         }
-
+        /// <summary>
+        /// Checks if the checkbox is check show open or Finished cases
+        /// </summary>
         private void checkBox_UCEmployeeTCManage_IsFinished_CheckedChanged(object sender, EventArgs e)
         {
             List<Case> Caselist;
@@ -330,7 +349,9 @@ namespace GUI
                 objectListView_UCEmployeeTCManage_ManageEmployee_ShowCases.SetObjects(Caselist);
             }
         }
-
+        /// <summary>
+        /// Switch to Manage client tab
+        /// </summary>
         private void button_UCEmployeeTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
