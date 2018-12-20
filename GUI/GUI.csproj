@@ -153,12 +153,6 @@
     <Compile Include="UserControl\UserControlEmployees.Designer.cs">
       <DependentUpon>UserControlEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControlHelp.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\UserControlHelp.Designer.cs">
-      <DependentUpon>UserControlHelp.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="GUIForm.resx">
       <DependentUpon>GUIForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControlEmployees.resx">
       <DependentUpon>UserControlEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControlHelp.resx">
-      <DependentUpon>UserControlHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControlServices.resx">
       <DependentUpon>UserControlServices.cs</DependentUpon>

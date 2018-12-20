@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
-using GUI;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
 using System.Diagnostics;
@@ -211,7 +205,6 @@ namespace GUI
             gui.setGUINavigationLabel("Administrer Sag");
         }
 
-        
         private void LoadCaseservicesTObjectListView(Case @case)
         {
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
@@ -231,8 +224,34 @@ namespace GUI
 
         private void button_UCCaseTCManage_AddService_Click(object sender, EventArgs e)
         {
-            gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
-            LoadCaseservicesTObjectListView(currentCase);
+            if (objectListView_UCCaseTCManage_ManageService != null)
+            {
+                Service selectedService = (Service)comboBox_UCCaseTCManage_AddService.SelectedItem;
+                List<Service> servicesInObjectListView = new List<Service>();
+                foreach (var item in objectListView_UCCaseTCManage_ManageService.Objects)
+                {
+                    KeyValuePair<CaseService, Service> keyValue = (KeyValuePair<CaseService, Service>)item;
+                    Service service = keyValue.Value;
+                    servicesInObjectListView.Add(service); 
+                }
+                bool exists = servicesInObjectListView.Any(s => s.ID == selectedService.ID);
+                if (!exists)
+                {
+                    gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
+                    LoadCaseservicesTObjectListView(currentCase);
+                    comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+                }
+                else
+                {
+                    comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+                }
+            }
+            else
+            {
+                gui.CaseServiceRepository.AddServiceToCase((Service)comboBox_UCCaseTCManage_AddService.SelectedItem, currentCase);
+                LoadCaseservicesTObjectListView(currentCase);
+                comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
+            }
         }
 
         private void button_UCCaseTCManage_Save_Click(object sender, EventArgs e)
