@@ -111,7 +111,7 @@
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManageCase);
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 20);
+            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCCases.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCCases.Name = "TabControl_UCCases";
@@ -407,10 +407,10 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_Description);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
-            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
             this.TC_UCCaseTC_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_CreateCase.TabIndex = 2;
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -603,10 +603,10 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_ManageCase.TabIndex = 3;
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -714,7 +714,7 @@
             // label_UCCaseTCManage_CaseName
             // 
             this.label_UCCaseTCManage_CaseName.AutoSize = true;
-            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(3, 63);
+            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(8, 63);
             this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
             this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(96, 18);
             this.label_UCCaseTCManage_CaseName.TabIndex = 22;
