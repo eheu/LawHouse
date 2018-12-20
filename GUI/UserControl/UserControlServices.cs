@@ -21,12 +21,16 @@ namespace GUI
 
             InitializeFindServiceObjectListView();
         }
-
+        /// <summary>
+        /// Reset the SearchBo
+        /// </summary>
         public void ResetSearchBox(object sender, EventArgs e)
         {
             textBox_UCServicesTCFind_Search.Text = null;
         }
-
+        /// <summary>
+        /// Set Specialitycombobox on Create Services
+        /// </summary>
         private void Set_ComboBox_UCServicesTCCreate_AddSpeciality()
         {
             comboBox_UCServicesTCCreate_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
@@ -34,7 +38,9 @@ namespace GUI
             comboBox_UCServicesTCCreate_AddSpeciality.ValueMember = "ID";
             comboBox_UCServicesTCCreate_AddSpeciality.SelectedIndex = -1;
         }
-
+        /// <summary>
+        /// Set Specialitycombobox on Manage Services
+        /// </summary>
         private void Set_ComboBox_UCServicesTCManage_AddSpeciality()
         {
             comboBox_UCServicesTCManage_AddSpeciality.DataSource = gui.SpecialityRepository.GetAll();
@@ -42,7 +48,9 @@ namespace GUI
             comboBox_UCServicesTCManage_AddSpeciality.ValueMember = "ID";
             comboBox_UCServicesTCManage_AddSpeciality.SelectedIndex = -1;
         }
-
+        /// <summary>
+        /// Initialize Find Service ObjectListView
+        /// </summary>
         private void InitializeFindServiceObjectListView()
         {
             olvColumn_UCServiceTCFind_IsHourly.AspectGetter = delegate (object obj)
@@ -53,7 +61,9 @@ namespace GUI
             List<Service> servicelist = gui.ServiceRepository.GetAll();
             objectListView_UCServiceTCFind_FindService.SetObjects(servicelist);
         }
-
+        /// <summary>
+        /// Switch to Create Service tab
+        /// </summary>
         private void button_UCCServicesTCFind_CreateService_Click(object sender, EventArgs e)
         {
             gui.ClearControlCollection(TC_UCServiceTC_CreateService.Controls);
@@ -62,7 +72,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Find Service tab
+        /// </summary>
         private void button_UCServicesTCCreate_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
@@ -70,7 +82,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Find Service tab
+        /// </summary>
         private void button_UCServicesTCEdit_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
@@ -78,14 +92,18 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Manage Service tab
+        /// </summary>
         private void button_UCServicesTCEdit_ManageService_Click(object sender, EventArgs e)
         {
             TabControl_UCServices.SelectedTab = TC_UCServiceTC_ManageService;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Find Service tab
+        /// </summary>
         private void button_UCServicesTCManage_FindService_Click(object sender, EventArgs e)
         {
             InitializeFindServiceObjectListView();
@@ -93,11 +111,11 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Edit Service tab
+        /// </summary>
         private void button_UCServicesTCManage_EditService_Click(object sender, EventArgs e)
         {
-
-
             richTextBox_UCServicesTCEdit_Description.Text = currentService.Description;
             //labels
             textBox_UCServiceTCEdit_ChangeName.Text = currentService.Name;
@@ -118,7 +136,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Rediger Ydelse");
         }
-
+        /// <summary>
+        /// Switch to Manage Service tab and load olv
+        /// </summary>
         private void objectListView_UCServiceTCFind_FindService_MousedoubleClick(object sender, MouseEventArgs e)
         {
             SetCurrentService();
@@ -132,7 +152,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Ydelse");
         }
-
+        /// <summary>
+        /// Set Current Service 
+        /// </summary>
         private void SetCurrentService()
         {
             Service service = (Service)objectListView_UCServiceTCFind_FindService.SelectedObject;
@@ -203,7 +225,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Ydelse");
         }
-
+        /// <summary>
+        /// Delete service
+        /// </summary>
         private void button_UCServicesTCEdit_DeleteService_Click(object sender, EventArgs e)
         {
             gui.ServiceRepository.Delete(currentService);
@@ -212,7 +236,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ydelse");
         }
-
+        /// <summary>
+        /// Manage service - AddSpeciality
+        /// </summary>
         private void button_UCServicesTCManage_AddSpeciality_Click(object sender, EventArgs e)
         {
             if (comboBox_UCServicesTCManage_AddSpeciality.SelectedItem != null)
@@ -224,7 +250,9 @@ namespace GUI
                 objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
             }
         }
-
+        /// <summary>
+        /// Create service - AddSpeciality
+        /// </summary>
         private void button_UCServicesTCCreate_AddSpeciality_Click(object sender, EventArgs e)
         {
             if (comboBox_UCServicesTCCreate_AddSpeciality.SelectedItem != null)
@@ -241,18 +269,24 @@ namespace GUI
                 }
             }
         }
-
+        /// <summary>
+        /// Filter the Search text
+        /// </summary>
         private void textBox_UCServicesTCFind_Search_TextChanged(object sender, EventArgs e)
         {
             this.objectListView_UCServiceTCFind_FindService.UseFiltering = true;
             this.objectListView_UCServiceTCFind_FindService.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCServiceTCFind_FindService, $"{textBox_UCServicesTCFind_Search.Text}");
         }
-
+        /// <summary>
+        /// toggle Menu Panel
+        /// </summary>
         private void UserControlServices_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
         }
-
+        /// <summary>
+        /// Remove Speciality from Service edit
+        /// </summary>
         private void button_UCServicesTCEdit_RemoveSpeciality_Click(object sender, EventArgs e)
         {
             if (objectListView_UCServicesTCEdit_Speciality.SelectedObject != null)
@@ -263,14 +297,5 @@ namespace GUI
                 objectListView_UCServicesTCManage_ManageService.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromService(currentService));
             }
         }
-    }
-}
-class Test
-{
-    public string a { get; set; }
-
-    public Test(string a)
-    {
-        this.a = a;
     }
 }
