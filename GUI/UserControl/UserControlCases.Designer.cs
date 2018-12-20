@@ -111,7 +111,7 @@
             this.TabControl_UCCases.Controls.Add(this.TC_UCCaseTC_ManageCase);
             this.TabControl_UCCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(100, 20);
+            this.TabControl_UCCases.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCCases.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCCases.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCCases.Name = "TabControl_UCCases";
@@ -130,10 +130,10 @@
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
-            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_FindCase.Name = "TC_UCCaseTC_FindCase";
             this.TC_UCCaseTC_FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
             this.TC_UCCaseTC_FindCase.Enter += new System.EventHandler(this.ResetSearchBox);

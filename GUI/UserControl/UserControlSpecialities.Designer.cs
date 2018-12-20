@@ -95,7 +95,7 @@
             this.TabControl_UCSpecialities.Controls.Add(this.TC_UCSpecialityTC_ManageSpeciality);
             this.TabControl_UCSpecialities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_UCSpecialities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(100, 20);
+            this.TabControl_UCSpecialities.ItemSize = new System.Drawing.Size(0, 1);
             this.TabControl_UCSpecialities.Location = new System.Drawing.Point(0, 0);
             this.TabControl_UCSpecialities.Margin = new System.Windows.Forms.Padding(5);
             this.TabControl_UCSpecialities.Name = "TabControl_UCSpecialities";
@@ -112,10 +112,10 @@
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.textBox_UCSpecialityTCFind_Search);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.button_UCCSpecialityTCFind_CreateSpeciality);
             this.TC_UCSpecialityTC_FindSpeciality.Controls.Add(this.objectListView_UCSpecialityTCFind_FindSpeciality);
-            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCSpecialityTC_FindSpeciality.Location = new System.Drawing.Point(4, 5);
             this.TC_UCSpecialityTC_FindSpeciality.Name = "TC_UCSpecialityTC_FindSpeciality";
             this.TC_UCSpecialityTC_FindSpeciality.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCSpecialityTC_FindSpeciality.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCSpecialityTC_FindSpeciality.TabIndex = 0;
             this.TC_UCSpecialityTC_FindSpeciality.Text = "Find efterud";
             this.TC_UCSpecialityTC_FindSpeciality.Enter += new System.EventHandler(this.ResetSearchBox);
