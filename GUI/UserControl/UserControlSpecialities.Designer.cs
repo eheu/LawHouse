@@ -563,7 +563,7 @@
             // 
             // button_UCSpecialityTCManage_EditSpeciality
             // 
-            this.button_UCSpecialityTCManage_EditSpeciality.Location = new System.Drawing.Point(195, 29);
+            this.button_UCSpecialityTCManage_EditSpeciality.Location = new System.Drawing.Point(186, 27);
             this.button_UCSpecialityTCManage_EditSpeciality.Name = "button_UCSpecialityTCManage_EditSpeciality";
             this.button_UCSpecialityTCManage_EditSpeciality.Size = new System.Drawing.Size(202, 27);
             this.button_UCSpecialityTCManage_EditSpeciality.TabIndex = 42;

@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 
@@ -93,7 +90,7 @@ namespace DataAccess
                 {
                      _connection.Open();
                     command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
-                                            FROM Client";
+                                            FROM Client ORDER BY firstName";
                     return MapCollection(command);
                 }
                 catch (Exception)

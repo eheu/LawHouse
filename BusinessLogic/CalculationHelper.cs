@@ -20,19 +20,19 @@ namespace BusinessLogic
             _caseServiceRepository = caseServiceRepository;
         }
 
-        public double CalculateClientPriceSum(Client client)
-        {
-            List<Case> cases = _caseRepository.GetCasesFromClient(client.ID);
-            double clientSum = 0;
-            foreach (Case @case in cases)
-            {
-                double caseSum = CalculateCasePriceSum(@case);
-                clientSum += caseSum;
-            }
-            return clientSum;
-        }
+        //public double CalculateClientPriceSum(Client client)
+        //{
+        //    List<Case> cases = _caseRepository.GetCasesFromClient(client.ID);
+        //    double clientSum = 0;
+        //    foreach (Case @case in cases)
+        //    {
+        //        double caseSum = CalculateCasePrice(@case);
+        //        clientSum += caseSum;
+        //    }
+        //    return clientSum;
+        //}
 
-        public double CalculateCasePriceSum(Case @case)
+        public double CalculateCasePrice(Case @case)
         {
             List<CaseService> caseServices = _caseServiceRepository.GetServicesOnCase(@case);
             Dictionary<CaseService,Service> servicesByCaseService = _caseServiceRepository.GetServicesByCaseServiceFromCase(@case);

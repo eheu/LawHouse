@@ -17,12 +17,16 @@ namespace GUI
             //Load of clients into the objectlistview
             SetObjectListViewClients();
         }
-
+        /// <summary>
+        /// Reset the searchbox
+        /// </summary>
         public void ResetSearchBox(object sender, EventArgs e)
         {
             textBox_UCClientTCFind_Search.Text = null;
         }
-
+        /// <summary>
+        /// Load Cases and employee into olv 
+        /// </summary>
         void SetCaseAndEmployeeObjectListViews(ObjectListView ObjectListViewName)
         {
             List<Case> Caselist = gui.CaseRepository.GetCasesFromClient(currentClient.ID);
@@ -34,31 +38,42 @@ namespace GUI
             }
             ObjectListViewName.SetObjects(CaseAndEmployeeDictionary);
         }
-
+        /// <summary>
+        /// toggle Menu Panel
+        /// </summary>
         private void UserControlClients_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();
         }
+        /// <summary>
+        /// Switch to Create Client tab
+        /// </summary>
         private void button_UCClientTCFind_CreateClient_Click(object sender, EventArgs e)
         {
             TabControl_UCClient.SelectedTab = TC_UCClientTC_CreateClient;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Klient");
         }
-
-        private void bottom_UCClientTCEdit_FindCase_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Switch to Find Client tab
+        /// </summary>
+        private void bottom_UCClientTCEdit_FindClient_Click(object sender, EventArgs e)
         {
             TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Klient");
         }
-
+        /// <summary>
+        /// Loads the olv with clients
+        /// </summary>
         private void SetObjectListViewClients()
         {
             List<Client> clientlist = gui.ClientRepository.GetAll();
             objectListView_UCClientTCFind_FindClient.SetObjects(clientlist);
         }
-
+        /// <summary>
+        /// Saves a new Client
+        /// </summary>
         private void bottom_UCClientTCCreate_Save_Click(object sender, EventArgs e)
         {
             try
@@ -131,7 +146,9 @@ namespace GUI
             this.objectListView_UCClientTCFind_FindClient.UseFiltering = true;
             this.objectListView_UCClientTCFind_FindClient.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCClientTCFind_FindClient, $"{textBox_UCClientTCFind_Search.Text}");
         }
-
+        /// <summary>
+        /// Switch to Edit Client tab
+        /// </summary>
         private void bottom_UCClientTCManage_Edit_Click(object sender, EventArgs e)
         {
             textbox_UCClientTCEdit_firstName.Text = currentClient.FirstName;
@@ -149,20 +166,18 @@ namespace GUI
 
         }
 
-        private void button_UCClientTCCreate_FindClient_Click(object sender, EventArgs e)
-        {
-            TabControl_UCClient.SelectedTab = TC_UCClientTC_FindClient;
-            //GUINavigationLabel
-            gui.setGUINavigationLabel("Find Klient");
-        }
-
+        /// <summary>
+        /// Switch to Manage Client tab
+        /// </summary>
         private void button_UCClientTCEdit_ManageClient_Click(object sender, EventArgs e)
         {
             TabControl_UCClient.SelectedTab = TC_UCClientTC_ManageClient;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Klient");
         }
-
+        /// <summary>
+        /// Saves the edited Clients data
+        /// </summary>
         private void bottom_UCClientTCEdit_Save_Click(object sender, EventArgs e)
         {
             Client client = new Client();

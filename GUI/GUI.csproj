@@ -123,7 +123,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Test.cs" />
     <Compile Include="UserControl\UserControlServices.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,12 +153,6 @@
     <Compile Include="UserControl\UserControlEmployees.Designer.cs">
       <DependentUpon>UserControlEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControlHelp.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\UserControlHelp.Designer.cs">
-      <DependentUpon>UserControlHelp.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="GUIForm.resx">
       <DependentUpon>GUIForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,20 +174,16 @@
     <EmbeddedResource Include="UserControl\UserControlEmployees.resx">
       <DependentUpon>UserControlEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControlHelp.resx">
-      <DependentUpon>UserControlHelp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControlServices.resx">
       <DependentUpon>UserControlServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControlSpecialities.resx">
       <DependentUpon>UserControlSpecialities.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="PDFTest.pdf">
+    <None Include="Brugerguide.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\PDFTest.pdf" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

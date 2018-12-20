@@ -38,7 +38,7 @@
             this.HelpPDFReader.Location = new System.Drawing.Point(0, 0);
             this.HelpPDFReader.MultiPagesThreshold = 60;
             this.HelpPDFReader.Name = "HelpPDFReader";
-            this.HelpPDFReader.Size = new System.Drawing.Size(720, 554);
+            this.HelpPDFReader.Size = new System.Drawing.Size(856, 554);
             this.HelpPDFReader.TabIndex = 0;
             this.HelpPDFReader.Text = "pdfDocumentViewer1";
             this.HelpPDFReader.Threshold = 60;
@@ -49,7 +49,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(720, 554);
+            this.ClientSize = new System.Drawing.Size(856, 554);
             this.Controls.Add(this.HelpPDFReader);
             this.Name = "HelpForm";
             this.Text = "HelpForm";
