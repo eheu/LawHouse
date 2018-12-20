@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLogic.Models;
+﻿using BusinessLogic.Models;
 
 namespace BusinessLogic.Interfaces
 {
     public interface IServiceSpecialityRepository : IRepository<ServiceSpeciality>
     {
-        //Dictionary<ServiceSpeciality, ServiceSpeciality> GetSpecialitiesByServiceSpecialityFromService(Service service);
     }
 }
