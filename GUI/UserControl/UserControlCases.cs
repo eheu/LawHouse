@@ -154,6 +154,7 @@ namespace GUI
             Client client = gui.ClientRepository.Get(currentCase.ClientID);
             Employee employee = gui.EmployeeRepository.Get(currentCase.EmployeeID);
 
+            label_UCCaseTCEdit_CaseID_Show.Text = Convert.ToString(currentCase.ID);
             textBox_UCCaseTCEdit_ChangeName.Text = currentCase.Title;
             comboBox_UCCaseTCEdit_ChangeClient.SelectedValue = client.ID;
             comboBox_UCCaseTCEdit_ChangeLawyer.SelectedValue = employee.ID;
@@ -192,10 +193,11 @@ namespace GUI
             gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
         }
 
-        private void objectListView_UCCaseTCFind_FindCase_floatClick(object sender, EventArgs e)
+        private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
         {
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
-            label_UCCaseTCManage_CaseName.Text = @case.Title;
+            label_UCCaseTCManage_CaseID_Show.Text = Convert.ToString(@case.ID);
+            label_UCCaseTCManage_CaseName_Show.Text = @case.Title;
             richTextBox_UCCaseTCManage_Description.Text = @case.Description;
             //her skal indlæses sager
             LoadCaseservicesTObjectListView(@case);
