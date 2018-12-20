@@ -23,7 +23,6 @@ namespace GUI
         UserControlClients userControlClients;
         UserControlSpecialities userControlSpecialities;
         UserControlServices userControlServices;
-        UserControlHelp userControlHelp;
 
         public GUIForm(ICaseRepository caseRepository, IClientRepository clientRepository, IEmployeeRepository employeeRepository, IServiceRepository serviceRepository, ICaseServiceRepository caseServiceRepository, ISpecialityRepository specialityRepository, IRoleRepository roleRepository, IEmployeeSpecialityRepository employeeSpecialityRepository, IServiceSpecialityRepository serviceSpecialityRepository)
         {
@@ -41,7 +40,6 @@ namespace GUI
             userControlClients = new UserControlClients(this);
             userControlSpecialities = new UserControlSpecialities(this);
             userControlServices = new UserControlServices(this);
-            userControlHelp = new UserControlHelp(this);
             InitializeComponent();
             panelWidth = MenuPanel.Width;
             hidden = true;
@@ -156,7 +154,6 @@ namespace GUI
             buttonBackColor(CaseBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlCases.Show();
@@ -165,6 +162,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlCases.Controls["TabControl_UCCases"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCCaseTC_FindCase"];
+
+            //Reset the Searchbox
+            userControlCases.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Sag");
         }
@@ -183,7 +184,6 @@ namespace GUI
             buttonBackColor(EmployeeBtn);
             userControlCases.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlEmployees.Show();
@@ -192,6 +192,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlEmployees.Controls["TabControl_UCEmployee"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCEmployeeTC_FindEmployee"];
+
+            //Reset the Searchbox
+            userControlEmployees.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Ansat");
         }
@@ -210,7 +214,6 @@ namespace GUI
             buttonBackColor(ClientBtn);
             userControlCases.Hide();
             userControlEmployees.Hide();
-            userControlHelp.Hide();
             userControlSpecialities.Hide();
             userControlServices.Hide();
             userControlClients.Show();
@@ -219,6 +222,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlClients.Controls["TabControl_UCClient"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCClientTC_FindClient"];
+
+            //Reset the Searchbox
+            userControlClients.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Klient");
         }
@@ -237,7 +244,6 @@ namespace GUI
             buttonBackColor(SpecialitiesBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlServices.Hide();
             userControlCases.Hide();
             userControlSpecialities.Show();
@@ -246,6 +252,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlSpecialities.Controls["TabControl_UCSpecialities"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCSpecialityTC_FindSpeciality"];
+
+            //Reset the Searchbox
+            userControlSpecialities.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Efteruddannelse");
         }
@@ -264,7 +274,6 @@ namespace GUI
             buttonBackColor(servicesBtn);
             userControlEmployees.Hide();
             userControlClients.Hide();
-            userControlHelp.Hide();
             userControlCases.Hide();
             userControlSpecialities.Hide();
             userControlServices.Show();
@@ -273,6 +282,10 @@ namespace GUI
 
             TabControl tabControl = (TabControl)userControlServices.Controls["TabControl_UCServices"];
             tabControl.SelectedTab = tabControl.TabPages["TC_UCServiceTC_FindService"];
+
+            //Reset the Searchbox
+            userControlServices.ResetSearchBox(sender, e);
+
             //GUINavigationLabel
             setGUINavigationLabel("Find Ydelse");
         }
@@ -315,11 +328,11 @@ namespace GUI
         {
             GUINavigationLabel.Text = text;
         }
-            
-        
+
+
         /// <summary>
         /// Clear all Controls in the given ControlCollection
-        /// Ex call: gui.ClearTextboxesAndCompoboxesAndlistboxes(TC_UCEmployeeTC_CreateEmployee.Controls);
+        /// Ex call: gui.ClearControlCollection(TC_UCEmployeeTC_CreateEmployee.Controls);
         /// </summary>
         public void ClearControlCollection(System.Windows.Forms.Control.ControlCollection ctrls)
         {

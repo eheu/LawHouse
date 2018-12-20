@@ -81,7 +81,7 @@
             this.SpecialitiesBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.SpecialitiesBtn.Image = ((System.Drawing.Image)(resources.GetObject("SpecialitiesBtn.Image")));
             this.SpecialitiesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SpecialitiesBtn.Location = new System.Drawing.Point(0, 330);
+            this.SpecialitiesBtn.Location = new System.Drawing.Point(0, 354);
             this.SpecialitiesBtn.Name = "SpecialitiesBtn";
             this.SpecialitiesBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.SpecialitiesBtn.Size = new System.Drawing.Size(347, 68);
@@ -101,7 +101,7 @@
             this.servicesBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.servicesBtn.Image = ((System.Drawing.Image)(resources.GetObject("servicesBtn.Image")));
             this.servicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.servicesBtn.Location = new System.Drawing.Point(0, 390);
+            this.servicesBtn.Location = new System.Drawing.Point(0, 422);
             this.servicesBtn.Name = "servicesBtn";
             this.servicesBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.servicesBtn.Size = new System.Drawing.Size(347, 68);
@@ -152,7 +152,7 @@
             this.ClientBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientBtn.Image")));
             this.ClientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClientBtn.Location = new System.Drawing.Point(0, 270);
+            this.ClientBtn.Location = new System.Drawing.Point(0, 286);
             this.ClientBtn.Name = "ClientBtn";
             this.ClientBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.ClientBtn.Size = new System.Drawing.Size(347, 68);
@@ -172,7 +172,7 @@
             this.EmployeeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.EmployeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeBtn.Image")));
             this.EmployeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeBtn.Location = new System.Drawing.Point(0, 210);
+            this.EmployeeBtn.Location = new System.Drawing.Point(0, 218);
             this.EmployeeBtn.Name = "EmployeeBtn";
             this.EmployeeBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.EmployeeBtn.Size = new System.Drawing.Size(347, 68);

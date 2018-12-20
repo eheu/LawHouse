@@ -93,7 +93,7 @@ namespace DataAccess
                 {
                      _connection.Open();
                     command.CommandText = @"SELECT ID, firstName, lastName, phone, address, email 
-                                            FROM Client";
+                                            FROM Client ORDER BY firstName";
                     return MapCollection(command);
                 }
                 catch (Exception)
@@ -112,7 +112,36 @@ namespace DataAccess
 
         public void Update(Client entity)
         {
-            throw new NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                try
+                {
+                    command.CommandText = @"UPDATE Client
+                                            SET [firstName]=@FirstName, [lastName]=@LastName, [phone]=@Phone, [address]=@Address, [email]=@Email
+                                            WHERE [ID]=@ID";
+                    command.AddParameter("FirstName", entity.FirstName);
+                    command.AddParameter("LastName", entity.LastName);
+                    command.AddParameter("Phone", entity.Phone);
+                    command.AddParameter("Address", entity.Address);
+                    command.AddParameter("Email", entity.Email);
+                    command.AddParameter("ID", entity.ID);
+
+                    _connection.Open();
+                    int numberOfRecords = command.ExecuteNonQuery();
+                    Console.WriteLine(numberOfRecords);
+
+                }
+
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _connection.Close();
+                }
+            }
         }
 
         private static void Map(SqlDataReader reader, Client client)

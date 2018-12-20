@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Models;
 using BrightIdeasSoftware;
@@ -23,7 +19,7 @@ namespace GUI
             //Load of Employees into the objectlistview
             SetObjectListViewEmployee();
             //Load of Speciality into Combobox
-            SetComboBoxSpeciality();
+            SetAllEmployeeComboBoxSpecialityAndRole();
         }
 
         private void SetObjectListViewEmployee()
@@ -39,6 +35,9 @@ namespace GUI
 
         private void button_UCEmployeeTCFind_CreateEmployee_Click(object sender, EventArgs e)
         {
+            //Reload of Speciality Combobox
+            SetEmployeeComboBoxSpeciality(comboBox_UCEmployeeTCCreate_CreateEmployee_Speciality);
+
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_CreateEmployee;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Ansat");
@@ -53,7 +52,6 @@ namespace GUI
 
         private void button_UCEmployeeTCEdit_FindEmployee_Click(object sender, EventArgs e)
         {
-            //her mangler vi at reloade UCEmployeeTCManage controlsne
             TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_FindEmployee;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Ansat");
@@ -63,7 +61,7 @@ namespace GUI
         /// <summary>
         /// Sets the All comboboxes on startup
         /// </summary>
-        private void SetComboBoxSpeciality()
+        private void SetAllEmployeeComboBoxSpecialityAndRole()
         {
             //Load of SpecialityList and RoleList from DB
             List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
@@ -100,9 +98,25 @@ namespace GUI
             combo_UCEmployeeTCEdit_Role.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-        #region Edit Employee
+        private void SetEmployeeComboBoxSpeciality(ComboBox ctrl)
+        {
+            List<Speciality> SpecialityList = gui.SpecialityRepository.GetAll();
+
+            ctrl.DataSource = SpecialityList;
+            ctrl.DisplayMember = "Name";
+            ctrl.ValueMember = "ID";
+            ctrl.SelectedIndex = -1;
+            ctrl.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ctrl.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        public void ResetSearchBox(object sender, EventArgs e)
+        {
+            textBox_UCEmployeeTCFind_Search.Text = null;
+        }
+
         /// <summary>
-        /// Inserts Speciality's in Edit Employee's SpecialityListbox and checks if the Employee already have them
+        /// Inserts Speciality's in Manage Employee's SpecialityListbox and checks if the Employee already have them
         /// </summary>
         /// ListBox_UCEmployeeTCManage_ManageEmployee_ShowSpeciality
         private void button_UCEmployeeTCManage_ManageEmployee_AddSpeciality_Click(object sender, EventArgs e)
@@ -118,6 +132,7 @@ namespace GUI
             }
         }
 
+        #region Edit Employee
         ///<summary>
         ///Saves the Employees edited data
         /// </summary>
@@ -181,6 +196,9 @@ namespace GUI
                 objectListView__UCEmployeeTCManage_Specialities.SetObjects(gui.SpecialityRepository.GetSpecialitiesFromLawyer(currentEmployee));
 
                 objectListView__UCEmployeeTCManage_Services.SetObjects(gui.ServiceRepository.GetServicesFromEmployee(currentEmployee));
+
+                //Reload of Speciality Combobox
+                SetEmployeeComboBoxSpeciality(comboBox_UCEmployeeTCManage_ManageEmployee_Speciality);
 
                 TabControl_UCEmployee.SelectedTab = TC_UCEmployeeTC_ManageEmployee;
                 //GUINavigationLabel

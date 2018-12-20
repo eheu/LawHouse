@@ -128,6 +128,7 @@
             this.TC_UCClientTC_FindClient.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCClientTC_FindClient.TabIndex = 0;
             this.TC_UCClientTC_FindClient.Text = "Find";
+            this.TC_UCClientTC_FindClient.Enter += new System.EventHandler(this.ResetSearchBox);
             this.TC_UCClientTC_FindClient.MouseEnter += new System.EventHandler(this.UserControlClients_MouseEnter);
             // 
             // textBox_UCClientTCFind_Search
@@ -191,19 +192,19 @@
             // 
             this.olvColumn3.AspectName = "Phone";
             this.olvColumn3.Text = "Telefon";
-            this.olvColumn3.Width = 165;
+            this.olvColumn3.Width = 168;
             // 
             // olvColumn4
             // 
             this.olvColumn4.AspectName = "Address";
             this.olvColumn4.Text = "Adresse";
-            this.olvColumn4.Width = 272;
+            this.olvColumn4.Width = 325;
             // 
             // olvColumn5
             // 
             this.olvColumn5.AspectName = "Email";
             this.olvColumn5.Text = "Email";
-            this.olvColumn5.Width = 177;
+            this.olvColumn5.Width = 311;
             // 
             // button_UCClientTCFind_CreateClient
             // 
@@ -269,6 +270,7 @@
             this.bottom_UCClientTCEdit_Save.TabIndex = 24;
             this.bottom_UCClientTCEdit_Save.Text = "Gem ændringer";
             this.bottom_UCClientTCEdit_Save.UseVisualStyleBackColor = true;
+            this.bottom_UCClientTCEdit_Save.Click += new System.EventHandler(this.bottom_UCClientTCEdit_Save_Click);
             // 
             // label14
             // 
@@ -421,7 +423,7 @@
             // label_UCClientTCCreate_Save
             // 
             this.label_UCClientTCCreate_Save.AutoSize = true;
-            this.label_UCClientTCCreate_Save.Location = new System.Drawing.Point(990, 487);
+            this.label_UCClientTCCreate_Save.Location = new System.Drawing.Point(120, 327);
             this.label_UCClientTCCreate_Save.Name = "label_UCClientTCCreate_Save";
             this.label_UCClientTCCreate_Save.Size = new System.Drawing.Size(0, 18);
             this.label_UCClientTCCreate_Save.TabIndex = 26;
