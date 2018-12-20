@@ -31,6 +31,9 @@ namespace GUI
             SetObjectListViewCases();            
         }
 
+        /// <summary>
+        /// Load Clients into the Combobox
+        /// </summary>
         private void SetComboBoxClient(ComboBox comboBox)
         {
             List<Client> clientList = gui.ClientRepository.GetAll();
@@ -41,7 +44,9 @@ namespace GUI
             comboBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Load Laywers into the Combobox
+        /// </summary>
         private void SetComboBoxLawyer(ComboBox comboBox)
         {
             List<Employee> lawyerList = gui.EmployeeRepository.GetAllLawyers();
@@ -52,7 +57,9 @@ namespace GUI
             comboBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Load Services into the Combobox
+        /// </summary>
         private void SetComboboxService(ComboBox comboBox)
         {
             List<Service> serviceList = gui.ServiceRepository.GetAll();
@@ -63,13 +70,17 @@ namespace GUI
             comboBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Load ObjectListView with open cases
+        /// </summary>
         private void SetObjectListViewCases()
         {
             caselist = gui.CaseRepository.GetAllOpenCases();
             objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
         }
-
+        /// <summary>
+        /// Resets the search textbox
+        /// </summary>
         public void ResetSearchBox(object sender, EventArgs e)
         {
             textBox_UCCaseTCFind_Search.Text = null;
@@ -82,7 +93,9 @@ namespace GUI
         {
             gui.toggleMenuPanel();
         }
-
+        /// <summary>
+        /// Switch to the Create case tab and load all comboboxes
+        /// </summary>
         private void button_UCCaseTCFind_CreateCase_Click(object sender, EventArgs e)
         {
 
@@ -97,14 +110,18 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Sag");
         }
-
+        /// <summary>
+        /// Switch to the Find case tab
+        /// </summary>
         private void button_UCCaseTCEdit_FindCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Sag");
         }
-
+        /// <summary>
+        /// Switch to the Manage case and load all comboboxes
+        /// </summary>
         private void button_UCCaseTCEdit_ManageCase_Click(object sender, EventArgs e)
         {
             //her skal indlæses sager
@@ -117,22 +134,28 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Sag");
         }
-
+        /// <summary>
+        /// Switch to the Find case and reset all controls on CreateCase
+        /// </summary>
         private void button_UCCaseTCCreate_FindCase_Click(object sender, EventArgs e)
         {
             gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Sag");
-        }   
-
+        }
+        /// <summary>
+        /// Switch to the Find case tab
+        /// </summary>
         private void button_UCCaseTCManage_FindCase_Click(object sender, EventArgs e)
         {
             TabControl_UCCases.SelectedTab = TC_UCCaseTC_FindCase;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Sag");
         }
-
+        /// <summary>
+        /// Switch to the Manage case tab and load all comboboxes
+        /// </summary>
         private void button_UCCaseTCManage_EditCase_Click(object sender, EventArgs e)
         {
             //klient
@@ -157,7 +180,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Rediger Sag");
         }
-
+        /// <summary>
+        /// Create case - Sends the data to DataAccess layer
+        /// </summary>
         private void button_UCCaseTCCreate_CreateCase_Click(object sender, EventArgs e)
         {
             Case @case = null;
@@ -186,7 +211,9 @@ namespace GUI
 
             gui.ClearControlCollection(TC_UCCaseTC_CreateCase.Controls);
         }
-
+        /// <summary>
+        /// Switch to the Manage case tab after the user has doubleclicked a obeject in the olv
+        /// </summary>
         private void objectListView_UCCaseTCFind_FindCase_DoubleClick(object sender, EventArgs e)
         {
             Case @case = (Case)objectListView_UCCaseTCFind_FindCase.SelectedObject;
@@ -204,13 +231,17 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Sag");
         }
-
+        /// <summary>
+        /// Load CaseServices into olv
+        /// </summary>
         private void LoadCaseservicesTObjectListView(Case @case)
         {
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(@case);
             objectListView_UCCaseTCManage_ManageService.SetObjects(servicesByCaseService);
         }
-
+        /// <summary>
+        /// Adds a Service to a new Case
+        /// </summary>
         private void button_UCCaseTCCreate_AddService_Click(object sender, EventArgs e)
         {
             List<Service> servicesInObjectListView = new List<Service>();
@@ -221,7 +252,9 @@ namespace GUI
             if (!exists)
                 objectListView_UCCaseTCCreate_Service.AddObject(selectedService);
         }
-
+        /// <summary>
+        /// Adds a Service to a Case
+        /// </summary>
         private void button_UCCaseTCManage_AddService_Click(object sender, EventArgs e)
         {
             if (objectListView_UCCaseTCManage_ManageService != null)
@@ -253,14 +286,18 @@ namespace GUI
                 comboBox_UCCaseTCManage_AddService.SelectedIndex = -1;
             }
         }
-
+        /// <summary>
+        /// Saves the content off the richtextbox on Manage Client
+        /// </summary>
         private void button_UCCaseTCManage_Save_Click(object sender, EventArgs e)
         {
             currentCase.Description = richTextBox_UCCaseTCManage_Description.Text;
             gui.CaseRepository.Update(currentCase);
             MessageBox.Show("Det virkede!");
         }
-
+        /// <summary>
+        /// Saves the chances after the user has edited the client
+        /// </summary>
         private void button_UCCaseTCEdit_SaveChange_Click(object sender, EventArgs e)
         {
             currentCase.Description = richTextBox_UCCaseTCEdit_Description.Text;
@@ -287,7 +324,9 @@ namespace GUI
             gui.setGUINavigationLabel("Administrer Sag");
 
         }
-
+        /// <summary>
+        /// Deletes a Case
+        /// </summary>
         private void button_UCCaseTCEdit_DeleteCase_Click(object sender, EventArgs e)
         {
             gui.CaseServiceRepository.DeleteAllServicesOnACase(currentCase);
@@ -298,7 +337,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Sag");
         }
-
+        /// <summary>
+        /// Removes a Service from a Case
+        /// </summary>
         private void button_UCCaseTCEdit_RemoveService_Click(object sender, EventArgs e)
         {
             KeyValuePair<CaseService, Service> caseServiceServiceKeyValuePair = (KeyValuePair<CaseService, Service>)objectListView_UCCaseTCEdit_Services.SelectedObject;
@@ -308,7 +349,9 @@ namespace GUI
             Dictionary<CaseService, Service> servicesByCaseService = gui.CaseServiceRepository.GetServicesByCaseServiceFromCase(currentCase);
             objectListView_UCCaseTCEdit_Services.SetObjects(servicesByCaseService);
         }
-
+        /// <summary>
+        /// Checks after Qualified laywers
+        /// </summary>
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
         {
                 List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
@@ -361,7 +404,9 @@ namespace GUI
                       
             gui.CaseServiceRepository.UpdateCaseService(caseService);
         }
-
+        /// <summary>
+        ///     CheckBox switch the content in olv from done to Not done cases 
+        /// </summary>
         private void checkBox_UCCaseTCFind_IsFinished_CheckedChanged(object sender, EventArgs e)
         {
             if (!checkBox_UCCaseTCFind_IsFinished.Checked)
@@ -375,13 +420,14 @@ namespace GUI
                 objectListView_UCCaseTCFind_FindCase.SetObjects(caselist);
             }
         }
-
+        /// <summary>
+        ///    Close/End a Case and insert end date on the case obejct in the DB
+        /// </summary>
         private void button_UCCaseTCManage_CloseCase_Click(object sender, EventArgs e)
         {
             if (currentCase.Status)
             {
                 currentCase.Status = false;
-                //currentCase.EndDate = DateTime.MinValue; unnecessary because default(DateTime) == DateTime.MinValue
                 gui.CaseRepository.Update(currentCase);
                 button_UCCaseTCManage_CloseCase.Text = "Afslut sag";
                 //Refresh Find case object list view

@@ -77,6 +77,8 @@
             this.label_UCCaseTCCreate_CaseTitel = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
+            this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
+            this.label_UCCaseTCManage_CaseID = new System.Windows.Forms.Label();
             this.label_UCCaseTCManage_CaseID_Show = new System.Windows.Forms.Label();
             this.button_UCCaseTCManage_CloseCase = new System.Windows.Forms.Button();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
@@ -96,8 +98,6 @@
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.highlightTextRenderer1 = new BrightIdeasSoftware.HighlightTextRenderer();
             this.highlightTextRenderer2 = new BrightIdeasSoftware.HighlightTextRenderer();
-            this.label_UCCaseTCManage_CaseID = new System.Windows.Forms.Label();
-            this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
@@ -181,8 +181,8 @@
             // olvColumnID
             // 
             this.olvColumnID.AspectName = "ID";
-            this.olvColumnID.Text = "Sags nummer";
-            this.olvColumnID.Width = 116;
+            this.olvColumnID.Text = "Sagsnr";
+            this.olvColumnID.Width = 69;
             // 
             // olvColumnName
             // 
@@ -652,6 +652,24 @@
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
+            // label_UCCaseTCManage_CaseName
+            // 
+            this.label_UCCaseTCManage_CaseName.AutoSize = true;
+            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(286, 56);
+            this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
+            this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(78, 18);
+            this.label_UCCaseTCManage_CaseName.TabIndex = 31;
+            this.label_UCCaseTCManage_CaseName.Text = "Sags title";
+            // 
+            // label_UCCaseTCManage_CaseID
+            // 
+            this.label_UCCaseTCManage_CaseID.AutoSize = true;
+            this.label_UCCaseTCManage_CaseID.Location = new System.Drawing.Point(286, 27);
+            this.label_UCCaseTCManage_CaseID.Name = "label_UCCaseTCManage_CaseID";
+            this.label_UCCaseTCManage_CaseID.Size = new System.Drawing.Size(66, 18);
+            this.label_UCCaseTCManage_CaseID.TabIndex = 30;
+            this.label_UCCaseTCManage_CaseID.Text = "Sags nr";
+            // 
             // label_UCCaseTCManage_CaseID_Show
             // 
             this.label_UCCaseTCManage_CaseID_Show.AutoSize = true;
@@ -822,24 +840,6 @@
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label_UCCaseTCManage_CaseID
-            // 
-            this.label_UCCaseTCManage_CaseID.AutoSize = true;
-            this.label_UCCaseTCManage_CaseID.Location = new System.Drawing.Point(286, 27);
-            this.label_UCCaseTCManage_CaseID.Name = "label_UCCaseTCManage_CaseID";
-            this.label_UCCaseTCManage_CaseID.Size = new System.Drawing.Size(66, 18);
-            this.label_UCCaseTCManage_CaseID.TabIndex = 30;
-            this.label_UCCaseTCManage_CaseID.Text = "Sags nr";
-            // 
-            // label_UCCaseTCManage_CaseName
-            // 
-            this.label_UCCaseTCManage_CaseName.AutoSize = true;
-            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(286, 56);
-            this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
-            this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(78, 18);
-            this.label_UCCaseTCManage_CaseName.TabIndex = 31;
-            this.label_UCCaseTCManage_CaseName.Text = "Sags title";
             // 
             // UserControlCases
             // 
