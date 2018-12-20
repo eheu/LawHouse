@@ -17,7 +17,7 @@ namespace GUI
         /// </summary>
         private void HelpForm_Load(object sender, EventArgs e)
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), @"Brugerguide.pdf");
             this.HelpPDFReader.LoadFromFile(path);
         }
         /// <summary>

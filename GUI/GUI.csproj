@@ -180,10 +180,10 @@
     <EmbeddedResource Include="UserControl\UserControlSpecialities.resx">
       <DependentUpon>UserControlSpecialities.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="PDFTest.pdf">
+    <None Include="Brugerguide.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
