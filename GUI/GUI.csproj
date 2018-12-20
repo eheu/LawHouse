@@ -123,7 +123,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Test.cs" />
     <Compile Include="UserControl\UserControlServices.cs">
       <SubType>UserControl</SubType>
     </Compile>
