@@ -142,9 +142,9 @@
             // 
             this.button_UCCSpecialityTCFind_CreateSpeciality.Location = new System.Drawing.Point(6, 27);
             this.button_UCCSpecialityTCFind_CreateSpeciality.Name = "button_UCCSpecialityTCFind_CreateSpeciality";
-            this.button_UCCSpecialityTCFind_CreateSpeciality.Size = new System.Drawing.Size(102, 30);
+            this.button_UCCSpecialityTCFind_CreateSpeciality.Size = new System.Drawing.Size(188, 30);
             this.button_UCCSpecialityTCFind_CreateSpeciality.TabIndex = 20;
-            this.button_UCCSpecialityTCFind_CreateSpeciality.Text = "Opret";
+            this.button_UCCSpecialityTCFind_CreateSpeciality.Text = "Opret Efteruddannelse";
             this.button_UCCSpecialityTCFind_CreateSpeciality.UseVisualStyleBackColor = true;
             this.button_UCCSpecialityTCFind_CreateSpeciality.Click += new System.EventHandler(this.button_UCCSpecialityTCFind_CreateSpeciality_Click);
             // 
@@ -280,7 +280,7 @@
             this.bottom_UCSpecialityTCCreate_Create.Name = "bottom_UCSpecialityTCCreate_Create";
             this.bottom_UCSpecialityTCCreate_Create.Size = new System.Drawing.Size(190, 30);
             this.bottom_UCSpecialityTCCreate_Create.TabIndex = 45;
-            this.bottom_UCSpecialityTCCreate_Create.Text = "Opret efteruddannelse";
+            this.bottom_UCSpecialityTCCreate_Create.Text = "Gem efteruddannelse";
             this.bottom_UCSpecialityTCCreate_Create.UseVisualStyleBackColor = true;
             this.bottom_UCSpecialityTCCreate_Create.Click += new System.EventHandler(this.bottom_UCSpecialityTCCreate_Create_Click);
             // 
@@ -570,10 +570,10 @@
             // 
             this.button_UCSpecialityTCManage_EditSpeciality.Location = new System.Drawing.Point(186, 27);
             this.button_UCSpecialityTCManage_EditSpeciality.Name = "button_UCSpecialityTCManage_EditSpeciality";
-            this.button_UCSpecialityTCManage_EditSpeciality.Size = new System.Drawing.Size(132, 31);
+            this.button_UCSpecialityTCManage_EditSpeciality.Size = new System.Drawing.Size(202, 27);
             this.button_UCSpecialityTCManage_EditSpeciality.TabIndex = 42;
             this.button_UCSpecialityTCManage_EditSpeciality.Tag = "";
-            this.button_UCSpecialityTCManage_EditSpeciality.Text = "Rediger ydelse";
+            this.button_UCSpecialityTCManage_EditSpeciality.Text = "Rediger efteruddannelse";
             this.button_UCSpecialityTCManage_EditSpeciality.UseVisualStyleBackColor = true;
             this.button_UCSpecialityTCManage_EditSpeciality.Click += new System.EventHandler(this.button_UCSpecialityTCManage_EditSpeciality_Click);
             // 

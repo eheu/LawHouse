@@ -152,9 +152,9 @@
             // 
             this.button_UCCServicesTCFind_CreateService.Location = new System.Drawing.Point(6, 27);
             this.button_UCCServicesTCFind_CreateService.Name = "button_UCCServicesTCFind_CreateService";
-            this.button_UCCServicesTCFind_CreateService.Size = new System.Drawing.Size(102, 30);
+            this.button_UCCServicesTCFind_CreateService.Size = new System.Drawing.Size(121, 30);
             this.button_UCCServicesTCFind_CreateService.TabIndex = 7;
-            this.button_UCCServicesTCFind_CreateService.Text = "Opret";
+            this.button_UCCServicesTCFind_CreateService.Text = "Opret Ydelse";
             this.button_UCCServicesTCFind_CreateService.UseVisualStyleBackColor = true;
             this.button_UCCServicesTCFind_CreateService.Click += new System.EventHandler(this.button_UCCServicesTCFind_CreateService_Click);
             // 
@@ -333,7 +333,7 @@
             this.bottom_UCServiceTCCreate_Create.Name = "bottom_UCServiceTCCreate_Create";
             this.bottom_UCServiceTCCreate_Create.Size = new System.Drawing.Size(138, 30);
             this.bottom_UCServiceTCCreate_Create.TabIndex = 26;
-            this.bottom_UCServiceTCCreate_Create.Text = "Opret ydelse";
+            this.bottom_UCServiceTCCreate_Create.Text = "Gem ydelse";
             this.bottom_UCServiceTCCreate_Create.UseVisualStyleBackColor = true;
             this.bottom_UCServiceTCCreate_Create.Click += new System.EventHandler(this.bottom_UCServiceTCCreate_Create_Click);
             // 
@@ -682,10 +682,10 @@
             // 
             this.button_UCServicesTCManage_EditService.Location = new System.Drawing.Point(132, 27);
             this.button_UCServicesTCManage_EditService.Name = "button_UCServicesTCManage_EditService";
-            this.button_UCServicesTCManage_EditService.Size = new System.Drawing.Size(120, 31);
+            this.button_UCServicesTCManage_EditService.Size = new System.Drawing.Size(137, 31);
             this.button_UCServicesTCManage_EditService.TabIndex = 31;
             this.button_UCServicesTCManage_EditService.Tag = "";
-            this.button_UCServicesTCManage_EditService.Text = "Rediger ydelse";
+            this.button_UCServicesTCManage_EditService.Text = "Rediger yedelse";
             this.button_UCServicesTCManage_EditService.UseVisualStyleBackColor = true;
             this.button_UCServicesTCManage_EditService.Click += new System.EventHandler(this.button_UCServicesTCManage_EditService_Click);
             // 
