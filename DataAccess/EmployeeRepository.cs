@@ -50,9 +50,6 @@ namespace DataAccess
             {
                 try
                 {
-                    //Prøv at få dette til at virke
-                    //DELETE[DBO].[Employee] , [DBO].[EmployeeSpeciality] FROM[Employee] INNER JOIN[EmployeeSpeciality]
-                    //WHERE[Employee].[ID] = [EmployeeSpeciality].[employeeID] and[Employee].[ID] = '23'
 
                     command.CommandText = @"Delete from [EmployeeSpeciality] where [EmployeeSpeciality].[employeeID] = @E_ID;
 		                                    Delete from [Employee] where [Employee].[ID] = @E_ID";
@@ -114,7 +111,7 @@ namespace DataAccess
                 {
                     _connection.Open();
                     command.CommandText = @"SELECT [ID], [firstName], [lastName], [roleID], [email], [phone] 
-                                        FROM [Employee]";
+                                        FROM [Employee] ORDER BY firstName";
                     return MapCollection(command);
                 }
                 catch (Exception)

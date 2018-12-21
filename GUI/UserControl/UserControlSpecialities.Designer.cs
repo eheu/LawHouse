@@ -229,8 +229,10 @@
             this.objectListView_UCSpecialityTCCreate_Service.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn4});
             this.objectListView_UCSpecialityTCCreate_Service.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView_UCSpecialityTCCreate_Service.FullRowSelect = true;
             this.objectListView_UCSpecialityTCCreate_Service.Location = new System.Drawing.Point(482, 41);
             this.objectListView_UCSpecialityTCCreate_Service.Name = "objectListView_UCSpecialityTCCreate_Service";
+            this.objectListView_UCSpecialityTCCreate_Service.ShowGroups = false;
             this.objectListView_UCSpecialityTCCreate_Service.Size = new System.Drawing.Size(201, 494);
             this.objectListView_UCSpecialityTCCreate_Service.TabIndex = 49;
             this.objectListView_UCSpecialityTCCreate_Service.UseCompatibleStateImageBehavior = false;
@@ -240,6 +242,9 @@
             // olvColumn4
             // 
             this.olvColumn4.AspectName = "Name";
+            this.olvColumn4.IsVisible = false;
+            this.olvColumn4.Text = "Ydelse";
+            this.olvColumn4.Width = 200;
             // 
             // button_UCSpecialityTCCreate_AddService
             // 
