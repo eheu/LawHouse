@@ -33,8 +33,8 @@
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
             this.checkBox_UCCaseTCFind_IsFinished = new System.Windows.Forms.CheckBox();
             this.objectListView_UCCaseTCFind_FindCase = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
@@ -137,10 +137,10 @@
             this.TC_UCCaseTC_FindCase.Controls.Add(this.textBox_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.label_UCCaseTCFind_Search);
             this.TC_UCCaseTC_FindCase.Controls.Add(this.button_UCCaseTCFind_CreateCase);
-            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 5);
+            this.TC_UCCaseTC_FindCase.Location = new System.Drawing.Point(4, 104);
             this.TC_UCCaseTC_FindCase.Name = "TC_UCCaseTC_FindCase";
             this.TC_UCCaseTC_FindCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 557);
+            this.TC_UCCaseTC_FindCase.Size = new System.Drawing.Size(1149, 458);
             this.TC_UCCaseTC_FindCase.TabIndex = 0;
             this.TC_UCCaseTC_FindCase.Text = "Find sag";
             this.TC_UCCaseTC_FindCase.Enter += new System.EventHandler(this.ResetSearchBox);
@@ -181,8 +181,9 @@
             // olvColumnID
             // 
             this.olvColumnID.AspectName = "ID";
-            this.olvColumnID.Text = "Sagsnr";
-            this.olvColumnID.Width = 69;
+            this.olvColumnID.DisplayIndex = 1;
+            this.olvColumnID.Text = "Sagsnummer";
+            this.olvColumnID.Width = 129;
             // 
             // olvColumnName
             // 
@@ -191,13 +192,6 @@
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
             this.olvColumnName.Width = 970;
-            // 
-            // olvColumnID
-            // 
-            this.olvColumnID.AspectName = "ID";
-            this.olvColumnID.DisplayIndex = 1;
-            this.olvColumnID.Text = "Sagsnummer";
-            this.olvColumnID.Width = 129;
             // 
             // textBox_UCCaseTCFind_Search
             // 

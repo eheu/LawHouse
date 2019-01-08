@@ -293,7 +293,6 @@ namespace GUI
         {
             currentCase.Description = richTextBox_UCCaseTCManage_Description.Text;
             gui.CaseRepository.Update(currentCase);
-            MessageBox.Show("Det virkede!");
         }
         /// <summary>
         /// Saves the chances after the user has edited the client
