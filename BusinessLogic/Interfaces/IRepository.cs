@@ -1,7 +1,7 @@
 ﻿using BusinessLogic.Models;
 using System.Collections.Generic;
 
-namespace BusinessLogic
+namespace BusinessLogic.Interfaces
 {
     /// <summary>
     ///     Generic repository interface.
