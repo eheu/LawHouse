@@ -33,8 +33,8 @@
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
             this.checkBox_UCCaseTCFind_IsFinished = new System.Windows.Forms.CheckBox();
             this.objectListView_UCCaseTCFind_FindCase = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
@@ -187,9 +187,17 @@
             // olvColumnName
             // 
             this.olvColumnName.AspectName = "Title";
+            this.olvColumnName.DisplayIndex = 0;
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
-            this.olvColumnName.Width = 398;
+            this.olvColumnName.Width = 970;
+            // 
+            // olvColumnID
+            // 
+            this.olvColumnID.AspectName = "ID";
+            this.olvColumnID.DisplayIndex = 1;
+            this.olvColumnID.Text = "Sagsnummer";
+            this.olvColumnID.Width = 129;
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -238,10 +246,10 @@
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeName);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_ManageCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_FindCase);
-            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_EditCase.Name = "TC_UCCaseTC_EditCase";
             this.TC_UCCaseTC_EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_EditCase.TabIndex = 1;
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
             this.TC_UCCaseTC_EditCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
