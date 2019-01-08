@@ -1,10 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Spire.Pdf;
-using Spire.Pdf.Actions;
-using Spire.Pdf.General;
-using Spire.PdfViewer.Forms;
 
 namespace GUI
 {
@@ -16,22 +12,17 @@ namespace GUI
             InitializeComponent();
             gui = guiForm;
         }
-
+        /// <summary>
+        /// Loads the HelpPDF Form
+        /// </summary>
         private void HelpForm_Load(object sender, EventArgs e)
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), @"PDFTest.pdf");
-
-            PdfDocument doc = new PdfDocument();
-            doc.LoadFromFile(path);
-            PdfDestination destination = new PdfDestination(doc.Pages[2]);
-            PdfGoToAction action = new PdfGoToAction(destination);
-            action.Destination.Zoom = 1F;
-            doc.AfterOpenAction = action;
-            doc.SaveToFile("PDFTest.pdf", FileFormat.PDF);
-
+            string path = Path.Combine(Directory.GetCurrentDirectory(), @"Brugerguide.pdf");
             this.HelpPDFReader.LoadFromFile(path);
         }
-
+        /// <summary>
+        /// Set the Helpform to null on GUI form
+        /// </summary>
         private void HelpForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             gui.helpForm = null;

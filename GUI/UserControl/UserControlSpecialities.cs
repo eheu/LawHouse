@@ -20,18 +20,24 @@ namespace GUI
             SetObjectListViewSpecialities();
             SetAddServiceComboBox();
         }
-
+        /// <summary>
+        /// Reset Search Box
+        /// </summary>
         public void ResetSearchBox(object sender, EventArgs e)
         {
             textBox_UCSpecialityTCFind_Search.Text = null;
         }
-
+        /// <summary>
+        /// Set ObjectListView Specialities
+        /// </summary>
         private void SetObjectListViewSpecialities()
         {
             List<Speciality> specialitylist = gui.SpecialityRepository.GetAll();
             objectListView_UCSpecialityTCFind_FindSpeciality.SetObjects(specialitylist);
         }
-
+        /// <summary>
+        /// Switch to Create Specialities tab
+        /// </summary>
         private void button_UCCSpecialityTCFind_CreateSpeciality_Click(object sender, EventArgs e)
         {
             gui.ClearControlCollection(TC_UCSpecialityTC_CreateSpeciality.Controls);
@@ -39,7 +45,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Opret Efteruddannelse");
         }
-
+        /// <summary>
+        /// Set - Add Service ComboBox
+        /// </summary>
         private void SetAddServiceComboBox()
         {
             comboBox_UCSpecialityTCCreate_AddService.DataSource = gui.ServiceRepository.GetAll();
@@ -49,7 +57,9 @@ namespace GUI
             comboBox_UCSpecialityTCCreate_AddService.AutoCompleteMode = AutoCompleteMode.Suggest;
             comboBox_UCSpecialityTCCreate_AddService.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
+        /// <summary>
+        /// Switch to Find Specialities
+        /// </summary>
         private void button_UCSpecialityTCCreate_FindSpeciality_Click(object sender, EventArgs e)
         {
             SetObjectListViewSpecialities();
@@ -57,7 +67,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Efteruddannelse");
         }
-
+        /// <summary>
+        /// Switch to Find Specialities
+        /// </summary>
         private void button_UCSpecialityTCEdit_FindSpeciality_Click(object sender, EventArgs e)
         {
             SetObjectListViewSpecialities();
@@ -65,14 +77,18 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Efteruddannelse");
         }
-
+        /// <summary>
+        /// Switch to Manage Specialities
+        /// </summary>
         private void button_UCSpecialityTCEdit_ManageSpeciality_Click(object sender, EventArgs e)
         {
             TabControl_UCSpecialities.SelectedTab = TC_UCSpecialityTC_ManageSpeciality;
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
-
+        /// <summary>
+        /// Switch to Find Specialities
+        /// </summary>
         private void button_UCSpecialityTCManage_FindSpeciality_Click(object sender, EventArgs e)
         {
             SetObjectListViewSpecialities();
@@ -80,7 +96,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Efteruddannelse");
         }
-
+        /// <summary>
+        /// Switch to Edit Specialities - Sends CurrentSpeciality data with
+        /// </summary>
         private void button_UCSpecialityTCManage_EditSpeciality_Click(object sender, EventArgs e)
         {
             textBox_UCSpecialityTCEdit_ChangeName.Text = currentSpeciality.Name;
@@ -122,7 +140,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
-
+        /// <summary>
+        /// Initialize Services On Speciality ObjectListView
+        /// </summary>
         private void InitializeServicesOnSpecialityObjectListView()
         {
             olvColumn_UCSpecialityTCManage_IsHourly.AspectGetter = delegate (object obj)
@@ -132,7 +152,9 @@ namespace GUI
             };
             objectListView_UCSpecialityTCManage_ServicesOnSpeciality.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
         }
-
+        /// <summary>
+        /// Initialize Add Service ComboBox
+        /// </summary>
         private void InitializeAddServiceComboBox()
         {
             comboBox_UCSpecialityTCManage_AddService.DataSource = gui.ServiceRepository.GetAll();
@@ -168,7 +190,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Administrer Efteruddannelse");
         }
-
+        /// <summary>
+        /// Delete a Speciality
+        /// </summary>
         private void button_UCSpecialityTCEdit_DeleteSpeciality_Click(object sender, EventArgs e)
         {
             try
@@ -184,7 +208,9 @@ namespace GUI
             //GUINavigationLabel
             gui.setGUINavigationLabel("Find Efteruddannelse");
         }
-
+        /// <summary>
+        /// Manage Speciality - Add Service
+        /// </summary>
         private void button_UCSpecialityTCManage_AddService_Click(object sender, EventArgs e)
         {
             if (comboBox_UCSpecialityTCManage_AddService.SelectedItem != null)
@@ -200,7 +226,9 @@ namespace GUI
             }
             comboBox_UCSpecialityTCManage_AddService.SelectedIndex = -1;
         }
-
+        /// <summary>
+        /// Create Speciality - Add Service
+        /// </summary>
         private void button_UCSpecialityTCCreate_AddService_Click(object sender, EventArgs e)
         {
             if (comboBox_UCSpecialityTCCreate_AddService.SelectedItem != null)
@@ -218,7 +246,9 @@ namespace GUI
             }
             comboBox_UCSpecialityTCCreate_AddService.SelectedIndex = -1;
         }
-
+        /// <summary>
+        /// Edit Speciality - Remove Service
+        /// </summary>
         private void button_UCSpecialityTCEdit_RemoveService_Click(object sender, EventArgs e)
         {
             if (objectListView_UCSpecialityTCEdit_Services.SelectedObject != null)
@@ -229,13 +259,17 @@ namespace GUI
                 objectListView_UCSpecialityTCManage_ServicesOnSpeciality.SetObjects(gui.ServiceRepository.GetServicesFromSpeciality(currentSpeciality));
             }
         }
-
+        /// <summary>
+        /// Filter Search text
+        /// </summary>
         private void textBox_UCSpecialityTCFind_Search_TextChanged(object sender, EventArgs e)
         {
             this.objectListView_UCSpecialityTCFind_FindSpeciality.UseFiltering = true;
             this.objectListView_UCSpecialityTCFind_FindSpeciality.ModelFilter = TextMatchFilter.Contains(this.objectListView_UCSpecialityTCFind_FindSpeciality, $"{textBox_UCSpecialityTCFind_Search.Text}");
         }
-
+        /// <summary>
+        /// toggle Menu Panel
+        /// </summary>
         private void UserControlSpecialities_MouseEnter(object sender, EventArgs e)
         {
             gui.toggleMenuPanel();

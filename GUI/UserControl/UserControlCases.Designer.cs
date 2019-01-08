@@ -178,6 +178,12 @@
             this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
             this.objectListView_UCCaseTCFind_FindCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
+            // olvColumnID
+            // 
+            this.olvColumnID.AspectName = "ID";
+            this.olvColumnID.Text = "Sagsnr";
+            this.olvColumnID.Width = 69;
+            // 
             // olvColumnName
             // 
             this.olvColumnName.AspectName = "Title";

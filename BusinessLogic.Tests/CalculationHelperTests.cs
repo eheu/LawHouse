@@ -1,16 +1,11 @@
-﻿using AutoFixture;
-using AutoFixture.Xunit2;
+﻿using AutoFixture.Xunit2;
 using BusinessLogic.Interfaces;
 using BusinessLogic.Models;
 using FakeItEasy;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace BusinessLogic.Tests
 {
@@ -25,11 +20,7 @@ namespace BusinessLogic.Tests
 
         [Theory]
         [AutoFakeItEasyData]
-        public void CanCalculateCaseServicePrice(Service service, 
-            CaseService caseService,
-            [Frozen]ICaseRepository caseRepository,
-            [Frozen]ICaseServiceRepository caseServiceRepository,
-            CalculationHelper SUT)
+        public void CanCalculateCaseServicePrice(Service service, CaseService caseService, CalculationHelper SUT)
         {
             //Arrange
             double hoursPrice = service.IsHourly ? caseService.Hours * service.Price : service.Price;
@@ -41,6 +32,15 @@ namespace BusinessLogic.Tests
 
             //Assert
             Assert.Equal(calculatedValue, expectedValue);
+        }
+
+        [Theory]
+        [InlineAutoFakeItEasyData(null)]
+        [InlineAutoFakeItEasyData(null, null)]
+        public void CannotCalculateNullCaseServicePrice(Service service, CaseService caseService, CalculationHelper SUT)
+        {
+            //Act/Assert
+            Assert.Throws<NullReferenceException>(() => SUT.CalculcateCaseServicePrice(service, caseService));
         }
 
         [Theory]
@@ -63,10 +63,10 @@ namespace BusinessLogic.Tests
                 expectedValue += caseServicePrice;
             }
             //Act
-            double calculatedValue = SUT.CalculateCasePriceSum(@case);
+            double calculatedValue = SUT.CalculateCasePrice(@case);
 
             //Assert
-            Assert.Equal(calculatedValue,expectedValue);
+            Assert.Equal(calculatedValue, expectedValue);
         }
     }
 }

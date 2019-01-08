@@ -59,15 +59,5 @@ namespace GUI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PDFTest {
-            get {
-                object obj = ResourceManager.GetObject("PDFTest", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
