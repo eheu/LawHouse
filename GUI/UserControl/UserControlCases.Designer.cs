@@ -33,8 +33,8 @@
             this.TC_UCCaseTC_FindCase = new System.Windows.Forms.TabPage();
             this.checkBox_UCCaseTCFind_IsFinished = new System.Windows.Forms.CheckBox();
             this.objectListView_UCCaseTCFind_FindCase = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox_UCCaseTCFind_Search = new System.Windows.Forms.TextBox();
             this.label_UCCaseTCFind_Search = new System.Windows.Forms.Label();
             this.button_UCCaseTCFind_CreateCase = new System.Windows.Forms.Button();
@@ -77,6 +77,8 @@
             this.label_UCCaseTCCreate_CaseTitel = new System.Windows.Forms.Label();
             this.button_UCCaseTCCreate_FindCase = new System.Windows.Forms.Button();
             this.TC_UCCaseTC_ManageCase = new System.Windows.Forms.TabPage();
+            this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
+            this.label_UCCaseTCManage_CaseID = new System.Windows.Forms.Label();
             this.label_UCCaseTCManage_CaseID_Show = new System.Windows.Forms.Label();
             this.button_UCCaseTCManage_CloseCase = new System.Windows.Forms.Button();
             this.objectListView_UCCaseTCManage_ManageService = new BrightIdeasSoftware.ObjectListView();
@@ -96,8 +98,6 @@
             this.imageListCases = new System.Windows.Forms.ImageList(this.components);
             this.highlightTextRenderer1 = new BrightIdeasSoftware.HighlightTextRenderer();
             this.highlightTextRenderer2 = new BrightIdeasSoftware.HighlightTextRenderer();
-            this.label_UCCaseTCManage_CaseID = new System.Windows.Forms.Label();
-            this.label_UCCaseTCManage_CaseName = new System.Windows.Forms.Label();
             this.TabControl_UCCases.SuspendLayout();
             this.TC_UCCaseTC_FindCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_UCCaseTCFind_FindCase)).BeginInit();
@@ -178,18 +178,20 @@
             this.objectListView_UCCaseTCFind_FindCase.DoubleClick += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_DoubleClick);
             this.objectListView_UCCaseTCFind_FindCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
             // 
-            // olvColumnID
-            // 
-            this.olvColumnID.AspectName = "ID";
-            this.olvColumnID.Text = "Sags nummer";
-            this.olvColumnID.Width = 116;
-            // 
             // olvColumnName
             // 
             this.olvColumnName.AspectName = "Title";
+            this.olvColumnName.DisplayIndex = 0;
             this.olvColumnName.Groupable = false;
             this.olvColumnName.Text = "Sags titel";
-            this.olvColumnName.Width = 398;
+            this.olvColumnName.Width = 970;
+            // 
+            // olvColumnID
+            // 
+            this.olvColumnID.AspectName = "ID";
+            this.olvColumnID.DisplayIndex = 1;
+            this.olvColumnID.Text = "Sagsnummer";
+            this.olvColumnID.Width = 129;
             // 
             // textBox_UCCaseTCFind_Search
             // 
@@ -238,10 +240,10 @@
             this.TC_UCCaseTC_EditCase.Controls.Add(this.label_UCCaseTCEdit_ChangeName);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_ManageCase);
             this.TC_UCCaseTC_EditCase.Controls.Add(this.button_UCCaseTCEdit_FindCase);
-            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_EditCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_EditCase.Name = "TC_UCCaseTC_EditCase";
             this.TC_UCCaseTC_EditCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_EditCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_EditCase.TabIndex = 1;
             this.TC_UCCaseTC_EditCase.Text = "Rediger";
             this.TC_UCCaseTC_EditCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -445,10 +447,10 @@
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_Description);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.label_UCCaseTCCreate_CaseTitel);
             this.TC_UCCaseTC_CreateCase.Controls.Add(this.button_UCCaseTCCreate_FindCase);
-            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_CreateCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_CreateCase.Name = "TC_UCCaseTC_CreateCase";
             this.TC_UCCaseTC_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_CreateCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_CreateCase.TabIndex = 2;
             this.TC_UCCaseTC_CreateCase.Text = "Opret";
             this.TC_UCCaseTC_CreateCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
@@ -644,13 +646,31 @@
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.button_UCCaseTCManage_FindCase);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.label_UCCaseTCManage_Description);
             this.TC_UCCaseTC_ManageCase.Controls.Add(this.richTextBox_UCCaseTCManage_Description);
-            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 24);
+            this.TC_UCCaseTC_ManageCase.Location = new System.Drawing.Point(4, 5);
             this.TC_UCCaseTC_ManageCase.Name = "TC_UCCaseTC_ManageCase";
             this.TC_UCCaseTC_ManageCase.Padding = new System.Windows.Forms.Padding(3);
-            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 538);
+            this.TC_UCCaseTC_ManageCase.Size = new System.Drawing.Size(1149, 557);
             this.TC_UCCaseTC_ManageCase.TabIndex = 3;
             this.TC_UCCaseTC_ManageCase.Text = "Administrer";
             this.TC_UCCaseTC_ManageCase.MouseEnter += new System.EventHandler(this.objectListView_UCCaseTCFind_FindCase_MouseEnter);
+            // 
+            // label_UCCaseTCManage_CaseName
+            // 
+            this.label_UCCaseTCManage_CaseName.AutoSize = true;
+            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(286, 56);
+            this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
+            this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(78, 18);
+            this.label_UCCaseTCManage_CaseName.TabIndex = 31;
+            this.label_UCCaseTCManage_CaseName.Text = "Sags title";
+            // 
+            // label_UCCaseTCManage_CaseID
+            // 
+            this.label_UCCaseTCManage_CaseID.AutoSize = true;
+            this.label_UCCaseTCManage_CaseID.Location = new System.Drawing.Point(286, 27);
+            this.label_UCCaseTCManage_CaseID.Name = "label_UCCaseTCManage_CaseID";
+            this.label_UCCaseTCManage_CaseID.Size = new System.Drawing.Size(66, 18);
+            this.label_UCCaseTCManage_CaseID.TabIndex = 30;
+            this.label_UCCaseTCManage_CaseID.Text = "Sags nr";
             // 
             // label_UCCaseTCManage_CaseID_Show
             // 
@@ -822,24 +842,6 @@
             this.imageListCases.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageListCases.ImageSize = new System.Drawing.Size(20, 20);
             this.imageListCases.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label_UCCaseTCManage_CaseID
-            // 
-            this.label_UCCaseTCManage_CaseID.AutoSize = true;
-            this.label_UCCaseTCManage_CaseID.Location = new System.Drawing.Point(286, 27);
-            this.label_UCCaseTCManage_CaseID.Name = "label_UCCaseTCManage_CaseID";
-            this.label_UCCaseTCManage_CaseID.Size = new System.Drawing.Size(66, 18);
-            this.label_UCCaseTCManage_CaseID.TabIndex = 30;
-            this.label_UCCaseTCManage_CaseID.Text = "Sags nr";
-            // 
-            // label_UCCaseTCManage_CaseName
-            // 
-            this.label_UCCaseTCManage_CaseName.AutoSize = true;
-            this.label_UCCaseTCManage_CaseName.Location = new System.Drawing.Point(286, 56);
-            this.label_UCCaseTCManage_CaseName.Name = "label_UCCaseTCManage_CaseName";
-            this.label_UCCaseTCManage_CaseName.Size = new System.Drawing.Size(78, 18);
-            this.label_UCCaseTCManage_CaseName.TabIndex = 31;
-            this.label_UCCaseTCManage_CaseName.Text = "Sags title";
             // 
             // UserControlCases
             // 
