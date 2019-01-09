@@ -354,7 +354,7 @@ namespace GUI
         /// </summary>
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
         {
-                List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
+            List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
             comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
             comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
         }

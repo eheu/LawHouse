@@ -210,9 +210,9 @@
             // 
             this.button_UCClientTCFind_CreateClient.Location = new System.Drawing.Point(6, 27);
             this.button_UCClientTCFind_CreateClient.Name = "button_UCClientTCFind_CreateClient";
-            this.button_UCClientTCFind_CreateClient.Size = new System.Drawing.Size(102, 30);
+            this.button_UCClientTCFind_CreateClient.Size = new System.Drawing.Size(119, 30);
             this.button_UCClientTCFind_CreateClient.TabIndex = 3;
-            this.button_UCClientTCFind_CreateClient.Text = "Opret";
+            this.button_UCClientTCFind_CreateClient.Text = "Opret klient";
             this.button_UCClientTCFind_CreateClient.UseVisualStyleBackColor = true;
             this.button_UCClientTCFind_CreateClient.Click += new System.EventHandler(this.button_UCClientTCFind_CreateClient_Click);
             // 
@@ -430,11 +430,11 @@
             // 
             // bottom_UCClientTCCreate_Save
             // 
-            this.bottom_UCClientTCCreate_Save.Location = new System.Drawing.Point(993, 475);
+            this.bottom_UCClientTCCreate_Save.Location = new System.Drawing.Point(6, 496);
             this.bottom_UCClientTCCreate_Save.Name = "bottom_UCClientTCCreate_Save";
-            this.bottom_UCClientTCCreate_Save.Size = new System.Drawing.Size(138, 30);
+            this.bottom_UCClientTCCreate_Save.Size = new System.Drawing.Size(102, 30);
             this.bottom_UCClientTCCreate_Save.TabIndex = 25;
-            this.bottom_UCClientTCCreate_Save.Text = "Gem ændringer";
+            this.bottom_UCClientTCCreate_Save.Text = "Gem klient";
             this.bottom_UCClientTCCreate_Save.UseVisualStyleBackColor = true;
             this.bottom_UCClientTCCreate_Save.Click += new System.EventHandler(this.bottom_UCClientTCCreate_Save_Click);
             // 
