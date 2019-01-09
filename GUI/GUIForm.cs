@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using BusinessLogic.Interfaces;
@@ -35,11 +36,19 @@ namespace GUI
             RoleRepository = roleRepository;
             EmployeeSpecialityRepository = employeeSpecialityRepository;
             ServiceSpecialityRepository = serviceSpecialityRepository;
-            userControlCases = new UserControlCases(this);
-            userControlEmployees = new UserControlEmployees(this);
-            userControlClients = new UserControlClients(this);
-            userControlSpecialities = new UserControlSpecialities(this);
-            userControlServices = new UserControlServices(this);
+            try
+            {
+                userControlCases = new UserControlCases(this);
+                userControlEmployees = new UserControlEmployees(this);
+                userControlClients = new UserControlClients(this);
+                userControlSpecialities = new UserControlSpecialities(this);
+                userControlServices = new UserControlServices(this);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Der opstod en netværks fejl. Bekræft, at du har internetforbindelse og prøv igen.");
+                Environment.Exit(Environment.ExitCode);
+            }
             InitializeComponent();
             panelWidth = MenuPanel.Width;
             hidden = true;

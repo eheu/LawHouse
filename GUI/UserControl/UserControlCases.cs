@@ -293,7 +293,6 @@ namespace GUI
         {
             currentCase.Description = richTextBox_UCCaseTCManage_Description.Text;
             gui.CaseRepository.Update(currentCase);
-            MessageBox.Show("Det virkede!");
         }
         /// <summary>
         /// Saves the chances after the user has edited the client
@@ -354,9 +353,12 @@ namespace GUI
         /// </summary>
         private void radioButton_UCCaseTCCreate_Qualified_CheckedChanged(object sender, EventArgs e)
         {
-            List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
-            comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
-            comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
+            if(objectListView_UCCaseTCCreate_Service.Objects != null)
+            {
+                List<Service> services = objectListView_UCCaseTCCreate_Service.Objects.Cast<Service>().ToList();
+                comboBox_UCCaseTCCreate_ChooseLawyer.DataSource = gui.EmployeeRepository.GetAllFullyQualifiedLawyersFromServices(services);
+                comboBox_UCCaseTCCreate_ChooseLawyer.SelectedIndex = -1;
+            }
         }
 
         private void radioButton_UCCaseTCCreate_All_CheckedChanged(object sender, EventArgs e)
